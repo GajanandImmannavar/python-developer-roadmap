@@ -119,7 +119,7 @@ print(f"{Result}\n")
 
 
 
-# (Subtraction After Implicit Type Casting) This trap no need to worry about this, we learnt python convert int to float there self
+# (Subtraction After Implicit Type Casting) This is trap no need to worry about this, we learnt python convert int to float there self
 Num_A = 1000
 Num_B = 101.1
 Result = Num_A - Num_B
