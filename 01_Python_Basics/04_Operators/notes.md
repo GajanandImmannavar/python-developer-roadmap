@@ -415,4 +415,108 @@ The `/` operator performs **true division**. Python always returns a float becau
 
 
 
+What does % 100 mean?
 
+Think of it this way:
+
+% 10   → keep last 1 digit
+
+% 100  → keep last 2 digits
+
+% 1000 → keep last 3 digits
+
+% 10000 → keep last 4 digits
+
+Examples
+583 % 10
+Output: 3
+
+583 % 100
+Output: 83
+
+583 % 1000
+Output: 583
+
+Notice the pattern?
+
+The number after % determines how many digits you keep when it's a power of 10.
+
+
+🎯 Interview Tip
+
+If an interviewer asks:
+
+"How do you extract the last k digits of a number?"
+
+The general formula is:
+
+number % (10 ** k)
+
+Examples:
+
+number % 10       # Last 1 digit
+number % 100      # Last 2 digits
+number % 1000     # Last 3 digits
+number % 10000    # Last 4 digits
+
+This pattern appears frequently in DSA and number-based interview questions.
+
+
+# Printing Last Number
+number = 987654
+
+last_two_digits = number % 100
+
+print(last_two_digits)
+
+# Remove the Last Two Digits 
+N =  987654
+
+Left_No = N // 100
+
+print(f"{Left_No}\n")
+
+# Dry Run Of Code 
+
+ 🧠 Dry Run
+
+ # Step 1
+ N = 987654
+
+ Python creates an Integer Object.
+
+ Memory:
+ N
+ │
+ ▼
+ 987654
+
+ # Step 2
+ Left_No = N // 100
+
+ Python performs:
+
+ 987654 // 100
+
+ Think of it as:
+ 987654 ÷ 100
+ ↓
+ 9876.54
+ ↓
+ 9876
+
+ Since // is floor division, Python removes the decimal part.
+
+ Python creates a new Integer Object.
+
+ Memory:
+
+ N                 Left_No
+ │                    │
+ ▼                    ▼
+ 987654             9876
+
+ # Step 3
+ print(Left_No)
+
+ Output: 9876 -->

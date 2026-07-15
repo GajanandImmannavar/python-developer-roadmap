@@ -152,9 +152,83 @@ print(f"Last Two Digit {last_two_digit}\n")
 
 print(f"Remove Last Two Digit {final}\n")
 
+# If you divide by 100, what does the remainder represent?
+
+# Example:
+
+# 987654 = ?
+
+# Think about what remains after removing complete groups of 100.
+
+# Rules
+# ✅ Use only arithmetic operators.
+# ✅ No strings.
+# ✅ No loops.
+# ✅ No if.
 
 
+# Number = 987654 
+# REMAINING = Number // 100
+# print(f"After Dividing By 100: {REMAINING}\n")
 
+# Number = Number % 100
 
+# print(f"{Number}\n")
 
+# Printing Last Number
+number = 987654
 
+last_two_digits = number % 100
+
+print(last_two_digits)
+
+# Remove the Last Two Digits
+N =  987654
+
+Left_No = N // 100
+
+print(f"{Left_No}\n")
+
+# Dry Run Of Code 
+
+# 🧠 Dry Run
+
+# Step 1
+# N = 987654
+
+# Python creates an Integer Object.
+
+# Memory:
+# N
+# │
+# ▼
+# 987654
+# Step 2
+# Left_No = N // 100
+
+# Python performs:
+
+# 987654 // 100
+
+# Think of it as:
+# 987654 ÷ 100
+# ↓
+# 9876.54
+# ↓
+# 9876
+
+# Since // is floor division, Python removes the decimal part.
+
+# Python creates a new Integer Object.
+
+# Memory:
+
+# N                 Left_No
+# │                    │
+# ▼                    ▼
+# 987654             9876
+
+# Step 3
+# print(Left_No)
+
+# Output: 9876
