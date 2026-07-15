@@ -797,3 +797,180 @@ x
 15
 
 The object 10 was never modified.
+
+
+Comparison Operators
+Lesson 1: Introduction
+1️⃣ Definition
+What is a Comparison Operator?
+
+A comparison operator compares two objects (values).
+
+After comparing them, Python returns only one of two Boolean values:
+
+True
+
+or
+
+False
+
+Comparison operators never return numbers. They always return a Boolean result.
+
+2️⃣ Why Do We Need Comparison Operators?
+
+Imagine you're building:
+
+Login system
+ATM
+Online shopping
+Student marks calculator
+Age verification
+Password checker
+
+Questions like these appear:
+
+Is age greater than 18?
+
+Is password correct?
+
+Are two numbers equal?
+
+Does user have enough balance?
+
+A computer must answer these with Yes or No.
+
+In Python:
+
+Yes  → True
+
+No   → False
+
+Comparison operators let Python make these decisions.
+
+Types of Comparison Operators
+
+| Operator | Meaning               |
+| -------- | --------------------- |
+| `==`     | Equal to              |
+| `!=`     | Not equal to          |
+| `>`      | Greater than          |
+| `<`      | Less than             |
+| `>=`     | Greater than or equal |
+| `<=`     | Less than or equal    |
+
+First Operator — == (Equal To)
+Definition
+
+Checks whether two objects have the same value.
+
+Syntax
+left == right
+
+Python compares the values of both objects.
+
+If they are equal:
+
+True
+
+Otherwise:
+
+False
+5️⃣ Internal Working
+
+Example:
+
+x = 10
+y = 10
+
+print(x == y)
+Step 1
+x = 10
+
+Memory:
+
+x
+│
+▼
+10
+Step 2
+y = 10
+
+Memory:
+
+x ─┐
+   │
+   ▼
+ 10
+ ▲
+ │
+ y
+
+(Both variables may refer to the same integer object.)
+
+Step 3
+x == y
+
+Python asks:
+
+Does the value of x equal the value of y?
+
+Answer:
+
+10 == 10
+
+↓
+
+True
+
+Python creates a Boolean object:
+
+True
+
+Then print() displays:
+
+True
+⭐ Important Theory
+
+Remember this forever:
+
+=
+
+means
+
+Assign
+
+Example:
+
+x = 10
+==
+
+means
+
+Compare
+
+Example:
+
+x == 10
+
+This is one of the most common beginner mistakes.
+
+🧠 Memory Trick
+=     → Give / Assign
+
+==    → Ask / Compare
+
+Think of it like this:
+
+Teacher gives marks
+
+↓
+
+=
+
+Teacher asks
+
+"Did you score 90?"
+
+↓
+
+==
