@@ -519,4 +519,281 @@ print(f"{Left_No}\n")
  # Step 3
  print(Left_No)
 
- Output: 9876 -->
+ Output: 9876 
+
+
+# 📖 Theory
+
+Let's make this a rule you can remember forever.
+
+When should you use //?
+
+Use // when the question asks you to:
+
+Remove digits
+Find the quotient
+Count complete groups
+
+# Examples:
+
+987654
+
+↓
+
+Remove last digit
+
+98765
+987654 // 10
+987654
+
+↓
+
+Remove last two digits
+
+9876
+987654 // 100
+987654
+
+↓
+
+Remove last three digits
+
+987
+987654 // 1000
+
+# 🧠 Memory Trick
+Question says...
+
+REMOVE
+↓
+
+Use //
+
+--------------------
+
+Question says...
+
+KEEP / EXTRACT
+↓
+
+Use %
+
+# Example:
+
+Number = 987654
+
+Keep last two digits
+
+↓
+
+54
+
+↓
+
+%100
+Number = 987654
+
+Remove last two digits
+
+↓
+
+9876
+
+↓
+
+//100
+# 📈 Complexity
+
+Your code performs one arithmetic operation.
+
+Time Complexity
+O(1)
+
+One operation.
+
+Space Complexity
+O(1)
+
+One extra variable.
+
+# 🎯 Interview Question
+
+If the interviewer asks:
+
+How do you remove the last k digits?
+
+General formula:
+
+number // (10 ** k)
+
+# Examples:
+
+number // 10
+
+Remove last digit.
+
+number // 100
+
+Remove last two digits.
+
+number // 1000
+
+Remove last three digits.
+
+This is a very common DSA pattern.
+
+#########################################################################################################
+# Assignment Operators
+#########################################################################################################
+
+Assignment Operators
+
+This chapter is much shorter, but very important.
+
+1️⃣ Definition
+What is an Assignment Operator?
+Definition
+
+An assignment operator is used to assign a value to a variable or update the value that a variable refers to.
+
+The simplest assignment operator is:
+
+=
+
+Example:
+
+x = 10
+
+Python creates an integer object 10, and x becomes a reference to it.
+
+2️⃣ Why Do We Need Assignment Operators?
+
+Imagine this code:
+
+x = 10
+
+x = x + 5
+
+It works.
+
+But Python gives us a shorter way:
+
+x += 5
+
+Both produce the same result.
+
+Assignment operators make code:
+
+shorter
+easier to read
+less repetitive
+3️⃣ Types of Assignment Operators
+| Operator | Meaning                 |
+| -------- | ----------------------- |
+| `=`      | Assign                  |
+| `+=`     | Add and assign          |
+| `-=`     | Subtract and assign     |
+| `*=`     | Multiply and assign     |
+| `/=`     | Divide and assign       |
+| `//=`    | Floor divide and assign |
+| `%=`     | Modulus and assign      |
+| `**=`    | Exponent and assign     |
+
+
+We'll learn them one by one.
+
+4️⃣ The = Operator (Revision)
+
+You already know this.
+
+Example:
+
+x = 10
+
+Memory:
+
+x
+│
+▼
+10
+
+Now:
+
+x = 20
+
+Memory:
+
+Old object: 10
+
+New object: 20
+
+x
+│
+▼
+20
+
+Notice:
+
+The integer object 10 is not changed.
+
+x now refers to a new integer object.
+
+This connects to everything we've learned about objects and references.
+
+5️⃣ The += Operator
+
+Example:
+
+x = 10
+
+x += 5
+
+Many beginners think:
+
+"Python changes the integer object 10."
+
+❌ That's not what happens.
+
+Let's dry run it.
+
+Step 1
+x = 10
+
+Memory:
+
+x
+│
+▼
+10
+Step 2
+x += 5
+
+Python internally treats it like:
+
+x = x + 5
+
+It:
+
+Reads the object referenced by x (10)
+Creates the result 15
+Creates a new integer object 15
+Makes x refer to 15
+
+Memory:
+
+Before
+
+x
+│
+▼
+10
+
+
+After
+
+x
+│
+▼
+15
+
+The object 10 was never modified.

@@ -189,46 +189,175 @@ Left_No = N // 100
 
 print(f"{Left_No}\n")
 
-# Dry Run Of Code 
-
-# 🧠 Dry Run
-
+# Assignment Operators
+# ----------------------------------------------------------------------------------------------
+# python create int object 
 # Step 1
-# N = 987654
+
+
+# x = 10
 
 # Python creates an Integer Object.
 
 # Memory:
-# N
+
+# x
 # │
 # ▼
-# 987654
+# 10
 # Step 2
-# Left_No = N // 100
+# y = x
 
-# Python performs:
+# Does Python create another integer object?
 
-# 987654 // 100
+# No.
 
-# Think of it as:
-# 987654 ÷ 100
-# ↓
-# 9876.54
-# ↓
-# 9876
-
-# Since // is floor division, Python removes the decimal part.
-
-# Python creates a new Integer Object.
+# It simply makes y refer to the same object.
 
 # Memory:
 
-# N                 Left_No
-# │                    │
-# ▼                    ▼
-# 987654             9876
+# x ─┐
+#    │
+#    ▼
+#   10
+#    ▲
+#    │
+# y ─┘
+
+# Both variables point to the same integer object.
 
 # Step 3
-# print(Left_No)
+# x += 5
 
-# Output: 9876
+# Python treats it as
+
+# x = x + 5
+
+# Now think carefully.
+
+# Does Python change the integer object 10?
+
+# ❌ No.
+
+# Why?
+
+# Because integers are immutable.
+
+# Python creates a new integer object.
+
+# 15
+
+# Then x starts referring to this new object.
+
+# Memory becomes:
+
+# x ─────► 15
+
+# y ─────► 10
+
+# Notice something?
+
+# y never moved.
+
+# It still refers to the original integer object 10.
+
+# That is why:
+
+# print(x)
+
+# prints
+
+# 15
+
+# and
+
+# print(y)
+
+# prints
+
+# 10
+
+
+
+x = 10
+y = x
+
+x += 5 
+
+print(x)
+print(y)
+
+
+
+
+# This Is The Biggest Difference
+# Immutable
+x = 10
+
+y = x
+
+x += 5
+
+# Memory
+
+# Before
+
+# x ─┐
+#    │
+#    ▼
+#  10
+#  ▲
+#  │
+#  y
+
+# After
+
+# x ─────► 15
+
+# y ─────► 10
+
+# A new object is created.
+
+# Mutable
+
+x = [10]
+
+y = x
+
+x.append(20)
+
+# Memory
+
+# Before
+
+# x ─┐
+#    │
+#    ▼
+# [10]
+#  ▲
+#  │
+#  y
+
+# After
+
+# x ─┐
+#    │
+#    ▼
+# [10,20]
+#  ▲
+#  │
+#  y
+
+# The same object changes.
+
+
+
+x = [10]
+y=x
+x =[100]
+
+y.append(20)
+print(x)
+print(y)
+
+

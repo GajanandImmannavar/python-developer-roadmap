@@ -641,5 +641,127 @@ print(f"{result}\n")
 
 # Output
 # 25.0
-=======
->>>>>>> 9d903c73b0cbaf1289785f298a9a649b209aed12
+
+
+# Assignment Operators
+# ----------------------------------------------------------------------------------------------
+#  Problem 1
+x = 10
+x += 5
+
+print(x)
+
+# Your explanation:
+
+# treat as x+5 and calculate and python assign x to new number again now x = 15
+
+# This is mostly correct.
+
+# Let's make it more precise.
+
+# Step 1
+# x = 10
+
+# Python creates
+
+# Integer Object
+
+# 10
+
+# Memory
+
+# x
+# │
+# ▼
+# 10
+# Step 2
+# x += 5
+
+# Python internally converts this into
+
+# x = x + 5
+
+# Python:
+
+# Reads the object referenced by x (10).
+# Adds 5.
+# Creates a new integer object 15.
+# Makes x refer to the new object 15.
+
+# Memory
+
+# Before
+
+# x
+# │
+# ▼
+# 10
+
+# After
+
+# x
+# │
+# ▼
+# 15
+
+# Notice:
+
+#  Python did not change the object 10.
+
+# It created a new object.
+
+# This is because integers are immutable.
+
+
+
+
+# Subtract and assign
+x = 20
+
+x -= 8
+
+print(x)
+
+
+# Multiply and assign
+x = 6
+x *= 4
+
+print(x)
+
+
+
+# Divide and assign
+x = 10
+x /= 1
+
+print(x)
+
+
+
+
+# Floor divide and assign
+x = 15
+x //= 2
+
+print(x)
+
+
+
+
+
+# Modulus and assign
+
+x = 17
+x %= 5
+
+print(x)
+
+
+
+# Exponent and assign
+
+x = 50
+x **= 3
+
+print(x)
