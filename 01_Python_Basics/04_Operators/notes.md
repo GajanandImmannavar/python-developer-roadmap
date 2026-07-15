@@ -798,10 +798,12 @@ x
 
 The object 10 was never modified.
 
-
-Comparison Operators
+########################################################################################################
+# Comparison Operators
+########################################################################################################
 Lesson 1: Introduction
 1️⃣ Definition
+
 What is a Comparison Operator?
 
 A comparison operator compares two objects (values).
