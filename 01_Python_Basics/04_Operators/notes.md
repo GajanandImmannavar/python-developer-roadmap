@@ -978,3 +978,60 @@ Teacher asks
 ↓
 
 ==
+
+###################################################################
+# 📝 Revision Notes (Write these in your notebook)
+###################################################################
+
+Comparison Operator ==
+Definition
+
+== compares the values of two objects.
+
+It does not check whether they are the same object in memory.
+
+Syntax
+left == right
+Return Type
+
+Always returns a Boolean object.
+
+True
+
+or
+
+False
+Examples
+10 == 10
+
+↓
+
+True
+10 == 20
+
+↓
+
+False
+10 == 10.0
+
+↓
+
+True
+
+because both represent the same numeric value.
+
+10 == "10"
+
+↓
+
+False
+
+because one is an integer and the other is a string.
+
+"Python" == "python"
+
+↓
+
+False
+
+because Python is case-sensitive.
