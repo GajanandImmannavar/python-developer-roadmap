@@ -765,3 +765,179 @@ x = 50
 x **= 3
 
 print(x)
+
+
+# Comparison Operators
+# ---------------------------------------------------------------------------------------------
+
+# Example 1: Comparing Two Equal Integer Objects
+
+x = 10
+y = 10
+print(x == y)
+
+# Step 1
+
+# Python creates an Integer Object with value 10.
+
+# Since the value already exists, Python may reuse the same Integer Object.
+
+# Memory
+
+#       x ─┐
+#          │
+#          ▼
+#       Integer Object
+#       Value : 10
+#       Type  : int
+#          ▲
+#          │
+#       y ─┘
+
+# Step 2
+
+# Python executes
+
+# x == y
+
+# Python performs these steps:
+
+# 1. Looks at variable 'x'.
+# 2. Finds the Integer Object referenced by 'x'.
+# 3. Looks at variable 'y'.
+# 4. Finds the Integer Object referenced by 'y'.
+# 5. Compares their values.
+# 6. Since both values are equal, Python creates the Boolean Object True.
+# 7. print() displays True.
+
+# Output
+
+# True
+
+# Python retrieves the objects referenced by x and y, compares their values,
+# creates a Boolean object True, 
+# and print() displays it.
+
+
+
+# Example 2: Comparing Two Different Integer Objects
+
+x = 10
+y = 20
+print(x == y)
+
+# Memory
+
+# x ─────► Integer Object (10)
+
+# y ─────► Integer Object (20)
+
+# Python executes
+
+# x == y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Integer Object referenced by 'y'.
+# 3. Compares their values.
+# 4. Since 10 is not equal to 20, Python creates the Boolean Object False.
+# 5. print() displays False.
+
+# Output
+
+# False
+
+
+# Example 3: Comparing Two Equal String Objects
+
+a = "Python"
+b = "Python"
+print(a == b)
+
+# Step 1
+
+# Python creates a String Object with value "Python".
+
+# Since the same string already exists, Python may reuse the same String Object.
+
+# Memory
+
+#       a ─┐
+#          │
+#          ▼
+#      String Object
+#      Value : "Python"
+#      Type  : str
+#          ▲
+#          │
+#       b ─┘
+
+# Step 2
+
+# Python compares the values of both String Objects.
+
+# The values are equal.
+
+# Python creates the Boolean Object True.
+
+# Output
+
+# True
+
+
+# Example 4: Comparing Two Different String Objects
+
+a = "Python"
+b = "python"
+print(a == b)
+
+# Memory
+
+# a ─────► String Object ("Python")
+
+# b ─────► String Object ("python")
+
+# Python compares both string values.
+
+# Python is case-sensitive.
+
+# "P" and "p" are different characters.
+
+# Python creates the Boolean Object False.
+
+# Output
+
+# False
+
+# Example 5: Comparing an Integer and a String
+
+x = 10
+y = "10"
+print(x==y)
+
+# Memory
+
+# x ─────► Integer Object (10)
+
+# y ─────► String Object ("10")
+
+# Python executes
+
+# x == y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the String Object referenced by 'y'.
+# 3. Checks their types.
+# 4. int and str are different object types.
+# 5. Their values are not considered equal.
+# 6. Python creates the Boolean Object False.
+# 7. print() displays False.
+
+# Output
+
+# False
+
+

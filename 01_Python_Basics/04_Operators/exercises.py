@@ -361,3 +361,220 @@ print(x)
 print(y)
 
 
+
+# Comparison Operator
+
+
+
+# Example 1: Comparing Two Boolean Objects
+
+x = True
+y = True
+print(x==y)
+
+# Step 1
+
+# Python creates a Boolean Object with value True.
+
+# Since the value already exists, Python may reuse the same Boolean Object.
+
+# Memory
+
+#       x ─┐
+#          │
+#          ▼
+#      Boolean Object
+#      Value : True
+#      Type  : bool
+#          ▲
+#          │
+#       y ─┘
+
+# Step 2
+
+# Python executes
+
+# x == y
+
+# Python performs these steps:
+
+# 1. Looks at variable 'x'.
+# 2. Finds the Boolean Object referenced by 'x'.
+# 3. Looks at variable 'y'.
+# 4. Finds the Boolean Object referenced by 'y'.
+# 5. Compares their values.
+# 6. Since both values are True, Python creates the Boolean Object True.
+# 7. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# Both objects have the same Boolean value (True), so the comparison returns True.
+
+
+# Example 2: Comparing Two Different Boolean Objects
+
+x = False
+y = True
+print(x==y)
+
+# Memory
+
+# x ─────► Boolean Object (False)
+
+# y ─────► Boolean Object (True)
+
+# Python executes
+
+# x == y
+
+# Python performs these steps:
+
+# 1. Finds the Boolean Object referenced by 'x'.
+# 2. Finds the Boolean Object referenced by 'y'.
+# 3. Compares their values.
+# 4. False is not equal to True.
+# 5. Python creates the Boolean Object False.
+# 6. print() displays False.
+
+# Output
+
+# False
+
+# Reason
+
+# The Boolean values are different, so the comparison returns False.
+
+# Example 3: Comparing a Floating-Point Number and an Integer
+
+x = 5.0
+y = 5
+print(x==y)
+
+# Memory
+
+# x ─────► Float Object (5.0)
+
+# y ─────► Integer Object (5)
+
+# Python executes
+
+# x == y
+
+# Python performs these steps:
+
+# 1. Finds the Float Object referenced by 'x'.
+# 2. Finds the Integer Object referenced by 'y'.
+# 3. Checks whether both numeric values can be compared.
+# 4. Python compares their numeric values (5.0 and 5).
+# 5. Since both represent the same numeric value, Python creates the Boolean Object True.
+# 6. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# Although the object types are different (`float` and `int`), both represent the same numeric value (5). Therefore, `5.0 == 5` evaluates to `True`.
+
+x = 10
+
+y = 10.0
+
+print(type(x))
+print(type(y))
+print(x == y)
+
+# Example 9: Comparing an Integer and a Floating-Point Number
+
+# x = 10
+# y = 10.0
+
+
+# Example 9: Comparing an Integer and a Floating-Point Number
+
+# x = 10
+# y = 10.0
+
+# Step 1
+
+# Python creates an Integer Object with value 10.
+
+# Memory
+
+# x ─────► Integer Object
+#           Value : 10
+#           Type  : int
+
+# Step 2
+
+# Python creates a Float Object with value 10.0.
+
+# Memory
+
+# x ─────► Integer Object (10)
+
+# y ─────► Float Object (10.0)
+
+# Step 3
+
+# Python executes
+
+# type(x)
+
+# Python finds the object referenced by 'x',
+# checks its type, and returns the type object <class 'int'>.
+
+# Output
+
+# <class 'int'>
+
+# Step 4
+
+# Python executes
+
+# type(y)
+
+# Python finds the object referenced by 'y',
+# checks its type, and returns the type object <class 'float'>.
+
+# Output
+
+# <class 'float'>
+
+# Step 5
+
+# Python executes
+
+# x == y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Float Object referenced by 'y'.
+# 3. Checks whether both numeric values can be compared.
+# 4. Python compares the numeric values (10 and 10.0).
+# 5. Since both represent the same numeric value, Python creates the Boolean Object True.
+# 6. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# Although 'x' is an Integer Object and 'y' is a Float Object,
+# both represent the same numeric value (10).
+
+# The `==` operator compares values, not object types.
+# Therefore,
+
+# 10 == 10.0
+
+# returns
+
+# True.

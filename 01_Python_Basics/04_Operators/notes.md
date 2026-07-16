@@ -1035,3 +1035,128 @@ because one is an integer and the other is a string.
 False
 
 because Python is case-sensitive.
+
+
+# Comparison Operator — != (Not Equal)
+
+1. Definition
+
+The != operator checks whether two values are different.
+
+If the values are different:
+
+True
+
+If the values are the same:
+
+False
+
+Just like ==, it returns a Boolean object.
+
+2. Why Do We Need It?
+
+Imagine a login system.
+
+password = "python123"
+
+user_input = "hello123"
+
+We want to know:
+
+"Is the entered password different from the real password?"
+
+Python can ask:
+
+user_input != password
+
+Result:
+
+True
+
+because the passwords are different.
+
+Real-life uses:
+
+Password validation
+Username checking
+Detecting changes
+Form validation
+Comparing old and new values
+3. Syntax
+left != right
+
+Read it as:
+
+"Left is not equal to right."
+
+4. Internal Working
+
+Example:
+
+x = 50
+y = 20
+
+print(x != y)
+Step 1
+
+Python creates an integer object:
+
+50
+
+and x refers to it.
+
+Step 2
+
+Python creates another integer object:
+
+20
+
+and y refers to it.
+
+Step 3
+
+Python asks:
+
+Is 50 different from 20?
+
+Answer:
+
+Yes
+
+Python creates a Boolean object:
+
+True
+
+print() displays:
+
+True
+
+
+5. Compare == and !=
+| Expression | Question Python Asks | Result  |
+| ---------- | -------------------- | ------- |
+| `10 == 10` | Are they equal?      | `True`  |
+| `10 != 10` | Are they different?  | `False` |
+| `10 == 20` | Are they equal?      | `False` |
+| `10 != 20` | Are they different?  | `True`  |
+
+Notice that != is the opposite of ==.
+
+
+6. Common Beginner Mistake
+
+Some beginners think:
+
+!=
+
+means
+
+"Not"
+
+❌ Incorrect.
+
+It means
+
+Not Equal To
+
+It always compares two values.
