@@ -1552,3 +1552,240 @@ Str < Str1
 
 # True.
 
+#
+# 5 examples for the >= (Greater Than or Equal To) operator in the same style as your repository.
+
+# Example 1: Comparing Two Integer Numbers Using >=
+
+x = 20
+y = 10
+
+print(x >= y)
+
+# Memory
+
+# x ─────► Integer Object (20)
+
+# y ─────► Integer Object (10)
+
+# Python executes
+
+# x >= y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Integer Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 20 is greater than or equal to 10.
+# 5. Since the condition is True, Python creates the Boolean Object True.
+# 6. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# 20 is greater than 10.
+
+# Therefore,
+
+# 20 >= 10
+
+# returns
+
+# True.
+
+
+# Example 2: Comparing Two Equal Integer Numbers Using >=
+
+x = 100
+y = 100
+
+print(x >= y)
+
+# Memory
+
+#       x ─┐
+#          │
+#          ▼
+#     Integer Object
+#     Value : 100
+#          ▲
+#          │
+#       y ─┘
+
+# Python executes
+
+# x >= y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Integer Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 100 is greater than or equal to 100.
+# 5. Since both values are equal, the condition is True.
+# 6. Python creates the Boolean Object True.
+# 7. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# The values are equal.
+
+# The '=' in '>=' allows equality.
+
+# Therefore,
+
+# 100 >= 100
+
+# returns
+
+# True.
+
+
+
+# Example 3: Comparing an Integer and a Floating-Point Number Using >=
+
+x = 50
+y = 75.5
+
+print(x >= y)
+
+# Memory
+
+# x ─────► Integer Object (50)
+
+# y ─────► Float Object (75.5)
+
+# Python executes
+
+# x >= y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Float Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 50 is greater than or equal to 75.5.
+# 5. Since the condition is False, Python creates the Boolean Object False.
+# 6. print() displays False.
+
+# Output
+
+# False
+
+# Reason
+
+# Python compares the numeric values.
+
+# 50 is less than 75.5.
+
+# Therefore,
+
+# 50 >= 75.5
+
+# returns
+
+# False.
+
+
+# Example 4: Comparing Two Floating-Point Numbers Using >=
+
+x = 25.5
+y = 25.5
+
+print(x >= y)
+
+# Memory
+
+#       x ─┐
+#          │
+#          ▼
+#      Float Object
+#      Value : 25.5
+#          ▲
+#          │
+#       y ─┘
+
+# Python executes
+
+x >= y
+
+# Python performs these steps:
+
+# 1. Finds the Float Object referenced by 'x'.
+# 2. Finds the Float Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 25.5 is greater than or equal to 25.5.
+# 5. Since both values are equal, Python creates the Boolean Object True.
+# 6. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# Both Float Objects have the same numeric value.
+
+# Therefore,
+
+# 25.5 >= 25.5
+
+# returns
+
+# True.
+
+
+
+# Example 5: Comparing Two String Objects Using >=
+
+Str = "Python"
+Str1 = "Programming"
+
+print(Str >= Str1)
+
+# Memory
+
+# Str  ─────► String Object ("Python")
+
+# Str1 ─────► String Object ("Programming")
+
+# Python executes
+
+# Str >= Str1
+
+# Python performs these steps:
+
+# 1. Finds the String Object referenced by 'Str'.
+# 2. Finds the String Object referenced by 'Str1'.
+# 3. Compares both strings lexicographically (dictionary order).
+# 4. Python compares the characters from left to right.
+# 5. The first different characters determine the result.
+# 6. Since 'y' comes after 'r' in Unicode order, "Python" is considered greater than "Programming".
+# 7. Python creates the Boolean Object True.
+# 8. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# Python compares strings character by character.
+
+# "Python" comes after "Programming" in lexicographical order.
+
+# Therefore,
+
+# "Python" >= "Programming"
+
+# returns
+
+# True.
