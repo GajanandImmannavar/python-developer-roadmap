@@ -691,3 +691,45 @@ print(Str > Int1)
 # You will get Error instead output remember python raise Error when you  compare string with Int
 
 
+
+
+
+
+#  Less than Operator "<"
+
+a = 10
+b = 22
+print(a<b)
+
+
+a = 2.2
+b = 2.1
+
+print(a<b)
+
+Str = '1'
+str2 = 1
+
+print(Str < str2)
+
+
+# Error Because we are comparing Int and Str Which is not work 
+
+
+
+
+Num1 = 21
+Num2 = Num1
+
+Num1 = 20
+
+print(Num2>Num1)
+
+# OutPut = True we learnt Assignment Operators  Num1 refers to 20 but 21 not changed and Num2 still refers to 21
+
+
+
+
+
+
+
