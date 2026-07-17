@@ -1543,3 +1543,29 @@ False
 | `!=`     | Are they different?         |
 | `>`      | Is left greater than right? |
 | `<`      | Is left less than right?    |
+
+
+
+⭐ Interview Tip
+
+Many beginners memorize symbols.
+
+A better approach is to translate them into English.
+
+When you see:
+
+a < b
+
+Read it as:
+
+"Is a less than b?"
+
+When you see:
+
+a > b
+
+Read it as:
+
+"Is a greater than b?"
+
+This habit makes it much easier to read complex conditions later in if statements.
