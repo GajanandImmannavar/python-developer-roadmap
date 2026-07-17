@@ -723,7 +723,7 @@ Num2 = Num1
 
 Num1 = 20
 
-print(Num2>Num1)
+print(Num2<Num1)
 
 # OutPut = True we learnt Assignment Operators  Num1 refers to 20 but 21 not changed and Num2 still refers to 21
 
