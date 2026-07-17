@@ -1569,3 +1569,267 @@ Read it as:
 "Is a greater than b?"
 
 This habit makes it much easier to read complex conditions later in if statements.
+
+
+#########################################################################################################
+
+
+# 🐍 Comparison Operator >=
+
+
+1️⃣ Definition
+
+The operator
+
+>=
+
+means
+
+Greater Than OR Equal To
+
+This is the first comparison operator that has two conditions.
+
+Python asks:
+
+Is the left value greater than the right value OR are they equal?
+
+If either condition is true,
+
+Python returns
+
+True
+
+Otherwise,
+
+False
+2️⃣ Why Do We Need It?
+
+Imagine a company hiring people.
+
+Requirement:
+
+Age must be 18 or above.
+
+Notice something.
+
+It doesn't say
+
+Greater than 18
+
+It says
+
+18 OR ABOVE
+
+That means
+
+age >= 18
+
+Examples
+
+Age = 18 ✅
+
+Age = 19 ✅
+
+Age = 25 ✅
+
+Age = 17 ❌
+
+Another example
+
+Bank Account
+
+Minimum balance required:
+
+₹1000
+
+If balance is
+
+₹1000 ✅
+
+₹1500 ✅
+
+₹2000 ✅
+
+₹999 ❌
+
+Python:
+
+balance >= 1000
+3️⃣ Syntax
+left >= right
+
+Read it as
+
+Left is greater than or equal to right
+
+4️⃣ Internal Working
+
+Example
+
+x = 10
+y = 5
+
+print(x >= y)
+
+Python asks
+
+Is 10 greater than 5?
+
+OR
+
+Is 10 equal to 5?
+
+The first question is
+
+Yes
+
+So Python immediately creates
+
+True
+
+Another Example
+
+x = 10
+y = 10
+
+print(x >= y)
+
+Python asks
+
+Is 10 greater than 10?
+
+No.
+
+Then asks
+
+Is 10 equal to 10?
+
+Yes.
+
+Result
+
+True
+
+Notice something important.
+
+Although
+
+10 is NOT greater than 10
+
+The answer is still
+
+True
+
+because of
+
+OR EQUAL
+
+This is the new concept in today's lesson.
+
+5️⃣ Number Line
+← Smaller ------------------------ Greater →
+
+1   2   3   4   5   6   7   8   9   10
+
+Suppose we ask
+
+5 >= 5
+
+Python thinks
+
+Is it to the right?
+
+OR
+
+Is it exactly here?
+
+It is exactly there.
+
+So
+
+True
+
+Another
+
+8 >= 5
+
+8 is to the right.
+
+Answer
+
+True
+
+Another
+
+2 >= 5
+
+2 is left of 5.
+
+Not equal.
+
+Answer
+
+False
+6️⃣ Compare > and >=
+
+This is one of the most important interview concepts.
+
+Expression	Result	Why
+5 > 5	False	Equal is not greater
+5 >= 5	True	Equal is allowed
+8 > 5	True	Greater
+8 >= 5	True	Greater
+2 > 5	False	Smaller
+2 >= 5	False	Smaller
+
+⭐ Golden Rule
+
+>= means
+
+Greater
+
+OR
+
+Equal
+
+If either is true, the answer is True.
+
+7️⃣ Common Beginner Mistakes
+Mistake 1
+
+Thinking
+
+5 >= 5
+
+is
+
+False
+
+❌ Wrong.
+
+Equal is included.
+
+Mistake 2
+
+Confusing
+
+>
+
+with
+
+>=
+
+Remember
+
+5 > 5
+
+↓
+
+False
+5 >= 5
+
+↓
+
+True
+
+One tiny = changes everything.
