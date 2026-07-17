@@ -632,7 +632,7 @@ Str1 = 'Hello'
 print(Str>Str1)
 
 # output  true 
-Example 6: Comparing Two String Objects Using >
+# Example 6: Comparing Two String Objects Using >
 
 Str = "Hi"
 Str1 = "Hello"
@@ -726,6 +726,44 @@ Num1 = 20
 print(Num2<Num1)
 
 # OutPut = True we learnt Assignment Operators  Num1 refers to 20 but 21 not changed and Num2 still refers to 21
+
+
+# Operator  ">="
+a = 10
+b = 20
+print(a>=b)
+
+
+Num1 = 22
+Num2 = 22
+print( Num1 >= Num2 )
+
+
+First = 100
+Second = 202
+print(First >= Second)
+
+
+
+# Exercises On <= Operators
+
+Num1 = 1000
+Num2 = 1001
+
+print(Num1 <= Num2)
+
+
+First = 1011
+Second = 201
+
+print(First <= Second)
+
+
+
+N1 = 10
+N2 = 10
+
+print(N1 <= N2)
 
 
 

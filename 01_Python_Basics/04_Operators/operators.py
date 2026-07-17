@@ -1326,7 +1326,7 @@ x > y
 
 
 
-
+#####################################################################################################################
 # Less than Operator
 
 # Example 1: Comparing Two Integer Numbers Using <
@@ -1552,7 +1552,7 @@ Str < Str1
 
 # True.
 
-#
+#####################################################################################################################
 # 5 examples for the >= (Greater Than or Equal To) operator in the same style as your repository.
 
 # Example 1: Comparing Two Integer Numbers Using >=
@@ -1785,6 +1785,243 @@ print(Str >= Str1)
 # Therefore,
 
 # "Python" >= "Programming"
+
+# returns
+
+# True.
+
+#############################################################################################################
+# Operator "<="
+
+# Example 1: Comparing Two Integer Numbers Using <=
+
+x = 10
+y = 20
+
+print(x <= y)
+
+# Memory
+
+# x ─────► Integer Object (10)
+
+# y ─────► Integer Object (20)
+
+# Python executes
+
+# x <= y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Integer Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 10 is less than or equal to 20.
+# 5. Since the condition is True, Python creates the Boolean Object True.
+# 6. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# 10 is less than 20.
+
+# Therefore,
+
+# 10 <= 20
+
+# returns
+
+# True.
+
+
+
+# Example 2: Comparing Two Equal Integer Numbers Using <=
+
+x = 100
+y = 100
+
+print(x <= y)
+
+# Memory
+
+#       x ─┐
+#          │
+#          ▼
+#     Integer Object
+#     Value : 100
+#          ▲
+#          │
+#       y ─┘
+
+# Python executes
+
+x <= y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Integer Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 100 is less than or equal to 100.
+# 5. Since both values are equal, the condition is True.
+# 6. Python creates the Boolean Object True.
+# 7. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# The values are equal.
+
+# The '=' in '<=' allows equality.
+
+# Therefore,
+
+# 100 <= 100
+
+# returns
+
+# True.
+
+
+
+# Example 3: Comparing an Integer and a Floating-Point Number Using <=
+
+x = 50
+y = 75.5
+
+print(x <= y)
+
+# Memory
+
+# x ─────► Integer Object (50)
+
+# y ─────► Float Object (75.5)
+
+# Python executes
+
+x <= y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Float Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 50 is less than or equal to 75.5.
+# 5. Since the condition is True, Python creates the Boolean Object True.
+# 6. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# Python compares the numeric values.
+
+# 50 is less than 75.5.
+
+# Therefore,
+
+# 50 <= 75.5
+
+# returns
+
+
+x = 25.5
+# True.
+
+
+# Example 4: Comparing Two Floating-Point Numbers Using <=
+y = 25.5
+
+print(x <= y)
+
+# Memory
+
+#       x ─┐
+#          │
+#          ▼
+#      Float Object
+#      Value : 25.5
+#          ▲
+#          │
+#       y ─┘
+
+# Python executes
+
+x <= y
+
+# Python performs these steps:
+
+# 1. Finds the Float Object referenced by 'x'.
+# 2. Finds the Float Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 25.5 is less than or equal to 25.5.
+# 5. Since both values are equal, Python creates the Boolean Object True.
+# 6. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# Both Float Objects have the same numeric value.
+
+# Therefore,
+
+# 25.5 <= 25.5
+
+# returns
+
+# True.
+
+
+# Example 5: Comparing Two String Objects Using <=
+
+Str = "Apple"
+Str1 = "Banana"
+
+print(Str <= Str1)
+
+# Memory
+
+# Str  ─────► String Object ("Apple")
+
+# Str1 ─────► String Object ("Banana")
+
+# Python executes
+
+Str <= Str1
+
+# Python performs these steps:
+
+# 1. Finds the String Object referenced by 'Str'.
+# 2. Finds the String Object referenced by 'Str1'.
+# 3. Compares both strings lexicographically (dictionary order).
+# 4. Python compares the characters from left to right.
+# 5. Since 'A' comes before 'B' in Unicode order, "Apple" is considered less than "Banana".
+# 6. Python creates the Boolean Object True.
+# 7. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# Python compares strings character by character.
+
+# "Apple" comes before "Banana" in lexicographical order.
+
+# Therefore,
+
+# "Apple" <= "Banana"
 
 # returns
 
