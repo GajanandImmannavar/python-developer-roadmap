@@ -578,3 +578,40 @@ print(x == y)
 # returns
 
 # True.
+
+# Quick Rule
+
+
+# | Expression       | Result  | Reason                     |
+# | ---------------- | ------- | -------------------------- |
+# | `5 != 5.0`       | `False` | Same numeric value         |
+# | `"AI" != "AI"`   | `False` | Same string value          |
+# | `False != False` | `False` | Same Boolean value         |
+# | `100 != "100"`   | `True`  | Different types and values |
+
+
+
+
+Name = 'Gajanand'
+User_Name = "gajanand"
+
+print(Name != User_Name)
+
+
+Age = 22
+user_Age = 21
+print(Age != user_Age)
+
+
+Message = "Hi Hello"
+Received_Message= "Hello"
+
+print(Message != Received_Message)
+
+
+Number =  21
+str = 'Hi'
+print(Number != str)
+
+
+

@@ -939,5 +939,166 @@ print(x==y)
 # Output
 
 # False
+# Example 1: Comparing an Integer and a Floating-Point Number Using !=
+
+x = 5
+y = 5.0
+
+print(x != y)
+
+# Memory
+
+# x ─────► Integer Object (5)
+
+# y ─────► Float Object (5.0)
+
+# Python executes
+
+# x != y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Float Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. 5 and 5.0 represent the same numeric value.
+# 5. Therefore, the values are equal.
+# 6. Since != means "not equal", Python creates the Boolean Object False.
+# 7. print() displays False.
+
+# Output
+
+# False
+
+# Reason
+
+# 5 and 5.0 have different types but the same numeric value.
+# Therefore, they are equal and != returns False.
 
 
+# Example 2: Comparing Two Equal String Objects Using !=
+
+x = "AI"
+y = "AI"
+
+print(x != y)
+
+# Memory
+
+#       x ─┐
+#          │
+#          ▼
+#      String Object
+#      Value : "AI"
+#          ▲
+#          │
+#       y ─┘
+
+# Python executes
+
+# x != y
+
+# Python performs these steps:
+
+# 1. Finds the String Object referenced by 'x'.
+# 2. Finds the String Object referenced by 'y'.
+# 3. Compares their values.
+# 4. Both strings contain "AI".
+# 5. The values are equal.
+# 6. Since != means "not equal", Python creates the Boolean Object False.
+# 7. print() displays False.
+
+# Output
+
+# False
+
+# Reason
+
+# Both String Objects contain the same value ("AI").
+# Therefore, they are equal and != returns False.
+
+
+# Example 3: Comparing Two Equal Boolean Objects Using !=
+
+x = False
+y = False
+
+print(x != y)
+
+# Memory
+
+#       x ─┐
+#          │
+#          ▼
+#     Boolean Object
+#     Value : False
+#          ▲
+#          │
+#       y ─┘
+
+# Python executes
+
+# x != y
+
+# Python performs these steps:
+
+# 1. Finds the Boolean Object referenced by 'x'.
+# 2. Finds the Boolean Object referenced by 'y'.
+# 3. Compares their values.
+# 4. Both values are False.
+# 5. The values are equal.
+# 6. Since != means "not equal", Python creates the Boolean Object False.
+# 7. print() displays False.
+
+# Output
+
+# False
+
+# Reason
+
+# Both Boolean Objects contain the same value (False).
+# Therefore, they are equal and != returns False.
+
+
+# Example 4: Comparing an Integer and a String Using !=
+
+x = 100
+y = "100"
+
+print(x != y)
+
+# Memory
+
+# x ─────► Integer Object (100)
+
+# y ─────► String Object ("100")
+
+# Python executes
+
+# x != y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the String Object referenced by 'y'.
+# 3. Compares their values and types.
+# 4. Integer Object (100) and String Object ("100") are different.
+# 5. Therefore, the values are not equal.
+# 6. Python creates the Boolean Object True.
+# 7. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# 100 and "100" may look similar, but one is an Integer Object and the other is a String Object.
+
+# Therefore,
+
+# 100 != "100"
+
+# returns
+
+# True.

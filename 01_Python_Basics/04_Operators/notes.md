@@ -1160,3 +1160,188 @@ It means
 Not Equal To
 
 It always compares two values.
+#########################################################################################################
+
+# ">" Greater Then Operator  
+1️⃣ Definition
+
+The > operator checks whether the left value is greater than the right value.
+
+If it is greater:
+
+True
+
+Otherwise:
+
+False
+
+Like all comparison operators, it always returns a Boolean object.
+
+2️⃣ Why Do We Need It?
+
+Imagine these situations:
+
+Is age greater than 18?
+Is salary greater than ₹50,000?
+Is the exam score greater than the passing mark?
+Is today's temperature greater than yesterday's?
+
+These are all comparisons.
+
+Example:
+
+age = 21
+
+age > 18
+
+Python asks:
+
+Is 21 greater than 18?
+
+Answer:
+
+True
+3️⃣ Syntax
+left > right
+
+Read it as:
+
+Left is greater than right.
+
+4️⃣ Internal Working
+
+Example:
+
+x = 15
+y = 10
+
+print(x > y)
+Step 1
+
+Python creates an integer object:
+
+15
+
+x refers to it.
+
+Step 2
+
+Python creates another integer object:
+
+10
+
+y refers to it.
+
+Step 3
+
+Python asks:
+
+Is 15 greater than 10?
+
+Answer:
+
+Yes
+
+Python creates the Boolean object:
+
+True
+
+print() displays:
+
+True
+Another Example
+x = 5
+y = 20
+
+print(x > y)
+
+Python asks:
+
+Is 5 greater than 20?
+
+Answer:
+
+No
+
+Python creates:
+
+False
+5️⃣ Number Line Thinking
+
+This helps a lot.
+
+← Smaller ---------------------------- Greater →
+
+1   2   3   4   5   6   7   8   9   10
+
+Example:
+
+8 > 3
+
+On the number line:
+
+3 --------> 8
+
+8 is to the right of 3.
+
+Result:
+
+True
+
+Example:
+
+2 > 9
+
+2 is to the left of 9.
+
+Result:
+
+False
+6️⃣ Strings
+
+Python can also compare strings.
+
+It compares them alphabetically (lexicographically) based on character values.
+
+For now, we'll focus on numbers only.
+
+We'll learn string comparison in depth when we study strings.
+
+7️⃣ Common Beginner Mistakes
+Mistake 1
+
+Thinking:
+
+5 > 5
+
+is
+
+True
+
+❌ Wrong.
+
+Python asks:
+
+Is 5 greater than 5?
+
+No.
+
+They are equal.
+
+Result:
+
+False
+
+Mistake 2
+
+Confusing > with >=.
+
+We'll learn >= later.
+
+For now:
+
+5 > 5
+
+↓
+
+False
