@@ -1162,7 +1162,7 @@ Not Equal To
 It always compares two values.
 #########################################################################################################
 
-# ">" Greater Than Operator  
+# ">" Greater Than  Operator  
 1️⃣ Definition
 
 The > operator checks whether the left value is greater than the right value.
