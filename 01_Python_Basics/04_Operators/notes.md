@@ -1833,3 +1833,16 @@ False
 True
 
 One tiny = changes everything.
+
+
+
+# This difference is worth remembering:
+
+| Expression   | Result      |
+| ------------ | ----------- |
+| `10 == "10"` | `False`     |
+| `10 != "10"` | `True`      |
+| `10 > "10"`  | `TypeError` |
+| `10 < "10"`  | `TypeError` |
+| `10 >= "10"` | `TypeError` |
+| `10 <= "10"` | `TypeError` |
