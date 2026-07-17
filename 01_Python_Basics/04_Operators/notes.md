@@ -1846,3 +1846,202 @@ One tiny = changes everything.
 | `10 < "10"`  | `TypeError` |
 | `10 >= "10"` | `TypeError` |
 | `10 <= "10"` | `TypeError` |
+
+
+########################################################################################################
+
+# 🐍 Comparison Operator <=
+1️⃣ Definition
+
+The operator
+
+<=
+
+means
+
+Less Than OR Equal To
+
+It checks two conditions:
+
+Is the left value less than the right value?
+OR are both values equal?
+
+If either condition is true,
+
+Python returns
+
+True
+
+Otherwise,
+
+False
+
+Like every comparison operator, it returns a Boolean object.
+
+2️⃣ Why Do We Need It?
+
+Imagine these real-world situations.
+
+Example 1: Speed Limit
+
+The maximum speed allowed is 80 km/h.
+
+That means:
+
+60 ✅
+75 ✅
+80 ✅
+81 ❌
+
+Python:
+
+speed <= 80
+
+Notice something.
+
+The rule is 80 or below.
+
+Not just below.
+
+Example 2: Age Requirement
+
+A children's ticket is available for ages 12 or younger.
+
+age <= 12
+
+Examples:
+
+Age = 8 ✅
+
+Age = 12 ✅
+
+Age = 13 ❌
+
+3️⃣ Syntax
+left <= right
+
+Read it as:
+
+Left is less than or equal to right.
+
+4️⃣ Internal Working
+
+Example
+
+x = 5
+y = 10
+
+print(x <= y)
+
+Python asks:
+
+Question 1
+
+Is 5 less than 10?
+
+✅ Yes.
+
+Python immediately creates
+
+True
+
+Another example
+
+x = 10
+y = 10
+
+print(x <= y)
+
+Python asks
+
+Is 10 less than 10?
+
+No.
+
+Then asks
+
+Is 10 equal to 10?
+
+Yes.
+
+Result
+
+True
+
+Another
+
+x = 15
+y = 10
+
+print(x <= y)
+
+Python asks
+
+Is 15 less than 10?
+
+No.
+
+Is 15 equal to 10?
+
+No.
+
+Result
+
+False
+5️⃣ Number Line Thinking
+← Smaller ------------------------- Greater →
+
+1   2   3   4   5   6   7   8   9   10
+
+Suppose we ask
+
+5 <= 5
+
+Python thinks
+
+Is it on the left?
+
+OR
+
+Is it exactly here?
+
+It is exactly there.
+
+Therefore
+
+True
+
+Another
+
+3 <= 5
+
+3 is left of 5.
+
+Answer
+
+True
+
+Another
+
+8 <= 5
+
+8 is right of 5.
+
+Not equal.
+
+Answer
+
+False
+
+
+#  Compare < and <=
+
+
+| Expression | Result  | Why                   |
+| ---------- | ------- | --------------------- |
+| `5 < 5`    | `False` | Equal is **not** less |
+| `5 <= 5`   | `True`  | Equal is allowed      |
+| `3 < 5`    | `True`  | Smaller               |
+| `3 <= 5`   | `True`  | Smaller               |
+| `8 < 5`    | `False` | Greater               |
+| `8 <= 5`   | `False` | Greater               |
