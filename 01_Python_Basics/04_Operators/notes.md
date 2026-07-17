@@ -1345,3 +1345,201 @@ For now:
 ↓
 
 False
+
+#########################################################################################################
+
+#  🐍 Comparison Operator <
+1️⃣ Definition
+
+The < operator checks whether the left value is less than the right value.
+
+If yes:
+
+True
+
+Otherwise:
+
+False
+
+Like every comparison operator, it always returns a Boolean object.
+
+2️⃣ Why Do We Need It?
+
+Real-life examples:
+
+Is the temperature below 0°C?
+Is the student's age less than 18?
+Is the stock price lower than yesterday?
+Is the account balance below ₹100?
+
+Example:
+
+balance = 80
+
+balance < 100
+
+Python asks:
+
+Is 80 less than 100?
+
+Answer:
+
+True
+3️⃣ Syntax
+left < right
+
+Read it as:
+
+Left is less than right.
+
+4️⃣ Internal Working
+
+Example
+
+x = 4
+y = 9
+
+print(x < y)
+Step 1
+
+Python creates an integer object
+
+4
+
+x refers to it.
+
+Step 2
+
+Python creates another integer object
+
+9
+
+y refers to it.
+
+Step 3
+
+Python asks:
+
+Is 4 less than 9?
+
+Answer:
+
+Yes
+
+Python creates a Boolean object:
+
+True
+
+print() displays:
+
+True
+Another Example
+x = 20
+y = 5
+
+print(x < y)
+
+Python asks:
+
+Is 20 less than 5?
+
+Answer:
+
+No
+
+Result:
+
+False
+5️⃣ Number Line Thinking
+
+Remember this forever.
+
+← Smaller ---------------------- Greater →
+
+-5  -4  -3  -2  -1   0   1   2   3   4   5
+
+A number is less than another number if it is to the left.
+
+Example
+
+2 < 8
+2 --------> 8
+
+2 is on the left.
+
+Result:
+
+True
+
+Another
+
+8 < 2
+
+8 is on the right.
+
+Result:
+
+False
+6️⃣ Negative Numbers
+
+This is where many beginners get confused.
+
+Example
+
+-8 < -3
+
+Number line:
+
+-8 -----> -3
+
+-8 is further left.
+
+So
+
+True
+7️⃣ Common Beginner Mistakes
+Mistake 1
+
+Thinking
+
+5 < 5
+
+is
+
+True
+
+❌ Wrong.
+
+Python asks:
+
+Is 5 less than 5?
+
+No.
+
+They are equal.
+
+Result
+
+False
+Mistake 2
+
+Confusing < with <=.
+
+We'll learn <= after >=.
+
+For now remember:
+
+5 < 5
+
+↓
+
+False
+
+📖 Comparison So Far
+
+| Operator | Question Python Asks        |
+| -------- | --------------------------- |
+| `==`     | Are they equal?             |
+| `!=`     | Are they different?         |
+| `>`      | Is left greater than right? |
+| `<`      | Is left less than right?    |
