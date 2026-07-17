@@ -1102,3 +1102,223 @@ print(x != y)
 # returns
 
 # True.
+
+
+# Example 1: Comparing Two Integer Numbers Using >
+
+x = 20
+y = 10
+
+print(x > y)
+
+# Memory
+
+# x ─────► Integer Object (20)
+
+# y ─────► Integer Object (10)
+
+# Python executes
+
+x > y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Integer Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 20 is greater than 10.
+# 5. Since the condition is True, Python creates the Boolean Object True.
+# 6. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# 20 is greater than 10.
+# Therefore,
+
+# 20 > 10
+
+# returns
+
+# True.
+
+# Example 2: Comparing an Integer and a Floating-Point Number Using >
+
+x = 15
+y = 10.5
+
+print(x > y)
+
+# Memory
+
+# x ─────► Integer Object (15)
+
+# y ─────► Float Object (10.5)
+
+# Python executes
+
+x > y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Float Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 15 is greater than 10.5.
+# 5. Since the condition is True, Python creates the Boolean Object True.
+# 6. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# Python can compare Integer Objects and Float Objects because both are numeric types.
+
+# 15 > 10.5
+
+# returns
+
+# True.
+
+
+
+# Example 3: Comparing Two Floating-Point Numbers Using >
+
+x = 5.5
+y = 8.5
+
+print(x > y)
+
+# Memory
+
+# x ─────► Float Object (5.5)
+
+# y ─────► Float Object (8.5)
+
+# Python executes
+
+x > y
+
+# Python performs these steps:
+
+# 1. Finds the Float Object referenced by 'x'.
+# 2. Finds the Float Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 5.5 is greater than 8.5.
+# 5. Since the condition is False, Python creates the Boolean Object False.
+# 6. print() displays False.
+
+# Output
+
+# False
+
+# Reason
+
+# 5.5 is less than 8.5.
+
+# Therefore,
+
+# 5.5 > 8.5
+
+# returns
+
+# False.
+
+
+# Example 4: Comparing Two Equal Integer Numbers Using >
+
+x = 100
+y = 100
+
+print(x > y)
+
+# Memory
+
+#       x ─┐
+#          │
+#          ▼
+#     Integer Object
+#     Value : 100
+#          ▲
+#          │
+#       y ─┘
+
+# Python executes
+
+x > y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the Integer Object referenced by 'y'.
+# 3. Compares their numeric values.
+# 4. Checks whether 100 is greater than 100.
+# 5. Since both values are equal, the condition is False.
+# 6. Python creates the Boolean Object False.
+# 7. print() displays False.
+
+# Output
+
+False
+
+# Reason
+
+# 100 is equal to 100, not greater.
+
+# Therefore,
+
+# 100 > 100
+
+# returns
+
+# False.
+
+
+
+# Example 5: Comparing an Integer and a String Using >
+
+x = 10
+y = "10"
+
+print(x > y)
+
+# Memory
+
+# x ─────► Integer Object (10)
+
+# y ─────► String Object ("10")
+
+# Python executes
+
+x > y
+
+# Python performs these steps:
+
+# 1. Finds the Integer Object referenced by 'x'.
+# 2. Finds the String Object referenced by 'y'.
+# 3. Python checks whether both objects can be compared.
+# 4. Integer Objects and String Objects cannot be ordered using '>'.
+# 5. Python raises a TypeError.
+# 6. The program stops unless the error is handled.
+
+# Output
+
+# TypeError:
+# '>' not supported between instances of 'int' and 'str'
+
+# Reason
+
+# The `>` operator compares the order of values.
+
+# Python can compare numeric types like `int` and `float`, but it cannot compare an `int` with a `str`.
+
+# Therefore,
+
+10 > "10"
+
+# raises a **TypeError** instead of returning `True` or `False`.
