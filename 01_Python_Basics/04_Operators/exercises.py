@@ -614,4 +614,80 @@ str = 'Hi'
 print(Number != str)
 
 
+# Greater than ">"
+
+Num1 = 100.1
+Num2 = 100
+print(Num1>Num2)
+
+
+Num1 = 100.0
+Num2 = 100
+print(Num1<Num2)
+
+
+Str = 'Hi'
+Str1 = 'Hello'
+
+print(Str>Str1)
+
+# output  true 
+Example 6: Comparing Two String Objects Using >
+
+Str = "Hi"
+Str1 = "Hello"
+
+print(Str > Str1)
+
+# Memory
+
+# Str  ─────► String Object ("Hi")
+
+# Str1 ─────► String Object ("Hello")
+
+# Python executes
+
+# Str > Str1
+
+# Python performs these steps:
+
+# 1. Finds the String Object referenced by 'Str'.
+# 2. Finds the String Object referenced by 'Str1'.
+# 3. Compares both strings lexicographically (dictionary order).
+# 4. Python compares the first characters:
+#       'H' and 'H' → Both are equal.
+# 5. Python moves to the next characters:
+#       'i' and 'e'
+# 6. The character 'i' comes after 'e' in Unicode (ASCII) order.
+# 7. Therefore, "Hi" is considered greater than "Hello".
+# 8. Python creates the Boolean Object True.
+# 9. print() displays True.
+
+# Output
+
+# True
+
+# Reason
+
+# Python compares strings character by character.
+
+# Since 'i' comes after 'e',
+
+# "Hi" > "Hello"
+
+# returns
+
+# True.
+
+
+
+
+
+Str = "Good bye!"
+Int1 = 100
+
+print(Str > Int1)
+
+# You will get Error instead output remember python raise Error when you  compare string with Int
+
 
