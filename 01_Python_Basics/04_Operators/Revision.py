@@ -15,18 +15,16 @@
 
 Seconds = 5432
 
-Hours = Seconds // 360
-Remaining =  Seconds % 360
+Hours = Seconds // 3600
+Remaining =  Seconds % 3600
 
-Minutes = Seconds // 60
-REMAINING = Seconds % 60
+Minutes = Remaining // 60
+REMAINING = Remaining % 60
 
-Secs = Seconds // 60
-Left = Seconds % 60
 
 print(f"{Hours} Hours ")
 print(f"{Minutes} Minutes")
-print(f"{Secs} Seconds")
+print(f"{REMAINING} Seconds")
 
 
 
