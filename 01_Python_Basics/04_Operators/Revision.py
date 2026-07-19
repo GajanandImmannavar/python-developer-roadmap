@@ -215,5 +215,106 @@ print(f"Parameter of this Place {Parameter}")
 
 
 
+# A movie is 3675 seconds long.
+
+# Find:
+
+# Hours
+
+# Remaining Minutes
+
+# Remaining Seconds
+
+# Notice:
+# This looks similar to time conversion, but you have to think about what "remaining" means.
 
 
+Seconds = 3675
+Hours = Seconds //  3600
+Remaining_Minutes = Seconds % 3600
+Minutes = Remaining_Minutes //  60
+Sec = Remaining_Minutes % 60
+
+
+print(f"{Hours}: Hours {Minutes}: Minutes  {Sec}: Seconds")
+
+
+# Price of one notebook = ₹45
+# Price of one pen = ₹12
+# You bought:
+# 8 notebooks
+# 15 pens
+# Find:
+# Notebook cost
+# Pen cost
+# Total bill
+
+Price_Of_NoteBook = 45
+Price_Of_Pen = 12
+Eight_NoteBooks = 8 * 45
+Fifteen_Pens = 15 * 12
+
+
+NoteBook_Cost = Eight_NoteBooks
+Pen_Cost = Fifteen_Pens
+Total_Bill = NoteBook_Cost + Pen_Cost
+
+print(f"NoteBook Cost: {NoteBook_Cost}\n  Pen Cost: {Pen_Cost}\n  Total Bill: {Total_Bill}")
+
+
+
+
+
+
+
+
+# Mobile Price = ₹25000
+
+# Discount = ₹3500
+
+# GST = ₹3870
+
+# Find:
+
+# Price after discount
+
+# Final price after GST
+
+
+
+Mobile_Price = 25000
+Discount = 3500
+Gst = 3870
+
+Price_After_Discount = Mobile_Price - Discount
+Final_Price = Price_After_Discount + Gst
+
+print(f"Price after discount: {Price_After_Discount}\n Final price with gst: {Final_Price}")
+
+
+
+
+
+
+
+# Basic Salary = ₹45000
+
+# Bonus = ₹7500
+
+# Tax = ₹3200
+
+# Find:
+
+# Gross Salary
+
+# Net Salary
+
+
+Basic_Salary = 45000
+Bonus = 7500
+Tax = 3200
+
+Gross_Salary = Basic_Salary + Bonus
+Net_Salary = Gross_Salary - Tax
+
+print(f"Gross Salary: {Gross_Salary}\n Net Salary: {Net_Salary}")
