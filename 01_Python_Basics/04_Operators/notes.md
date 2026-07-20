@@ -2045,3 +2045,300 @@ False
 | `3 <= 5`   | `True`  | Smaller               |
 | `8 < 5`    | `False` | Greater               |
 | `8 <= 5`   | `False` | Greater               |
+
+
+
+
+
+Logical Operators
+
+Before learning them, remember this:
+
+Arithmetic Operators work on numbers.
+
+Example:
+
+10 + 5
+
+↓
+
+Result
+
+15
+
+Comparison Operators work on values.
+
+Example:
+
+10 > 5
+
+↓
+
+Result
+
+True
+
+Now ask yourself:
+
+What if I have two comparison results?
+
+Example:
+
+10 > 5
+
+↓
+
+True
+
+and
+
+20 > 15
+
+↓
+
+True
+
+How do we combine these two Boolean values?
+
+That's why Logical Operators exist.
+
+1. Definition
+
+A Logical Operator is an operator that works with Boolean values (True and False) and produces a Boolean result.
+
+They are used to combine or modify Boolean expressions.
+
+2. Why do we need Logical Operators?
+
+Imagine a real-world rule.
+
+A student passes only if:
+
+Marks are 35 or more
+Attendance is 75% or more
+
+These are two conditions.
+
+Without logical operators, Python would have no way to combine them.
+
+Logical operators answer questions like:
+
+Are both conditions true?
+Is at least one condition true?
+Is a condition not true?
+3. Types of Logical Operators
+
+Python has three logical operators.
+
+| Operator | Meaning                             |
+| -------- | ----------------------------------- |
+| `and`    | Both conditions must be True        |
+| `or`     | At least one condition must be True |
+| `not`    | Reverses a Boolean value            |
+
+
+The and Operator
+Definition
+
+The and operator returns True only if both operands are True.
+
+If either operand is False, the result is False.
+
+5. Think Like Python
+
+Example:
+
+True and True
+
+Python asks:
+
+Is the left operand True?
+
+✅ Yes.
+
+Then asks:
+
+Is the right operand True?
+
+✅ Yes.
+
+Both are True.
+
+Python creates a new Boolean object:
+
+True
+
+Another example:
+
+True and False
+
+Python asks:
+
+Left?
+
+✅ True.
+
+Right?
+
+❌ False.
+
+Since both are not True:
+
+Python creates:
+
+False
+
+
+Truth Table
+
+This table is the foundation of logical operators.
+
+| Left  | Right | Left `and` Right |
+| ----- | ----- | ---------------- |
+| True  | True  | True             |
+| True  | False | False            |
+| False | True  | False            |
+| False | False | False            |
+
+
+Read it carefully.
+
+Only one row produces True.
+
+7. Internal Working
+
+Consider:
+
+5 > 3 and 10 > 7
+
+Let's go step by step.
+
+Step 1
+
+Python evaluates the left comparison.
+
+5 > 3
+
+Python creates a Boolean object:
+
+True
+Step 2
+
+Python evaluates the right comparison.
+
+10 > 7
+
+Python creates another Boolean object:
+
+True
+Step 3
+
+Now Python has:
+
+True and True
+
+It checks the truth table.
+
+Result:
+
+True
+
+Python creates a new Boolean object for the final result.
+
+8. Memory Thinking
+
+Suppose:
+
+print(5 > 3 and 10 > 7)
+
+Conceptually:
+
+5 > 3
+   │
+   ▼
+ True Object
+
+10 > 7
+   │
+   ▼
+ True Object
+
+True and True
+      │
+      ▼
+ Final True Object
+
+
+Notice:
+
+Python does not change the earlier Boolean objects.
+
+It creates a result based on them.
+
+Just like integers, Boolean values are immutable.
+
+Boolean Objects
+
+Remember:
+
+True
+
+and
+
+False
+
+are actual Python objects.
+
+Their type is:
+
+bool
+
+Example:
+
+print(type(True))
+
+Output:
+
+<class 'bool'>
+
+Real-Life Examples
+Example 1
+
+You can enter a movie only if:
+
+Age is 18 or above.
+Ticket is valid.
+
+Both must be true.
+
+That is an and situation.
+
+Example 2
+
+You can submit an exam only if:
+
+You finished writing.
+Time has not expired.
+
+Again, both conditions are required.
+
+11. Common Beginner Mistake
+
+Many beginners think:
+
+True and False
+
+returns True because one side is True.
+
+That is incorrect.
+
+The word and means:
+
+Both conditions must be satisfied.
+
+Summary
+
+| Operator | Meaning     | Rule                         |
+| -------- | ----------- | ---------------------------- |
+| `and`    | Logical AND | Both operands must be `True` |
+
