@@ -59,8 +59,8 @@ Each topic contains:
 | Variables | ✅ Completed |
 | Data Types | ✅ Completed |
 | Type Casting | ✅ Completed |
-| Operators | ✅ Completed |
-| Input & Output | ⏳ In Progress |
+| Operators | ⏳ In Progress |
+| Input & Output | ⬜ Not Started |
 | Control Flow | ⬜ Not Started |
 | Functions | ⬜ Not Started |
 | Strings | ⬜ Not Started |
