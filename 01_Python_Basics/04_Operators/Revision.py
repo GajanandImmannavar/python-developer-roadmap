@@ -318,3 +318,45 @@ Gross_Salary = Basic_Salary + Bonus
 Net_Salary = Gross_Salary - Tax
 
 print(f"Gross Salary: {Gross_Salary}\n Net Salary: {Net_Salary}")
+# Previous Reading = 28450
+
+# Current Reading = 29120
+
+# Cost per Unit = ₹8
+
+# Find:
+
+# Units Consumed
+
+# Total Bill
+
+
+# Petrol Price = ₹104
+
+# Litres = 23
+
+# Find:
+
+# Total Cost
+
+Petrol_Price =  104
+Litres = 23
+Total_Cost = 104*23
+print(f"Total Cost: {Total_Cost}")
+
+# Electricity Bill
+
+# Previous Reading = 28450
+
+# Current Reading = 29120
+
+# Cost per Unit = ₹8
+
+# Find:
+
+# Units Consumed
+
+# Total Bill
+
+
+
