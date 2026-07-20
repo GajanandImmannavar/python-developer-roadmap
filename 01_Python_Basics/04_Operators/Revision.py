@@ -358,5 +358,101 @@ print(f"Total Cost: {Total_Cost}")
 
 # Total Bill
 
+Previous_Reading = 28450
+Current_Reading = 29120
+Cost_PerUnit = 8
+
+Units_Consumed = Current_Reading - Previous_Reading
+
+Total_Bill = Units_Consumed * Cost_PerUnit
+
+print(f"Unit Consumed: {Units_Consumed}\n")
+print(f"Total Bill: {Total_Bill}")
 
 
+# Cricket
+
+# Runs = 384
+
+# Balls = 275
+
+# Find:
+
+# Overs Bowled
+
+# Remaining Balls
+
+Runs = 384
+Balls = 275
+Overs_Bowled = Balls // 6
+Remaining_Balls = Balls % 6
+
+print(f"Overs Bowled: {Overs_Bowled}\n")
+print(f"Remaining Balls: {Remaining_Balls}")
+
+#  Travel
+
+# Distance = 468 km
+
+# Speed = 72 km/hour
+
+# Find:
+
+# Hours
+
+# Remaining Distance
+
+Distance = 468
+Speed = 72
+
+Hours = Distance // Speed
+Remaining_Distance = Distance % Speed
+
+print(f"Hours To Trave: {Hours}\n")
+print(f"Remaining Distance: {Remaining_Distance}")
+
+
+# Packaging
+
+# 1250 chocolates
+
+# Pack 24 chocolates in one box.
+
+# Find:
+
+# Full boxes
+
+# Remaining chocolates
+
+
+Chocolates = 1250
+Box_Capacity = 24
+
+Full_Boxes =  Chocolates // Box_Capacity
+Remaining_Chocolates = Chocolates % Box_Capacity
+
+print(f"No of Boxes: {Full_Boxes}\n")
+print(f"Remaining Chocolate: {Remaining_Chocolates}")
+
+
+# Water Bottles
+
+
+# 365 bottles
+
+# Each carton holds 12 bottles.
+
+# Find:
+
+# Full cartons
+
+# Remaining bottles
+
+Bottles = 365
+Capacity_Of_Carton = 12
+
+Full_Cartons  = Bottles // Capacity_Of_Carton
+Remaining_Bottles = Bottles % Capacity_Of_Carton
+
+print(f"full Catons: {Full_Cartons}\n")
+print(f"Remaining Bottles: {Remaining_Bottles}")
