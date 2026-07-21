@@ -3141,3 +3141,49 @@ Examples:
 "" is falsy:
 
 → ""
+
+Very Important: bool() vs and
+
+These are different:
+
+bool(10)
+
+Output:
+
+True
+
+But:
+
+10 and 20
+
+Output:
+
+20
+
+Why?
+
+bool() asks:
+
+"What is the Boolean value of 10?"
+
+and asks:
+
+"Is the first value falsy? If not, give me the second value."
+
+🧠 Remember This
+bool(value)
+
+Converts the truthiness into:
+
+True or False
+
+Example:
+
+bool(10) → True
+bool(0)  → False
+and
+
+Returns one of the actual operands:
+
+10 and 20 → 20
+0 and 20  → 0
