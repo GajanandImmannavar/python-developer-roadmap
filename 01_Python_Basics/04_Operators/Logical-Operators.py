@@ -311,3 +311,262 @@ print(20 >= 20 and 15 <= 15)
 # # So:
 
 # 10 and 20 → 20
+
+###################################################################################
+
+print(bool(5))
+
+# output True 
+
+# Because:
+
+# 5 ≠ 0
+
+# All non-zero numbers are truthy.
+
+
+
+
+print(bool(0))
+
+# output False
+# Because 0 → Falsy
+
+
+
+
+print(bool(""))
+
+# output  False
+# "" → Empty String → Falsy
+
+
+
+
+print(bool("0"))
+
+#output True 
+
+
+
+
+
+print(bool([]))
+
+# Output False 
+
+
+
+
+
+print(bool([0]))
+
+# output True 
+
+
+
+
+
+# 🔴 Falsy Values
+
+
+# | Value   | Type             |
+# | ------- | ---------------- |
+# | `False` | bool             |
+# | `None`  | NoneType         |
+# | `0`     | int              |
+# | `0.0`   | float            |
+# | `0j`    | complex          |
+# | `""`    | empty string     |
+# | `[]`    | empty list       |
+# | `()`    | empty tuple      |
+# | `{}`    | empty dictionary |
+# | `set()` | empty set        |
+
+# Truthy Values
+
+
+# True
+# 1
+# 10
+# -1
+# 3.14
+# "Python"
+# " "
+# [1]
+# [0]
+# (1,)
+# {"a": 1}
+# {1}
+
+# Rule:
+# 0 → Falsy
+# Any non-zero number → Truthy
+
+# So:
+
+# 0       → False
+# 1       → True
+# -1      → True
+# 100     → True
+# -999    → True  
+##########################################################################################################################
+
+# Float Values
+
+print(bool(0.0))
+
+# output False
+
+print(bool(3.14))
+
+# output True
+
+print(bool(-2.5))
+
+# output True
+#########################################################################################################
+
+# Strings
+
+print(bool(""))
+
+# output  False
+
+# Non-Empty String
+
+print(bool("Python"))
+
+# output True
+
+
+print(bool("0"))
+
+# output True
+
+#########################################################################################################
+
+
+# Spaces
+
+print(bool(" "))
+
+#  output  True  Space consider as character 
+
+
+# ""   → 0 characters → Falsy
+# " "  → 1 character  → Truthy
+
+#########################################################################################################
+
+# Lists
+
+print(bool([]))
+
+# output False
+
+print(bool([1]))
+
+# output True 
+
+print(bool([0]))
+
+# output True
+
+#######################################################################################################
+
+# Tuples
+
+print(bool(()))
+
+# output False
+
+print(bool((1,)))
+
+# output True
+
+############################################################################################
+
+# Dictionaries
+
+print(bool({}))
+
+#output False
+
+print(bool({"name": "Gajanand"})) 
+
+# output True
+
+
+###################################################################################################
+
+# Sets
+
+
+print(bool(set()))
+
+# output False
+
+
+
+print(bool((1,2,3)))
+
+# output True
+
+
+#########################################################################################################
+
+# Logical AND
+
+
+print(10 and 20)
+
+# Python checks:
+
+# 10
+
+# Is 10 falsy?
+
+# No
+
+# Therefore Python returns the second operand:
+
+# 20
+
+# Final output:
+# 20
+
+# output 20
+
+
+
+
+print(0 and 20)
+
+# output 0
+
+
+
+print(5 and 0)
+
+# output 0
+
+
+
+
+print(-10 and 100)
+
+# out put 100
+
+
+print([1,2] and [1,2,3,4])
+
+# output : [1,2,3,4]
+
+print([] and [1, 2, 3])
+# Output : []
+
+
+
+
+
