@@ -3196,3 +3196,43 @@ Returns one of the actual operands:
 | `0 and 20`   | Return the falsy operand      | `0`     |
 | `bool([])`   | Convert truthiness to Boolean | `False` |
 | `[] and [1]` | Return the falsy operand      | `[]`    |
+
+
+################################################################################################
+
+🐍 Logical Operator 2: or
+
+Python has three main logical operators:
+
+1. and
+2. or
+3. not
+
+We have completed the basic and concept. Now let's start or from the beginner level.
+
+1. What Is or?
+
+or means:
+
+At least one condition must be True.
+
+Example:
+
+True or False
+
+Output:
+
+True
+
+Why?
+
+Because one side is True.
+
+Truth Table
+
+| A       | B       | `A or B` |
+| ------- | ------- | -------- |
+| `True`  | `True`  | `True`   |
+| `True`  | `False` | `True`   |
+| `False` | `True`  | `True`   |
+| `False` | `False` | `False`  |
