@@ -3101,3 +3101,21 @@ Truthy/Falsy Cheat Sheet
 │ {}                          │
 │ set()                       │
 └─────────────────────────────┘
+
+
+## Falsy Values in Python
+
+The following values are considered **Falsy** in Python:
+
+| Falsy Value | Type |
+|---|---|
+| `False` | `bool` |
+| `None` | `NoneType` |
+| `0` | `int` |
+| `0.0` | `float` |
+| `0j` | `complex` |
+| `""` | Empty string |
+| `[]` | Empty list |
+| `()` | Empty tuple |
+| `{}` | Empty dictionary |
+| `set()` | Empty set |
