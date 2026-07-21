@@ -2342,3 +2342,39 @@ Summary
 | -------- | ----------- | ---------------------------- |
 | `and`    | Logical AND | Both operands must be `True` |
 
+🧠 One Important Concept Before More Practice
+
+Now let's understand the evaluation process more precisely.
+
+Consider:
+
+10 > 5 and 8 > 2
+
+Python conceptually evaluates:
+
+Step 1:
+10 > 5
+↓
+True
+
+Step 2:
+8 > 2
+↓
+True
+
+Step 3:
+True and True
+↓
+True
+
+So the logical operator receives the results of the comparisons.
+
+Conceptually:
+
+Comparison 1 ──► Boolean
+                         \
+                          AND ──► Boolean result
+                         /
+Comparison 2 ──► Boolean
+
+This is the basic model you should remember.
