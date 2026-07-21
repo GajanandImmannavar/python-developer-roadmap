@@ -2378,3 +2378,4 @@ Comparison 1 ──► Boolean
 Comparison 2 ──► Boolean
 
 This is the basic model you should remember.
+
