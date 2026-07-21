@@ -1,1 +1,313 @@
+# Internal Working 
+# Step 1: 10>2--------->True  
+# Step 2: 10 == 12-----> False
+# Step 3: True and True = False (According to Truth Table )
+
 print(10>2 and 10==12)
+
+
+# Example 2:
+# True is Boolean Object = True 
+# False is Boolean Object = False
+# True AND False = False (Because Truth Table Says True AND True = True remaining are False)
+
+print(True and False)
+
+# Example 3:
+
+print(True and False)
+
+
+# Example 4:
+
+print(False and True)
+
+
+# Example 5:
+
+print(False and False)
+
+# Example 6:
+
+print(10 > 5 and 8 > 2)
+
+# Example 7:
+
+print(5 == 5 and 10 != 10)
+
+# Example 8:
+
+print(20 >= 20 and 15 <= 15)
+
+
+# Expression 1 → Boolean result
+# Expression 2 → Boolean result
+#               ↓
+#            AND operator
+#               ↓
+#         Final Boolean result
+
+
+
+# Example:
+
+# x > 5 and y < 10
+
+# Python conceptually does:
+
+# x > 5
+# ↓
+# True / False
+
+# y < 10
+# ↓
+# True / False
+
+# True/False and True/False
+# ↓
+# Final True/False
+
+
+# 🐍 Logical Operator: and — Level 2
+
+# For now, remember:
+
+# Empty → Falsy
+# Zero → Falsy
+# False → Falsy
+# None → Falsy
+
+# Non-empty → Truthy
+# Non-zero → Truthy
+# True → Truthy
+
+
+
+# Truthy and Falsy — Beginner Explanation
+
+# Imagine Python asks every value one simple question:
+
+# "Should I treat you like True or False?"
+
+# Python internally does something similar to:
+
+# bool(value)
+
+# 1. Basic Example
+# x = 10
+
+# print(bool(x))
+
+# Output:
+
+# True
+
+# Why?
+
+# Because 10 is a non-zero number.
+
+# 10 → Truthy
+
+# Now:
+
+# x = 0
+
+# print(bool(x))
+
+# Output:
+
+# False
+
+# Why?
+
+# Because 0 represents no value/zero quantity.
+
+# 0 → Falsy
+# 2. The Basic Rule
+
+# For numbers:
+
+# 0       → Falsy
+# Any other number → Truthy
+
+# Examples:
+
+# bool(0)       # False
+# bool(1)       # True
+# bool(10)      # True
+# bool(-10)     # True
+# bool(3.14)    # True
+# bool(0.0)     # False
+
+# Think:
+
+# Zero     → False
+# Non-zero → True
+# 3. Strings
+
+# Now:
+
+# name = ""
+# print(bool(name))
+
+# Output:
+
+# False
+
+# Why?
+
+# Because the string is empty.
+
+# "" → contains 0 characters → Falsy
+
+# But:
+
+# name = "Python"
+# print(bool(name))
+
+# Output:
+
+# True
+
+# Why?
+
+# Because it contains characters.
+
+# "Python" → contains characters → Truthy
+# Very Important Difference
+# bool(0)
+
+# Output:
+
+# False
+
+# But:
+
+# bool("0")
+
+# Output:
+
+# True
+
+# Why?
+
+# 0
+# Integer
+# Value = zero
+# Falsy
+# "0"
+# String
+# Contains one character: 0
+# Non-empty
+# Truthy
+
+# Python does not look at the meaning of the character "0".
+
+# It only asks:
+
+# Is the string empty?
+
+# 4. Lists
+# items = []
+
+# print(bool(items))
+
+# Output:
+
+# False
+
+# Why?
+
+# The list contains nothing.
+
+# [] → empty list → Falsy
+
+# Now:
+
+# items = [10]
+
+# print(bool(items))
+
+# Output:
+
+# True
+
+# The list contains one item.
+
+# [10] → non-empty list → Truthy
+
+# Even:
+
+# items = [0]
+
+# print(bool(items))
+
+# Output:
+
+# True
+
+# This is important.
+
+# The list is not empty.
+
+# So:
+
+# [0] → Truthy
+# 5. Simple Mental Model
+
+# For containers such as:
+
+# String
+# List
+# Tuple
+# Dictionary
+# Set
+
+# Python asks:
+
+# Is it empty?
+
+# Empty       → Falsy
+# Not empty   → Truthy
+
+# Examples:
+
+# ""      → Falsy
+# "Hi"    → Truthy
+
+# []      → Falsy
+# [0]     → Truthy
+
+# ()      → Falsy
+# (0,)    → Truthy
+
+# {}      → Falsy
+# {"a":1} → Truthy
+# 6. The and Connection
+
+# Now let's connect this to the previous topic.
+
+# Example 1
+# print(10 and 20)
+
+# Python checks the first value:
+
+# 10
+
+# Question:
+
+# Is 10 truthy?
+
+# Yes.
+
+# So Python goes to the second value:
+
+# 20
+
+# Result:
+
+# 20
+
+# # So:
+
+# 10 and 20 → 20

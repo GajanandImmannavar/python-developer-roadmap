@@ -3102,3 +3102,42 @@ The following values are considered **Falsy** in Python:
 | `()` | Empty tuple |
 | `{}` | Empty dictionary |
 | `set()` | Empty set |
+
+
+7. The Easiest Rule for and
+A and B
+
+Python asks:
+
+Is A falsy?
+
+If yes:
+
+Return A
+
+If no:
+
+Return B
+
+Examples:
+
+10 and 20
+
+10 is truthy:
+
+→ 20
+0 and 20
+
+0 is falsy:
+
+→ 0
+"Python" and "Developer"
+
+"Python" is truthy:
+
+→ "Developer"
+"" and "Developer"
+
+"" is falsy:
+
+→ ""
