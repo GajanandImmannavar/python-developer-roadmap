@@ -3187,3 +3187,12 @@ Returns one of the actual operands:
 
 10 and 20 → 20
 0 and 20  → 0
+
+## 🧠 The Key Difference
+
+| Expression   | What happens                  | Output  |
+| ------------ | ----------------------------- | ------- |
+| `bool(0)`    | Convert truthiness to Boolean | `False` |
+| `0 and 20`   | Return the falsy operand      | `0`     |
+| `bool([])`   | Convert truthiness to Boolean | `False` |
+| `[] and [1]` | Return the falsy operand      | `[]`    |
