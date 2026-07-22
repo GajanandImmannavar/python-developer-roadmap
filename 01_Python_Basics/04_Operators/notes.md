@@ -3756,7 +3756,7 @@ print(not [])
 | `not` | Reverse truthiness | One value | `not 10` | `False` | `bool` |
 | `not` | Reverse falsiness | One value | `not 0` | `True` | `bool` |
 
----    
+  
 
 # 🧠 Truthy and Falsy — Quick Reference
 
