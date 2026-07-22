@@ -1,9 +1,12 @@
 # Internal Working 
 # Step 1: 10>2--------->True  
 # Step 2: 10 == 12-----> False
-# Step 3: True and True = False (According to Truth Table )
+# Step 3: True and False = False (According to Truth Table )
 
 print(10>2 and 10==12)
+
+
+
 
 
 # Example 2:
@@ -13,31 +16,52 @@ print(10>2 and 10==12)
 
 print(True and False)
 
+
+
+
+
+
+
+
 # Example 3:
 
 print(True and False)
+# output: False
+
+
 
 
 # Example 4:
 
 print(False and True)
 
+# output : False 
+
 
 # Example 5:
 
 print(False and False)
+# output: False
+
+
 
 # Example 6:
 
 print(10 > 5 and 8 > 2)
 
+# output: True
+
 # Example 7:
 
 print(5 == 5 and 10 != 10)
+# output: False
+
+
 
 # Example 8:
 
 print(20 >= 20 and 15 <= 15)
+# output: True
 
 
 # Expression 1 → Boolean result
@@ -67,7 +91,7 @@ print(20 >= 20 and 15 <= 15)
 # ↓
 # Final True/False
 
-
+#######################################################################################################
 # 🐍 Logical Operator: and — Level 2
 
 # For now, remember:
@@ -94,9 +118,9 @@ print(20 >= 20 and 15 <= 15)
 # bool(value)
 
 # 1. Basic Example
-# x = 10
+x = 10
 
-# print(bool(x))
+print(bool(x))
 
 # Output:
 
@@ -110,9 +134,9 @@ print(20 >= 20 and 15 <= 15)
 
 # Now:
 
-# x = 0
+x = 0
 
-# print(bool(x))
+print(bool(x))
 
 # Output:
 
@@ -288,7 +312,7 @@ print(20 >= 20 and 15 <= 15)
 # Now let's connect this to the previous topic.
 
 # Example 1
-# print(10 and 20)
+print(10 and 20)
 
 # Python checks the first value:
 
@@ -565,6 +589,118 @@ print([1,2] and [1,2,3,4])
 
 print([] and [1, 2, 3])
 # Output : []
+
+
+
+#################################################################################################
+
+# Or Logical Operator
+
+
+
+print(True or False)
+
+# out put True Because Or find True Value  and return if there is no true value  it returns False as Output
+
+
+print(True or True)
+
+# output True  Because First value is True and  either is true  and  if first value is true or integer(1,2,3,4...) python doesn't check next value it return first value instead of checking  second value 
+
+
+
+print(False or True)
+
+# output  : True  
+
+
+print(False or False)
+
+# output : False
+
+
+
+print("" or "Gajanand")
+
+# output : Gajanand because first string is empty so second string contains Gajanand 
+
+
+print(" " or "Hi")
+
+#output : Nothing you will not get anything as output because 
+# first string has white space and python consider whitespace as a value  so python return nothing even though 
+# having value in second  string 
+
+
+
+print(10>12 or 10<8)
+
+# output: False 
+
+
+print(10 or 20)
+
+# output: 10
+
+
+
+
+
+##################################################################################################
+
+# Not Operator  
+
+# Simple Rule
+# If a value is Truthy, not returns False.
+# If a value is Falsy, not returns True.
+
+print(not True)
+
+# Output False 
+
+print(not False)
+
+# output : True 
+
+
+print(not 0)
+
+# output : True  
+
+print(not 10)
+
+
+# output False 
+
+
+print(not "")
+
+# out-put: True  
+
+
+print(not "Python")
+
+# out-put: False
+
+print(not [])
+
+# Output : True
+
+
+print(not [0])
+
+# output: False
+
+
+print(not (10 > 5))
+
+# output False  
+
+
+print(not (10 < 5))
+
+# output : True 
+
 
 
 
