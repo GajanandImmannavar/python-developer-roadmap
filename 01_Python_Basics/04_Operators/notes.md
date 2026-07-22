@@ -1,43 +1,70 @@
-# Operators
+# 🐍 Python Operators
 
-## Goal
-Learn how Python performs calculations, comparisons, and logical decisions.
+## 🎯 Goal
+
+Learn how Python performs:
+
+- Calculations
+- Assignments
+- Comparisons
+- Logical decisions
+- Object identity checks
+- Membership checks
+- Bitwise operations
 
 ---
 
-## Example
+# 🧠 How Python Uses Operators
+
+Consider this expression:
 
 ```python
 10 + 20
 ```
 
-Python sees:
+Python sees this conceptually as:
 
-```
+```text
 Integer Object + Integer Object → New Integer Object
 ```
 
-> **Note:** Operators work on **objects**, not variables. Variables only help Python locate those objects.
+### Example
+
+```text
+10       +       20
+↓                ↓
+Integer Object   Integer Object
+        ↓
+    Addition
+        ↓
+   30
+        ↓
+New Integer Object
+```
+
+> **Important:** Operators work on **objects**, not directly on variables. Variables are names that help Python locate objects.
 
 ---
 
-# Types of Operators
+# 📚 Types of Operators
 
-1. Arithmetic Operators
-2. Assignment Operators
-3. Comparison Operators
-4. Logical Operators
-5. Identity Operators
-6. Membership Operators
-7. Bitwise Operators
+Python provides several types of operators:
+
+1. ➕ Arithmetic Operators
+2. 📝 Assignment Operators
+3. ⚖️ Comparison Operators
+4. 🧠 Logical Operators
+5. 🆔 Identity Operators
+6. 🔍 Membership Operators
+7. ⚙️ Bitwise Operators
 
 ---
 
-# 1. Arithmetic Operators
+# 1️⃣ Arithmetic Operators
 
-## 1️⃣ Definition
+## 📖 Definition
 
-**Operator:** A symbol that tells Python to perform an operation on one or more objects.
+An **operator** is a symbol that tells Python to perform an operation on one or more values or objects.
 
 ### Example
 
@@ -45,59 +72,103 @@ Integer Object + Integer Object → New Integer Object
 5 + 3
 ```
 
-Here, `+` is the operator.
+Here:
 
-### Real-Life Example
-
+```text
+5 → Operand
++ → Operator
+3 → Operand
 ```
+
+The `+` symbol tells Python to perform **addition**.
+
+---
+
+## 🍎 Real-Life Example
+
+```text
 5 Apples + 3 Apples = 8 Apples
 ```
 
-The `+` tells you what operation to perform. Python operators work the same way.
+The `+` symbol tells us:
+
+> "Add these two quantities."
+
+Python operators work in a similar way.
+
+```python
+5 + 3
+```
+
+```text
+5 + 3 → 8
+```
 
 ---
 
-## 2️⃣ Types of Arithmetic Operators
+# 🧮 Types of Arithmetic Operators
 
-| Operator | Name |
-|----------|------|
-| `+` | Addition |
-| `-` | Subtraction |
-| `*` | Multiplication |
-| `/` | Division |
-| `//` | Floor Division |
-| `%` | Modulus |
-| `**` | Exponent |
-
-We'll learn each one in detail.
+| Operator | Name | Purpose |
+|---|---|---|
+| `+` | Addition | Adds values |
+| `-` | Subtraction | Subtracts one value from another |
+| `*` | Multiplication | Multiplies values |
+| `/` | Division | Divides values and returns a `float` |
+| `//` | Floor Division | Divides and returns the floor value |
+| `%` | Modulus | Returns the remainder |
+| `**` | Exponentiation | Raises a value to a power |
 
 ---
+
+# 🧠 Arithmetic Operators — Quick Overview
+
+| Expression | Operation | Result |
+|---|---|---|
+| `10 + 3` | Addition | `13` |
+| `10 - 3` | Subtraction | `7` |
+| `10 * 3` | Multiplication | `30` |
+| `10 / 3` | Division | `3.333...` |
+| `10 // 3` | Floor Division | `3` |
+| `10 % 3` | Remainder | `1` |
+| `10 ** 3` | Exponentiation | `1000` |
+
+---
+
+> 🚀 **We'll learn each arithmetic operator in detail, one at a time.**
 
 # 3️⃣ Addition (`+`)
 
-### Definition
+## 📖 Definition
 
-Adds two numeric objects.
+The addition operator (`+`) adds two numeric objects.
 
-### Syntax
+---
+
+## 🧩 Syntax
 
 ```python
 a + b
 ```
 
-### Example
+---
+
+## 🧪 Example
 
 ```python
 10 + 20
 ```
 
-**Output**
+### Output
 
-```python
+```text
 30
 ```
 
-## Internal Working
+---
+
+## 🧠 Internal Working
+
+Consider this code:
 
 ```python
 x = 10
@@ -105,2423 +176,5138 @@ y = 20
 z = x + y
 ```
 
-Python performs these steps:
+Python performs the following steps:
 
-1. `x = 10` → Creates an Integer Object (`10`)
-2. `y = 20` → Creates another Integer Object (`20`)
-3. `z = x + y`
-   - Finds the object referenced by `x`
-   - Finds the object referenced by `y`
-   - Performs addition
-   - Creates a **new Integer Object** (`30`)
+### Step 1: Create the first integer object
 
-### Memory
-
+```python
+x = 10
 ```
+
+```text
+x ─► 10
+```
+
+`x` refers to the integer object `10`.
+
+---
+
+### Step 2: Create the second integer object
+
+```python
+y = 20
+```
+
+```text
+x ─► 10
+y ─► 20
+```
+
+`y` refers to the integer object `20`.
+
+---
+
+### Step 3: Perform the addition
+
+```python
+z = x + y
+```
+
+Python:
+
+1. Finds the object referenced by `x` → `10`
+2. Finds the object referenced by `y` → `20`
+3. Performs the addition → `10 + 20`
+4. Creates a **new integer object** → `30`
+5. Makes `z` refer to the new object
+
+```text
 x ─► 10
 y ─► 20
 z ─► 30
 ```
 
-> **Notice:** Objects `10` and `20` are unchanged. Python creates a new object (`30`).
+> **Important:** The objects `10` and `20` are unchanged. Python creates a new object containing the result `30`.
 
-### Example 2
+---
+
+## 🔄 Example 2: Integer + Float
 
 ```python
 5 + 2.5
 ```
 
-**Output**
+### Output
 
-```python
+```text
 7.5
 ```
 
-**Type:** `float`
+### Result Type
 
-**Why?** Python performs **implicit type conversion**, converting the integer to a float before addition.
+```python
+float
+```
+
+### Why?
+
+Python performs **implicit type conversion**.
+
+```text
+int + float
+   ↓
+float + float
+   ↓
+result → float
+```
+
+Conceptually:
+
+```text
+5 → 5.0
+
+5.0 + 2.5 = 7.5
+```
 
 ---
 
 # 4️⃣ Subtraction (`-`)
 
-### Definition
+## 📖 Definition
 
-Subtracts the second object from the first.
+The subtraction operator (`-`) subtracts the second object from the first object.
 
-### Syntax
+---
+
+## 🧩 Syntax
 
 ```python
 a - b
 ```
 
-### Example
+---
+
+## 🧪 Example
 
 ```python
 20 - 5
 ```
 
-**Output**
+### Output
 
-```python
+```text
 15
 ```
 
-Python creates a **new Integer Object**.
+Python creates a **new integer object** containing the result.
+
+```text
+20 - 5
+ ↓
+15
+```
 
 ---
 
 # 5️⃣ Multiplication (`*`)
 
-### Definition
+## 📖 Definition
 
-Multiplies two numeric objects.
+The multiplication operator (`*`) multiplies two numeric objects.
 
-### Example
+---
+
+## 🧪 Example
 
 ```python
 5 * 4
 ```
 
-**Output**
+### Output
 
-```python
+```text
 20
 ```
 
-Python creates a **new Integer Object**.
+Python creates a **new integer object** containing the result.
+
+```text
+5 × 4
+ ↓
+20
+```
 
 ---
 
 # 6️⃣ Division (`/`)
 
-> **Important Rule:** `/` always returns a **float**.
+> ⭐ **Important Rule:** The `/` operator always returns a `float`.
 
-### Example
+---
+
+## 🧪 Example
 
 ```python
 10 / 2
 ```
 
-**Output**
+### Output
 
-```python
+```text
 5.0
 ```
 
-Even this:
+Even when the division is exact:
 
 ```python
 8 / 4
 ```
 
-returns
+The result is:
 
-```python
+```text
 2.0
 ```
 
-### Why?
+---
 
-Division can produce decimal values. Python always returns a float to keep the result consistent.
+## 🧠 Why Does `/` Return a Float?
+
+Division can produce decimal values.
+
+For example:
+
+```python
+10 / 3
+```
+
+```text
+3.333333...
+```
+
+To keep the result type consistent, Python's `/` operator always returns a `float`.
+
+### Quick Rule
+
+```text
+/ → Always returns float
+```
 
 ---
 
 # 7️⃣ Floor Division (`//`)
 
-### Definition
+## 📖 Definition
 
-Returns the quotient after removing the fractional part.
+Floor division (`//`) returns the result of division rounded **down toward negative infinity**.
 
-### Example
+---
+
+## 🧪 Example
 
 ```python
 10 // 3
 ```
 
-```
+Normal division:
+
+```text
 10 / 3 = 3.333...
-Floor Division = 3
 ```
 
-### Example
+Floor division:
+
+```text
+10 // 3 = 3
+```
+
+---
+
+## 🧪 Example 2
 
 ```python
 17 // 5
 ```
 
-```
+Normal division:
+
+```text
 17 / 5 = 3.4
-Floor Division = 3
 ```
 
-> **Important:** Floor division is **not rounding**. It always moves down to the nearest integer.
+Floor division:
+
+```text
+17 // 5 = 3
+```
+
+> ⚠️ **Important:** Floor division is not normal rounding. It moves toward negative infinity.
+
+### Positive Example
+
+```python
+10 // 3
+```
+
+```text
+3.333... → 3
+```
+
+### Negative Example
+
+```python
+-10 // 3
+```
+
+```text
+-3.333... → -4
+```
+
+Because `-4` is the next lower integer.
 
 ---
 
 # 8️⃣ Modulus (`%`)
 
-### Definition
+## 📖 Definition
 
-Returns the remainder after division.
+The modulus operator (`%`) returns the **remainder** after division.
 
-### Example
+---
+
+## 🧪 Example
 
 ```python
 10 % 3
 ```
 
-```
+The division can be represented as:
+
+```text
 10 = (3 × 3) + 1
 ```
 
-**Output**
+Therefore:
 
-```python
+```text
+Remainder = 1
+```
+
+### Output
+
+```text
 1
 ```
 
-### Example
+---
+
+## 🧪 Example 2
 
 ```python
 20 % 5
 ```
 
-**Output**
+```text
+20 = (5 × 4) + 0
+```
 
-```python
+### Output
+
+```text
 0
 ```
 
-because there is no remainder.
-
-### Why is `%` Important?
-
-It is heavily used in DSA problems such as:
-
-- Even/Odd Numbers
-- Circular Arrays
-- Hashing
-- Cyclic Problems
+There is no remainder.
 
 ---
 
-# 9️⃣ Exponent (`**`)
+## 🧠 The Modulus Formula
 
-### Definition
+```text
+Dividend = (Divisor × Quotient) + Remainder
+```
 
-Raises a number to the power of another number.
+Example:
 
-### Example
+```text
+10 = (3 × 3) + 1
+```
+
+Therefore:
+
+```text
+10 % 3 = 1
+```
+
+---
+
+## 🔥 Why Is `%` Important?
+
+The modulus operator is heavily used in programming and DSA problems:
+
+- ✅ Even and Odd Numbers
+- 🔢 Extracting Digits
+- 🔄 Circular Arrays
+- 🔁 Cyclic Problems
+- 🗂️ Hashing
+- 📦 Distribution Problems
+
+### Example: Even or Odd
+
+```python
+number = 10
+
+print(number % 2)
+```
+
+Output:
+
+```text
+0
+```
+
+```text
+number % 2 == 0 → Even
+number % 2 != 0 → Odd
+```
+
+---
+
+# 9️⃣ Exponentiation (`**`)
+
+## 📖 Definition
+
+The exponentiation operator (`**`) raises a number to the power of another number.
+
+---
+
+## 🧪 Example
 
 ```python
 2 ** 3
 ```
 
-means
+This means:
 
-```
+```text
 2 × 2 × 2
 ```
 
-**Output**
+### Output
 
-```python
+```text
 8
 ```
 
-### Example
+---
+
+## 🧪 Example 2
 
 ```python
 5 ** 2
 ```
 
-**Output**
+This means:
 
-```python
+```text
+5 × 5
+```
+
+### Output
+
+```text
 25
 ```
 
 ---
 
-# 📌 Summary Table
+# 🧠 Arithmetic Operators — Final Revision
+
+| Operator | Name | Main Purpose | Example | Result |
+|---|---|---|---|---|
+| `+` | Addition | Adds values | `10 + 3` | `13` |
+| `-` | Subtraction | Subtracts values | `10 - 3` | `7` |
+| `*` | Multiplication | Multiplies values | `10 * 3` | `30` |
+| `/` | Division | Returns division result as `float` | `10 / 3` | `3.333...` |
+| `//` | Floor Division | Returns floor quotient | `10 // 3` | `3` |
+| `%` | Modulus | Returns remainder | `10 % 3` | `1` |
+| `**` | Exponentiation | Raises to a power | `10 ** 3` | `1000` |
+
+---
+
+# 🔥 Three Important Rules
+
+```text
+/  → Always returns a float
+
+// → Returns the floor value
+
+%  → Returns the remainder
+```
+
+---
+
+# ⭐ Remember
+
+```text
+Arithmetic Operators
+        ↓
+Perform Operations
+        ↓
+Create a Result
+        ↓
+Python Creates or Returns the Result Object
+```
+
+# 📌 Arithmetic Operators — Summary
+
+## 🧮 Summary Table
 
 | Operator | Name | Example | Output |
-|:--------:|----------------|:-------:|:------:|
+|:---:|---|:---:|:---:|
 | `+` | Addition | `5 + 3` | `8` |
 | `-` | Subtraction | `5 - 3` | `2` |
 | `*` | Multiplication | `5 * 3` | `15` |
 | `/` | Division | `6 / 3` | `2.0` |
 | `//` | Floor Division | `7 // 2` | `3` |
 | `%` | Modulus | `7 % 2` | `1` |
-| `**` | Exponent | `2 ** 4` | `16` |
+| `**` | Exponentiation | `2 ** 4` | `16` |
 
 ---
 
 # 🚫 Common Beginner Mistakes
 
-### Mistake 1
+## ❌ Mistake 1: Confusing `/` Result
 
-Thinking:
+Many beginners think:
 
 ```python
 10 / 2
 ```
 
-returns
+returns:
 
-```python
+```text
 5
 ```
 
-❌ Wrong
+❌ This is incorrect.
 
-It returns
+Python returns:
 
-```python
+```text
 5.0
+```
+
+### Rule
+
+```text
+/ → Always returns a float
 ```
 
 ---
 
-### Mistake 2
+## ❌ Mistake 2: Confusing `/` and `//`
 
-Confusing `/` and `//`
-
-| Operator | Meaning |
-|----------|---------|
-| `/` | Normal Division |
-| `//` | Floor Division |
+| Operator | Meaning | Example | Result |
+|---|---|---|---|
+| `/` | True Division | `7 / 2` | `3.5` |
+| `//` | Floor Division | `7 // 2` | `3` |
 
 ---
 
-### Mistake 3
+## ❌ Mistake 3: Thinking `%` Returns the Quotient
 
-Thinking `%` returns the quotient.
+The modulus operator (`%`) does **not** return the quotient.
 
-❌ Wrong.
+It returns the:
 
-It returns the **remainder**.
+```text
+REMAINDER
+```
+
+Example:
+
+```python
+7 % 2
+```
+
+```text
+7 = (2 × 3) + 1
+```
+
+Therefore:
+
+```text
+Remainder = 1
+```
 
 ---
 
 # 🎤 Interview Question
 
-### Q. Why does `/` always return a float in Python?
+## Q: Why does `/` always return a float in Python?
 
 ### Answer
 
-The `/` operator performs **true division**. Python always returns a float because division can produce fractional values, and using a consistent return type avoids ambiguity.
+The `/` operator performs **true division**.
 
+Python always returns a `float` because division can produce fractional values. Returning a consistent type avoids ambiguity.
 
+```python
+10 / 2 → 5.0
+10 / 3 → 3.333...
+```
 
-What does % 100 mean?
+---
 
-Think of it this way:
+# 🔢 Extracting the Last Digits Using `%`
 
-% 10   → keep last 1 digit
+## 🧠 The Pattern
 
-% 100  → keep last 2 digits
+```text
+% 10     → Keep the last 1 digit
 
-% 1000 → keep last 3 digits
+% 100    → Keep the last 2 digits
 
-% 10000 → keep last 4 digits
+% 1000   → Keep the last 3 digits
 
-Examples
+% 10000  → Keep the last 4 digits
+```
+
+---
+
+## 🧪 Examples
+
+```python
 583 % 10
-Output: 3
+```
 
+Output:
+
+```text
+3
+```
+
+---
+
+```python
 583 % 100
-Output: 83
+```
 
+Output:
+
+```text
+83
+```
+
+---
+
+```python
 583 % 1000
-Output: 583
+```
 
-Notice the pattern?
+Output:
 
-The number after % determines how many digits you keep when it's a power of 10.
+```text
+583
+```
 
+---
 
-🎯 Interview Tip
+## 🧠 Notice the Pattern
+
+When the number after `%` is a power of `10`:
+
+```text
+10      → Last 1 digit
+100     → Last 2 digits
+1000    → Last 3 digits
+10000   → Last 4 digits
+```
+
+---
+
+# 🎯 Interview Tip
 
 If an interviewer asks:
 
-"How do you extract the last k digits of a number?"
+> **How do you extract the last `k` digits of a number?**
 
-The general formula is:
+Use the formula:
 
+```python
 number % (10 ** k)
+```
 
-Examples:
+---
 
-number % 10       # Last 1 digit
-number % 100      # Last 2 digits
-number % 1000     # Last 3 digits
-number % 10000    # Last 4 digits
+## 🧪 Examples
 
-This pattern appears frequently in DSA and number-based interview questions.
+```python
+number % 10
+```
 
+```text
+Last 1 digit
+```
 
-# Printing Last Number
+---
+
+```python
+number % 100
+```
+
+```text
+Last 2 digits
+```
+
+---
+
+```python
+number % 1000
+```
+
+```text
+Last 3 digits
+```
+
+---
+
+```python
+number % 10000
+```
+
+```text
+Last 4 digits
+```
+
+---
+
+# 🧪 Example: Printing the Last Two Digits
+
+```python
 number = 987654
 
 last_two_digits = number % 100
 
 print(last_two_digits)
+```
 
-# Remove the Last Two Digits 
-N =  987654
+### Output
 
-Left_No = N // 100
+```text
+54
+```
 
-print(f"{Left_No}\n")
+---
 
-# Dry Run Of Code 
+# 🔪 Removing the Last Digits Using `//`
 
- 🧠 Dry Run
+To remove the last digits of a number, use floor division (`//`).
 
- # Step 1
- N = 987654
+---
 
- Python creates an Integer Object.
+## 🧪 Example
 
- Memory:
- N
- │
- ▼
- 987654
+```python
+number = 987654
 
- # Step 2
- Left_No = N // 100
+left_number = number // 100
 
- Python performs:
+print(left_number)
+```
 
- 987654 // 100
+### Output
 
- Think of it as:
- 987654 ÷ 100
- ↓
- 9876.54
- ↓
- 9876
-
- Since // is floor division, Python removes the decimal part.
-
- Python creates a new Integer Object.
-
- Memory:
-
- N                 Left_No
- │                    │
- ▼                    ▼
- 987654             9876
-
- # Step 3
- print(Left_No)
-
- Output: 9876 
-
-
-# 📖 Theory
-
-Let's make this a rule you can remember forever.
-
-When should you use //?
-
-Use // when the question asks you to:
-
-Remove digits
-Find the quotient
-Count complete groups
-
-# Examples:
-
-987654
-
-↓
-
-Remove last digit
-
-98765
-987654 // 10
-987654
-
-↓
-
-Remove last two digits
-
+```text
 9876
-987654 // 100
+```
+
+---
+
+# 🧠 Dry Run
+
+## Step 1: Create the Number
+
+```python
+number = 987654
+```
+
+Python creates an integer object.
+
+```text
+number
+   │
+   ▼
 987654
+```
 
-↓
+---
 
+## Step 2: Perform Floor Division
+
+```python
+left_number = number // 100
+```
+
+Python performs:
+
+```text
+987654 // 100
+```
+
+Normal division:
+
+```text
+987654 ÷ 100 = 9876.54
+```
+
+Floor division:
+
+```text
+9876.54 → 9876
+```
+
+Therefore:
+
+```text
+left_number = 9876
+```
+
+Python creates a new integer object.
+
+```text
+number              left_number
+   │                    │
+   ▼                    ▼
+987654                9876
+```
+
+---
+
+## Step 3: Print the Result
+
+```python
+print(left_number)
+```
+
+### Output
+
+```text
+9876
+```
+
+---
+
+# 📖 Theory: When Should You Use `//`?
+
+Use `//` when the problem asks you to:
+
+- 🔪 Remove digits
+- ➗ Find the quotient
+- 📦 Count complete groups
+- 🧮 Perform integer division
+
+---
+
+# 🔪 Removing Digits Using `//`
+
+## Remove the Last Digit
+
+```text
+987654
+   ↓
+Remove last digit
+   ↓
+98765
+```
+
+```python
+987654 // 10
+```
+
+Result:
+
+```text
+98765
+```
+
+---
+
+## Remove the Last Two Digits
+
+```text
+987654
+   ↓
+Remove last two digits
+   ↓
+9876
+```
+
+```python
+987654 // 100
+```
+
+Result:
+
+```text
+9876
+```
+
+---
+
+## Remove the Last Three Digits
+
+```text
+987654
+   ↓
 Remove last three digits
-
+   ↓
 987
+```
+
+```python
 987654 // 1000
+```
+
+Result:
+
+```text
+987
+```
+
+---
 
 # 🧠 Memory Trick
-Question says...
 
+## Question Says: REMOVE
+
+```text
 REMOVE
-↓
-
+   ↓
 Use //
+```
 
---------------------
+---
 
-Question says...
+## Question Says: KEEP / EXTRACT
 
+```text
 KEEP / EXTRACT
-↓
+      ↓
+    Use %
+```
 
-Use %
+---
 
-# Example:
+# 🧪 Side-by-Side Example
 
-Number = 987654
+## Keep the Last Two Digits
 
+```python
+number = 987654
+
+last_two_digits = number % 100
+```
+
+```text
+987654
+   ↓
 Keep last two digits
-
-↓
-
+   ↓
 54
+```
 
-↓
+```text
+Use: %
+```
 
-%100
-Number = 987654
+---
 
+## Remove the Last Two Digits
+
+```python
+number = 987654
+
+remaining_number = number // 100
+```
+
+```text
+987654
+   ↓
 Remove last two digits
-
-↓
-
+   ↓
 9876
+```
 
-↓
+```text
+Use: //
+```
 
-//100
+---
+
+# 🔥 The Most Important Pattern
+
+| Problem Requirement | Operator | Formula |
+|---|---|---|
+| Keep last `k` digits | `%` | `number % (10 ** k)` |
+| Remove last `k` digits | `//` | `number // (10 ** k)` |
+
+---
+
 # 📈 Complexity
 
-Your code performs one arithmetic operation.
+Consider:
 
-Time Complexity
+```python
+last_two_digits = number % 100
+```
+
+This performs one arithmetic operation.
+
+### ⏱️ Time Complexity
+
+```text
 O(1)
+```
 
-One operation.
+The operation takes constant time.
 
-Space Complexity
+### 💾 Space Complexity
+
+```text
 O(1)
+```
 
-One extra variable.
+Only a constant amount of extra memory is used.
 
-# 🎯 Interview Question
+> **Important:** The number of digits does not change the basic operation's complexity.
 
-If the interviewer asks:
+---
 
-How do you remove the last k digits?
+# 🎯 Interview Questions
 
-General formula:
+## Q1: How do you extract the last `k` digits?
 
+### Formula
+
+```python
+number % (10 ** k)
+```
+
+### Example
+
+```python
+number % 10
+```
+
+Removes nothing and keeps the last digit.
+
+```python
+number % 100
+```
+
+Keeps the last two digits.
+
+```python
+number % 1000
+```
+
+Keeps the last three digits.
+
+---
+
+## Q2: How do you remove the last `k` digits?
+
+### Formula
+
+```python
 number // (10 ** k)
+```
 
-# Examples:
+### Examples
 
+```python
 number // 10
+```
 
-Remove last digit.
+Removes the last digit.
 
+---
+
+```python
 number // 100
+```
 
-Remove last two digits.
+Removes the last two digits.
 
+---
+
+```python
 number // 1000
+```
 
-Remove last three digits.
+Removes the last three digits.
 
-This is a very common DSA pattern.
+---
 
-#########################################################################################################
-# Assignment Operators
-#########################################################################################################
+# 🏆 Final Revision
 
-Assignment Operators
+```text
+KEEP / EXTRACT
+      ↓
+      %
 
-This chapter is much shorter, but very important.
+REMOVE
+      ↓
+      //
 
-1️⃣ Definition
-What is an Assignment Operator?
-Definition
+Last k digits:
+number % (10 ** k)
 
-An assignment operator is used to assign a value to a variable or update the value that a variable refers to.
+Remove last k digits:
+number // (10 ** k)
+```
+
+> ⭐ This is one of the most important arithmetic patterns for number-based programming and DSA problems.
+
+# 📝 Assignment Operators
+
+Assignment operators are used to assign values to variables and update the values that variables refer to.
+
+---
+
+# 1️⃣ What Is an Assignment Operator?
+
+An **assignment operator** is used to:
+
+- Assign a value to a variable
+- Update the value a variable refers to
 
 The simplest assignment operator is:
 
+```python
 =
+```
 
-Example:
+---
 
+## 🧪 Example
+
+```python
 x = 10
+```
 
-Python creates an integer object 10, and x becomes a reference to it.
+Python:
 
-2️⃣ Why Do We Need Assignment Operators?
+1. Creates an integer object `10`
+2. Makes `x` refer to that object
 
-Imagine this code:
-
-x = 10
-
-x = x + 5
-
-It works.
-
-But Python gives us a shorter way:
-
-x += 5
-
-Both produce the same result.
-
-Assignment operators make code:
-
-shorter
-easier to read
-less repetitive
-3️⃣ Types of Assignment Operators
-| Operator | Meaning                 |
-| -------- | ----------------------- |
-| `=`      | Assign                  |
-| `+=`     | Add and assign          |
-| `-=`     | Subtract and assign     |
-| `*=`     | Multiply and assign     |
-| `/=`     | Divide and assign       |
-| `//=`    | Floor divide and assign |
-| `%=`     | Modulus and assign      |
-| `**=`    | Exponent and assign     |
-
-
-We'll learn them one by one.
-
-4️⃣ The = Operator (Revision)
-
-You already know this.
-
-Example:
-
-x = 10
-
-Memory:
-
+```text
 x
 │
 ▼
 10
+```
+
+> **Important:** The variable `x` is a name that refers to an object.
+
+---
+
+# 2️⃣ Why Do We Need Assignment Operators?
+
+Consider this code:
+
+```python
+x = 10
+
+x = x + 5
+```
+
+The final value of `x` is:
+
+```text
+15
+```
+
+Python provides a shorter way to write the same operation:
+
+```python
+x = 10
+
+x += 5
+```
+
+Both produce the same result.
+
+---
+
+## ✨ Assignment Operators Make Code
+
+- Shorter
+- Easier to read
+- Less repetitive
+
+---
+
+# 3️⃣ Types of Assignment Operators
+
+| Operator | Meaning |
+|---|---|
+| `=` | Assign |
+| `+=` | Add and assign |
+| `-=` | Subtract and assign |
+| `*=` | Multiply and assign |
+| `/=` | Divide and assign |
+| `//=` | Floor divide and assign |
+| `%=` | Modulus and assign |
+| `**=` | Exponentiate and assign |
+
+---
+
+# 4️⃣ The `=` Operator
+
+## 📖 Definition
+
+The `=` operator assigns a value to a variable.
+
+---
+
+## 🧪 Example
+
+```python
+x = 10
+```
+
+### Memory
+
+```text
+x
+│
+▼
+10
+```
 
 Now:
 
+```python
 x = 20
+```
 
-Memory:
+The reference changes:
 
-Old object: 10
+```text
+Old Object: 10
 
-New object: 20
+New Object: 20
+```
 
+```text
 x
 │
 ▼
 20
+```
 
-Notice:
+> **Important:** The integer object `10` is not modified. The variable `x` now refers to a different object: `20`.
 
-The integer object 10 is not changed.
+---
 
-x now refers to a new integer object.
+# 5️⃣ The `+=` Operator
 
-This connects to everything we've learned about objects and references.
+## 🧪 Example
 
-5️⃣ The += Operator
-
-Example:
-
+```python
 x = 10
 
 x += 5
+```
+
+The final value is:
+
+```text
+15
+```
+
+---
+
+## 🧠 What Happens Internally?
 
 Many beginners think:
 
-"Python changes the integer object 10."
+> "Python changes the integer object `10`."
 
-❌ That's not what happens.
+❌ This is not what happens.
 
-Let's dry run it.
+Python treats:
 
-Step 1
-x = 10
-
-Memory:
-
-x
-│
-▼
-10
-Step 2
+```python
 x += 5
+```
 
-Python internally treats it like:
+conceptually like:
 
+```python
 x = x + 5
+```
 
-It:
+---
 
-Reads the object referenced by x (10)
-Creates the result 15
-Creates a new integer object 15
-Makes x refer to 15
+## 🔍 Dry Run
 
-Memory:
+### Step 1: Create `x`
 
-Before
+```python
+x = 10
+```
 
+```text
 x
 │
 ▼
 10
+```
 
+---
 
-After
+### Step 2: Perform `x += 5`
 
+Python:
+
+1. Reads the object referenced by `x` → `10`
+2. Performs `10 + 5`
+3. Creates the result → `15`
+4. Creates or uses an integer object containing `15`
+5. Makes `x` refer to the new result
+
+---
+
+### Before
+
+```text
+x
+│
+▼
+10
+```
+
+---
+
+### After
+
+```text
 x
 │
 ▼
 15
+```
 
-The object 10 was never modified.
+> **Important:** The integer object `10` was never modified. The reference held by `x` now points to the result `15`.
 
-########################################################################################################
-# Comparison Operators
-########################################################################################################
+---
 
+# 🧠 Assignment Operators — Core Pattern
 
-Lesson 1: Introduction
-1️⃣ Definition
+```text
+x = 10
+```
 
-What is a Comparison Operator?
+```text
+Assign a value
+```
 
-A comparison operator compares two objects (values).
+---
 
-After comparing them, Python returns only one of two Boolean values:
+```python
+x += 5
+```
 
+Conceptually:
+
+```python
+x = x + 5
+```
+
+---
+
+```python
+x -= 5
+```
+
+Conceptually:
+
+```python
+x = x - 5
+```
+
+---
+
+```python
+x *= 5
+```
+
+Conceptually:
+
+```python
+x = x * 5
+```
+
+---
+
+# 🧮 Assignment Operator Formula
+
+| Short Form | Long Form |
+|---|---|
+| `x += 5` | `x = x + 5` |
+| `x -= 5` | `x = x - 5` |
+| `x *= 5` | `x = x * 5` |
+| `x /= 5` | `x = x / 5` |
+| `x //= 5` | `x = x // 5` |
+| `x %= 5` | `x = x % 5` |
+| `x **= 5` | `x = x ** 5` |
+
+---
+
+# ⚖️ Comparison Operators
+
+Comparison operators are used to compare two values or objects.
+
+After comparing them, Python returns one of two Boolean values:
+
+```text
 True
+```
 
 or
 
+```text
 False
+```
 
-Comparison operators never return numbers. They always return a Boolean result.
+---
 
-2️⃣ Why Do We Need Comparison Operators?
+# 1️⃣ Why Do We Need Comparison Operators?
 
-Imagine you're building:
+Comparison operators help Python answer questions such as:
 
-Login system
-ATM
-Online shopping
-Student marks calculator
-Age verification
-Password checker
+- Is the age greater than `18`?
+- Is the password correct?
+- Are two numbers equal?
+- Does the user have enough balance?
+- Did the student pass?
 
-Questions like these appear:
+Computers often need to make decisions.
 
-Is age greater than 18?
+```text
+Yes → True
 
-Is password correct?
+No  → False
+```
 
-Are two numbers equal?
+Comparison operators help Python answer these questions.
 
-Does user have enough balance?
+---
 
-A computer must answer these with Yes or No.
+# 2️⃣ Types of Comparison Operators
 
-In Python:
+| Operator | Meaning |
+|---|---|
+| `==` | Equal to |
+| `!=` | Not equal to |
+| `>` | Greater than |
+| `<` | Less than |
+| `>=` | Greater than or equal to |
+| `<=` | Less than or equal to |
 
-Yes  → True
+---
 
-No   → False
+# 3️⃣ The `==` Operator — Equal To
 
-Comparison operators let Python make these decisions.
+## 📖 Definition
 
-Types of Comparison Operators
+The `==` operator checks whether two values are equal.
 
-| Operator | Meaning               |
-| -------- | --------------------- |
-| `==`     | Equal to              |
-| `!=`     | Not equal to          |
-| `>`      | Greater than          |
-| `<`      | Less than             |
-| `>=`     | Greater than or equal |
-| `<=`     | Less than or equal    |
+---
 
-First Operator — == (Equal To)
-Definition
+## 🧩 Syntax
 
-Checks whether two objects have the same value.
-
-Syntax
+```python
 left == right
+```
 
-Python compares the values of both objects.
+Python compares the values on both sides.
 
 If they are equal:
 
+```text
 True
+```
 
 Otherwise:
 
+```text
 False
-5️⃣ Internal Working
+```
 
-Example:
+---
 
+## 🧪 Example
+
+```python
 x = 10
 y = 10
 
 print(x == y)
-Step 1
+```
+
+### Output
+
+```text
+True
+```
+
+---
+
+# 🧠 Internal Working
+
+## Step 1: Create `x`
+
+```python
 x = 10
+```
 
-Memory:
-
+```text
 x
 │
 ▼
 10
-Step 2
+```
+
+---
+
+## Step 2: Create `y`
+
+```python
 y = 10
+```
 
-Memory:
+Conceptually:
 
+```text
 x ─┐
    │
    ▼
- 10
- ▲
- │
- y
+  10
+   ▲
+   │
+   y
+```
 
-(Both variables may refer to the same integer object.)
+Both variables may refer to the same integer object.
 
-Step 3
+> **Important:** For the `==` operator, the important question is whether the values are equal.
+
+---
+
+## Step 3: Compare the Values
+
+```python
 x == y
+```
 
 Python asks:
 
+```text
 Does the value of x equal the value of y?
+```
 
-Answer:
+The comparison becomes:
 
+```text
 10 == 10
+```
 
-↓
+Therefore:
 
+```text
 True
+```
 
-Python creates a Boolean object:
+Python returns a Boolean object:
 
+```text
 True
+```
 
-Then print() displays:
+Then:
 
+```python
+print(x == y)
+```
+
+displays:
+
+```text
 True
-⭐ Important Theory
+```
+
+---
+
+# ⭐ Important Difference: `=` vs `==`
 
 Remember this forever:
 
-=
+## `=`
 
-means
+Means:
 
-Assign
+```text
+ASSIGN
+```
 
 Example:
 
+```python
 x = 10
-==
+```
 
-means
+Meaning:
 
-Compare
+```text
+Give 10 to x
+```
+
+---
+
+## `==`
+
+Means:
+
+```text
+COMPARE
+```
 
 Example:
 
+```python
 x == 10
+```
 
-This is one of the most common beginner mistakes.
+Meaning:
 
-🧠 Memory Trick
-=     → Give / Assign
+```text
+Is x equal to 10?
+```
 
-==    → Ask / Compare
+---
 
-Think of it like this:
+# 🧠 Memory Trick
 
+```text
+=   → Give / Assign
+
+==  → Ask / Compare
+```
+
+### Think of It Like This
+
+```text
 Teacher gives marks
+        ↓
+        =
+```
 
-↓
+The teacher asks:
 
-=
-
-Teacher asks
-
+```text
 "Did you score 90?"
+        ↓
+       ==
+```
 
-↓
+---
 
-==
+# 🏆 Final Revision
 
-###################################################################
-# 📝 Revision Notes (Write these in your notebook)
-###################################################################
+| Operator | Purpose | Example | Result |
+|---|---|---|---|
+| `=` | Assign a value | `x = 10` | `x` refers to `10` |
+| `==` | Compare values | `x == 10` | `True` or `False` |
 
-Comparison Operator ==
-Definition
+> 🔥 **Most common beginner mistake:** Do not confuse assignment (`=`) with comparison (`==`).
 
-== compares the values of two objects.
 
-It does not check whether they are the same object in memory.
+# 🧠 Comparison Operators — Revision
 
-Syntax
-left == right
-Return Type
+Comparison operators compare values and return a Boolean result:
 
-Always returns a Boolean object.
-
+```text
 True
+```
 
 or
 
+```text
 False
-Examples
+```
+
+---
+
+# 1️⃣ Comparison Operator: `==`
+
+## 📖 Definition
+
+The `==` operator compares the **values** of two objects.
+
+It checks:
+
+```text
+Are the values equal?
+```
+
+> ⚠️ **Important:** `==` checks value equality. It does not check whether two variables refer to the exact same object in memory.
+
+---
+
+## 🧩 Syntax
+
+```python
+left == right
+```
+
+---
+
+## 🔄 Return Type
+
+The `==` operator always returns a Boolean value:
+
+```text
+True
+```
+
+or
+
+```text
+False
+```
+
+---
+
+# 🧪 Examples
+
+## Equal Integer Values
+
+```python
 10 == 10
-
-↓
-
-True
-10 == 20
-
-↓
-
-False
-10 == 10.0
-
-↓
-
-True
-
-because both represent the same numeric value.
-
-10 == "10"
-
-↓
-
-False
-
-because one is an integer and the other is a string.
-
-"Python" == "python"
-
-↓
-
-False
-
-because Python is case-sensitive.
-
-
-# Comparison Operator — != (Not Equal)
-
-1. Definition
-
-The != operator checks whether two values are different.
-
-If the values are different:
-
-True
-
-If the values are the same:
-
-False
-
-Just like ==, it returns a Boolean object.
-
-2. Why Do We Need It?
-
-Imagine a login system.
-
-password = "python123"
-
-user_input = "hello123"
-
-We want to know:
-
-"Is the entered password different from the real password?"
-
-Python can ask:
-
-user_input != password
+```
 
 Result:
 
+```text
 True
+```
 
-because the passwords are different.
+---
 
-Real-life uses:
+## Different Integer Values
 
-Password validation
-Username checking
-Detecting changes
-Form validation
-Comparing old and new values
-3. Syntax
+```python
+10 == 20
+```
+
+Result:
+
+```text
+False
+```
+
+---
+
+## Integer and Float
+
+```python
+10 == 10.0
+```
+
+Result:
+
+```text
+True
+```
+
+### Why?
+
+Both represent the same numeric value:
+
+```text
+10 == 10.0
+  ↓
+True
+```
+
+---
+
+## Integer and String
+
+```python
+10 == "10"
+```
+
+Result:
+
+```text
+False
+```
+
+### Why?
+
+They have different types:
+
+```text
+10    → int
+
+"10"  → str
+```
+
+Even though they look similar, they are different values and different types.
+
+---
+
+## Case Sensitivity
+
+```python
+"Python" == "python"
+```
+
+Result:
+
+```text
+False
+```
+
+### Why?
+
+Python is case-sensitive.
+
+```text
+"P" ≠ "p"
+```
+
+Therefore:
+
+```text
+"Python" ≠ "python"
+```
+
+---
+
+# 2️⃣ Comparison Operator: `!=`
+
+## 📖 Definition
+
+The `!=` operator checks whether two values are different.
+
+It asks:
+
+```text
+Are the values NOT equal?
+```
+
+If the values are different:
+
+```text
+True
+```
+
+If the values are the same:
+
+```text
+False
+```
+
+Just like `==`, the `!=` operator returns a Boolean value.
+
+---
+
+# 🧩 Syntax
+
+```python
 left != right
+```
 
 Read it as:
 
+```text
 "Left is not equal to right."
+```
 
-4. Internal Working
+---
 
-Example:
+# 🧪 Example
 
+```python
 x = 50
 y = 20
 
 print(x != y)
-Step 1
+```
+
+---
+
+# 🧠 Internal Working
+
+## Step 1: Create `x`
+
+```python
+x = 50
+```
 
 Python creates an integer object:
 
+```text
 50
+```
 
-and x refers to it.
+and `x` refers to it.
 
-Step 2
+```text
+x
+│
+▼
+50
+```
+
+---
+
+## Step 2: Create `y`
+
+```python
+y = 20
+```
 
 Python creates another integer object:
 
+```text
 20
+```
 
-and y refers to it.
+and `y` refers to it.
 
-Step 3
+```text
+x ─► 50
+
+y ─► 20
+```
+
+---
+
+## Step 3: Compare the Values
+
+```python
+x != y
+```
 
 Python asks:
 
+```text
 Is 50 different from 20?
+```
 
-Answer:
+The answer is:
 
+```text
 Yes
+```
+
+Therefore:
+
+```text
+50 != 20
+   ↓
+ True
+```
 
 Python creates a Boolean object:
 
+```text
 True
+```
 
-print() displays:
+Then:
 
+```python
+print(x != y)
+```
+
+displays:
+
+```text
 True
+```
 
+---
 
-5. Compare == and !=
-| Expression | Question Python Asks | Result  |
-| ---------- | -------------------- | ------- |
-| `10 == 10` | Are they equal?      | `True`  |
-| `10 != 10` | Are they different?  | `False` |
-| `10 == 20` | Are they equal?      | `False` |
-| `10 != 20` | Are they different?  | `True`  |
+# 🧪 Real-World Example: Password Validation
 
-Notice that != is the opposite of ==.
+```python
+password = "python123"
 
+user_input = "hello123"
 
-6. Common Beginner Mistake
-
-Some beginners think:
-
-!=
-
-means
-
-"Not"
-
-❌ Incorrect.
-
-It means
-
-Not Equal To
-
-It always compares two values.
-#########################################################################################################
-
-# ">" Greater Than  Operator  
-1️⃣ Definition
-
-The > operator checks whether the left value is greater than the right value.
-
-If it is greater:
-
-True
-
-Otherwise:
-
-False
-
-Like all comparison operators, it always returns a Boolean object.
-
-2️⃣ Why Do We Need It?
-
-Imagine these situations:
-
-Is age greater than 18?
-Is salary greater than ₹50,000?
-Is the exam score greater than the passing mark?
-Is today's temperature greater than yesterday's?
-
-These are all comparisons.
-
-Example:
-
-age = 21
-
-age > 18
+print(user_input != password)
+```
 
 Python asks:
 
-Is 21 greater than 18?
+```text
+Is the entered password different from the actual password?
+```
 
-Answer:
+```text
+"hello123" != "python123"
+          ↓
+        True
+```
 
+The values are different.
+
+---
+
+# 🌍 Real-Life Uses of `!=`
+
+The `!=` operator is commonly used for:
+
+- 🔐 Password validation
+- 👤 Username checking
+- 🔄 Detecting changes
+- 📝 Form validation
+- 📊 Comparing old and new values
+- 🧪 Checking whether a value has changed
+
+---
+
+# ⚖️ Comparing `==` and `!=`
+
+| Expression | Question Python Asks | Result |
+|---|---|---|
+| `10 == 10` | Are they equal? | `True` |
+| `10 != 10` | Are they different? | `False` |
+| `10 == 20` | Are they equal? | `False` |
+| `10 != 20` | Are they different? | `True` |
+
+---
+
+# 🧠 The Main Relationship
+
+```text
+!= is the opposite of ==
+```
+
+| `==` | `!=` |
+|---|---|
+| Equal | Not Equal |
+| Same value → `True` | Different value → `True` |
+| Different value → `False` | Same value → `False` |
+
+---
+
+# 🔥 Memory Trick
+
+```text
+==  → Are they equal?
+
+!=  → Are they different?
+```
+
+---
+
+# 🏆 Final Revision
+
+```text
+== → Compare equality
+
+!= → Compare inequality
+```
+
+Both operators:
+
+```text
+Compare values
+      ↓
+Return a Boolean
+      ↓
+True or False
+```
+
+> ⭐ **Remember:** `==` and `!=` compare values. They do not check whether two variables refer to the same object in memory.
+
+# ⚠️ Common Beginner Mistake: `!=`
+
+Some beginners think:
+
+```text
+!=
+```
+
+means:
+
+```text
+NOT
+```
+
+❌ This is incorrect.
+
+The correct meaning is:
+
+```text
+NOT EQUAL TO
+```
+
+The `!=` operator always compares **two values**.
+
+```python
+x != y
+```
+
+Python asks:
+
+```text
+Is x different from y?
+```
+
+### Example
+
+```python
+10 != 20
+```
+
+```text
+10 is different from 20
+        ↓
+      True
+```
+
+> ⭐ **Remember:** `!=` does not simply mean "not". It means **not equal to**.
+
+---
+
+# 3️⃣ Greater Than (`>`)
+
+## 📖 Definition
+
+The `>` operator checks whether the value on the **left** is greater than the value on the **right**.
+
+If the left value is greater:
+
+```text
 True
-3️⃣ Syntax
+```
+
+Otherwise:
+
+```text
+False
+```
+
+Like all comparison operators, `>` always returns a Boolean value.
+
+---
+
+# 🎯 Why Do We Need `>`?
+
+The greater-than operator helps Python answer questions such as:
+
+- Is the age greater than `18`?
+- Is the salary greater than `₹50,000`?
+- Is the exam score greater than the passing mark?
+- Is today's temperature greater than yesterday's?
+
+These are all comparisons.
+
+---
+
+## 🧪 Example
+
+```python
+age = 21
+
+age > 18
+```
+
+Python asks:
+
+```text
+Is 21 greater than 18?
+```
+
+The answer is:
+
+```text
+True
+```
+
+---
+
+# 🧩 Syntax
+
+```python
 left > right
+```
 
 Read it as:
 
+```text
 Left is greater than right.
+```
 
-4️⃣ Internal Working
+---
 
-Example:
+# 🧠 Internal Working
 
+Consider this code:
+
+```python
 x = 15
 y = 10
 
 print(x > y)
-Step 1
+```
+
+---
+
+## Step 1: Create `x`
+
+```python
+x = 15
+```
 
 Python creates an integer object:
 
+```text
 15
+```
 
-x refers to it.
+and `x` refers to it.
 
-Step 2
+```text
+x
+│
+▼
+15
+```
+
+---
+
+## Step 2: Create `y`
+
+```python
+y = 10
+```
 
 Python creates another integer object:
 
+```text
 10
+```
 
-y refers to it.
+and `y` refers to it.
 
-Step 3
+```text
+x ─► 15
+
+y ─► 10
+```
+
+---
+
+## Step 3: Compare the Values
+
+```python
+x > y
+```
 
 Python asks:
 
+```text
 Is 15 greater than 10?
+```
 
-Answer:
+The answer is:
 
+```text
 Yes
+```
+
+Therefore:
+
+```text
+15 > 10
+   ↓
+ True
+```
 
 Python creates the Boolean object:
 
+```text
 True
+```
 
-print() displays:
+Then:
 
+```python
+print(x > y)
+```
+
+displays:
+
+```text
 True
-Another Example
+```
+
+---
+
+# 🧪 Another Example
+
+```python
 x = 5
 y = 20
 
 print(x > y)
+```
 
 Python asks:
 
+```text
 Is 5 greater than 20?
+```
 
-Answer:
+The answer is:
 
+```text
 No
+```
 
-Python creates:
+Therefore:
 
+```text
+5 > 20
+   ↓
+ False
+```
+
+### Output
+
+```text
 False
-5️⃣ Number Line Thinking
+```
 
-This helps a lot.
+---
 
+# 🔢 Number Line Thinking
+
+A number line is a useful way to understand `>`.
+
+```text
 ← Smaller ---------------------------- Greater →
+```
 
+```text
 1   2   3   4   5   6   7   8   9   10
+```
 
-Example:
+---
 
+## Example 1
+
+```python
 8 > 3
+```
 
 On the number line:
 
-3 --------> 8
+```text
+3 ───────────────► 8
+```
 
-8 is to the right of 3.
+`8` is to the right of `3`.
 
-Result:
+Therefore:
 
+```text
+8 > 3
+  ↓
 True
+```
 
-Example:
+---
 
+## Example 2
+
+```python
 2 > 9
+```
 
-2 is to the left of 9.
+On the number line:
 
-Result:
+```text
+2 ◄─────────────── 9
+```
 
+`2` is to the left of `9`.
+
+Therefore:
+
+```text
+2 > 9
+  ↓
 False
-6️⃣ Strings
+```
+
+---
+
+# 🔤 String Comparison
 
 Python can also compare strings.
 
-It compares them alphabetically (lexicographically) based on character values.
-
-For now, we'll focus on numbers only.
-
-We'll learn string comparison in depth when we study strings.
-
-7️⃣ Common Beginner Mistakes
-Mistake 1
-
-Thinking:
-
-5 > 5
-
-is
-
-True
-
-❌ Wrong.
-
-Python asks:
-
-Is 5 greater than 5?
-
-No.
-
-They are equal.
-
-Result:
-
-False
-
-Mistake 2
-
-Confusing > with >=.
-
-We'll learn >= later.
-
-For now:
-
-5 > 5
-
-↓
-
-False
-
-#########################################################################################################
-
-#  🐍 Comparison Operator <
-1️⃣ Definition
-
-The < operator checks whether the left value is less than the right value.
-
-If yes:
-
-True
-
-Otherwise:
-
-False
-
-Like every comparison operator, it always returns a Boolean object.
-
-2️⃣ Why Do We Need It?
-
-Real-life examples:
-
-Is the temperature below 0°C?
-Is the student's age less than 18?
-Is the stock price lower than yesterday?
-Is the account balance below ₹100?
+String comparison is based on **lexicographical order**, which means Python compares characters based on their character values.
 
 Example:
 
-balance = 80
+```python
+"Python" > "Java"
+```
 
-balance < 100
+String comparison will be studied in detail when we learn strings.
+
+> 📌 **For now, focus on understanding `>` with numbers.**
+
+---
+
+# ⚠️ Common Beginner Mistakes
+
+## ❌ Mistake 1: Thinking Equal Values Are Greater
+
+Some beginners think:
+
+```python
+5 > 5
+```
+
+is:
+
+```text
+True
+```
+
+This is incorrect.
 
 Python asks:
 
-Is 80 less than 100?
+```text
+Is 5 greater than 5?
+```
 
-Answer:
+The answer is:
 
+```text
+No
+```
+
+The values are equal.
+
+Therefore:
+
+```text
+5 > 5
+  ↓
+False
+```
+
+---
+
+## ❌ Mistake 2: Confusing `>` with `>=`
+
+These operators are different:
+
+```text
+>   → Greater Than
+
+>=  → Greater Than or Equal To
+```
+
+For example:
+
+```python
+5 > 5
+```
+
+Result:
+
+```text
+False
+```
+
+because `5` is not greater than `5`.
+
+We will learn `>=` separately.
+
+---
+
+# 🧠 Memory Trick
+
+```text
+>
+```
+
+The left side must be:
+
+```text
+GREATER
+```
+
+than the right side.
+
+```text
+10 > 5
+```
+
+```text
+10 is greater than 5
+        ↓
+      True
+```
+
+---
+
+# 🏆 Final Revision
+
+| Expression | Python Asks | Result |
+|---|---|---|
+| `10 > 5` | Is 10 greater than 5? | `True` |
+| `5 > 10` | Is 5 greater than 10? | `False` |
+| `5 > 5` | Is 5 greater than 5? | `False` |
+
+```text
+> → Greater Than
+```
+
+> ⭐ The value on the left must be strictly greater than the value on the right for the result to be `True`.
+
+# 🐍 Comparison Operator: `<`
+
+---
+
+# 1️⃣ Definition
+
+The `<` operator checks whether the value on the **left** is less than the value on the **right**.
+
+If the left value is less than the right value:
+
+```text
 True
-3️⃣ Syntax
+```
+
+Otherwise:
+
+```text
+False
+```
+
+Like every comparison operator, `<` always returns a Boolean value.
+
+---
+
+# 2️⃣ Why Do We Need `<`?
+
+The less-than operator helps Python answer questions such as:
+
+- Is the temperature below `0°C`?
+- Is the student's age less than `18`?
+- Is the stock price lower than yesterday's price?
+- Is the account balance below `₹100`?
+
+---
+
+## 🧪 Example
+
+```python
+balance = 80
+
+balance < 100
+```
+
+Python asks:
+
+```text
+Is 80 less than 100?
+```
+
+The answer is:
+
+```text
+True
+```
+
+---
+
+# 3️⃣ Syntax
+
+```python
 left < right
+```
 
 Read it as:
 
+```text
 Left is less than right.
+```
 
-4️⃣ Internal Working
+---
 
-Example
+# 4️⃣ Internal Working
 
+Consider this code:
+
+```python
 x = 4
 y = 9
 
 print(x < y)
-Step 1
+```
 
-Python creates an integer object
+---
 
+## Step 1: Create `x`
+
+```python
+x = 4
+```
+
+Python creates an integer object:
+
+```text
 4
+```
 
-x refers to it.
+and `x` refers to it.
 
-Step 2
+```text
+x
+│
+▼
+4
+```
 
-Python creates another integer object
+---
 
+## Step 2: Create `y`
+
+```python
+y = 9
+```
+
+Python creates another integer object:
+
+```text
 9
+```
 
-y refers to it.
+and `y` refers to it.
 
-Step 3
+```text
+x ─► 4
+
+y ─► 9
+```
+
+---
+
+## Step 3: Compare the Values
+
+```python
+x < y
+```
 
 Python asks:
 
+```text
 Is 4 less than 9?
+```
 
-Answer:
+The answer is:
 
+```text
 Yes
+```
+
+Therefore:
+
+```text
+4 < 9
+  ↓
+True
+```
 
 Python creates a Boolean object:
 
+```text
 True
+```
 
-print() displays:
+Then:
 
+```python
+print(x < y)
+```
+
+displays:
+
+```text
 True
-Another Example
+```
+
+---
+
+# 🧪 Another Example
+
+```python
 x = 20
 y = 5
 
 print(x < y)
+```
 
 Python asks:
 
+```text
 Is 20 less than 5?
+```
 
-Answer:
+The answer is:
 
+```text
 No
+```
 
-Result:
+Therefore:
 
+```text
+20 < 5
+   ↓
+ False
+```
+
+### Result
+
+```text
 False
-5️⃣ Number Line Thinking
+```
 
-Remember this forever.
+---
 
+# 🔢 Number Line Thinking
+
+Remember:
+
+```text
 ← Smaller ---------------------- Greater →
+```
 
+Example:
+
+```text
 -5  -4  -3  -2  -1   0   1   2   3   4   5
+```
 
-A number is less than another number if it is to the left.
+A number is **less than** another number if it is located to the **left**.
 
-Example
+---
 
+## 🧪 Example 1
+
+```python
 2 < 8
-2 --------> 8
-
-2 is on the left.
-
-Result:
-
-True
-
-Another
-
-8 < 2
-
-8 is on the right.
-
-Result:
-
-False
-6️⃣ Negative Numbers
-
-This is where many beginners get confused.
-
-Example
-
--8 < -3
+```
 
 Number line:
 
--8 -----> -3
+```text
+2 ───────────────► 8
+```
 
--8 is further left.
+`2` is on the left of `8`.
 
-So
+Therefore:
 
+```text
+2 < 8
+  ↓
 True
-7️⃣ Common Beginner Mistakes
-Mistake 1
+```
 
-Thinking
+---
 
+## 🧪 Example 2
+
+```python
+8 < 2
+```
+
+Here, `8` is on the right of `2`.
+
+Therefore:
+
+```text
+8 < 2
+  ↓
+False
+```
+
+---
+
+# ➖ Negative Numbers
+
+Negative numbers can sometimes confuse beginners.
+
+Consider:
+
+```python
+-8 < -3
+```
+
+On the number line:
+
+```text
+-8 ─────────────► -3
+```
+
+`-8` is further to the left.
+
+Therefore:
+
+```text
+-8 < -3
+    ↓
+  True
+```
+
+---
+
+# ⚠️ Common Beginner Mistakes
+
+## ❌ Mistake 1: Thinking Equal Values Are Less Than
+
+Some beginners think:
+
+```python
 5 < 5
+```
 
-is
+is:
 
+```text
 True
+```
 
-❌ Wrong.
+This is incorrect.
 
 Python asks:
 
+```text
 Is 5 less than 5?
+```
 
-No.
+The answer is:
 
-They are equal.
+```text
+No
+```
 
-Result
+The values are equal.
 
-False
-Mistake 2
+Therefore:
 
-Confusing < with <=.
-
-We'll learn <= after >=.
-
-For now remember:
-
+```text
 5 < 5
-
-↓
-
+  ↓
 False
+```
 
-📖 Comparison So Far
+---
 
-| Operator | Question Python Asks        |
-| -------- | --------------------------- |
-| `==`     | Are they equal?             |
-| `!=`     | Are they different?         |
-| `>`      | Is left greater than right? |
-| `<`      | Is left less than right?    |
+## ❌ Mistake 2: Confusing `<` with `<=`
 
+These operators are different:
 
+```text
+<   → Less Than
 
-⭐ Interview Tip
+<=  → Less Than or Equal To
+```
 
-Many beginners memorize symbols.
+For now, remember:
 
-A better approach is to translate them into English.
+```python
+5 < 5
+```
+
+Result:
+
+```text
+False
+```
+
+We will study `<=` separately.
+
+---
+
+# 📖 Comparison Operators — So Far
+
+| Operator | Question Python Asks |
+|---|---|
+| `==` | Are they equal? |
+| `!=` | Are they different? |
+| `>` | Is the left value greater than the right? |
+| `<` | Is the left value less than the right? |
+
+---
+
+# ⭐ Interview Tip
+
+Many beginners simply memorize comparison symbols.
+
+A better approach is to translate every symbol into English.
 
 When you see:
 
+```python
 a < b
+```
 
 Read it as:
 
+```text
 "Is a less than b?"
+```
 
 When you see:
 
+```python
 a > b
+```
 
 Read it as:
 
+```text
 "Is a greater than b?"
+```
 
-This habit makes it much easier to read complex conditions later in if statements.
+This habit makes it much easier to understand complex conditions later in:
+
+```python
+if
+```
+
+statements.
+
+---
+
+# 🧠 Memory Trick
+
+```text
+< → Smaller / Less Than
+```
+
+The left value must be **strictly smaller** than the right value.
+
+```text
+3 < 8
+↓
+True
+```
+
+```text
+8 < 3
+↓
+False
+```
+
+```text
+5 < 5
+↓
+False
+```
+
+> ⭐ **Key Rule:** Equal values are neither greater than nor less than each other.
 
 
-#########################################################################################################
+# 🐍 Comparison Operator: `>=`
 
+---
 
-# 🐍 Comparison Operator >=
+# 1️⃣ Definition
 
+The operator:
 
-1️⃣ Definition
-
-The operator
-
+```python
 >=
+```
 
-means
+means:
 
+```text
 Greater Than OR Equal To
+```
 
-This is the first comparison operator that has two conditions.
+This is a comparison operator with **two possible conditions**.
 
 Python asks:
 
-Is the left value greater than the right value OR are they equal?
+```text
+Is the left value greater than the right value?
+```
 
-If either condition is true,
+**OR**
 
-Python returns
+```text
+Are both values equal?
+```
 
+If either condition is true:
+
+```text
 True
+```
 
-Otherwise,
+Otherwise:
 
+```text
 False
-2️⃣ Why Do We Need It?
+```
 
-Imagine a company hiring people.
+---
 
-Requirement:
+# 2️⃣ Why Do We Need `>=`?
 
+Imagine a company has this requirement:
+
+```text
 Age must be 18 or above.
+```
 
-Notice something.
+Notice the requirement does **not** mean:
 
-It doesn't say
+```text
+Age must be greater than 18.
+```
 
-Greater than 18
+It means:
 
-It says
-
+```text
 18 OR ABOVE
+```
 
-That means
+Therefore:
 
+```python
 age >= 18
+```
 
-Examples
+---
 
-Age = 18 ✅
+## 🧪 Examples
 
-Age = 19 ✅
+| Age | `age >= 18` | Why? |
+|---:|:---:|---|
+| `18` | ✅ `True` | Equal to 18 |
+| `19` | ✅ `True` | Greater than 18 |
+| `25` | ✅ `True` | Greater than 18 |
+| `17` | ❌ `False` | Less than 18 |
 
-Age = 25 ✅
+---
 
-Age = 17 ❌
+## 🏦 Another Example: Minimum Bank Balance
 
-Another example
+Suppose the minimum required balance is:
 
-Bank Account
-
-Minimum balance required:
-
+```text
 ₹1000
+```
 
-If balance is
+The requirement is:
 
-₹1000 ✅
-
-₹1500 ✅
-
-₹2000 ✅
-
-₹999 ❌
-
-Python:
-
+```python
 balance >= 1000
-3️⃣ Syntax
+```
+
+| Balance | Result | Why? |
+|---:|:---:|---|
+| ₹1000 | `True` | Equal to minimum |
+| ₹1500 | `True` | Greater than minimum |
+| ₹2000 | `True` | Greater than minimum |
+| ₹999 | `False` | Less than minimum |
+
+---
+
+# 3️⃣ Syntax
+
+```python
 left >= right
+```
 
-Read it as
+Read it as:
 
-Left is greater than or equal to right
+```text
+Left is greater than or equal to right.
+```
 
-4️⃣ Internal Working
+---
 
-Example
+# 4️⃣ Internal Working
 
+Consider:
+
+```python
 x = 10
 y = 5
 
 print(x >= y)
+```
 
-Python asks
+Python conceptually asks:
 
+```text
 Is 10 greater than 5?
+```
 
-OR
+**OR**
 
+```text
 Is 10 equal to 5?
+```
 
-The first question is
+The first condition is true:
 
-Yes
+```text
+10 > 5
+   ↓
+ True
+```
 
-So Python immediately creates
+Therefore:
 
-True
+```text
+10 >= 5
+    ↓
+  True
+```
 
-Another Example
+---
 
+## 🧪 Another Example
+
+```python
 x = 10
 y = 10
 
 print(x >= y)
+```
 
-Python asks
+Python asks:
 
+```text
 Is 10 greater than 10?
+```
+
+```text
+No
+```
+
+Then it checks:
+
+```text
+Is 10 equal to 10?
+```
+
+```text
+Yes
+```
+
+Therefore:
+
+```text
+10 >= 10
+    ↓
+  True
+```
+
+---
+
+# ⭐ Important Concept
+
+Although:
+
+```text
+10 is NOT greater than 10
+```
+
+the result is still:
+
+```text
+True
+```
+
+because `>=` means:
+
+```text
+GREATER
+   OR
+EQUAL
+```
+
+The equality condition is allowed.
+
+---
+
+# 🔢 Number Line Thinking
+
+```text
+← Smaller ------------------------ Greater →
+```
+
+```text
+1   2   3   4   5   6   7   8   9   10
+```
+
+---
+
+## Example 1
+
+```python
+5 >= 5
+```
+
+Python asks:
+
+```text
+Is 5 to the right of 5?
+```
 
 No.
 
-Then asks
+Then:
 
-Is 10 equal to 10?
+```text
+Is 5 equal to 5?
+```
 
 Yes.
 
-Result
+Therefore:
 
-True
-
-Notice something important.
-
-Although
-
-10 is NOT greater than 10
-
-The answer is still
-
-True
-
-because of
-
-OR EQUAL
-
-This is the new concept in today's lesson.
-
-5️⃣ Number Line
-← Smaller ------------------------ Greater →
-
-1   2   3   4   5   6   7   8   9   10
-
-Suppose we ask
-
+```text
 5 >= 5
+    ↓
+  True
+```
 
-Python thinks
+---
 
-Is it to the right?
+## Example 2
 
-OR
-
-Is it exactly here?
-
-It is exactly there.
-
-So
-
-True
-
-Another
-
+```python
 8 >= 5
+```
 
-8 is to the right.
+`8` is to the right of `5`.
 
-Answer
+Therefore:
 
-True
+```text
+8 >= 5
+    ↓
+  True
+```
 
-Another
+---
 
+## Example 3
+
+```python
 2 >= 5
+```
 
-2 is left of 5.
+`2` is to the left of `5`.
 
-Not equal.
+It is also not equal to `5`.
 
-Answer
+Therefore:
 
-False
-6️⃣ Compare > and >=
+```text
+2 >= 5
+    ↓
+  False
+```
 
-This is one of the most important interview concepts.
+---
 
-Expression	Result	Why
-5 > 5	False	Equal is not greater
-5 >= 5	True	Equal is allowed
-8 > 5	True	Greater
-8 >= 5	True	Greater
-2 > 5	False	Smaller
-2 >= 5	False	Smaller
+# ⚖️ Comparing `>` and `>=`
 
-⭐ Golden Rule
+This is one of the most important concepts in programming and interviews.
 
->= means
+| Expression | Result | Why? |
+|---|:---:|---|
+| `5 > 5` | `False` | Equal is not greater |
+| `5 >= 5` | `True` | Equal is allowed |
+| `8 > 5` | `True` | Greater |
+| `8 >= 5` | `True` | Greater |
+| `2 > 5` | `False` | Smaller |
+| `2 >= 5` | `False` | Smaller |
 
-Greater
+---
 
-OR
+# ⭐ Golden Rule
 
-Equal
-
-If either is true, the answer is True.
-
-7️⃣ Common Beginner Mistakes
-Mistake 1
-
-Thinking
-
-5 >= 5
-
-is
-
-False
-
-❌ Wrong.
-
-Equal is included.
-
-Mistake 2
-
-Confusing
-
->
-
-with
-
+```text
 >=
+```
 
-Remember
+means:
 
-5 > 5
+```text
+GREATER
+   OR
+EQUAL
+```
 
-↓
+If either condition is true:
 
-False
-5 >= 5
-
-↓
-
+```text
 True
+```
 
-One tiny = changes everything.
+---
 
+# ⚠️ Common Beginner Mistakes
 
+## ❌ Mistake 1: Thinking `5 >= 5` Is `False`
 
-# This difference is worth remembering:
+Some beginners think:
 
-| Expression   | Result      |
-| ------------ | ----------- |
-| `10 == "10"` | `False`     |
-| `10 != "10"` | `True`      |
-| `10 > "10"`  | `TypeError` |
-| `10 < "10"`  | `TypeError` |
+```python
+5 >= 5
+```
+
+is:
+
+```text
+False
+```
+
+This is incorrect.
+
+The `=` means equality is included.
+
+Therefore:
+
+```text
+5 >= 5
+    ↓
+  True
+```
+
+---
+
+## ❌ Mistake 2: Confusing `>` with `>=`
+
+Remember:
+
+```python
+5 > 5
+```
+
+```text
+False
+```
+
+Because `5` is not greater than `5`.
+
+---
+
+```python
+5 >= 5
+```
+
+```text
+True
+```
+
+Because equal values are allowed.
+
+---
+
+# 🧠 One Tiny `=` Changes Everything
+
+```text
+>   → Greater Than
+
+>=  → Greater Than OR Equal To
+```
+
+That small equality symbol changes the result when both values are equal.
+
+---
+
+# ⚠️ Comparing Different Types
+
+Some comparisons between different types are not supported.
+
+For example:
+
+```python
+10 == "10"
+```
+
+Result:
+
+```text
+False
+```
+
+The values are not equal.
+
+---
+
+```python
+10 != "10"
+```
+
+Result:
+
+```text
+True
+```
+
+The values are different.
+
+---
+
+However, ordering comparisons between an integer and a string are not supported:
+
+```python
+10 > "10"
+```
+
+```text
+TypeError
+```
+
+---
+
+```python
+10 < "10"
+```
+
+```text
+TypeError
+```
+
+---
+
+```python
+10 >= "10"
+```
+
+```text
+TypeError
+```
+
+---
+
+```python
+10 <= "10"
+```
+
+```text
+TypeError
+```
+
+---
+
+# 📊 Comparison Summary
+
+| Expression | Result |
+|---|---|
+| `10 == "10"` | `False` |
+| `10 != "10"` | `True` |
+| `10 > "10"` | `TypeError` |
+| `10 < "10"` | `TypeError` |
 | `10 >= "10"` | `TypeError` |
 | `10 <= "10"` | `TypeError` |
 
+---
 
-########################################################################################################
+# 🏆 Final Revision
 
-# 🐍 Comparison Operator <=
-1️⃣ Definition
+```text
+>   → Greater Than
 
-The operator
+>=  → Greater Than OR Equal To
+```
 
+### Examples
+
+```python
+10 >= 5
+```
+
+```text
+True
+```
+
+because:
+
+```text
+10 is greater than 5
+```
+
+---
+
+```python
+10 >= 10
+```
+
+```text
+True
+```
+
+because:
+
+```text
+10 is equal to 10
+```
+
+---
+
+```python
+5 >= 10
+```
+
+```text
+False
+```
+
+because:
+
+```text
+5 is smaller than 10
+```
+
+> ⭐ **Key Rule:** `>=` is true when the left value is either greater than or equal to the right value.
+
+
+# 🐍 Comparison Operator: `<=`
+
+---
+
+# 1️⃣ Definition
+
+The operator:
+
+```python
 <=
+```
 
-means
+means:
 
+```text
 Less Than OR Equal To
+```
 
 It checks two conditions:
 
+```text
 Is the left value less than the right value?
-OR are both values equal?
+```
 
-If either condition is true,
+**OR**
 
-Python returns
+```text
+Are both values equal?
+```
 
+If either condition is true:
+
+```text
 True
+```
 
-Otherwise,
+Otherwise:
 
+```text
 False
+```
 
-Like every comparison operator, it returns a Boolean object.
+Like every comparison operator, `<=` returns a Boolean value.
 
-2️⃣ Why Do We Need It?
+---
 
-Imagine these real-world situations.
+# 2️⃣ Why Do We Need `<=`?
 
-Example 1: Speed Limit
+The `<=` operator is used when a value is allowed to be:
 
-The maximum speed allowed is 80 km/h.
+```text
+LESS THAN
+```
 
-That means:
+or:
 
-60 ✅
-75 ✅
-80 ✅
-81 ❌
+```text
+EQUAL TO
+```
 
-Python:
+a limit.
 
+---
+
+# 🚗 Example 1: Speed Limit
+
+Suppose the maximum allowed speed is:
+
+```text
+80 km/h
+```
+
+The rule is:
+
+```python
 speed <= 80
+```
 
-Notice something.
+| Speed | Result | Why? |
+|---:|:---:|---|
+| `60` | ✅ `True` | Less than 80 |
+| `75` | ✅ `True` | Less than 80 |
+| `80` | ✅ `True` | Equal to 80 |
+| `81` | ❌ `False` | Greater than 80 |
 
-The rule is 80 or below.
+> ⭐ The rule is **80 or below**, not only below 80.
 
-Not just below.
+---
 
-Example 2: Age Requirement
+# 🎟️ Example 2: Age Requirement
 
-A children's ticket is available for ages 12 or younger.
+Suppose a children's ticket is available for ages:
 
+```text
+12 or younger
+```
+
+The condition is:
+
+```python
 age <= 12
+```
 
-Examples:
+| Age | Result | Why? |
+|---:|:---:|---|
+| `8` | ✅ `True` | Less than 12 |
+| `12` | ✅ `True` | Equal to 12 |
+| `13` | ❌ `False` | Greater than 12 |
 
-Age = 8 ✅
+---
 
-Age = 12 ✅
+# 3️⃣ Syntax
 
-Age = 13 ❌
-
-3️⃣ Syntax
+```python
 left <= right
+```
 
 Read it as:
 
+```text
 Left is less than or equal to right.
+```
 
-4️⃣ Internal Working
+---
 
-Example
+# 4️⃣ Internal Working
 
+## 🧪 Example 1: Left Value Is Smaller
+
+```python
 x = 5
 y = 10
 
 print(x <= y)
+```
 
 Python asks:
 
-Question 1
-
+```text
 Is 5 less than 10?
+```
 
-✅ Yes.
+The answer is:
 
-Python immediately creates
+```text
+Yes
+```
 
+Therefore:
+
+```text
+5 <= 10
+    ↓
+  True
+```
+
+Python returns:
+
+```text
 True
+```
 
-Another example
+---
 
+## 🧪 Example 2: Values Are Equal
+
+```python
 x = 10
 y = 10
 
 print(x <= y)
+```
 
-Python asks
+Python asks:
 
+```text
 Is 10 less than 10?
+```
 
-No.
+The answer is:
 
-Then asks
+```text
+No
+```
 
+Then Python asks:
+
+```text
 Is 10 equal to 10?
+```
 
-Yes.
+The answer is:
 
-Result
+```text
+Yes
+```
 
-True
+Therefore:
 
-Another
+```text
+10 <= 10
+     ↓
+   True
+```
 
+---
+
+## 🧪 Example 3: Left Value Is Greater
+
+```python
 x = 15
 y = 10
 
 print(x <= y)
+```
 
-Python asks
+Python asks:
 
+```text
 Is 15 less than 10?
+```
 
-No.
+```text
+No
+```
 
+Then:
+
+```text
 Is 15 equal to 10?
+```
+
+```text
+No
+```
+
+Therefore:
+
+```text
+15 <= 10
+     ↓
+   False
+```
+
+---
+
+# 🔢 Number Line Thinking
+
+```text
+← Smaller ------------------------- Greater →
+```
+
+```text
+1   2   3   4   5   6   7   8   9   10
+```
+
+A value is `<=` another value when it is:
+
+```text
+To the LEFT
+```
+
+or:
+
+```text
+Exactly EQUAL
+```
+
+---
+
+## 🧪 Example 1
+
+```python
+5 <= 5
+```
+
+Python asks:
+
+```text
+Is 5 less than 5?
+```
 
 No.
 
-Result
+Then:
 
-False
-5️⃣ Number Line Thinking
-← Smaller ------------------------- Greater →
+```text
+Is 5 equal to 5?
+```
 
-1   2   3   4   5   6   7   8   9   10
+Yes.
 
-Suppose we ask
+Therefore:
 
+```text
 5 <= 5
+    ↓
+  True
+```
 
-Python thinks
+---
 
-Is it on the left?
+## 🧪 Example 2
 
-OR
-
-Is it exactly here?
-
-It is exactly there.
-
-Therefore
-
-True
-
-Another
-
+```python
 3 <= 5
+```
 
-3 is left of 5.
+`3` is to the left of `5`.
 
-Answer
+Therefore:
 
-True
+```text
+3 <= 5
+    ↓
+  True
+```
 
-Another
+---
 
+## 🧪 Example 3
+
+```python
 8 <= 5
+```
 
-8 is right of 5.
+`8` is to the right of `5`.
 
-Not equal.
+It is also not equal to `5`.
 
-Answer
+Therefore:
 
+```text
+8 <= 5
+    ↓
+  False
+```
+
+---
+
+# ⚖️ Comparing `<` and `<=`
+
+| Expression | Result | Why |
+|---|:---:|---|
+| `5 < 5` | `False` | Equal is **not** less |
+| `5 <= 5` | `True` | Equal is allowed |
+| `3 < 5` | `True` | Smaller |
+| `3 <= 5` | `True` | Smaller |
+| `8 < 5` | `False` | Greater |
+| `8 <= 5` | `False` | Greater |
+
+---
+
+# ⭐ The Important Difference
+
+```text
+<   → Less Than Only
+
+<=  → Less Than OR Equal To
+```
+
+The extra:
+
+```text
+=
+```
+
+allows equal values.
+
+---
+
+## 🧠 Compare Equal Values
+
+```python
+5 < 5
+```
+
+```text
 False
+```
+
+Because:
+
+```text
+5 is not less than 5
+```
+
+---
+
+```python
+5 <= 5
+```
+
+```text
+True
+```
+
+Because:
+
+```text
+5 is equal to 5
+```
+
+---
+
+# 🏆 Final Revision
+
+```text
+<=
+```
+
+means:
+
+```text
+LESS
+  OR
+EQUAL
+```
+
+### Examples
+
+```python
+3 <= 5
+```
+
+```text
+True
+```
+
+because `3` is less than `5`.
+
+---
+
+```python
+5 <= 5
+```
+
+```text
+True
+```
+
+because both values are equal.
+
+---
+
+```python
+8 <= 5
+```
+
+```text
+False
+```
+
+because `8` is greater than `5`.
+
+---
+
+# 📖 All Comparison Operators
+
+| Operator | Meaning |
+|---|---|
+| `==` | Equal To |
+| `!=` | Not Equal To |
+| `>` | Greater Than |
+| `<` | Less Than |
+| `>=` | Greater Than or Equal To |
+| `<=` | Less Than or Equal To |
+
+> ⭐ **Key Rule:** `<=` is `True` when the left value is either smaller than or equal to the right value.
 
 
-#  Compare < and <=
 
+# 🧠 Logical Operators
 
-| Expression | Result  | Why                   |
-| ---------- | ------- | --------------------- |
-| `5 < 5`    | `False` | Equal is **not** less |
-| `5 <= 5`   | `True`  | Equal is allowed      |
-| `3 < 5`    | `True`  | Smaller               |
-| `3 <= 5`   | `True`  | Smaller               |
-| `8 < 5`    | `False` | Greater               |
-| `8 <= 5`   | `False` | Greater               |
+Before learning logical operators, remember the difference between arithmetic and comparison operators.
 
+---
 
+# 🔢 Arithmetic Operators
 
+Arithmetic operators work with numbers.
 
-
-Logical Operators
-
-Before learning them, remember this:
-
-Arithmetic Operators work on numbers.
-
-Example:
-
+```python
 10 + 5
+```
 
-↓
+Python performs the calculation:
 
-Result
-
+```text
+10 + 5
+  ↓
 15
+```
 
-Comparison Operators work on values.
+### Result
 
-Example:
+```text
+15
+```
 
+---
+
+# ⚖️ Comparison Operators
+
+Comparison operators compare values.
+
+```python
 10 > 5
-
-↓
-
-Result
-
-True
-
-Now ask yourself:
-
-What if I have two comparison results?
-
-Example:
-
-10 > 5
-
-↓
-
-True
-
-and
-
-20 > 15
-
-↓
-
-True
-
-How do we combine these two Boolean values?
-
-That's why Logical Operators exist.
-
-1. Definition
-
-A Logical Operator is an operator that works with Boolean values (True and False) and produces a Boolean result.
-
-They are used to combine or modify Boolean expressions.
-
-2. Why do we need Logical Operators?
-
-Imagine a real-world rule.
-
-A student passes only if:
-
-Marks are 35 or more
-Attendance is 75% or more
-
-These are two conditions.
-
-Without logical operators, Python would have no way to combine them.
-
-Logical operators answer questions like:
-
-Are both conditions true?
-Is at least one condition true?
-Is a condition not true?
-3. Types of Logical Operators
-
-Python has three logical operators.
-
-| Operator | Meaning                             |
-| -------- | ----------------------------------- |
-| `and`    | Both conditions must be True        |
-| `or`     | At least one condition must be True |
-| `not`    | Reverses a Boolean value            |
-
-
-The and Operator
-Definition
-
-The and operator returns True only if both operands are True.
-
-If either operand is False, the result is False.
-
-5. Think Like Python
-
-Example:
-
-True and True
+```
 
 Python asks:
 
-Is the left operand True?
+```text
+Is 10 greater than 5?
+```
 
-✅ Yes.
+### Result
 
-Then asks:
-
-Is the right operand True?
-
-✅ Yes.
-
-Both are True.
-
-Python creates a new Boolean object:
-
+```text
 True
+```
 
-Another example:
+---
 
-True and False
+# 🤔 What If We Have Multiple Conditions?
 
-Python asks:
+Suppose we have two comparison expressions:
 
-Left?
-
-✅ True.
-
-Right?
-
-❌ False.
-
-Since both are not True:
-
-Python creates:
-
-False
-
-
-Truth Table
-
-This table is the foundation of logical operators.
-
-| Left  | Right | Left `and` Right |
-| ----- | ----- | ---------------- |
-| True  | True  | True             |
-| True  | False | False            |
-| False | True  | False            |
-| False | False | False            |
-
-
-Read it carefully.
-
-Only one row produces True.
-
-7. Internal Working
-
-Consider:
-
-5 > 3 and 10 > 7
-
-Let's go step by step.
-
-Step 1
-
-Python evaluates the left comparison.
-
-5 > 3
-
-Python creates a Boolean object:
-
-True
-Step 2
-
-Python evaluates the right comparison.
-
-10 > 7
-
-Python creates another Boolean object:
-
-True
-Step 3
-
-Now Python has:
-
-True and True
-
-It checks the truth table.
+```python
+10 > 5
+```
 
 Result:
 
+```text
 True
+```
 
-Python creates a new Boolean object for the final result.
+And:
 
-8. Memory Thinking
+```python
+20 > 15
+```
 
-Suppose:
+Result:
 
+```text
+True
+```
+
+Now we have:
+
+```text
+True
+```
+
+and:
+
+```text
+True
+```
+
+How can we combine these Boolean values?
+
+This is why **logical operators** exist.
+
+---
+
+# 1️⃣ Definition
+
+A **logical operator** is an operator that works with Boolean values:
+
+```text
+True
+```
+
+and:
+
+```text
+False
+```
+
+Logical operators are used to:
+
+- Combine Boolean expressions
+- Check multiple conditions
+- Modify Boolean results
+
+---
+
+# 2️⃣ Why Do We Need Logical Operators?
+
+Imagine a student passes only when **both** conditions are satisfied:
+
+```text
+Marks ≥ 35
+```
+
+AND:
+
+```text
+Attendance ≥ 75%
+```
+
+These are two separate conditions.
+
+Python needs a way to combine them.
+
+```python
+marks >= 35 and attendance >= 75
+```
+
+Logical operators allow Python to answer questions such as:
+
+```text
+Are both conditions true?
+```
+
+```text
+Is at least one condition true?
+```
+
+```text
+Is this condition not true?
+```
+
+---
+
+# 3️⃣ Types of Logical Operators
+
+Python has three logical operators:
+
+| Operator | Meaning |
+|---|---|
+| `and` | Both conditions must be true |
+| `or` | At least one condition must be true |
+| `not` | Reverses a Boolean value |
+
+---
+
+# 4️⃣ The `and` Operator
+
+## 📖 Definition
+
+The `and` operator returns:
+
+```text
+True
+```
+
+only when **both operands are True**.
+
+If even one operand is:
+
+```text
+False
+```
+
+the result is:
+
+```text
+False
+```
+
+---
+
+# 🧠 Think Like Python
+
+## Example 1
+
+```python
+True and True
+```
+
+Python asks:
+
+### Question 1
+
+```text
+Is the left operand True?
+```
+
+```text
+Yes ✅
+```
+
+### Question 2
+
+```text
+Is the right operand True?
+```
+
+```text
+Yes ✅
+```
+
+Both operands are `True`.
+
+Therefore:
+
+```text
+True and True
+        ↓
+      True
+```
+
+Python returns:
+
+```text
+True
+```
+
+---
+
+## Example 2
+
+```python
+True and False
+```
+
+Python asks:
+
+### Left Operand
+
+```text
+Is the left operand True?
+```
+
+```text
+Yes ✅
+```
+
+### Right Operand
+
+```text
+Is the right operand True?
+```
+
+```text
+No ❌
+```
+
+Both operands are not `True`.
+
+Therefore:
+
+```text
+True and False
+         ↓
+       False
+```
+
+---
+
+# 📊 Truth Table: `and`
+
+This is the foundation of logical operators.
+
+| Left | Right | `Left and Right` |
+|---|---|---|
+| `True` | `True` | `True` |
+| `True` | `False` | `False` |
+| `False` | `True` | `False` |
+| `False` | `False` | `False` |
+
+---
+
+# ⭐ Golden Rule of `and`
+
+```text
+and → BOTH must be True
+```
+
+Think:
+
+```text
+True AND True
+      ↓
+    True
+```
+
+Every other combination:
+
+```text
+False
+```
+
+---
+
+# 🧪 Real-World Example
+
+A student passes only if:
+
+```text
+Marks >= 35
+```
+
+AND:
+
+```text
+Attendance >= 75
+```
+
+Example:
+
+```python
+marks = 80
+attendance = 90
+
+result = marks >= 35 and attendance >= 75
+
+print(result)
+```
+
+Python evaluates:
+
+```text
+80 >= 35
+   ↓
+ True
+```
+
+and:
+
+```text
+90 >= 75
+   ↓
+ True
+```
+
+Then:
+
+```text
+True and True
+        ↓
+      True
+```
+
+### Final Result
+
+```text
+True
+```
+
+---
+
+# 🧠 Quick Revision
+
+```text
+Arithmetic Operators
+        ↓
+     Numbers
+        ↓
+      15
+```
+
+---
+
+```text
+Comparison Operators
+        ↓
+      Values
+        ↓
+   True / False
+```
+
+---
+
+```text
+Logical Operators
+        ↓
+Combine Boolean Results
+        ↓
+   True / False
+```
+
+---
+
+# 🏆 Final Rule
+
+```text
+and
+```
+
+means:
+
+```text
+BOTH conditions must be True.
+```
+
+```text
+True and True
+        ↓
+      True
+```
+
+```text
+True and False
+         ↓
+       False
+```
+
+```text
+False and True
+         ↓
+       False
+```
+
+```text
+False and False
+          ↓
+        False
+```
+
+> ⭐ **Memory Trick:** `and` is strict. It gives `True` only when **everything is True**.
+
+
+# 🧠 `and` Operator — Internal Working
+
+## 📖 Read the Truth Table Carefully
+
+The `and` operator has only **one combination** that produces:
+
+```text
+True
+```
+
+That combination is:
+
+```text
+True and True
+```
+
+All other combinations produce:
+
+```text
+False
+```
+
+---
+
+# 7️⃣ Internal Working
+
+Consider:
+
+```python
+5 > 3 and 10 > 7
+```
+
+Let's evaluate it step by step.
+
+---
+
+## Step 1: Evaluate the Left Comparison
+
+```python
+5 > 3
+```
+
+Python asks:
+
+```text
+Is 5 greater than 3?
+```
+
+The answer is:
+
+```text
+True
+```
+
+Python creates a Boolean object:
+
+```text
+True
+```
+
+---
+
+## Step 2: Evaluate the Right Comparison
+
+```python
+10 > 7
+```
+
+Python asks:
+
+```text
+Is 10 greater than 7?
+```
+
+The answer is:
+
+```text
+True
+```
+
+Python creates another Boolean object:
+
+```text
+True
+```
+
+---
+
+## Step 3: Apply the `and` Operator
+
+Now Python has:
+
+```python
+True and True
+```
+
+Python checks the truth table:
+
+```text
+True and True
+        ↓
+      True
+```
+
+### Final Result
+
+```text
+True
+```
+
+Python produces the final Boolean result:
+
+```text
+True
+```
+
+---
+
+# 🧠 8️⃣ Memory Thinking
+
+Consider:
+
+```python
 print(5 > 3 and 10 > 7)
+```
 
 Conceptually:
 
+```text
 5 > 3
    │
    ▼
- True Object
+True Object
+```
 
+```text
 10 > 7
-   │
-   ▼
- True Object
+    │
+    ▼
+True Object
+```
 
+Then:
+
+```text
 True and True
       │
       ▼
- Final True Object
+Final True Result
+```
 
+---
 
-Notice:
+## ⭐ Important Observation
 
 Python does not change the earlier Boolean objects.
 
-It creates a result based on them.
+The comparison results are used to produce the final logical result.
 
-Just like integers, Boolean values are immutable.
+Conceptually:
 
-Boolean Objects
+```text
+Comparison 1
+     ↓
+ Boolean Result
+     ↓
+     AND
+     ↑
+ Boolean Result
+     ↑
+Comparison 2
+```
+
+---
+
+# 🔒 Boolean Objects Are Immutable
 
 Remember:
 
+```python
 True
+```
 
-and
+and:
 
+```python
 False
+```
 
 are actual Python objects.
 
 Their type is:
 
+```python
 bool
+```
 
-Example:
+---
 
+## 🧪 Example
+
+```python
 print(type(True))
+```
 
-Output:
+### Output
 
+```text
 <class 'bool'>
+```
 
-Real-Life Examples
-Example 1
+---
+
+# 🌍 Real-Life Examples
+
+## 🎬 Example 1: Movie Entry
 
 You can enter a movie only if:
 
-Age is 18 or above.
-Ticket is valid.
+```text
+Age is 18 or above
+```
 
-Both must be true.
+AND:
 
-That is an and situation.
+```text
+Ticket is valid
+```
 
-Example 2
-
-You can submit an exam only if:
-
-You finished writing.
-Time has not expired.
-
-Again, both conditions are required.
-
-11. Common Beginner Mistake
-
-Many beginners think:
-
-True and False
-
-returns True because one side is True.
-
-That is incorrect.
-
-The word and means:
-
-Both conditions must be satisfied.
-
-Summary
-
-| Operator | Meaning     | Rule                         |
-| -------- | ----------- | ---------------------------- |
-| `and`    | Logical AND | Both operands must be `True` |
-
-🧠 One Important Concept Before More Practice
-
-Now let's understand the evaluation process more precisely.
-
-Consider:
-
-10 > 5 and 8 > 2
-
-Python conceptually evaluates:
-
-Step 1:
-10 > 5
-↓
-True
-
-Step 2:
-8 > 2
-↓
-True
-
-Step 3:
-True and True
-↓
-True
-
-So the logical operator receives the results of the comparisons.
+Both conditions must be true.
 
 Conceptually:
 
-Comparison 1 ──► Boolean
-                         \
-                          AND ──► Boolean result
-                         /
-Comparison 2 ──► Boolean
+```python
+age >= 18 and ticket_is_valid
+```
 
-This is the basic model you should remember.
+This is an `and` situation.
 
+---
 
+## 📝 Example 2: Exam Submission
 
-🐍 Logical Operator: and — Level 2
+You can submit an exam only if:
 
-So far, you learned:
+```text
+You finished writing
+```
 
-True and True
+AND:
 
-Result:
+```text
+Time has not expired
+```
 
+Both conditions are required.
+
+Conceptually:
+
+```python
+finished_writing and time_remaining
+```
+
+---
+
+# ⚠️ Common Beginner Mistake
+
+Many beginners think:
+
+```python
+True and False
+```
+
+returns:
+
+```text
 True
+```
 
-and:
+because one side is `True`.
 
-False and True
+❌ This is incorrect.
+
+The word:
+
+```text
+and
+```
+
+means:
+
+```text
+BOTH conditions must be satisfied.
+```
+
+Therefore:
+
+```text
+True and False
+         ↓
+       False
+```
+
+---
+
+# 📊 Summary
+
+| Operator | Meaning | Rule |
+|---|---|---|
+| `and` | Logical AND | Both operands must be `True` |
+
+---
+
+# 🧠 The Evaluation Process
+
+Consider:
+
+```python
+10 > 5 and 8 > 2
+```
+
+Python conceptually evaluates the expression in stages.
+
+---
+
+## Step 1: Evaluate Comparison 1
+
+```python
+10 > 5
+```
+
+```text
+True
+```
+
+---
+
+## Step 2: Evaluate Comparison 2
+
+```python
+8 > 2
+```
+
+```text
+True
+```
+
+---
+
+## Step 3: Apply the Logical Operator
+
+```python
+True and True
+        ↓
+      True
+```
+
+---
+
+# 🔗 The Basic Mental Model
+
+```text
+Comparison 1
+     │
+     ▼
+ Boolean Result
+     │
+     ├─────────────┐
+     │             │
+     ▼             ▼
+     AND ───────► Boolean Result
+     ▲
+     │
+ Boolean Result
+     ▲
+     │
+Comparison 2
+```
+
+Or more simply:
+
+```text
+Comparison 1 ──► Boolean
+                      \
+                       AND ──► Final Boolean Result
+                      /
+Comparison 2 ──► Boolean
+```
+
+---
+
+# 🏆 The Basic Model to Remember
+
+```text
+Comparison
+    ↓
+True / False
+    ↓
+Logical Operator
+    ↓
+True / False
+```
+
+For `and`:
+
+```text
+True and True
+        ↓
+      True
+```
+
+Everything else:
+
+```text
+False
+```
+
+> ⭐ **Key Concept:** Comparison operators produce Boolean results. Logical operators then combine those Boolean results.
+
+
+
+# 🐍 Logical Operator: `and` — Level 2
+
+So far, you learned the Boolean truth table:
+
+```python
+True and True
+```
 
 Result:
 
+```text
+True
+```
+
+And:
+
+```python
+False and True
+```
+
+Result:
+
+```text
 False
+```
 
-You learned and with Boolean values.
+Until now, we used `and` with Boolean values.
 
-Now we learn an important Python behavior:
+Now we will learn an important Python behavior:
 
-Python's and operator does not always return True or False.
+> ⭐ Python's `and` operator does **not always return `True` or `False`.
 
-This is a very important concept.
+This is one of the most important concepts in Python.
 
-1. First Example
+---
+
+# 1️⃣ First Example
+
+```python
 x = 10
 y = 20
 
 print(x and y)
+```
 
 What do you expect?
 
 Maybe:
 
+```text
 True
+```
 
 But Python outputs:
 
+```text
 20
+```
 
 Why?
 
-Because Python's and operator works differently from the simple Boolean truth table.
+Because Python's `and` operator does not simply follow the Boolean truth table.
 
-2. Python's Rule for and
+It follows a special value-returning rule.
 
-The simplified rule is:
+---
 
+# 2️⃣ Python's Rule for `and`
+
+For:
+
+```python
 A and B
+```
 
-Python checks A.
+Python first checks:
 
-If A is False-like:
+```text
+A
+```
+
+### If `A` is Falsy
+
+```text
 Return A
-If A is True-like:
+```
+
+### If `A` is Truthy
+
+```text
 Return B
+```
 
-So:
+---
 
+## 🧠 The Simple Rule
+
+```text
 A and B
+```
 
 means:
 
-"If A is truthy, give me B."
+```text
+If A is falsy:
+    return A
 
-3. Example
+Otherwise:
+    return B
+```
+
+Or remember:
+
+```text
+and → first FALSY value
+```
+
+If the first value is truthy, Python returns the second value.
+
+---
+
+# 3️⃣ Example: Both Values Are Truthy
+
+```python
 10 and 20
+```
 
 Python asks:
 
+```text
 Is 10 truthy?
+```
 
 Yes.
 
-So Python returns the second operand:
+Therefore, Python returns the second operand:
 
+```text
 20
+```
 
-Output:
+### Output
 
+```text
 20
-4. Another Example
+```
+
+---
+
+## 🧠 Evaluation
+
+```text
+10 and 20
+  │
+  ▼
+Is 10 falsy?
+  │
+  └── No
+       │
+       ▼
+   Return 20
+```
+
+---
+
+# 4️⃣ Example: First Value Is Falsy
+
+```python
 0 and 20
+```
 
 Python asks:
 
+```text
 Is 0 truthy?
+```
 
 No.
 
-So Python immediately returns:
+`0` is falsy.
 
+Therefore, Python immediately returns:
+
+```text
 0
+```
 
-Output:
+### Output
 
+```text
 0
+```
 
-It never needs to evaluate the second operand.
+Python does not need to continue evaluating the second side.
 
-5. Truthy and Falsy
+---
 
-Python considers some values as False-like.
+# ⭐ The Main Rule
 
-Common Falsy Values
+```text
+First value Falsy  → Return First Value
+First value Truthy → Return Second Value
+```
+
+---
+
+# 5️⃣ Truthy and Falsy Values
+
+Python considers certain values to be **Falsy**.
+
+## ❌ Common Falsy Values
+
+```python
 False
 0
 0.0
 ""
 None
-
-Also:
-
 []
 ()
 {}
 set()
+```
 
-These are considered Falsy.
+These values behave like:
 
-Most other values are Truthy:
+```text
+False
+```
 
+when Python checks their truthiness.
+
+---
+
+## ✅ Common Truthy Values
+
+```python
 True
 1
 10
 -5
 "Python"
 [1, 2]
-6. Internal Working
+```
+
+Most non-empty and non-zero values are truthy.
+
+---
+
+# 6️⃣ Internal Working
 
 Consider:
 
+```python
 x = 10
 y = 20
 
 result = x and y
+```
 
 Conceptually:
 
+```text
 x
 ↓
 10
@@ -2533,259 +5319,622 @@ No
 Return y
 ↓
 20
+```
 
 Therefore:
 
+```text
 result → 20
+```
 
-Notice:
+---
 
-result is not True
+# ⭐ Important Observation
 
-It contains the actual value:
+The result is:
 
+```text
 20
-7. Memory Model
+```
+
+It is **not**:
+
+```text
+True
+```
+
+The `and` operator returned the actual value:
+
+```text
+20
+```
+
+---
+
+# 7️⃣ Memory Model
+
+Consider:
+
+```python
 x = 10
 y = 20
+
 result = x and y
+```
 
 Conceptually:
 
+```text
 x ─────────────► [10]
+
 
 y ─────────────► [20]
                    ▲
                    │
 result ────────────┘
+```
 
-and does not create a new Boolean object here.
+The result is:
 
-It returns the second operand:
-
+```text
 20
+```
 
-and result refers to that value.
+Therefore:
 
-8. Compare With Comparison Operators
-Comparison
+```text
+result
+```
+
+refers to the same value returned by the expression.
+
+---
+
+# 🧠 Important Concept
+
+In this example:
+
+```python
+10 and 20
+```
+
+`and` does not need to create a new Boolean object:
+
+```text
+True
+```
+
+Instead, it returns an actual operand:
+
+```text
+20
+```
+
+---
+
+# 8️⃣ Comparison Operators vs Logical `and`
+
+## ⚖️ Comparison Operator
+
+```python
 10 > 5
+```
+
+Python asks:
+
+```text
+Is 10 greater than 5?
+```
 
 Result:
 
+```text
 True
+```
 
 A comparison operator produces a Boolean result.
 
-Logical and
+---
+
+## 🧠 Logical `and`
+
+```python
 10 and 20
+```
 
-Result:
+Python checks:
 
-20
-
-The and operator can return an actual operand.
-
-This is a very important difference.
-
-9. Short-Circuit Evaluation
-
-This is the technical name for what Python does.
-
-Consider:
-
-0 and 100
-
-Python evaluates:
-
-Is 0 falsy?
+```text
+Is 10 truthy?
+```
 
 Yes.
 
-Therefore, the answer is already known:
+Therefore:
 
-0
+```text
+Return 20
+```
 
-Python does not need to evaluate the second side.
+Result:
 
-This is called:
+```text
+20
+```
 
+---
+
+# ⭐ Important Difference
+
+| Expression | Result | What Happens? |
+|---|---|---|
+| `10 > 5` | `True` | Comparison returns a Boolean |
+| `10 and 20` | `20` | `and` returns an actual operand |
+
+> ⭐ Comparison operators return Boolean results. The `and` operator can return the actual value of an operand.
+
+---
+
+# 9️⃣ Short-Circuit Evaluation
+
+The technical name for this behavior is:
+
+```text
 Short-circuit evaluation
-
-10. Why Is This Useful?
+```
 
 Consider:
 
+```python
+0 and 100
+```
+
+Python evaluates:
+
+```text
+Is 0 falsy?
+```
+
+Yes.
+
+Python already knows the result must be:
+
+```text
+0
+```
+
+Therefore, it does not need to continue evaluating the second operand.
+
+```text
+0 and 100
+  ↓
+0
+```
+
+---
+
+# ⚡ Why Is This Called Short-Circuiting?
+
+Imagine an electrical circuit.
+
+If the circuit is already broken at the first point, electricity cannot continue.
+
+Similarly, in:
+
+```python
+0 and 100
+```
+
+the first value is already falsy.
+
+Therefore, Python stops early.
+
+```text
+First value is Falsy
+        ↓
+Stop immediately
+        ↓
+Return First Value
+```
+
+---
+
+# 🔟 Why Is This Useful?
+
+Consider:
+
+```python
 name = "Gajanand"
 
 print(name and "Name exists")
+```
 
-Since:
+Python asks:
 
-"Gajanand"
+```text
+Is "Gajanand" truthy?
+```
 
-is truthy, Python returns:
+Yes.
 
+Therefore, Python returns the second operand:
+
+```text
 "Name exists"
+```
 
-Output:
+### Output
 
+```text
 Name exists
+```
 
-Another:
+---
 
+## 🧪 Another Example
+
+```python
 name = ""
 
 print(name and "Name exists")
+```
 
-Since an empty string is falsy:
+Python asks:
 
+```text
+Is "" truthy?
+```
+
+No.
+
+An empty string is falsy.
+
+Therefore, Python returns:
+
+```text
 ""
+```
 
-is returned.
+---
 
-11. Important Rule
+# 1️⃣1️⃣ The Most Important Rule
 
 For:
 
+```python
 A and B
+```
 
-Think:
+Remember:
 
-If A is falsy → return A
-If A is truthy → return B
+```text
+If A is Falsy
+    ↓
+Return A
+```
 
-Examples:
+```text
+If A is Truthy
+    ↓
+Return B
+```
 
-10 and 20
+---
 
-↓
+# 📊 Examples
 
-20
-0 and 20
+| Expression | First Value | Result |
+|---|---|---|
+| `10 and 20` | `10` is Truthy | `20` |
+| `0 and 20` | `0` is Falsy | `0` |
+| `"Python" and "Developer"` | `"Python"` is Truthy | `"Developer"` |
+| `"" and "Developer"` | `""` is Falsy | `""` |
+| `True and False` | `True` is Truthy | `False` |
+| `False and True` | `False` is Falsy | `False` |
 
-↓
+---
 
-0
-"Python" and "Developer"
-
-↓
-
-"Developer"
-"" and "Developer"
-
-↓
-
-""
-🧠 One Important Detail
+# 🧠 One Important Detail
 
 When we say:
 
+```text
 10 is truthy
+```
 
-we are not saying:
+we are **not** saying:
 
+```python
 10 == True
+```
 
-These are different concepts.
+These are two different concepts.
 
+---
+
+## Comparison
+
+```python
 10 == True
+```
 
-↓
+Result:
 
+```text
 False
+```
+
+Because:
+
+```text
+10 is not equal to 1
+```
+
+---
 
 But:
 
+```python
 bool(10)
+```
 
-↓
+Result:
 
+```text
 True
+```
 
-So:
-| Expression   | Result  |
-| ------------ | ------- |
-| `10 == True` | `False` |
-| `bool(10)`   | `True`  |
+Because:
+
+```text
+10 is a truthy value
+```
+
+---
+
+# 📊 Truthiness vs Equality
+
+| Expression | Result | Meaning |
+|---|---|---|
+| `10 == True` | `False` | Does 10 equal True? |
+| `bool(10)` | `True` | Is 10 truthy? |
+
+---
+
+# 🏆 Final Mental Model
+
+## `and`
+
+```text
+A and B
+```
+
+### First Check `A`
+
+```text
+Is A Falsy?
+```
+
+If yes:
+
+```text
+Return A
+```
+
+If no:
+
+```text
+Return B
+```
+
+---
+
+# 🔥 Memory Trick
+
+```text
+and → Stop at the first FALSY value
+```
+
+Examples:
+
+```python
+0 and 20
+```
+
+```text
+0
+```
+
+Because `0` is the first falsy value.
+
+---
+
+```python
+10 and 20
+```
+
+```text
+20
+```
+
+Because `10` is truthy, so Python continues to the second value.
+
+---
+
+```python
+"Python" and "Developer"
+```
+
+```text
+"Developer"
+```
+
+Because `"Python"` is truthy.
+
+---
+
+```python
+"" and "Developer"
+```
+
+```text
+""
+```
+
+Because the empty string is falsy.
+
+> ⭐ **Key Concept:** Python's `and` operator does not necessarily return a Boolean. It returns the first falsy operand, or the last operand if all values are truthy.
     
-🐍 Truthy and Falsy Values
-1. What Does "Truthy" Mean?
+# 🐍 Truthy and Falsy Values
 
-A value is truthy when Python treats it as:
+---
 
+# 1️⃣ What Does "Truthy" Mean?
+
+A value is **Truthy** when Python treats it as:
+
+```text
 True
+```
 
 in a Boolean context.
 
-Example:
+---
 
+## 🧪 Example
+
+```python
 bool(10)
+```
 
-Output:
+### Output
 
+```text
 True
+```
 
-So:
+Therefore:
 
+```text
 10 → Truthy
+```
 
-But remember:
+---
 
+# ⚠️ Important: Truthiness Is Not Equality
+
+Remember:
+
+```python
 10 == True
+```
 
-is:
+returns:
 
+```text
 False
+```
 
-These are different concepts.
+But:
 
-Truthy means:
+```python
+bool(10)
+```
 
-"Python considers this value as logically True."
+returns:
 
-2. What Does "Falsy" Mean?
+```text
+True
+```
 
-A value is falsy when Python treats it as:
+These are two different concepts.
 
+### `10 == True`
+
+Asks:
+
+```text
+Does 10 equal True?
+```
+
+### `bool(10)`
+
+Asks:
+
+```text
+Does Python consider 10 logically True?
+```
+
+---
+
+## 🧠 Truthy Means:
+
+> "Python considers this value logically True."
+
+---
+
+# 2️⃣ What Does "Falsy" Mean?
+
+A value is **Falsy** when Python treats it as:
+
+```text
 False
+```
 
 in a Boolean context.
 
-Example:
+---
 
+## 🧪 Example
+
+```python
 bool(0)
+```
 
-Output:
+### Output
 
+```text
 False
+```
 
-So:
+Therefore:
 
+```text
 0 → Falsy
-3. Is There a Fixed List?
+```
 
-Yes. Python has a small set of important falsy values.
+---
 
-🔴 Falsy Values:
+# 3️⃣ Is There a Fixed List of Falsy Values?
 
-| Value   | Type             |
-| ------- | ---------------- |
-| `False` | bool             |
-| `None`  | NoneType         |
-| `0`     | int              |
-| `0.0`   | float            |
-| `0j`    | complex          |
-| `""`    | empty string     |
-| `[]`    | empty list       |
-| `()`    | empty tuple      |
-| `{}`    | empty dictionary |
-| `set()` | empty set        |
+Yes.
+
+Python has a small set of important built-in falsy values.
+
+## 🔴 Main Falsy Values
+
+| Value | Type |
+|---|---|
+| `False` | `bool` |
+| `None` | `NoneType` |
+| `0` | `int` |
+| `0.0` | `float` |
+| `0j` | `complex` |
+| `""` | Empty string |
+| `[]` | Empty list |
+| `()` | Empty tuple |
+| `{}` | Empty dictionary |
+| `set()` | Empty set |
 
 These are the main built-in falsy values.
 
-Everything Else Is Generally Truthy
+---
 
+# 4️⃣ Everything Else Is Generally Truthy
+
+Common examples:
+
+```python
 True
 1
 10
@@ -2798,297 +5947,799 @@ True
 (1,)
 {"a": 1}
 {1}
+```
 
-⚠️ Important
+---
+
+# ⚠️ Important: `0` vs `[0]`
 
 Look carefully:
 
+```python
 0
+```
 
-is falsy.
+is:
+
+```text
+Falsy
+```
 
 But:
 
+```python
 [0]
+```
 
-is truthy.
+is:
+
+```text
+Truthy
+```
 
 Why?
 
 Because:
 
+```text
 0
+```
 
 is the integer zero.
 
 But:
 
+```text
 [0]
+```
 
 is a non-empty list.
 
-Python checks whether the container is empty, not whether its contents are zero.
+Python checks whether the container is empty.
 
-The Main Rule
+It does **not** check whether the contents are zero.
 
-You can always test a value using:
+---
 
-bool(value)
+## 🧠 The Main Rule
 
-Example:
+```text
+Empty Container → Falsy
+Non-Empty Container → Truthy
+```
 
-bool(10)
+Therefore:
 
-Output:
-
-True
-
-Example:
-
-bool(0)
-
-Output:
-
-False
-6. Numeric Values
-Integer
-bool(0)
-False
-bool(1)
-True
-bool(-1)
-True
-Rule:
-0 → Falsy
-Any non-zero number → Truthy
-
-So:
-
-0       → False
-1       → True
--1      → True
-100     → True
--999    → True
-7. Float Values
-bool(0.0)
-
-↓
-
-False
-bool(3.14)
-
-↓
-
-True
-bool(-2.5)
-
-↓
-
-True
-Rule:
-0.0 → Falsy
-Any non-zero float → Truthy
-8. Strings
-Empty String
-bool("")
-
-↓
-
-False
-
-Because the string contains zero characters.
-
-Non-Empty String
-bool("Python")
-
-↓
-
-True
-
-Even:
-
-bool("0")
-
-↓
-
-True
-
-Why?
-
-Because "0" is a string containing one character.
-
-It is not the integer 0.
-
-Compare:
-
-bool(0)      # False
-bool("0")    # True
-
-Very important.
-
-9. Spaces
-bool(" ")
-
-↓
-
-True
-
-Why?
-
-Because the string contains one space character.
-
-It is not empty.
-
-""   → 0 characters → Falsy
-" "  → 1 character  → Truthy
-10. Lists
+```python
 bool([])
+```
 
-↓
-
+```text
 False
-
-Empty list = falsy.
+```
 
 But:
 
-bool([1])
-
-↓
-
-True
-
-And:
-
+```python
 bool([0])
+```
 
-↓
-
+```text
 True
+```
 
-Again:
+---
 
-Python checks whether the list is empty.
+# 5️⃣ How Can You Test Truthiness?
 
-11. Tuples
-bool(())
+You can always use:
 
-↓
+```python
+bool(value)
+```
 
+---
+
+## 🧪 Example
+
+```python
+bool(10)
+```
+
+```text
+True
+```
+
+---
+
+```python
+bool(0)
+```
+
+```text
 False
-bool((1,))
+```
 
-↓
+---
 
-True
-12. Dictionaries
-bool({})
+# 6️⃣ Numeric Values: Integers
 
-↓
+```python
+bool(0)
+```
 
+```text
 False
-bool({"name": "Gajanand"})
+```
 
-↓
+---
 
+```python
+bool(1)
+```
+
+```text
 True
-13. Sets
-bool(set())
+```
 
-↓
+---
 
+```python
+bool(-1)
+```
+
+```text
+True
+```
+
+---
+
+## ⭐ Integer Rule
+
+```text
+0 → Falsy
+```
+
+```text
+Any non-zero number → Truthy
+```
+
+---
+
+### Examples
+
+| Value | Boolean Value |
+|---:|:---:|
+| `0` | `False` |
+| `1` | `True` |
+| `-1` | `True` |
+| `100` | `True` |
+| `-999` | `True` |
+
+---
+
+# 7️⃣ Float Values
+
+```python
+bool(0.0)
+```
+
+```text
 False
-bool({1})
+```
 
-↓
+---
 
+```python
+bool(3.14)
+```
+
+```text
 True
-14. Memory Model
+```
+
+---
+
+```python
+bool(-2.5)
+```
+
+```text
+True
+```
+
+---
+
+## ⭐ Float Rule
+
+```text
+0.0 → Falsy
+```
+
+```text
+Any non-zero float → Truthy
+```
+
+---
+
+# 8️⃣ Strings
+
+## 🔴 Empty String
+
+```python
+bool("")
+```
+
+```text
+False
+```
+
+Why?
+
+Because the string contains:
+
+```text
+0 characters
+```
+
+Therefore:
+
+```text
+"" → Falsy
+```
+
+---
+
+## 🟢 Non-Empty String
+
+```python
+bool("Python")
+```
+
+```text
+True
+```
+
+Any non-empty string is generally truthy.
+
+---
+
+# ⚠️ `"0"` Is Truthy
 
 Consider:
 
+```python
+bool("0")
+```
+
+The result is:
+
+```text
+True
+```
+
+Why?
+
+Because:
+
+```text
+"0"
+```
+
+is a string containing one character.
+
+It is not the integer:
+
+```text
+0
+```
+
+---
+
+## 🧠 Important Comparison
+
+```python
+bool(0)
+```
+
+```text
+False
+```
+
+---
+
+```python
+bool("0")
+```
+
+```text
+True
+```
+
+---
+
+| Value | Type | Truthiness |
+|---|---|---|
+| `0` | `int` | Falsy |
+| `"0"` | `str` | Truthy |
+
+> ⭐ The value's type and whether it is empty matter.
+
+---
+
+# 9️⃣ Spaces in Strings
+
+Consider:
+
+```python
+bool(" ")
+```
+
+### Result
+
+```text
+True
+```
+
+Why?
+
+Because the string contains:
+
+```text
+1 space character
+```
+
+It is not empty.
+
+---
+
+## 🧠 Compare
+
+```text
+""   → 0 characters → Falsy
+```
+
+```text
+" "  → 1 character  → Truthy
+```
+
+---
+
+# 🔟 Lists
+
+## Empty List
+
+```python
+bool([])
+```
+
+```text
+False
+```
+
+An empty list is:
+
+```text
+Falsy
+```
+
+---
+
+## Non-Empty List
+
+```python
+bool([1])
+```
+
+```text
+True
+```
+
+---
+
+```python
+bool([0])
+```
+
+```text
+True
+```
+
+---
+
+## ⭐ Important Rule
+
+Python checks:
+
+```text
+Is the list empty?
+```
+
+It does not check:
+
+```text
+Are the elements inside the list truthy?
+```
+
+Therefore:
+
+```text
+[]    → Falsy
+[0]   → Truthy
+[None] → Truthy
+```
+
+because all three non-empty lists contain at least one element.
+
+---
+
+# 1️⃣1️⃣ Tuples
+
+## Empty Tuple
+
+```python
+bool(())
+```
+
+```text
+False
+```
+
+---
+
+## Non-Empty Tuple
+
+```python
+bool((1,))
+```
+
+```text
+True
+```
+
+---
+
+```text
+()      → Empty → Falsy
+(1,)    → Non-empty → Truthy
+```
+
+---
+
+# 1️⃣2️⃣ Dictionaries
+
+## Empty Dictionary
+
+```python
+bool({})
+```
+
+```text
+False
+```
+
+---
+
+## Non-Empty Dictionary
+
+```python
+bool({"name": "Gajanand"})
+```
+
+```text
+True
+```
+
+---
+
+```text
+{}                  → Empty → Falsy
+{"name": "Gajanand"} → Non-empty → Truthy
+```
+
+---
+
+# 1️⃣3️⃣ Sets
+
+## Empty Set
+
+```python
+bool(set())
+```
+
+```text
+False
+```
+
+---
+
+## Non-Empty Set
+
+```python
+bool({1})
+```
+
+```text
+True
+```
+
+---
+
+```text
+set() → Empty → Falsy
+{1}    → Non-empty → Truthy
+```
+
+---
+
+# 1️⃣4️⃣ Memory Model
+
+Consider:
+
+```python
 x = 0
+```
 
 Conceptually:
 
+```text
 x ─────► [0]
           │
-          │
-       Falsy
+          ▼
+        Falsy
+```
 
 Now:
 
+```python
 y = 10
+```
+
+Conceptually:
+
+```text
 y ─────► [10]
           │
-          │
-       Truthy
+          ▼
+        Truthy
+```
+
+---
+
+## ⭐ Important
 
 The object itself does not change.
 
 Python simply evaluates the object's Boolean truth value when needed.
 
-15. Truthiness Is Not the Same as Type
+Conceptually:
+
+```text
+Object
+   ↓
+Python checks truthiness
+   ↓
+True or False
+```
+
+---
+
+# 1️⃣5️⃣ Truthiness Is Not a Data Type
 
 This is extremely important.
 
+Consider:
+
+```python
 10
+```
 
-is:
+Its type is:
 
+```text
 int
+```
 
-and is:
+Its truthiness is:
 
+```text
 Truthy
+```
 
-But:
+---
 
+Now consider:
+
+```python
 "Python"
+```
 
-is:
+Its type is:
 
+```text
 str
+```
 
-and is also:
+Its truthiness is:
 
+```text
 Truthy
+```
 
-So truthy/falsy is not a data type.
+---
 
-It is a logical evaluation.
+## 🧠 Important Concept
 
-16. The and Connection
+```text
+Data Type
+```
+
+and:
+
+```text
+Truthiness
+```
+
+are different concepts.
+
+---
+
+| Value | Data Type | Truthiness |
+|---|---|---|
+| `10` | `int` | Truthy |
+| `"Python"` | `str` | Truthy |
+| `0` | `int` | Falsy |
+| `""` | `str` | Falsy |
+| `[]` | `list` | Falsy |
+| `[0]` | `list` | Truthy |
+
+> ⭐ Truthy and Falsy are not data types. They are logical evaluations.
+
+---
+
+# 1️⃣6️⃣ Connection With the `and` Operator
 
 Now return to:
 
+```python
 10 and 20
+```
 
 Python asks:
 
+```text
 Is 10 truthy?
+```
 
 Yes.
 
-So:
+Therefore:
 
+```text
 Return 20
+```
+
+### Result
+
+```text
+20
+```
+
+---
+
+Now:
+
+```python
 0 and 20
+```
 
 Python asks:
 
+```text
 Is 0 truthy?
+```
 
 No.
 
-So:
+Therefore:
 
+```text
 Return 0
+```
 
+### Result
 
-## Falsy Values in Python
+```text
+0
+```
 
-The following values are considered **Falsy** in Python:
+---
+
+# 🧠 The `and` Rule
+
+```text
+A and B
+```
+
+### If `A` is Falsy:
+
+```text
+Return A
+```
+
+### If `A` is Truthy:
+
+```text
+Return B
+```
+
+---
+
+# 🏆 Final Truthiness Revision
+
+| Value | Truthiness |
+|---|---|
+| `False` | Falsy |
+| `None` | Falsy |
+| `0` | Falsy |
+| `0.0` | Falsy |
+| `0j` | Falsy |
+| `""` | Falsy |
+| `[]` | Falsy |
+| `()` | Falsy |
+| `{}` | Falsy |
+| `set()` | Falsy |
+| `True` | Truthy |
+| `1` | Truthy |
+| `-1` | Truthy |
+| `"0"` | Truthy |
+| `" "` | Truthy |
+| `[0]` | Truthy |
+| `(1,)` | Truthy |
+| `{"a": 1}` | Truthy |
+| `{1}` | Truthy |
+
+---
+
+# 🔥 Memory Rules
+
+```text
+Zero → Falsy
+```
+
+```text
+Empty → Falsy
+```
+
+```text
+Non-zero → Truthy
+```
+
+```text
+Non-empty → Truthy
+```
+
+---
+
+> ⭐ **Key Concept:** Python does not ask whether a value is literally `True` or `False`. In a Boolean context, Python evaluates the value's truthiness.
+
+# 🐍 Falsy Values and the `and` Operator
+
+---
+
+# 🔴 Falsy Values in Python
+
+The following values are considered **Falsy** in Python.
+
+When Python evaluates them in a Boolean context, they behave like:
+
+```text
+False
+```
+
+---
+
+## 📊 Complete Falsy Values Table
 
 | Falsy Value | Type |
 |---|---|
@@ -3103,614 +6754,1744 @@ The following values are considered **Falsy** in Python:
 | `{}` | Empty dictionary |
 | `set()` | Empty set |
 
+---
 
-7. The Easiest Rule for and
+# 🧠 The Easiest Rule for `and`
+
+For:
+
+```python
 A and B
+```
 
 Python asks:
 
+```text
 Is A falsy?
+```
 
-If yes:
+---
 
+## If `A` Is Falsy
+
+```text
 Return A
+```
 
-If no:
+---
 
+## If `A` Is Truthy
+
+```text
 Return B
+```
 
-Examples:
+---
 
+# 📖 Examples
+
+## Example 1
+
+```python
 10 and 20
+```
 
-10 is truthy:
+Python checks:
 
-→ 20
-0 and 20
+```text
+Is 10 falsy?
+```
 
-0 is falsy:
+No.
 
-→ 0
-"Python" and "Developer"
+`10` is truthy.
 
-"Python" is truthy:
+Therefore:
 
-→ "Developer"
-"" and "Developer"
+```text
+Return 20
+```
 
-"" is falsy:
+### Result
 
-→ ""
-
-Very Important: bool() vs and
-
-These are different:
-
-bool(10)
-
-Output:
-
-True
-
-But:
-
-10 and 20
-
-Output:
-
+```text
 20
+```
 
-Why?
+---
 
-bool() asks:
+## Example 2
 
-"What is the Boolean value of 10?"
+```python
+0 and 20
+```
 
-and asks:
+Python checks:
 
-"Is the first value falsy? If not, give me the second value."
+```text
+Is 0 falsy?
+```
 
-🧠 Remember This
-bool(value)
+Yes.
 
-Converts the truthiness into:
+Therefore:
 
-True or False
+```text
+Return 0
+```
 
-Example:
+### Result
 
-bool(10) → True
-bool(0)  → False
-and
+```text
+0
+```
 
-Returns one of the actual operands:
+---
 
-10 and 20 → 20
-0 and 20  → 0
+## Example 3
 
-## 🧠 The Key Difference
+```python
+"Python" and "Developer"
+```
 
-| Expression   | What happens                  | Output  |
-| ------------ | ----------------------------- | ------- |
-| `bool(0)`    | Convert truthiness to Boolean | `False` |
-| `0 and 20`   | Return the falsy operand      | `0`     |
-| `bool([])`   | Convert truthiness to Boolean | `False` |
-| `[] and [1]` | Return the falsy operand      | `[]`    |
+Python checks:
 
+```text
+Is "Python" falsy?
+```
 
-################################################################################################
+No.
 
-🐍 Logical Operator 2: or
+Therefore:
 
-Python has three main logical operators:
+```text
+Return "Developer"
+```
 
-1. and
-2. or
-3. not
+### Result
 
-We have completed the basic and concept. Now let's start or from the beginner level.
+```text
+"Developer"
+```
 
-1. What Is or?
+---
 
-or means:
+## Example 4
 
-At least one condition must be True.
+```python
+"" and "Developer"
+```
 
-Example:
+Python checks:
 
-True or False
+```text
+Is "" falsy?
+```
 
-Output:
+Yes.
 
-True
+Therefore:
 
-Why?
+```text
+Return ""
+```
 
-Because one side is True.
+### Result
 
-Truth Table
+```text
+""
+```
 
-| A       | B       | `A or B` |
-| ------- | ------- | -------- |
-| `True`  | `True`  | `True`   |
-| `True`  | `False` | `True`   |
-| `False` | `True`  | `True`   |
-| `False` | `False` | `False`  |
+---
 
-The main rule:
+# ⚠️ Very Important: `bool()` vs `and`
 
-and → Both must be True
-or  → At least one must be True
+These are different operations.
 
-3. Simple Examples
-print(True or True)
+---
 
-Output:
-
-True
-
-Both are True.
-
-print(True or False)
-
-Output:
-
-True
-
-The first condition is already True.
-
-print(False or True)
-
-Output:
-
-True
-
-The second condition is True.
-
-print(False or False)
-
-Output:
-
-False
-
-Neither condition is True.
-
-4. With Comparisons
-print(10 > 5 or 10 < 2)
-
-Python first evaluates the comparisons:
-
-10 > 5 → True
-10 < 2 → False
-
-Then:
-
-True or False
-
-Result:
-
-True
-5. Internal Evaluation
+## `bool()`
 
 Consider:
 
+```python
+bool(10)
+```
+
+Output:
+
+```text
+True
+```
+
+Why?
+
+Because `bool()` asks:
+
+```text
+"What is the Boolean value of 10?"
+```
+
+It converts the truthiness of the value into:
+
+```text
+True
+```
+
+or:
+
+```text
+False
+```
+
+---
+
+## `and`
+
+Now consider:
+
+```python
+10 and 20
+```
+
+Output:
+
+```text
+20
+```
+
+Why?
+
+Because `and` asks:
+
+```text
+"Is the first value falsy?"
+```
+
+If the first value is not falsy:
+
+```text
+Return the second operand.
+```
+
+---
+
+# 🧠 Remember This
+
+## `bool(value)`
+
+Converts truthiness into:
+
+```text
+True
+```
+
+or:
+
+```text
+False
+```
+
+### Examples
+
+```python
+bool(10)
+```
+
+```text
+True
+```
+
+---
+
+```python
+bool(0)
+```
+
+```text
+False
+```
+
+---
+
+## `and`
+
+Returns one of the actual operands.
+
+```python
+10 and 20
+```
+
+```text
+20
+```
+
+---
+
+```python
+0 and 20
+```
+
+```text
+0
+```
+
+---
+
+# 🧠 The Key Difference
+
+| Expression | What Happens | Output |
+|---|---|---|
+| `bool(0)` | Converts truthiness to Boolean | `False` |
+| `0 and 20` | Returns the falsy operand | `0` |
+| `bool([])` | Converts truthiness to Boolean | `False` |
+| `[] and [1]` | Returns the falsy operand | `[]` |
+
+---
+
+# 🔥 Final Mental Model
+
+```text
+bool(value)
+```
+
+means:
+
+```text
+Tell me whether this value is Truthy or Falsy.
+```
+
+Result:
+
+```text
+True / False
+```
+
+---
+
+```text
+A and B
+```
+
+means:
+
+```text
+If A is falsy → return A
+If A is truthy → return B
+```
+
+---
+
+# 🏆 One-Line Memory Trick
+
+```text
+bool() → tells you the truthiness
+```
+
+```text
+and → returns an actual operand
+```
+
+> ⭐ **Key Concept:** `bool()` converts a value's truthiness into `True` or `False`, while `and` uses truthiness to decide which actual operand to return.
+
+
+# 🐍 Logical Operator 2: `or`
+
+Python has three main logical operators:
+
+1. `and`
+2. `or`
+3. `not`
+
+We have already learned the basic concept of:
+
+```python
+and
+```
+
+Now let's learn:
+
+```python
+or
+```
+
+from the beginner level.
+
+---
+
+# 1️⃣ What Is `or`?
+
+The `or` operator means:
+
+```text
+At least one condition must be True.
+```
+
+---
+
+## 🧪 Example
+
+```python
+True or False
+```
+
+### Result
+
+```text
+True
+```
+
+Why?
+
+Because at least one side is:
+
+```text
+True
+```
+
+---
+
+# 2️⃣ Truth Table
+
+| A | B | `A or B` |
+|---|---|---|
+| `True` | `True` | `True` |
+| `True` | `False` | `True` |
+| `False` | `True` | `True` |
+| `False` | `False` | `False` |
+
+---
+
+# ⭐ Main Rule
+
+```text
+and → Both must be True
+```
+
+```text
+or  → At least one must be True
+```
+
+---
+
+# 3️⃣ Simple Examples
+
+## Example 1
+
+```python
+print(True or True)
+```
+
+### Result
+
+```text
+True
+```
+
+Both values are:
+
+```text
+True
+```
+
+Therefore:
+
+```text
+True or True
+        ↓
+      True
+```
+
+---
+
+## Example 2
+
+```python
+print(True or False)
+```
+
+### Result
+
+```text
+True
+```
+
+The first value is already:
+
+```text
+True
+```
+
+Therefore, the `or` condition is satisfied.
+
+---
+
+## Example 3
+
+```python
+print(False or True)
+```
+
+### Result
+
+```text
+True
+```
+
+The second value is:
+
+```text
+True
+```
+
+Therefore:
+
+```text
+False or True
+         ↓
+       True
+```
+
+---
+
+## Example 4
+
+```python
+print(False or False)
+```
+
+### Result
+
+```text
+False
+```
+
+Neither value is:
+
+```text
+True
+```
+
+Therefore:
+
+```text
+False or False
+          ↓
+        False
+```
+
+---
+
+# 4️⃣ `or` With Comparisons
+
+Consider:
+
+```python
+print(10 > 5 or 10 < 2)
+```
+
+Python first evaluates the comparison expressions.
+
+---
+
+## Step 1
+
+```python
+10 > 5
+```
+
+Result:
+
+```text
+True
+```
+
+---
+
+## Step 2
+
+```python
+10 < 2
+```
+
+Result:
+
+```text
+False
+```
+
+---
+
+## Step 3: Apply `or`
+
+Python now has:
+
+```python
+True or False
+```
+
+Therefore:
+
+```text
+True
+```
+
+### Final Result
+
+```text
+True
+```
+
+---
+
+# 5️⃣ Internal Evaluation
+
+Consider:
+
+```python
 x = 10
 y = 20
 
 print(x > 5 or y < 10)
+```
 
-Conceptually:
+---
 
-Step 1:
+## Step 1: Evaluate the First Comparison
+
+```python
 x > 5
-↓
+```
+
+Substitute the value:
+
+```python
 10 > 5
-↓
-True
-
-Then:
-
-Step 2:
-True or ?
-
-Since or already has one True value, the final Boolean result is:
-
-True
-6. Important Difference from and
-
-For Boolean values:
-
-True and False
-
-↓
-
-False
-
-But:
-
-True or False
-
-↓
-
-True
-
-Remember:
-
-AND:
-True + False → False
-
-OR:
-True + False → True
-7. or Also Uses Truthy and Falsy Values
-
-Just like and, or does not always return True or False.
-
-Example:
-
-print(10 or 20)
-
-Output:
-
-10
-
-Why?
-
-10 is truthy.
-
-Python sees that the first value is already truthy, so it returns the first value.
-
-Example
-print(0 or 20)
-
-Python checks:
-
-0 → Falsy
-
-So Python goes to the second value:
-
-20 → Truthy
+```
 
 Result:
 
+```text
+True
+```
+
+---
+
+## Step 2: Apply `or`
+
+Python now has:
+
+```text
+True or ?
+```
+
+Since `or` already has one truthy value:
+
+```text
+True
+```
+
+the final Boolean result is already known.
+
+Therefore:
+
+```text
+True
+```
+
+---
+
+# 6️⃣ Important Difference Between `and` and `or`
+
+Consider:
+
+```python
+True and False
+```
+
+Result:
+
+```text
+False
+```
+
+But:
+
+```python
+True or False
+```
+
+Result:
+
+```text
+True
+```
+
+---
+
+# 🧠 Remember
+
+## `and`
+
+```text
+True + False
+      ↓
+    False
+```
+
+Because both values must be true.
+
+---
+
+## `or`
+
+```text
+True + False
+      ↓
+     True
+```
+
+Because at least one value is true.
+
+---
+
+# 7️⃣ `or` Also Uses Truthy and Falsy Values
+
+Just like `and`, the `or` operator does not always return:
+
+```text
+True
+```
+
+or:
+
+```text
+False
+```
+
+It can return the actual operand.
+
+---
+
+## 🧪 Example
+
+```python
+print(10 or 20)
+```
+
+### Output
+
+```text
+10
+```
+
+Why?
+
+Python checks the first value:
+
+```text
+10
+```
+
+Is `10` truthy?
+
+```text
+Yes
+```
+
+Therefore, Python returns the first value:
+
+```text
+10
+```
+
+---
+
+## 🧪 Another Example
+
+```python
+print(0 or 20)
+```
+
+Python checks:
+
+```text
+0 → Falsy
+```
+
+Therefore, Python continues to the second value:
+
+```text
+20 → Truthy
+```
+
+The result is:
+
+```text
 20
+```
 
-So:
+Therefore:
 
-0 or 20 → 20
-8. Exact Rule for or
+```text
+0 or 20
+      ↓
+     20
+```
+
+---
+
+# 8️⃣ Exact Rule for `or`
 
 For:
 
+```python
 A or B
+```
 
 Python conceptually does:
 
+```text
 If A is truthy:
     return A
 
 Otherwise:
     return B
+```
 
-Compare with and:
+---
 
+# ⚖️ Compare With `and`
+
+## `and`
+
+```python
 A and B
+```
 
+```text
 If A is falsy:
     return A
 
 Otherwise:
     return B
+```
 
-This is the key difference.
+---
 
-9. Examples
+## `or`
+
+```python
+A or B
+```
+
+```text
+If A is truthy:
+    return A
+
+Otherwise:
+    return B
+```
+
+---
+
+# ⭐ Key Difference
+
+| Operator | First Value Is Falsy | First Value Is Truthy |
+|---|---|---|
+| `and` | Return first value | Return second value |
+| `or` | Return second value | Return first value |
+
+---
+
+# 9️⃣ Examples
+
+## Example 1
+
+```python
 10 or 20
+```
 
-First value is truthy:
+First value:
 
+```text
 10 → Truthy
+```
 
-Return:
+Therefore:
 
+```text
+Return 10
+```
+
+### Result
+
+```text
 10
+```
 
+---
 
+## Example 2
+
+```python
 0 or 20
+```
 
-First value is falsy:
+First value:
 
+```text
 0 → Falsy
+```
 
-Return second:
+Therefore:
 
+```text
+Return the second value
+```
+
+### Result
+
+```text
 20
+```
 
+---
 
+## Example 3
+
+```python
 "" or "Python"
+```
 
-First value is falsy:
+First value:
 
+```text
 "" → Falsy
+```
 
-Return:
+Therefore:
 
+```text
+Return "Python"
+```
+
+### Result
+
+```text
 "Python"
+```
 
+---
 
+## Example 4
+
+```python
 "Python" or "Developer"
+```
 
-First value is truthy:
+First value:
 
+```text
 "Python" → Truthy
+```
 
-Return:
+Therefore:
 
+```text
+Return "Python"
+```
+
+### Result
+
+```text
 "Python"
+```
 
-## 🧠 Compare and and or  
+---
 
-| Expression  | Result |
-| ----------- | ------ |
-| `10 and 20` | `20`   |
-| `0 and 20`  | `0`    |
-| `10 or 20`  | `10`   |
-| `0 or 20`   | `20`   |
+# 🧠 Compare `and` and `or`
 
+| Expression | Result |
+|---|---|
+| `10 and 20` | `20` |
+| `0 and 20` | `0` |
+| `10 or 20` | `10` |
+| `0 or 20` | `20` |
 
-Simple memory trick:
+---
 
+# 🔥 Simple Memory Trick
+
+```text
 AND → Find the first Falsy value
+```
+
+```text
 OR  → Find the first Truthy value
+```
 
-If no such value exists, Python returns the last value.
+---
 
+## `and`
 
+```python
+10 and 0 and 20
+```
 
-# Logical Operator 3: not
+Python searches for the first falsy value:
 
-1. What Is not?
-
-not means:
-
-Reverse the Boolean result.
-
-If something is:
-
-True
-
-then:
-
-not True
-
-becomes:
-
-False
-
-If something is:
-
-False
-
-then:
-
-not False
-
-becomes:
-
-True
-
-Basic Truth Table 
-
-| Value   | `not value` |
-| ------- | ----------- |
-| `True`  | `False`     |
-| `False` | `True`      |
-
-
-So:
-
-not True
-
-↓
-
-False
-
-And:
-
-not False
-
-↓
-
-True
-3. not With Comparisons
-
-Consider:
-
-x = 10
-
-print(not x > 5)
-
-First Python evaluates the comparison:
-
-x > 5
-
-Substitute:
-
-10 > 5
+```text
+10 → Truthy
+0  → Falsy
+```
 
 Result:
 
-True
+```text
+0
+```
 
-Then not reverses it:
+---
 
-not True
+## `or`
 
-Final result:
+```python
+0 or "" or 20
+```
 
-False
+Python searches for the first truthy value:
 
-So:
-
-not (10 > 5) → False
-
-
-4. Another Example
-x = 10
-
-print(not x < 5)
-
-First:
-
-10 < 5 → False
-
-Then:
-
-not False → True
-
-Output:
-
-True
-5. not With Truthy and Falsy Values
-
-This is where your previous learning becomes useful.
-
-Example
-print(not 10)
-
-Python checks:
-
-10 → Truthy
-
-Then:
-
-not Truthy → False
-
-Output:
-
-False
-Example
-print(not 0)
-
-Python checks:
-
-0 → Falsy
-
-Then:
-
-not Falsy → True
-
-Output:
-
-True
-6. not With Strings
-print(not "")
-
-Empty string:
-
+```text
+0  → Falsy
 "" → Falsy
+20 → Truthy
+```
 
-Therefore:
+Result:
 
-not False → True
-
-Output:
-
-True
-print(not "Python")
-
-"Python" is non-empty:
-
-"Python" → Truthy
-
-Therefore:
-
-not True → False
-
-Output:
-
-False
-
-7. not Always Returns a Boolean
-
-This is different from and and or.
-
-Compare:
-
-10 and 20
-
-Output:
-
+```text
 20
-10 or 20
+```
 
-Output:
+---
 
-10
+# ⭐ If No Matching Value Exists
 
-But:
+If `and` cannot find a falsy value:
 
-not 10
+```python
+10 and 20 and 30
+```
 
-Output:
+All values are truthy.
 
+Therefore, Python returns the last value:
+
+```text
+30
+```
+
+---
+
+If `or` cannot find a truthy value:
+
+```python
+0 or "" or []
+```
+
+All values are falsy.
+
+Therefore, Python returns the last value:
+
+```text
+[]
+```
+
+---
+
+# 🏆 Final Mental Model
+
+## `and`
+
+```text
+Find the first FALSY value.
+```
+
+If no falsy value exists:
+
+```text
+Return the LAST value.
+```
+
+---
+
+## `or`
+
+```text
+Find the first TRUTHY value.
+```
+
+If no truthy value exists:
+
+```text
+Return the LAST value.
+```
+
+---
+
+> ⭐ **Key Concept:** `and` searches for the first falsy value, while `or` searches for the first truthy value. Both operators can return actual operands instead of only `True` or `False`.
+
+
+
+# 🐍 Logical Operator 3: `not`
+
+Python has three main logical operators:
+
+1. `and`
+2. `or`
+3. `not`
+
+We have already learned:
+
+```python
+and
+```
+
+and:
+
+```python
+or
+```
+
+Now let's learn the third logical operator:
+
+```python
+not
+```
+
+---
+
+# 1️⃣ What Is `not`?
+
+The `not` operator means:
+
+```text
+Reverse the Boolean result.
+```
+
+If something is:
+
+```text
+True
+```
+
+then:
+
+```python
+not True
+```
+
+becomes:
+
+```text
 False
+```
 
-So:
+If something is:
 
-and → Can return an actual operand
-or  → Can return an actual operand
-not → Always returns True or False
-8. Internal Working
+```text
+False
+```
+
+then:
+
+```python
+not False
+```
+
+becomes:
+
+```text
+True
+```
+
+---
+
+# 2️⃣ Basic Truth Table
+
+| Value | `not value` |
+|---|---|
+| `True` | `False` |
+| `False` | `True` |
+
+---
+
+## Example 1
+
+```python
+not True
+```
+
+Result:
+
+```text
+False
+```
+
+---
+
+## Example 2
+
+```python
+not False
+```
+
+Result:
+
+```text
+True
+```
+
+---
+
+# 🧠 Main Rule
+
+```text
+not → Reverses truthiness
+```
+
+```text
+Truthy  → False
+Falsy   → True
+```
+
+---
+
+# 3️⃣ `not` With Comparisons
 
 Consider:
 
+```python
 x = 10
 
-result = not x
+print(not x > 5)
+```
+
+Python evaluates the expression step by step.
+
+---
+
+## Step 1: Evaluate the Comparison
+
+```python
+x > 5
+```
+
+Substitute the value of `x`:
+
+```python
+10 > 5
+```
+
+Result:
+
+```text
+True
+```
+
+---
+
+## Step 2: Apply `not`
+
+Now Python has:
+
+```python
+not True
+```
+
+Result:
+
+```text
+False
+```
+
+---
+
+## Final Result
+
+```text
+False
+```
 
 Conceptually:
 
+```text
+not (10 > 5)
+      ↓
+    not True
+      ↓
+     False
+```
+
+---
+
+# 4️⃣ Another Example
+
+```python
+x = 10
+
+print(not x < 5)
+```
+
+---
+
+## Step 1: Evaluate the Comparison
+
+```python
+10 < 5
+```
+
+Result:
+
+```text
+False
+```
+
+---
+
+## Step 2: Apply `not`
+
+```python
+not False
+```
+
+Result:
+
+```text
+True
+```
+
+---
+
+## Final Output
+
+```text
+True
+```
+
+---
+
+# 5️⃣ `not` With Truthy and Falsy Values
+
+This is where the previous concept of **Truthy and Falsy** becomes important.
+
+---
+
+## Example 1
+
+```python
+print(not 10)
+```
+
+Python checks:
+
+```text
+10 → Truthy
+```
+
+Then:
+
+```text
+not Truthy
+```
+
+becomes:
+
+```text
+False
+```
+
+### Output
+
+```text
+False
+```
+
+---
+
+## Example 2
+
+```python
+print(not 0)
+```
+
+Python checks:
+
+```text
+0 → Falsy
+```
+
+Then:
+
+```text
+not Falsy
+```
+
+becomes:
+
+```text
+True
+```
+
+### Output
+
+```text
+True
+```
+
+---
+
+# 6️⃣ `not` With Strings
+
+## Example 1: Empty String
+
+```python
+print(not "")
+```
+
+An empty string is:
+
+```text
+"" → Falsy
+```
+
+Therefore:
+
+```text
+not False
+```
+
+becomes:
+
+```text
+True
+```
+
+### Output
+
+```text
+True
+```
+
+---
+
+## Example 2: Non-Empty String
+
+```python
+print(not "Python")
+```
+
+The string:
+
+```text
+"Python"
+```
+
+is non-empty.
+
+Therefore:
+
+```text
+"Python" → Truthy
+```
+
+Then:
+
+```text
+not True
+```
+
+becomes:
+
+```text
+False
+```
+
+### Output
+
+```text
+False
+```
+
+---
+
+# 7️⃣ `not` Always Returns a Boolean
+
+This is an important difference between:
+
+```python
+and
+```
+
+```python
+or
+```
+
+and:
+
+```python
+not
+```
+
+---
+
+## `and`
+
+```python
+10 and 20
+```
+
+Output:
+
+```text
+20
+```
+
+`and` can return an actual operand.
+
+---
+
+## `or`
+
+```python
+10 or 20
+```
+
+Output:
+
+```text
+10
+```
+
+`or` can return an actual operand.
+
+---
+
+## `not`
+
+```python
+not 10
+```
+
+Output:
+
+```text
+False
+```
+
+`not` always returns:
+
+```text
+True
+```
+
+or:
+
+```text
+False
+```
+
+---
+
+# 🧠 Important Comparison
+
+| Operator | What It Returns |
+|---|---|
+| `and` | Can return an actual operand |
+| `or` | Can return an actual operand |
+| `not` | Always returns `True` or `False` |
+
+---
+
+# 8️⃣ Internal Working
+
+Consider:
+
+```python
+x = 10
+
+result = not x
+```
+
+Python conceptually evaluates this step by step.
+
+---
+
+## Step 1
+
+```text
 x
 ↓
 10
-↓
+```
+
+---
+
+## Step 2: Check Truthiness
+
+```text
 Is 10 truthy?
-↓
+```
+
+Answer:
+
+```text
 Yes
-↓
+```
+
+---
+
+## Step 3: Apply `not`
+
+```text
 not True
-↓
+```
+
+---
+
+## Step 4: Final Result
+
+```text
 False
+```
 
-So:
+Therefore:
 
+```text
 result → False
-9. Important Difference
+```
 
-This:
+---
 
+# 9️⃣ Important Difference
+
+Consider:
+
+```python
 not 10
+```
 
-does not mean:
+This does **not** mean:
 
+```text
 10 → False
+```
 
-Python does not change the integer object 10.
+Python does not change the integer object:
 
-Instead:
+```text
+10
+```
 
-10 is truthy
+Instead, Python performs a logical evaluation:
+
+```text
+10
 ↓
-not reverses that logical result
+Truthy
+↓
+not Truthy
 ↓
 False
+```
 
 The original object remains:
 
+```text
 10
+```
 
+---
 
-10. Basic Examples
+# 🔟 Basic Examples
+
+| Expression | Truthiness of Value | Result |
+|---|---|---|
+| `not True` | Truthy | `False` |
+| `not False` | Falsy | `True` |
+| `not 10` | Truthy | `False` |
+| `not 0` | Falsy | `True` |
+| `not "Python"` | Truthy | `False` |
+| `not ""` | Falsy | `True` |
+| `not [1, 2]` | Truthy | `False` |
+| `not []` | Falsy | `True` |
+
+---
+
+# 🔥 The Simplest Rule
+
+For:
+
+```python
+not A
+```
+
+Python asks:
+
+```text
+Is A truthy?
+```
+
+Then reverses the result.
+
+---
+
+## If `A` Is Truthy
+
+```text
+A → Truthy
+not A → False
+```
+
+---
+
+## If `A` Is Falsy
+
+```text
+A → Falsy
+not A → True
+```
+
+---
+
+# 🏆 Final Mental Model
+
+```text
+and → Find the first FALSY value
+```
+
+```text
+or → Find the first TRUTHY value
+```
+
+```text
+not → REVERSE truthiness
+```
+
+---
+
+# ⭐ One-Table Revision
+
+| Operator | Python Checks | Result |
+|---|---|---|
+| `and` | First falsy value | Can return actual operand |
+| `or` | First truthy value | Can return actual operand |
+| `not` | Truthiness of one value | Always `True` or `False` |
+
+---
+
+> 🧠 **Key Concept:** `not` does not change the original object. It checks the object's truthiness and returns the opposite Boolean result.
 
 ## `not` Operator
 
