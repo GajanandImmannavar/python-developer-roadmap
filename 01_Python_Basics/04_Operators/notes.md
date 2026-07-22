@@ -3739,3 +3739,84 @@ print(not True)
 print(not 0)
 print(not "Python")
 print(not [])
+
+
+# 🐍 Logical Operators — One-Table Revision
+
+| Operator | Simple Meaning | Python Checks | Example | Result | Return Type |
+|---|---|---|---|---|---|
+| `and` | Both sides need to be truthy | First falsy value | `10 and 20` | `20` | `int` |
+| `and` | Stop at the first falsy value | First falsy value | `0 and 20` | `0` | `int` |
+| `and` | Both Boolean values are `True` | Both values | `True and True` | `True` | `bool` |
+| `and` | One Boolean value is `False` | Both values | `True and False` | `False` | `bool` |
+| `or` | At least one value needs to be truthy | First truthy value | `10 or 20` | `10` | `int` |
+| `or` | First value is falsy | Second value | `0 or 20` | `20` | `int` |
+| `or` | At least one Boolean value is `True` | Both values | `False or True` | `True` | `bool` |
+| `or` | Both Boolean values are `False` | Both values | `False or False` | `False` | `bool` |
+| `not` | Reverse truthiness | One value | `not 10` | `False` | `bool` |
+| `not` | Reverse falsiness | One value | `not 0` | `True` | `bool` |
+
+---
+
+# 🧠 Truthy and Falsy — Quick Reference
+
+| Value | Result |
+|---|---|
+| `0` | Falsy |
+| `0.0` | Falsy |
+| `""` | Falsy |
+| `[]` | Falsy |
+| `{}` | Falsy |
+| `False` | Falsy |
+| `10` | Truthy |
+| `-10` | Truthy |
+| `3.14` | Truthy |
+| `"0"` | Truthy |
+| `"Python"` | Truthy |
+| `[0]` | Truthy |
+| `[1, 2]` | Truthy |
+
+---
+
+# 🔥 Three Rules to Remember
+
+```text
+and  → first FALSY value
+
+or   → first TRUTHY value
+
+not  → reverse truthiness
+
+
+0 and 20       # 0
+10 and 20      # 20
+
+0 or 20        # 20
+10 or 20       # 10
+
+not 0          # True
+not 10         # False
+
+
+
+⭐ The Most Important Difference
+
+
+| Operator | What It Returns                  |
+| -------- | -------------------------------- |
+| `and`    | Can return the actual value      |
+| `or`     | Can return the actual value      |
+| `not`    | Always returns `True` or `False` |
+
+
+print(10 and 20)   # 20
+print(0 and 20)    # 0
+
+print(10 or 20)    # 10
+print(0 or 20)     # 20
+
+print(not 10)      # False
+print(not 0)       # True
+
+
+
