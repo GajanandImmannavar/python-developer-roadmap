@@ -700,3 +700,426 @@ print(not (10 > 5))
 print(not (10 < 5))
 
 # output : True 
+
+
+###########################################################################################################
+
+#   🐍 Logical Operator Precedence
+
+
+#Remember the Preference
+
+# () 
+#  ↓
+# not
+#  ↓
+# and
+#  ↓
+# or
+
+
+print((True or False) and False)
+
+#Parentheses Come First
+
+#First:
+
+# True or False
+# ↓
+# True
+
+# Then:
+
+# True and False
+# ↓
+# False
+
+# Final:
+
+# False
+# output: False
+
+
+
+
+# Parentheses can change the result:
+
+print(True or (False and False))
+
+# output: True 
+
+# First:
+
+# False and False
+# ↓
+# False
+
+# Then:
+
+# True or False
+# ↓
+# True
+
+print(True or False and False)
+
+# output: True
+
+
+# print(not 1 or 2(True and False))
+
+
+print(True and True or False)
+
+# output : True
+
+print(not True and False or True)
+
+# internal work not True ----> false   
+# False and  False = False
+# False or True = True 
+
+# Output: True 
+
+
+
+
+# 🎯 Practice
+
+# Predict the output:
+
+# Problem 1
+print(True or False and False)
+
+# Problem 2
+print(False or True and False)
+
+# Problem 3
+print(not True or False)
+
+# Problem 4
+print(not False and True)
+
+# Problem 5
+print(True and False or True)
+
+# Problem 6
+print(False or False and True)
+
+# Problem 7
+print(not (True or False))
+
+# Problem 8
+print((True or False) and False)
+
+
+# ()  →  not  →  and  →  or
+
+
+
+# | Problem | Expression                  | Your Answer | Correct? | Evaluation                                                      |
+# | ------- | --------------------------- | ----------- | -------- | --------------------------------------------------------------- |
+# | 1       | `True or False and False`   | `True`      | ✅        | `False and False → False`, then `True or False → True`          |
+# | 2       | `False or True and False`   | `False`     | ✅        | `True and False → False`, then `False or False → False`         |
+# | 3       | `not True or False`         | `False`     | ✅        | `not True → False`, then `False or False → False`               |
+# | 4       | `not False and True`        | `True`      | ✅        | `not False → True`, then `True and True → True`                 |
+# | 5       | `True and False or True`    | `True`      | ✅        | `True and False → False`, then `False or True → True`           |
+# | 6       | `False or False and True`   | `False`     | ✅        | `False and True → False`, then `False or False → False`         |
+# | 7       | `not (True or False)`       | `False`     | ✅        | Brackets first: `True or False → True`, then `not True → False` |
+# | 8       | `(True or False) and False` | `False`     | ✅        | Brackets first: `True`, then `True and False → False`           |
+
+
+# Memory trick:
+
+# Brackets → NOT → AND → OR
+
+
+###################################################################################################
+
+# 🐍 Combining Comparison and Logical Operators
+
+
+
+# Comparison Operators
+# ==    Equal
+# !=    Not equal
+# >     Greater than
+# <     Less than
+# >=    Greater than or equal
+# <=    Less than or equal
+
+# These always produce:
+
+# True
+
+# or:
+
+# False
+
+
+
+# 1. and With Comparisons
+
+
+age = 20
+
+print(age >= 18 and age<=60)
+
+# output : True   
+
+# 2. One Condition False
+
+
+age = 70
+print(age>=18 and age<= 60)
+
+# output : False
+
+
+
+# 3. or With Comparisons
+
+
+age = 20
+print(age<18 or age <60)
+
+# output : True 
+
+
+
+# 4. not With Comparison
+
+age = 20
+print(not age<18)
+
+# output : True
+
+# First:
+
+# 20 < 18 → False
+
+# Then:
+
+# not False → True
+
+# Final:
+
+# True
+
+
+# 🧠 The Evaluation Process
+
+# Consider:
+
+age = 25
+
+result = age >= 18 and age <= 60
+
+# Python conceptually does:
+
+# Step 1:
+# age >= 18
+# ↓
+# 25 >= 18
+# ↓
+# True
+
+# Then:
+
+# Step 2:
+# age <= 60
+# ↓
+# 25 <= 60
+# ↓
+# True
+
+# Then:
+
+# True and True
+# ↓
+# True
+
+# Finally:
+
+# result → True
+# 🔥 Important: Comparison Happens Before Logical Operation
+
+
+
+# Consider:
+
+x = 10
+y = 20
+
+print(x < y and y > 15)
+
+# Python evaluates:
+
+# x < y
+# ↓
+# 10 < 20
+# ↓
+# True
+
+# Then:
+
+# y > 15
+# ↓
+# 20 > 15
+# ↓
+# True
+
+# Then:
+
+# True and True
+
+# Final:
+
+# True
+# 5. and + or Together
+
+
+age = 25
+
+print(age >= 18 and age <= 30 or age == 50)
+
+# Precedence:
+
+# and → first
+# or  → second
+
+# First:
+
+# age >= 18
+# ↓
+# True
+
+# Second:
+
+# age <= 30
+# ↓
+# True
+
+# Then:
+
+# True and True
+# ↓
+# True
+
+# Then:
+
+# True or age == 50
+
+# Python already has True.
+
+# Final:
+
+# True
+
+
+# 6. Use Parentheses for Clarity
+
+# This:
+
+age >= 18 and age <= 30 or age == 50
+
+# is evaluated as:
+
+# (age >= 18 and age <= 30) or age == 50
+
+# Because:
+
+# and → higher priority than or
+# 7. Real Example
+# age = 25
+# has_ticket = True
+
+print(age >= 18 and has_ticket == True)
+
+# Evaluation:
+
+# age >= 18
+# ↓
+# True
+# has_ticket == True
+# ↓
+# True
+
+# Then:
+
+# True and True
+# ↓
+# True
+# 8. Combining Multiple Comparisons
+# marks = 85
+
+print(marks >= 35 and marks <= 100)
+
+# This asks:
+
+# Is marks at least 35?
+# AND
+# Is marks at most 100?
+
+# Evaluation:
+
+# 85 >= 35 → True
+# 85 <= 100 → True
+
+# Final:
+
+# True
+
+
+
+# 9. Multiple or Conditions
+day = "Saturday"
+
+print(day == "Saturday" or day == "Sunday")
+
+# Evaluation:
+
+# "Saturday" == "Saturday"
+# ↓
+# True
+
+# Python already has a true condition.
+
+# Final:
+
+# True
+
+# Meaning:
+
+# Is the day Saturday OR Sunday?
+
+
+# 🧠 One-Table Revision
+
+
+# | Step | What Happens                        |
+# | ---- | ----------------------------------- |
+# | 1    | Parentheses are evaluated           |
+# | 2    | Comparisons are evaluated           |
+# | 3    | `not` is evaluated                  |
+# | 4    | `and` is evaluated                  |
+# | 5    | `or` is evaluated                   |
+# | 6    | Final `True` or `False` is produced |
+
+
+# Example:
+
+x > 5 and y < 20 or z == 10
+
+# Think:
+
+# Comparison
+# ↓
+# Comparison
+# ↓
+# and
+# ↓
+# Comparison
+# ↓
+# or
+# ↓
+# Final Boolean
