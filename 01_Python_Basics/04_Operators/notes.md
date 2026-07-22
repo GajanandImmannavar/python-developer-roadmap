@@ -3463,3 +3463,279 @@ AND → Find the first Falsy value
 OR  → Find the first Truthy value
 
 If no such value exists, Python returns the last value.
+
+
+
+# Logical Operator 3: not
+
+1. What Is not?
+
+not means:
+
+Reverse the Boolean result.
+
+If something is:
+
+True
+
+then:
+
+not True
+
+becomes:
+
+False
+
+If something is:
+
+False
+
+then:
+
+not False
+
+becomes:
+
+True
+
+Basic Truth Table 
+
+| Value   | `not value` |
+| ------- | ----------- |
+| `True`  | `False`     |
+| `False` | `True`      |
+
+
+So:
+
+not True
+
+↓
+
+False
+
+And:
+
+not False
+
+↓
+
+True
+3. not With Comparisons
+
+Consider:
+
+x = 10
+
+print(not x > 5)
+
+First Python evaluates the comparison:
+
+x > 5
+
+Substitute:
+
+10 > 5
+
+Result:
+
+True
+
+Then not reverses it:
+
+not True
+
+Final result:
+
+False
+
+So:
+
+not (10 > 5) → False
+
+
+4. Another Example
+x = 10
+
+print(not x < 5)
+
+First:
+
+10 < 5 → False
+
+Then:
+
+not False → True
+
+Output:
+
+True
+5. not With Truthy and Falsy Values
+
+This is where your previous learning becomes useful.
+
+Example
+print(not 10)
+
+Python checks:
+
+10 → Truthy
+
+Then:
+
+not Truthy → False
+
+Output:
+
+False
+Example
+print(not 0)
+
+Python checks:
+
+0 → Falsy
+
+Then:
+
+not Falsy → True
+
+Output:
+
+True
+6. not With Strings
+print(not "")
+
+Empty string:
+
+"" → Falsy
+
+Therefore:
+
+not False → True
+
+Output:
+
+True
+print(not "Python")
+
+"Python" is non-empty:
+
+"Python" → Truthy
+
+Therefore:
+
+not True → False
+
+Output:
+
+False
+
+7. not Always Returns a Boolean
+
+This is different from and and or.
+
+Compare:
+
+10 and 20
+
+Output:
+
+20
+10 or 20
+
+Output:
+
+10
+
+But:
+
+not 10
+
+Output:
+
+False
+
+So:
+
+and → Can return an actual operand
+or  → Can return an actual operand
+not → Always returns True or False
+8. Internal Working
+
+Consider:
+
+x = 10
+
+result = not x
+
+Conceptually:
+
+x
+↓
+10
+↓
+Is 10 truthy?
+↓
+Yes
+↓
+not True
+↓
+False
+
+So:
+
+result → False
+9. Important Difference
+
+This:
+
+not 10
+
+does not mean:
+
+10 → False
+
+Python does not change the integer object 10.
+
+Instead:
+
+10 is truthy
+↓
+not reverses that logical result
+↓
+False
+
+The original object remains:
+
+10
+
+
+10. Basic Examples
+
+## `not` Operator
+
+The `not` operator reverses the Boolean value of an expression.
+
+| Expression | Result |
+|---|---|
+| `not True` | `False` |
+| `not False` | `True` |
+| `not 0` | `True` |
+| `not 10` | `False` |
+| `not ""` | `True` |
+| `not "Python"` | `False` |
+| `not []` | `True` |
+| `not [1, 2]` | `False` |
+
+### Simple Rule
+
+- If a value is **Truthy**, `not` returns `False`.
+- If a value is **Falsy**, `not` returns `True`.
+
+### Example
+
+```python
+print(not True)
+print(not 0)
+print(not "Python")
+print(not [])
