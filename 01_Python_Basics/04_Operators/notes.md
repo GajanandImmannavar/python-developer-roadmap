@@ -3739,7 +3739,7 @@ print(not True)
 print(not 0)
 print(not "Python")
 print(not [])
-
+```
 
 # 🐍 Logical Operators — One-Table Revision
 
@@ -3756,7 +3756,7 @@ print(not [])
 | `not` | Reverse truthiness | One value | `not 10` | `False` | `bool` |
 | `not` | Reverse falsiness | One value | `not 0` | `True` | `bool` |
 
-  
+---
 
 # 🧠 Truthy and Falsy — Quick Reference
 
@@ -3781,13 +3781,16 @@ print(not [])
 # 🔥 Three Rules to Remember
 
 ```text
-and  → first FALSY value
+and → first FALSY value
+or  → first TRUTHY value
+not → reverse truthiness
+```
 
-or   → first TRUTHY value
+---
 
-not  → reverse truthiness
+## Examples
 
-
+```python
 0 and 20       # 0
 10 and 20      # 20
 
@@ -3796,19 +3799,23 @@ not  → reverse truthiness
 
 not 0          # True
 not 10         # False
+```
 
+---
 
+# ⭐ The Most Important Difference
 
-⭐ The Most Important Difference
+| Operator | What It Returns |
+|---|---|
+| `and` | Can return the actual value |
+| `or` | Can return the actual value |
+| `not` | Always returns `True` or `False` |
 
+---
 
-| Operator | What It Returns                  |
-| -------- | -------------------------------- |
-| `and`    | Can return the actual value      |
-| `or`     | Can return the actual value      |
-| `not`    | Always returns `True` or `False` |
+## Example
 
-
+```python
 print(10 and 20)   # 20
 print(0 and 20)    # 0
 
@@ -3817,6 +3824,4 @@ print(0 or 20)     # 20
 
 print(not 10)      # False
 print(not 0)       # True
-
-
-
+```
