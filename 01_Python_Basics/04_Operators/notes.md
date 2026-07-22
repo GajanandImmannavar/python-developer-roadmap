@@ -3825,3 +3825,261 @@ print(0 or 20)     # 20
 print(not 10)      # False
 print(not 0)       # True
 ```
+
+
+# 🐍 Logical Operator Precedence
+
+When multiple logical operators appear in one expression, **operator precedence** determines which operator Python evaluates first.
+
+## 🔢 Order of Precedence
+
+```text
+1. not
+2. and
+3. or
+```
+
+### 🧠 Memory Trick
+
+```text
+NOT
+ ↓
+AND
+ ↓
+OR
+```
+
+> **Important:** Python does not always evaluate logical expressions simply from left to right. It follows operator precedence.
+
+---
+
+# 🧪 Example 1
+
+```python
+True or False and False
+```
+
+### Step 1: Evaluate `and` first
+
+```text
+False and False
+      ↓
+    False
+```
+
+### Step 2: Evaluate `or`
+
+```text
+True or False
+     ↓
+   True
+```
+
+### Final Result
+
+```text
+True
+```
+
+---
+
+# 🧪 Example 2
+
+```python
+not True and False
+```
+
+### Step 1: Evaluate `not` first
+
+```text
+not True
+   ↓
+ False
+```
+
+### Step 2: Evaluate `and`
+
+```text
+False and False
+      ↓
+    False
+```
+
+### Final Result
+
+```text
+False
+```
+
+---
+
+# 🧪 Example 3
+
+```python
+not False or False
+```
+
+### Step 1: Evaluate `not` first
+
+```text
+not False
+    ↓
+   True
+```
+
+### Step 2: Evaluate `or`
+
+```text
+True or False
+    ↓
+  True
+```
+
+### Final Result
+
+```text
+True
+```
+
+---
+
+# 🧠 One-Table Revision
+
+| Priority | Operator | Meaning |
+|---|---|---|
+| 1️⃣ | `not` | Reverse truthiness |
+| 2️⃣ | `and` | Find the first falsy value |
+| 3️⃣ | `or` | Find the first truthy value |
+
+---
+
+# ⭐ The Golden Rule
+
+```text
+NOT → AND → OR
+```
+
+Python evaluates logical operators in this order:
+
+```text
+not
+ ↓
+and
+ ↓
+or
+```
+
+---
+
+# 🟡 Parentheses Come First
+
+Parentheses have the highest priority.
+
+## Example
+
+```python
+(True or False) and False
+```
+
+### Step 1: Evaluate the parentheses
+
+```text
+True or False
+    ↓
+  True
+```
+
+### Step 2: Evaluate `and`
+
+```text
+True and False
+     ↓
+   False
+```
+
+### Final Result
+
+```text
+False
+```
+
+---
+
+# 🔄 Parentheses Can Change the Result
+
+Compare the following expressions:
+
+## Without Parentheses
+
+```python
+True or False and False
+```
+
+### Order
+
+```text
+False and False
+      ↓
+    False
+
+True or False
+    ↓
+  True
+```
+
+### Result
+
+```text
+True
+```
+
+---
+
+## With Parentheses
+
+```python
+(True or False) and False
+```
+
+### Order
+
+```text
+True or False
+    ↓
+  True
+
+True and False
+     ↓
+   False
+```
+
+### Result
+
+```text
+False
+```
+
+---
+
+# 🏆 Final Revision
+
+| Priority | Operator | Example | Evaluated First |
+|---|---|---|---|
+| 1️⃣ | Parentheses `()` | `(True or False)` | Always first |
+| 2️⃣ | `not` | `not True` | Second |
+| 3️⃣ | `and` | `True and False` | Third |
+| 4️⃣ | `or` | `True or False` | Last |
+
+## Remember
+
+```text
+()
+ ↓
+not
+ ↓
+and
+ ↓
+or
+```
+
+> **Parentheses can override the normal operator precedence and change the result of an expression.**
