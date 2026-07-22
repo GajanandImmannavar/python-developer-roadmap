@@ -1274,16 +1274,16 @@ number // (10 ** k)
 
 # 📝 Assignment Operators
 
-Assignment operators are used to assign values to variables and update the values that variables refer to.
+Assignment operators are used to:
+
+- Assign values to variables
+- Update the values that variables refer to
 
 ---
 
 # 1️⃣ What Is an Assignment Operator?
 
-An **assignment operator** is used to:
-
-- Assign a value to a variable
-- Update the value a variable refers to
+An **assignment operator** is used to assign a value to a variable or update the value that a variable refers to.
 
 The simplest assignment operator is:
 
@@ -1317,12 +1317,20 @@ x
 
 # 2️⃣ Why Do We Need Assignment Operators?
 
-Consider this code:
+Consider:
 
 ```python
 x = 10
 
 x = x + 5
+```
+
+Python performs:
+
+```text
+10 + 5
+↓
+15
 ```
 
 The final value of `x` is:
@@ -1331,7 +1339,7 @@ The final value of `x` is:
 15
 ```
 
-Python provides a shorter way to write the same operation:
+Python provides a shorter way:
 
 ```python
 x = 10
@@ -1339,7 +1347,11 @@ x = 10
 x += 5
 ```
 
-Both produce the same result.
+Both produce the same final result:
+
+```text
+15
+```
 
 ---
 
@@ -1416,6 +1428,12 @@ x
 
 # 5️⃣ The `+=` Operator
 
+## 📖 Definition
+
+The `+=` operator adds a value to the current value of a variable and assigns the result back to that variable.
+
+---
+
 ## 🧪 Example
 
 ```python
@@ -1432,21 +1450,13 @@ The final value is:
 
 ---
 
-## 🧠 What Happens Internally?
-
-Many beginners think:
-
-> "Python changes the integer object `10`."
-
-❌ This is not what happens.
-
-Python treats:
+## 🧠 Conceptually
 
 ```python
 x += 5
 ```
 
-conceptually like:
+is similar to:
 
 ```python
 x = x + 5
@@ -1456,7 +1466,7 @@ x = x + 5
 
 ## 🔍 Dry Run
 
-### Step 1: Create `x`
+### Step 1
 
 ```python
 x = 10
@@ -1471,15 +1481,28 @@ x
 
 ---
 
-### Step 2: Perform `x += 5`
+### Step 2
+
+```python
+x += 5
+```
 
 Python:
 
 1. Reads the object referenced by `x` → `10`
-2. Performs `10 + 5`
-3. Creates the result → `15`
-4. Creates or uses an integer object containing `15`
-5. Makes `x` refer to the new result
+2. Performs:
+
+```text
+10 + 5
+```
+
+3. Creates the result:
+
+```text
+15
+```
+
+4. Makes `x` refer to the result
 
 ---
 
@@ -1507,31 +1530,19 @@ x
 
 ---
 
-# 🧠 Assignment Operators — Core Pattern
+# 6️⃣ The `-=` Operator
 
-```text
-x = 10
-```
+## 📖 Definition
 
-```text
-Assign a value
-```
+The `-=` operator subtracts a value from the current value and assigns the result back to the variable.
 
 ---
 
-```python
-x += 5
-```
-
-Conceptually:
+## 🧪 Example
 
 ```python
-x = x + 5
-```
+x = 20
 
----
-
-```python
 x -= 5
 ```
 
@@ -1541,21 +1552,413 @@ Conceptually:
 x = x - 5
 ```
 
+Python performs:
+
+```text
+20 - 5
+↓
+15
+```
+
+### Final Value
+
+```text
+15
+```
+
 ---
 
+## 🔍 Dry Run
+
+```text
+Before:
+
+x
+│
+▼
+20
+```
+
+```text
+x -= 5
+```
+
+```text
+20 - 5
+↓
+15
+```
+
+```text
+After:
+
+x
+│
+▼
+15
+```
+
+---
+
+# 7️⃣ The `*=` Operator
+
+## 📖 Definition
+
+The `*=` operator multiplies the current value by another value and assigns the result back to the variable.
+
+---
+
+## 🧪 Example
+
 ```python
-x *= 5
+x = 5
+
+x *= 4
 ```
 
 Conceptually:
 
 ```python
-x = x * 5
+x = x * 4
+```
+
+Python performs:
+
+```text
+5 × 4
+↓
+20
+```
+
+### Final Value
+
+```text
+20
+```
+
+---
+
+## 🔍 Dry Run
+
+```text
+Before:
+
+x
+│
+▼
+5
+```
+
+```text
+x *= 4
+```
+
+```text
+5 × 4
+↓
+20
+```
+
+```text
+After:
+
+x
+│
+▼
+20
+```
+
+---
+
+# 8️⃣ The `/=` Operator
+
+## 📖 Definition
+
+The `/=` operator divides the current value by another value and assigns the result back to the variable.
+
+---
+
+## 🧪 Example
+
+```python
+x = 10
+
+x /= 2
+```
+
+Conceptually:
+
+```python
+x = x / 2
+```
+
+Python performs:
+
+```text
+10 / 2
+↓
+5.0
+```
+
+### Final Value
+
+```text
+5.0
+```
+
+---
+
+> ⚠️ **Important:** Just like normal `/` division, `/=` produces a `float`.
+
+---
+
+## 🧪 Example
+
+```python
+x = 8
+
+x /= 4
+
+print(x)
+print(type(x))
+```
+
+### Output
+
+```text
+2.0
+<class 'float'>
+```
+
+---
+
+# 9️⃣ The `//=` Operator
+
+## 📖 Definition
+
+The `//=` operator performs floor division and assigns the result back to the variable.
+
+---
+
+## 🧪 Example
+
+```python
+x = 17
+
+x //= 5
+```
+
+Conceptually:
+
+```python
+x = x // 5
+```
+
+Python performs:
+
+```text
+17 // 5
+↓
+3
+```
+
+### Final Value
+
+```text
+3
+```
+
+---
+
+## 🔍 Dry Run
+
+```text
+Before:
+
+x
+│
+▼
+17
+```
+
+```text
+x //= 5
+```
+
+```text
+17 // 5
+↓
+3
+```
+
+```text
+After:
+
+x
+│
+▼
+3
+```
+
+---
+
+# 🔟 The `%=` Operator
+
+## 📖 Definition
+
+The `%=` operator calculates the remainder and assigns the result back to the variable.
+
+---
+
+## 🧪 Example
+
+```python
+x = 17
+
+x %= 5
+```
+
+Conceptually:
+
+```python
+x = x % 5
+```
+
+Python performs:
+
+```text
+17 % 5
+↓
+2
+```
+
+### Final Value
+
+```text
+2
+```
+
+---
+
+## 🔍 Dry Run
+
+```text
+Before:
+
+x
+│
+▼
+17
+```
+
+```python
+x %= 5
+```
+
+```text
+17 % 5
+↓
+2
+```
+
+```text
+After:
+
+x
+│
+▼
+2
+```
+
+---
+
+# 1️⃣1️⃣ The `**=` Operator
+
+## 📖 Definition
+
+The `**=` operator raises the current value to a power and assigns the result back to the variable.
+
+---
+
+## 🧪 Example
+
+```python
+x = 2
+
+x **= 3
+```
+
+Conceptually:
+
+```python
+x = x ** 3
+```
+
+Python performs:
+
+```text
+2³
+↓
+8
+```
+
+### Final Value
+
+```text
+8
+```
+
+---
+
+## 🔍 Dry Run
+
+```text
+Before:
+
+x
+│
+▼
+2
+```
+
+```python
+x **= 3
+```
+
+```text
+2 ** 3
+↓
+8
+```
+
+```text
+After:
+
+x
+│
+▼
+8
 ```
 
 ---
 
 # 🧮 Assignment Operator Formula
+
+Every compound assignment operator follows this pattern:
+
+```text
+variable operator= value
+```
+
+Conceptually:
+
+```text
+variable = variable operator value
+```
+
+---
+
+# 📊 Short Form and Long Form
 
 | Short Form | Long Form |
 |---|---|
@@ -1566,6 +1969,479 @@ x = x * 5
 | `x //= 5` | `x = x // 5` |
 | `x %= 5` | `x = x % 5` |
 | `x **= 5` | `x = x ** 5` |
+
+---
+
+# 🧠 Complete Dry Run
+
+Consider:
+
+```python
+x = 10
+
+x += 5
+x *= 2
+x -= 4
+x //= 2
+x %= 5
+```
+
+Let's execute step by step.
+
+---
+
+## Step 1
+
+```python
+x = 10
+```
+
+```text
+x = 10
+```
+
+---
+
+## Step 2
+
+```python
+x += 5
+```
+
+Same as:
+
+```python
+x = x + 5
+```
+
+```text
+10 + 5
+↓
+15
+```
+
+Now:
+
+```text
+x = 15
+```
+
+---
+
+## Step 3
+
+```python
+x *= 2
+```
+
+Same as:
+
+```python
+x = x * 2
+```
+
+```text
+15 × 2
+↓
+30
+```
+
+Now:
+
+```text
+x = 30
+```
+
+---
+
+## Step 4
+
+```python
+x -= 4
+```
+
+Same as:
+
+```python
+x = x - 4
+```
+
+```text
+30 - 4
+↓
+26
+```
+
+Now:
+
+```text
+x = 26
+```
+
+---
+
+## Step 5
+
+```python
+x //= 2
+```
+
+Same as:
+
+```python
+x = x // 2
+```
+
+```text
+26 // 2
+↓
+13
+```
+
+Now:
+
+```text
+x = 13
+```
+
+---
+
+## Step 6
+
+```python
+x %= 5
+```
+
+Same as:
+
+```python
+x = x % 5
+```
+
+```text
+13 % 5
+↓
+3
+```
+
+### Final Value
+
+```text
+x = 3
+```
+
+---
+
+# 🧠 Important Connection With Arithmetic Operators
+
+Assignment operators combine:
+
+```text
+Arithmetic Operator
+```
+
+with:
+
+```text
+Assignment Operator
+```
+
+For example:
+
+```python
+x += 5
+```
+
+contains:
+
+```text
++  → Arithmetic operation
+=  → Assignment
+```
+
+Together:
+
+```text
+Add
+↓
+Assign the result
+```
+
+---
+
+# 🔗 Assignment Operator Process
+
+For:
+
+```python
+x += 5
+```
+
+Think:
+
+```text
+Read current value
+        ↓
+Perform arithmetic operation
+        ↓
+Create the result
+        ↓
+Assign result back to x
+```
+
+---
+
+# 📖 Example
+
+```python
+x = 10
+
+x += 5
+```
+
+Conceptually:
+
+```text
+Read x
+ ↓
+10
+
+Perform:
+10 + 5
+ ↓
+15
+
+Assign:
+x = 15
+```
+
+---
+
+# ⚠️ Important: `/=` Changes the Type
+
+Consider:
+
+```python
+x = 10
+
+x /= 2
+```
+
+Before:
+
+```text
+x → 10
+```
+
+Type:
+
+```text
+int
+```
+
+After:
+
+```text
+x → 5.0
+```
+
+Type:
+
+```text
+float
+```
+
+Therefore:
+
+```python
+x /= 2
+```
+
+can change the type of the value stored in `x`.
+
+---
+
+# ⚠️ Important: `//=` and `%=` Have Different Jobs
+
+Consider:
+
+```python
+x = 17
+```
+
+### Floor Division Assignment
+
+```python
+x //= 5
+```
+
+Result:
+
+```text
+3
+```
+
+It keeps the quotient.
+
+---
+
+### Modulus Assignment
+
+```python
+x %= 5
+```
+
+Result:
+
+```text
+2
+```
+
+It keeps the remainder.
+
+---
+
+# 🧠 Memory Trick
+
+```text
++= → Add
+```
+
+```text
+-= → Subtract
+```
+
+```text
+*= → Multiply
+```
+
+```text
+/= → Divide
+```
+
+```text
+//= → Floor Divide
+```
+
+```text
+%= → Keep Remainder
+```
+
+```text
+**= → Raise to Power
+```
+
+---
+
+# 🎯 Interview Question
+
+## Q: What is the difference between `=` and `==`?
+
+### Answer
+
+```text
+=  → Assignment
+```
+
+It assigns a value:
+
+```python
+x = 10
+```
+
+---
+
+```text
+== → Comparison
+```
+
+It compares two values:
+
+```python
+x == 10
+```
+
+The result is:
+
+```text
+True
+```
+
+or:
+
+```text
+False
+```
+
+---
+
+# 🎯 Interview Question
+
+## Q: What is the difference between `x += 5` and `x = x + 5`?
+
+For immutable numeric values, both produce the same final value.
+
+```python
+x += 5
+```
+
+is the shorter form of:
+
+```python
+x = x + 5
+```
+
+Conceptually, Python:
+
+1. Reads the current value
+2. Performs the arithmetic operation
+3. Produces the result
+4. Assigns the result back to the variable
+
+---
+
+# 📌 Complete Assignment Operator Summary
+
+| Operator | Name | Example | Equivalent Form |
+|---|---|---|---|
+| `=` | Assignment | `x = 10` | Assign value |
+| `+=` | Add and assign | `x += 5` | `x = x + 5` |
+| `-=` | Subtract and assign | `x -= 5` | `x = x - 5` |
+| `*=` | Multiply and assign | `x *= 5` | `x = x * 5` |
+| `/=` | Divide and assign | `x /= 5` | `x = x / 5` |
+| `//=` | Floor divide and assign | `x //= 5` | `x = x // 5` |
+| `%=` | Modulus and assign | `x %= 5` | `x = x % 5` |
+| `**=` | Exponentiate and assign | `x **= 5` | `x = x ** 5` |
+
+---
+
+# 🏆 Final Mental Model
+
+```text
+Assignment Operator
+        ↓
+Perform an operation
+        ↓
+Assign the result back
+```
+
+For example:
+
+```python
+x += 5
+```
+
+means:
+
+```text
+Take x
+  ↓
+Add 5
+  ↓
+Get result
+  ↓
+Store result back in x
+```
 
 ---
 
