@@ -3236,3 +3236,230 @@ Truth Table
 | `True`  | `False` | `True`   |
 | `False` | `True`  | `True`   |
 | `False` | `False` | `False`  |
+
+The main rule:
+
+and → Both must be True
+or  → At least one must be True
+
+3. Simple Examples
+print(True or True)
+
+Output:
+
+True
+
+Both are True.
+
+print(True or False)
+
+Output:
+
+True
+
+The first condition is already True.
+
+print(False or True)
+
+Output:
+
+True
+
+The second condition is True.
+
+print(False or False)
+
+Output:
+
+False
+
+Neither condition is True.
+
+4. With Comparisons
+print(10 > 5 or 10 < 2)
+
+Python first evaluates the comparisons:
+
+10 > 5 → True
+10 < 2 → False
+
+Then:
+
+True or False
+
+Result:
+
+True
+5. Internal Evaluation
+
+Consider:
+
+x = 10
+y = 20
+
+print(x > 5 or y < 10)
+
+Conceptually:
+
+Step 1:
+x > 5
+↓
+10 > 5
+↓
+True
+
+Then:
+
+Step 2:
+True or ?
+
+Since or already has one True value, the final Boolean result is:
+
+True
+6. Important Difference from and
+
+For Boolean values:
+
+True and False
+
+↓
+
+False
+
+But:
+
+True or False
+
+↓
+
+True
+
+Remember:
+
+AND:
+True + False → False
+
+OR:
+True + False → True
+7. or Also Uses Truthy and Falsy Values
+
+Just like and, or does not always return True or False.
+
+Example:
+
+print(10 or 20)
+
+Output:
+
+10
+
+Why?
+
+10 is truthy.
+
+Python sees that the first value is already truthy, so it returns the first value.
+
+Example
+print(0 or 20)
+
+Python checks:
+
+0 → Falsy
+
+So Python goes to the second value:
+
+20 → Truthy
+
+Result:
+
+20
+
+So:
+
+0 or 20 → 20
+8. Exact Rule for or
+
+For:
+
+A or B
+
+Python conceptually does:
+
+If A is truthy:
+    return A
+
+Otherwise:
+    return B
+
+Compare with and:
+
+A and B
+
+If A is falsy:
+    return A
+
+Otherwise:
+    return B
+
+This is the key difference.
+
+9. Examples
+10 or 20
+
+First value is truthy:
+
+10 → Truthy
+
+Return:
+
+10
+
+
+0 or 20
+
+First value is falsy:
+
+0 → Falsy
+
+Return second:
+
+20
+
+
+"" or "Python"
+
+First value is falsy:
+
+"" → Falsy
+
+Return:
+
+"Python"
+
+
+"Python" or "Developer"
+
+First value is truthy:
+
+"Python" → Truthy
+
+Return:
+
+"Python"
+
+## 🧠 Compare and and or  
+
+| Expression  | Result |
+| ----------- | ------ |
+| `10 and 20` | `20`   |
+| `0 and 20`  | `0`    |
+| `10 or 20`  | `10`   |
+| `0 or 20`   | `20`   |
+
+
+Simple memory trick:
+
+AND → Find the first Falsy value
+OR  → Find the first Truthy value
+
+If no such value exists, Python returns the last value.
