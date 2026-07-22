@@ -700,9 +700,3 @@ print(not (10 > 5))
 print(not (10 < 5))
 
 # output : True 
-
-
-
-
-
-
