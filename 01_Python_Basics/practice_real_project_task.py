@@ -518,3 +518,275 @@ print(f"{Withdrawal_Valid}")
 #                        │
 #                        ▼
 #                     True
+
+
+# 🚗 Project Task: Car Rental Eligibility Checker
+
+# Build a car rental eligibility checker using only what you have learned so far.
+
+# Store these values:
+# Customer name
+# Customer age
+# Driving license validity in years
+# Available wallet balance
+# Rental price
+# Whether the customer has unpaid fines
+# Whether the car is available
+# Rental rules
+
+# The customer can rent the car only when:
+
+# Age is greater than or equal to 21
+# Driving license validity is greater than or equal to 1 year
+# Wallet balance is greater than or equal to rental price
+# The customer has no unpaid fines
+# The car is available
+
+# All conditions must be satisfied.
+
+# Calculate:
+# Rental_Valid
+# Print:
+# Customer Name
+# Customer Age
+# Rental Price
+# Wallet Balance
+# Rental Valid: True or False
+# Use only:
+# Variables
+# int
+# float
+# str
+# bool
+# Arithmetic operators
+# Comparison operators
+# and
+# or
+# not
+
+Name = "Gajanand L Immannavar"
+
+Age = 22
+
+License_Validity = 2
+
+Wallet_Balance = 2000
+
+Rental_Price = 1000
+
+Unpaid_Fines = False
+
+Car_available= False 
+
+
+Rental_Valid =(
+    Age >= 21 and License_Validity >= 1 and Wallet_Balance >= Rental_Price 
+    and not Unpaid_Fines  and not Car_available 
+)
+
+print(f"{Name}")
+print(f"{Age}")
+print(f"{Rental_Price}")
+print(f"{Wallet_Balance}")
+print(f'{Rental_Valid}')
+
+
+
+# 🔑 The Main Rule
+
+# Use not when your variable already represents the negative condition.
+
+# For example:
+
+# has_unpaid_fines = False
+
+# This variable means:
+
+# Does the customer have unpaid fines?
+
+# The rental rule says:
+
+# The customer must NOT have unpaid fines.
+
+# So:
+
+# not has_unpaid_fines
+
+# means:
+
+# not False
+# ↓
+# True
+
+# Therefore, the customer passes the condition.
+
+# Example 1: Unpaid Fines
+# has_unpaid_fines = False
+
+# Read the variable:
+
+# Has unpaid fines = False
+
+# The requirement:
+
+# Must NOT have unpaid fines.
+
+# Code:
+
+# not has_unpaid_fines
+
+# Evaluation:
+
+# not False
+# ↓
+# True
+
+# Correct.
+
+
+# 🏥 Project Task: Hospital Appointment Eligibility
+
+# Build a hospital appointment eligibility checker using only what you have learned.
+
+# Store these values:
+# Patient name
+# Patient age
+# Appointment fee
+# Patient wallet balance
+# Whether the patient has valid ID
+# Whether the doctor is available
+# Whether the patient is banned from booking
+# Appointment rules
+
+# The appointment is valid only when:
+
+# Patient age is greater than or equal to 18
+# Appointment fee is less than or equal to wallet balance
+# Patient has a valid ID
+# Doctor is available
+# Patient is not banned from booking
+
+# All conditions must be satisfied.
+
+# Calculate:
+# Appointment_Valid
+# Print:
+# Patient Name
+# Patient Age
+# Appointment Fee
+# Wallet Balance
+# Appointment Valid: True or False
+# Use only:
+# Variables
+# int, float, str, bool
+# Arithmetic operators
+# Comparison operators
+# and
+# or
+# not
+# print()
+
+
+
+
+Patient_name = "Ji"
+
+Patient_age = 90
+
+Appointment_fee =20
+
+Patient_wallet_balance = 2000
+
+valid_ID = True
+
+doctor_available =  True
+
+patient_is_banned = False
+
+Appointment_Valid =(
+    Patient_age >= 18 and Appointment_fee <= Patient_wallet_balance 
+    and  valid_ID and doctor_available and not  patient_is_banned
+)
+
+print(f"Patient: {Patient_name}")
+print(f"Age: {Patient_age}")
+print(f"Appointment Fee: {Appointment_fee}")
+print(f"Wallet Balance: {Patient_wallet_balance}")
+print(f"Appointment Valid: {Appointment_Valid}")
+
+
+# 🏦 Project Task: Bank Loan Eligibility Checker
+
+# Now let's combine all the operators you have learned so far in a more realistic project.
+
+# Store these values:
+# Applicant name
+# Applicant age
+# Monthly salary
+# Loan amount
+# Credit score
+# Whether the applicant has existing unpaid loans
+# Whether the applicant's documents are verified
+# Loan eligibility rules
+
+# The applicant is eligible for the loan only when:
+
+# Age is greater than or equal to 21
+# Monthly salary is greater than or equal to ₹30,000
+# Credit score is greater than or equal to 700
+# Loan amount is less than or equal to 10 times the monthly salary
+# Applicant has no existing unpaid loans
+# Documents are verified
+
+# All conditions must be satisfied.
+
+# Calculate:
+# Loan_Eligible
+# Print:
+# Applicant Name
+# Age
+# Monthly Salary
+# Loan Amounint, float, str, bool
+# Arithmetic operators
+# Comparison operators
+# and
+# or
+# not
+# print()t
+# Credit Score
+# Loan Eligible: True or False
+# Use only:
+# Variables
+
+
+Applicant_Name  = "Gajanand L Immannavar"
+
+Applicant_Age = 21
+
+Monthly_Salary = 50000
+
+Loan_Amount = 40000
+
+Credit_Score = 1000
+
+Unpaid_Loans = False
+
+Documents_Verified = True 
+
+Loan_Eligible = (
+    Applicant_Age >= 21 and  Monthly_Salary > 30000
+    and Credit_Score > 700 and Loan_Amount <= Monthly_Salary * 10
+    and not Unpaid_Loans and Documents_Verified 
+                )
+
+
+
+print(f"{Applicant_Name}")
+print(f"{Applicant_Age}")
+print(f"{Monthly_Salary}")
+print(f"{Loan_Amount}")
+print(f"{Credit_Score}")
+print(f"{Loan_Eligible}")
+
+
+
