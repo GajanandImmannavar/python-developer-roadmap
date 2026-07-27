@@ -2250,3 +2250,75 @@ print(x is y)
 # # False
 # # False
 
+
+####################################################
+# is not
+
+x = [10, 20]
+y = x
+
+print(x is y)
+print(x is not y)
+
+# Memory:
+
+# x ───────┐
+#          ▼
+#       [10, 20]
+#          ▲
+# y ───────┘
+
+# Output:
+
+# True
+# False
+
+# Why?
+
+# x is y
+
+# Both refer to the same object:
+
+# Same object → True
+
+# Therefore:
+
+# x is not y
+
+# means:
+
+# Different objects? → False
+
+
+
+# Different Objects
+
+x = [10, 20]
+y = [10, 20]
+
+print(x == y)
+print(x is y)
+print(x is not y)
+
+# Output:
+
+# True
+# False
+# True
+
+# Explanation:
+
+# Values are same       → x == y       → True
+# Objects are different → x is y       → False
+# Objects are different → x is not y   → True
+
+# Memory:
+
+# x ─────► [10, 20]
+
+# y ─────► [10, 20]
+
+# They have the same values but are two separate objects.
+
+
+
