@@ -10377,6 +10377,9 @@ Why?
 
 ---
 
+---
+
+## 🧠 Simple Quick Revision Table
 
 | Expression   |  Result | Why                      |
 | ------------ | ------: | ------------------------ |
@@ -10384,3 +10387,5 @@ Why?
 | `x != y`     | `False` | Values are not different |
 | `x is y`     | `False` | Different objects        |
 | `x is not y` |  `True` | Different objects        |
+
+---
