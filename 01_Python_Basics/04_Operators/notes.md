@@ -10377,7 +10377,6 @@ Why?
 
 ---
 
----
 
 ## 🧠 Simple Quick Revision Table
 
