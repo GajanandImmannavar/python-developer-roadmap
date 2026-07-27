@@ -10229,6 +10229,92 @@ asks:
 
 > Are these two variables referencing different objects?
 
+# 🌍 Real-World Python Usage: `None`
+
+This is the most important practical use of:
+
+```python
+is not
+```
+
+---
+
+## Example
+
+```python
+result = None
+```
+
+To check whether a value is **not `None`**:
+
+```python
+if result is not None:
+    print("A result exists")
+```
+
+---
+
+## 🤔 Why Do Python Developers Prefer `is not None`?
+
+Python developers prefer:
+
+```python
+result is not None
+```
+
+instead of:
+
+```python
+result != None
+```
+
+Because `None` is a special **singleton object** in Python.
+
+---
+
+## 🧠 What Is a Singleton Object?
+
+There is only **one `None` object** in Python:
+
+```text
+        None
+         ▲
+         │
+    ┌────┴────┐
+    │         │
+result      value
+```
+
+All references to `None` point to the same special object.
+
+Therefore, identity checking is appropriate:
+
+```python
+result is None
+```
+
+```python
+result is not None
+```
+
+---
+
+## 🧠 Memory Trick
+
+| Operator | Question          |
+| -------- | ----------------- |
+| `==`     | Same value?       |
+| `!=`     | Different value?  |
+| `is`     | Same object?      |
+| `is not` | Different object? |
+
+```text
+==       → Same value?
+!=       → Different value?
+is       → Same object?
+is not   → Different object?
+```
+
 ## Example
 
 ```python
