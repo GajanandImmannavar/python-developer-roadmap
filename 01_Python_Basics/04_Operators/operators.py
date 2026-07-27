@@ -126,7 +126,7 @@ Result = Num_A - Num_B
 print("Example 5: Subtraction After Implicit Type Casting")
 print(f"{Num_A} - {Num_B} =")
 print(f"{Result}\n")
-<<<<<<< HEAD
+
 
 
 # Example 1: Multiplication of Two Integer Numbers
@@ -2026,3 +2026,227 @@ Str <= Str1
 # returns
 
 # True.
+
+############################################################################################
+
+
+# Identity Operators in Python 
+
+# Types of  Indetity Operators 
+# 1: is 
+# 2: is Not 
+
+# Example 1: "is"
+
+x = [1,2,3,4]
+y = x
+
+print(x == y)
+print (x is y)
+
+# Your answer:
+
+# True
+# True
+
+# Correct.
+
+# Memory:
+
+# x ────────┐
+#           ▼
+#        [1,2,3,4]
+#           ▲
+# y ────────┘
+
+# Both variables reference the exact same list object.
+
+# Therefore:
+
+# x == y → True
+# x is y → True
+
+
+x = 10
+y = x
+
+print(x == y)
+print(x is y)
+
+# Your answer:
+
+# True
+# True
+
+# Correct.
+
+# Because:
+
+# y = x
+
+# means y receives the same object reference.
+
+# Conceptually:
+
+# x ────────┐
+#           ▼
+#           10
+#           ▲
+# y ────────┘
+
+# Therefore:
+
+# x == y → True
+# x is y → True
+# 🧠 Important Correction for Professional Python
+
+# Although your answer for Problem 3 is correct, remember this rule:
+
+# x == y
+
+# is the correct way to compare values.
+
+# Do not normally write:
+
+# x is y
+
+# to compare integers, strings, or other ordinary values.
+
+# For example:
+
+# x = 1000
+# y = 1000
+
+# x == y
+
+# is the correct value comparison.
+
+# Use:
+
+# x is y
+
+# when you specifically want to ask:
+
+# Are these the exact same object?
+
+# The most common special case is:
+
+# value is None
+
+x = [1, 2, 3]
+y = x
+
+x.append(4)
+
+print(x)
+print(y)
+print(x == y)
+print(x is y)
+
+# output:
+# [1, 2, 3, 4]
+# [1, 2, 3, 4]
+# True
+# True
+
+# Memory model
+# x ───────┐
+#          ▼
+#      [1, 2, 3]
+#          ▲
+# y ───────┘
+
+# Initially:
+
+# y = x
+
+# Both variables reference the same list object.
+
+# Then:
+
+# x.append(4)
+
+# The list itself is modified:
+
+# [1, 2, 3] → [1, 2, 3, 4]
+
+# Because x and y point to the same object:
+
+# x → [1, 2, 3, 4]
+# y → [1, 2, 3, 4]
+
+# Therefore:
+
+# x == y   # True
+# x is y   # True
+
+
+
+
+
+x = [1, 2, 3]
+y = [1, 2, 3]
+
+x.append(4)
+
+print(x)
+print(y)
+print(x == y)
+print(x is y)
+
+# output:
+# [1, 2, 3, 4]
+# [1, 2, 3]
+# False
+# False
+
+# [1, 2, 3, 4]
+# [1, 2, 3]
+# False
+# False
+
+
+
+# Memory model
+# x ─────► [1, 2, 3]
+
+# y ─────► [1, 2, 3]
+
+# Two separate list objects.
+
+# After:
+
+# x.append(4)
+
+# Only the list referenced by x changes:
+
+# x ─────► [1, 2, 3, 4]
+
+# y ─────► [1, 2, 3]
+
+# Therefore:
+
+# x == y   # False
+
+# The values are different.
+
+# x is y   # False
+
+# The objects are also different.
+
+# x = [10, 20]
+# y = x
+
+# x = [100]
+
+# print(x)
+# print(y)
+# print(x == y)
+# print(x is y)
+
+# # Output :
+# # [100]
+# # [10, 20]
+# # False
+# # False
+
