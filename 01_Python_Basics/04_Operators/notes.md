@@ -9739,4 +9739,704 @@ and
 or
 ```
 
-> **Parentheses can override the normal operator precedence and change the result of an expression.**
+> **Parentheses can override the normal operator precedence and change the result of an expression.**  
+
+
+
+# 🐍 Identity Operators in Python
+
+We are starting the next operator category:
+
+```python
+is
+is not
+```
+
+This topic is extremely important because many beginners confuse:
+
+```python
+==
+```
+
+with:
+
+```python
+is
+```
+
+---
+
+## 1️⃣ What Are Identity Operators?
+
+Python has two identity operators:
+
+| Operator | Meaning                                                  |
+| -------- | -------------------------------------------------------- |
+| `is`     | Checks whether two variables reference the same object   |
+| `is not` | Checks whether two variables reference different objects |
+
+The key concept is:
+
+> **Same object**
+
+Not:
+
+> **Same value**
+
+---
+
+## 2️⃣ First Understand `==`
+
+Suppose:
+
+```python
+x = 10
+y = 10
+```
+
+You ask:
+
+```python
+x == y
+```
+
+Python asks:
+
+> Do the values of `x` and `y` compare equal?
+
+Step-by-step:
+
+```text
+x == y
+  ↓
+10 == 10
+  ↓
+True
+```
+
+### Result
+
+```text
+True
+```
+
+So:
+
+```text
+== → Value equality
+```
+
+---
+
+## 3️⃣ Now Understand `is`
+
+Suppose:
+
+```python
+x = 10
+y = 10
+```
+
+When you write:
+
+```python
+x is y
+```
+
+Python asks:
+
+> Do `x` and `y` refer to the exact same object in memory?
+
+So:
+
+```text
+== → Same value?
+is → Same object?
+```
+
+This is the most important difference.
+
+---
+
+## 🧠 Memory Model
+
+Consider:
+
+```python
+x = 10
+y = x
+```
+
+Conceptually:
+
+```text
+             ┌──────────┐
+x ──────────►│          │
+             │    10    │
+y ──────────►│          │
+             └──────────┘
+```
+
+Both names point to the same object.
+
+Therefore:
+
+```python
+x == y
+```
+
+Output:
+
+```text
+True
+```
+
+And:
+
+```python
+x is y
+```
+
+Output:
+
+```text
+True
+```
+
+Because:
+
+```text
+Same value?  → Yes
+Same object? → Yes
+```
+
+---
+
+# 4️⃣ `==` vs `is`
+
+Consider:
+
+```python
+x = 10
+y = 10
+```
+
+Check:
+
+```python
+x == y
+```
+
+Python asks:
+
+> Does `10` equal `10`?
+
+Answer:
+
+```text
+True
+```
+
+Now:
+
+```python
+x is y
+```
+
+Python asks:
+
+> Are `x` and `y` referencing the same exact object?
+
+Depending on Python's object handling for certain immutable values, they may refer to the same object.
+
+However:
+
+> ⚠️ You should never use `is` to compare normal values.
+
+Use:
+
+```python
+x == y
+```
+
+for value comparison.
+
+---
+
+# 🚨 The Most Important Example: Lists
+
+Consider:
+
+```python
+x = [1, 2, 3]
+y = [1, 2, 3]
+```
+
+Many beginners think:
+
+```python
+x == y
+```
+
+and:
+
+```python
+x is y
+```
+
+will both be `True`.
+
+But:
+
+```python
+x == y
+```
+
+returns:
+
+```text
+True
+```
+
+Why?
+
+Because both lists contain the same values:
+
+```python
+[1, 2, 3] == [1, 2, 3]
+```
+
+But:
+
+```python
+x is y
+```
+
+returns:
+
+```text
+False
+```
+
+Why?
+
+Because Python created two different list objects:
+
+```text
+       ┌──────────────┐
+x ────►│ [1, 2, 3]    │
+       └──────────────┘
+
+
+       ┌──────────────┐
+y ────►│ [1, 2, 3]    │
+       └──────────────┘
+```
+
+The values are equal.
+
+But the objects are different.
+
+Therefore:
+
+```python
+x == y    # True
+x is y    # False
+```
+
+---
+
+## 🧠 Remember This
+
+```text
+┌──────────────────────────────┐
+│ ==                           │
+│                              │
+│ "Do they have equal values?" │
+└──────────────────────────────┘
+```
+
+```text
+┌──────────────────────────────┐
+│ is                           │
+│                              │
+│ "Are they the same object?"  │
+└──────────────────────────────┘
+```
+
+---
+
+# 5️⃣ Same Object Example
+
+Consider:
+
+```python
+x = [1, 2, 3]
+y = x
+```
+
+Now:
+
+```text
+       ┌──────────────┐
+x ────►│              │
+       │ [1, 2, 3]    │
+y ────►│              │
+       └──────────────┘
+```
+
+Both variables reference one list object.
+
+Therefore:
+
+```python
+x == y
+```
+
+Output:
+
+```text
+True
+```
+
+And:
+
+```python
+x is y
+```
+
+Output:
+
+```text
+True
+```
+
+Because:
+
+```text
+Same values?  → True
+Same object?  → True
+```
+
+---
+
+# 6️⃣ Different Objects, Same Values
+
+Consider:
+
+```python
+x = [1, 2, 3]
+y = [1, 2, 3]
+```
+
+### Memory
+
+```text
+x ───► [1, 2, 3]  ← Object A
+
+y ───► [1, 2, 3]  ← Object B
+```
+
+Therefore:
+
+```python
+x == y
+```
+
+Output:
+
+```text
+True
+```
+
+But:
+
+```python
+x is y
+```
+
+Output:
+
+```text
+False
+```
+
+Because:
+
+```text
+Same values?  → True
+Same object?  → False
+```
+
+---
+
+# 🔥 Very Important Rule
+
+## Use `==` for Values
+
+Examples:
+
+```python
+age == 18
+name == "Gajanand"
+marks == 100
+```
+
+The question is:
+
+> Do the values match?
+
+---
+
+## Use `is` for Object Identity
+
+The most common use is:
+
+```python
+value is None
+```
+
+Example:
+
+```python
+result = None
+```
+
+Later, we can write:
+
+```python
+if result is None:
+    ...
+```
+
+We will learn the `if` syntax later.
+
+For now:
+
+```python
+result is None
+```
+
+asks:
+
+> Is `result` the exact special `None` object?
+
+---
+
+# 7️⃣ `is not`
+
+`is not` means:
+
+> Are these two variables referencing different objects?
+
+## Example
+
+```python
+x = [1, 2]
+y = [1, 2]
+
+x is not y
+```
+
+Since they are different list objects:
+
+```text
+True
+```
+
+---
+
+## Same Object Example
+
+```python
+x = [1, 2]
+y = x
+```
+
+Now:
+
+```python
+x is not y
+```
+
+returns:
+
+```text
+False
+```
+
+because they are the same object.
+
+---
+
+## 🧠 Simple Comparison Table
+
+| Code         | Question           | Result         |
+| ------------ | ------------------ | -------------- |
+| `x == y`     | Same/equal value?  | Value-based    |
+| `x is y`     | Same object?       | Identity-based |
+| `x != y`     | Different values?  | Value-based    |
+| `x is not y` | Different objects? | Identity-based |
+
+---
+
+# 🎯 The Golden Example
+
+Consider:
+
+```python
+x = [10, 20]
+y = [10, 20]
+z = x
+```
+
+## Memory
+
+```text
+x ───────────────┐
+                 ▼
+              [10, 20]
+                 ▲
+z ───────────────┘
+
+
+y ─────────────► [10, 20]
+```
+
+---
+
+## `x == y`
+
+```python
+x == y
+```
+
+Output:
+
+```text
+True
+```
+
+Why?
+
+> Same values.
+
+---
+
+## `x is y`
+
+```python
+x is y
+```
+
+Output:
+
+```text
+False
+```
+
+Why?
+
+> Different objects.
+
+---
+
+## `x is z`
+
+```python
+x is z
+```
+
+Output:
+
+```text
+True
+```
+
+Why?
+
+> Same object.
+
+---
+
+## `x == z`
+
+```python
+x == z
+```
+
+Output:
+
+```text
+True
+```
+
+Why?
+
+> Same values too.
+
+---
+
+# 🧪 Your First Practice
+
+Predict the output without running the code.
+
+---
+
+## 🟢 Problem 1
+
+```python
+x = [10, 20]
+y = [10, 20]
+
+print(x == y)
+print(x is y)
+```
+
+What are the two outputs?
+
+---
+
+## 🟢 Problem 2
+
+```python
+x = [10, 20]
+y = x
+
+print(x == y)
+print(x is y)
+```
+
+What are the two outputs?
+
+---
+
+## 🟢 Problem 3
+
+```python
+x = 10
+y = x
+
+print(x == y)
+print(x is y)
+```
+
+What are the two outputs?
+
+---
+
+# 🧠 Practice 1 — Expected Results
+
+Assume:
+
+```python
+x = [10, 20]
+y = [10, 20]
+```
+
+| Expression   |  Result | Why                      |
+| ------------ | ------: | ------------------------ |
+| `x == y`     |  `True` | Same values              |
+| `x != y`     | `False` | Values are not different |
+| `x is y`     | `False` | Different objects        |
+| `x is not y` |  `True` | Different objects        |
