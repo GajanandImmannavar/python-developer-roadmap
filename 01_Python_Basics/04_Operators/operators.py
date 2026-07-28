@@ -2453,3 +2453,617 @@ print(x is not y)
 # y ─────► Object B
 # x is y → ❌ False
 # x is not y → ✅ True
+
+
+############################################################################################################
+
+# Membership  Operator
+
+USN = [101, 102, 103, 104]
+print(101 in USN )
+
+# output 
+
+# Step 1: Python creates the list
+
+# Memory:
+
+# USN
+#  │
+#  ▼
+# +------------------------+
+# | 101 | 102 | 103 | 104 |
+# +------------------------+
+
+# USN stores a reference to the list object.
+
+# Step 2: Python evaluates
+# 101 in USN
+
+# Python asks:
+
+# "Is 101 one of the elements inside this list?"
+
+# Step 3: Search starts
+
+# Python checks one element at a time.
+
+# 101 ?
+
+# ↓
+
+# Found ✅
+
+# ↓
+
+# Stop searching
+
+# Python doesn't continue because it already found the answer.
+
+# Step 4: Python creates a Boolean object
+# True
+# Output
+# True
+
+
+
+
+name = "PYTHON"
+print("P" in name)
+
+# Step 1
+
+# Python creates a string object.
+
+# Memory
+
+# name
+#  │
+#  ▼
+# +-------------------+
+# | P | Y | T | H | O | N |
+# +-------------------+
+
+# Strings are sequences of characters.
+
+# Step 2
+
+# Python evaluates
+
+# "P" in name
+
+# Python asks
+
+# "Is the character P inside this string?"
+
+# Step 3
+
+# Search
+
+# P ?
+
+# ↓
+
+# Found ✅
+
+# ↓
+
+# Stop
+# Step 4
+
+# Creates
+
+# True
+# Output
+# True
+
+
+name = "PYTHON"
+print("Z" in name)
+
+# Memory
+# P
+# Y
+# T
+# H
+# O
+# N
+# Python asks
+
+# "Is Z inside this string?"
+
+# Search
+
+# P ?
+
+# No
+
+# ↓
+
+# Y ?
+
+# No
+
+# ↓
+
+# T ?
+
+# No
+
+# ↓
+
+# H ?
+
+# No
+
+# ↓
+
+# O ?
+
+# No
+
+# ↓
+
+# N ?
+
+# No
+
+# ↓
+
+# Reached end
+
+# Nothing matched.
+
+# Python creates
+
+# False
+
+# Output: False
+
+Numbers = [1,2,3,4,5,6,7,8,9,0]
+print(1 not in Numbers)
+
+# Numbers
+#  │
+#  ▼
+# +------------------------------+
+# |1|2|3|4|5|6|7|8|9|0|
+# +------------------------------+
+
+# Python first evaluates
+
+# 1 in Numbers
+
+# Search
+
+# 1 ?
+
+# ↓
+
+# Found
+
+# So
+
+# 1 in Numbers
+
+# becomes
+
+# True
+
+# Now Python applies
+
+# not True
+
+# which becomes
+
+# False
+# Output
+# False
+
+
+Numbers = [0,9,8,7,6,5,4,3,2,1]
+print(1 in Numbers)
+
+# Notice something important.
+
+# Many beginners think because 1 is last, Python returns False.
+
+# No.
+
+# Python simply searches until it finds it.
+
+# Memory
+
+# 0
+# 9
+# 8
+# 7
+# 6
+# 5
+# 4
+# 3
+# 2
+# 1
+
+# Search
+
+# 0 ?
+
+# No
+
+# ↓
+
+# 9 ?
+
+# No
+
+# ↓
+
+# 8 ?
+
+# No
+
+# ↓
+
+# ...
+
+# ↓
+
+# 1 ?
+
+# Yes
+
+# ↓
+
+# Stop
+
+# Output
+
+# True
+
+Student ={"Name": "Gajanand",
+          "USN" : "1NH23AI406"}
+
+print("USN" in Student)
+
+# Memory
+# Student
+#  │
+#  ▼
+
+# +----------------------------------+
+# | "Name" ─────► "Gajanand"         |
+# | "USN"  ─────► "1NH23AI406"       |
+# +----------------------------------+
+
+# Notice there are two parts.
+
+# Key
+
+# Name
+# USN
+
+# Value
+
+# Gajanand
+# 1NH23AI406
+
+# Python asks
+
+# "Is USN one of the keys?"
+
+# Search
+
+# Name ?
+
+# No
+
+# ↓
+
+# USN ?
+
+# Yes
+
+# Stop.
+
+# Output
+
+# True
+
+
+student = {
+    "name": "Gajanand",
+    "age": 22
+}
+
+print("Gajanand" in student)
+
+
+# Memory
+
+# +------------------------------+
+# | name ─────► Gajanand         |
+# | age  ─────► 22               |
+# +------------------------------+
+
+# Python asks
+
+# "Is Gajanand one of the keys?"
+
+# Search
+
+# name ?
+
+# No
+
+# ↓
+
+# age ?
+
+# No
+
+# ↓
+
+# End
+
+# Notice
+
+# Python never checks the values.
+
+# It only checks
+
+# Keys
+
+# name
+# age
+
+# Therefore
+
+# False
+# Output
+# False
+
+
+
+# Universal Thinking Pattern
+
+# Whenever you see:
+
+# value in collection
+
+# Think:
+
+# Python
+
+# ↓
+
+# Evaluates left value
+
+# ↓
+
+# Evaluates right collection
+
+# ↓
+
+# Looks inside the collection
+
+# ↓
+
+# How it looks depends on the collection type
+
+# List
+# ↓
+
+# Elements
+
+# Tuple
+# ↓
+
+# Elements
+
+# String
+# ↓
+
+# Characters
+
+# Set
+# ↓
+
+# Elements (hash lookup)
+
+# Dictionary
+# ↓
+
+# Keys
+
+
+
+# Python's Internal Thinking
+
+# Suppose
+
+# numbers = [10, 20, 30]
+
+# Now Python sees
+
+# 20 in numbers
+
+# Internally Python thinks:
+
+# Step 1
+
+# Evaluate the left operand.
+
+# 20
+
+# It becomes
+
+# Search Value = 20
+# Step 2
+
+# Evaluate the right operand.
+
+# numbers
+
+# Python looks up the variable.
+
+# It finds
+
+# [10,20,30]
+
+# Now Python knows
+
+# Search Value
+
+# 20
+
+# Search Collection
+
+# [10,20,30]
+# Step 3
+
+# Search begins
+
+# 20 == 10 ?
+
+# No
+
+# ↓
+
+# 20 == 20 ?
+
+# Yes
+
+# ↓
+
+# Return True
+# Another Example
+# "P" in "PYTHON"
+
+# Python sees
+
+# "P"      in      "PYTHON"
+
+# Left operand
+
+# ↓
+
+# P
+
+# Right operand
+
+# ↓
+
+# PYTHON
+
+# Python thinks
+
+# Search
+
+# P
+
+# Inside
+
+# PYTHON
+# Another Example
+# "USN" in student
+
+# Suppose
+
+# student = {
+#     "Name":"Gajanand",
+#     "USN":"1NH23AI406"
+# }
+
+# Python sees
+
+# "USN"      in      student
+
+# Left operand
+
+# ↓
+
+# USN
+
+# Right operand
+
+# ↓
+
+# Dictionary
+
+# Now Python thinks
+
+# Search key
+
+# USN
+
+# Inside dictionary keys 
+
+# Why doesn't Python search values?
+
+# Because the dictionary is designed as a mapping.
+
+# Think of it like a locker.
+
+# Locker Number (Key)
+
+# ↓
+
+# Contains
+
+# Student Bag (Value)
+
+# Python knows the locker numbers.
+
+# It does not know what is inside every locker until you open it.
+
+# So when you write
+
+# "USN" in student
+
+# Python checks the locker labels (keys), not the contents (values).
+
+# Universal Rule
+
+# Every binary operator follows the same pattern.
+
+# Left Operand
+
+# ↓
+
+# Operator
+
+# ↓
+
+# Right Operand
+
+# Python:
+
+# Evaluates the left operand into a value.
+# Evaluates the right operand into a value.
+# Applies the operator.
+# Produces the result.
+# Memory Trick
+
+# Don't think:
+
+# ❌ Left variable and right variable.
+
+# Think:
+
+# ✅ Left operand and right operand.
+
+# An operand is simply anything that produces a value.
+
+# Examples of operands:
+
+# 10          # literal
+# x           # variable
+# x + y       # expression
+# len(name)   # function call
+# "Python"    # string literal
+
+
+###########################################################################
+# Bitwise Operator
+
