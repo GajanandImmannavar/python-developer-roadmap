@@ -10474,3 +10474,566 @@ Why?
 | `x is not y` |  `True` | Different objects        |
 
 ---
+
+Excellent! Now we start the **last major beginner operator category** before moving into control flow.
+
+# 📚 Membership Operators
+
+```python
+in
+not in
+```
+
+These operators are used **every day** by Python developers.
+
+---
+
+# 1. What are Membership Operators?
+
+Membership operators check **whether a value exists inside a collection**.
+
+A collection can be:
+
+* String
+* List
+* Tuple
+* Set
+* Dictionary
+
+Python asks:
+
+> **"Is this value present inside that collection?"**
+
+The answer is always a Boolean:
+
+```python
+True
+```
+
+or
+
+```python
+False
+```
+
+---
+
+# 2. Why do we need Membership Operators?
+
+Imagine:
+
+* Is a student's name in the attendance list?
+* Is a product in the shopping cart?
+* Does a password contain `"@"`?
+* Is a city in the supported locations?
+* Is `"python"` one of the available courses?
+
+Without membership operators, checking these would be much harder.
+
+---
+
+# 3. Syntax
+
+## `in`
+
+```python
+value in collection
+```
+
+Python asks:
+
+> "Does this value exist inside this collection?"
+
+---
+
+## `not in`
+
+```python
+value not in collection
+```
+
+Python asks:
+
+> "Does this value NOT exist inside this collection?"
+
+---
+
+# 4. Internal Working
+
+Example:
+
+```python
+numbers = [10, 20, 30]
+
+print(20 in numbers)
+```
+
+### Step 1
+
+Python looks at
+
+```text
+[10, 20, 30]
+```
+
+### Step 2
+
+It starts searching.
+
+```
+10 ?
+```
+
+Not equal.
+
+↓
+
+```
+20 ?
+```
+
+Equal!
+
+↓
+
+Stop searching.
+
+Python creates
+
+```python
+True
+```
+
+and prints it.
+
+---
+
+# Memory Model
+
+```text
+numbers
+    │
+    ▼
++------------------+
+| 10 | 20 | 30 |
++------------------+
+```
+
+Python checks one element at a time until:
+
+* it finds the value
+* or reaches the end
+
+---
+
+# 5. Example with List
+
+```python
+numbers = [10, 20, 30]
+
+print(20 in numbers)
+```
+
+Python thinks
+
+```
+Is 20 inside the list?
+```
+
+Yes.
+
+Output
+
+```text
+True
+```
+
+---
+
+Example
+
+```python
+numbers = [10, 20, 30]
+
+print(50 in numbers)
+```
+
+Python thinks
+
+```
+10?
+
+No
+
+20?
+
+No
+
+30?
+
+No
+
+Reached end.
+```
+
+Output
+
+```text
+False
+```
+
+---
+
+# 6. Example with String
+
+```python
+name = "Python"
+
+print("P" in name)
+```
+
+Python searches
+
+```
+P
+```
+
+Found.
+
+Output
+
+```text
+True
+```
+
+---
+
+Example
+
+```python
+print("Z" in name)
+```
+
+Search
+
+```
+P
+
+y
+
+t
+
+h
+
+o
+
+n
+```
+
+Not found.
+
+Output
+
+```text
+False
+```
+
+---
+
+# 7. Example with Tuple
+
+```python
+numbers = (10, 20, 30)
+
+print(30 in numbers)
+```
+
+Output
+
+```text
+True
+```
+
+---
+
+# 8. Example with Set
+
+```python
+numbers = {10, 20, 30}
+
+print(20 in numbers)
+```
+
+Output
+
+```text
+True
+```
+
+Sets are optimized for very fast membership checks, which is one reason they're useful.
+
+---
+
+# 9. Example with Dictionary
+
+This is very important.
+
+```python
+student = {
+    "name": "Gajanand",
+    "age": 22
+}
+
+print("name" in student)
+```
+
+Output
+
+```text
+True
+```
+
+### Why?
+
+Python checks **dictionary keys**, not values.
+
+Keys:
+
+```
+name
+age
+```
+
+---
+
+Example
+
+```python
+print("Gajanand" in student)
+```
+
+Output
+
+```text
+False
+```
+
+Even though `"Gajanand"` is stored in the dictionary, it is a **value**, not a key.
+
+Later, when we study dictionaries in depth, we'll learn how to check values as well.
+
+---
+
+# 10. `not in`
+
+Example
+
+```python
+numbers = [10, 20, 30]
+
+print(50 not in numbers)
+```
+
+Python asks
+
+```
+Is 50 NOT inside the list?
+```
+
+Yes.
+
+Output
+
+```text
+True
+```
+
+---
+
+Example
+
+```python
+print(20 not in numbers)
+```
+
+Python asks
+
+```
+Is 20 NOT inside the list?
+```
+
+No.
+
+Output
+
+```text
+False
+```
+
+---
+
+# 11. Real-World Examples
+
+### Login System
+
+```python
+allowed_users = ["Alice", "Bob", "Charlie"]
+
+"Bob" in allowed_users
+```
+
+Meaning:
+
+```
+Is Bob allowed?
+```
+
+---
+
+### Shopping Cart
+
+```python
+cart = ["Milk", "Bread", "Eggs"]
+
+"Milk" in cart
+```
+
+Meaning:
+
+```
+Is Milk in the cart?
+```
+
+---
+
+### Password Validation
+
+```python
+password = "Hello@123"
+
+"@" in password
+```
+
+Meaning:
+
+```
+Does the password contain @?
+```
+
+---
+
+### Course Platform
+
+```python
+courses = ["Python", "Java", "C++"]
+
+"Python" in courses
+```
+
+Meaning:
+
+```
+Is Python available?
+```
+
+---
+
+# 🧠 Memory Trick
+
+| Operator | Python asks                |
+| -------- | -------------------------- |
+| `in`     | Does this value exist?     |
+| `not in` | Does this value NOT exist? |
+
+---
+
+# ⚠ Common Beginner Mistakes
+
+### ❌ Mistake 1
+
+Thinking `in` compares object identity.
+
+No.
+
+It checks **membership**, not memory identity.
+
+---
+
+### ❌ Mistake 2
+
+Thinking dictionaries search values.
+
+```python
+student = {
+    "name": "Gajanand"
+}
+```
+
+```python
+"Gajanand" in student
+```
+
+returns
+
+```text
+False
+```
+
+because Python checks keys by default.
+
+---
+
+### ❌ Mistake 3
+
+Confusing `==` with `in`.
+
+```python
+numbers = [10, 20, 30]
+```
+
+```python
+20 == numbers
+```
+
+asks:
+
+```
+Is 20 equal to the entire list?
+```
+
+Answer:
+
+```text
+False
+```
+
+Whereas:
+
+```python
+20 in numbers
+```
+
+asks:
+
+```
+Is 20 one of the elements in the list?
+```
+
+Answer:
+
+```text
+True
+```
+
+---
+
+# 📋 Revision Table
+
+| Operator | Python asks                                      | Returns          |
+| -------- | ------------------------------------------------ | ---------------- |
+| `in`     | Does this value exist inside the collection?     | `True` / `False` |
+| `not in` | Does this value NOT exist inside the collection? | `True` / `False` |
+
+---
+
+
