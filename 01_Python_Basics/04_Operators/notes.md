@@ -12059,4 +12059,685 @@ Convert these decimal numbers to binary.
 
 Once you're comfortable converting between decimal and binary, learning `&`, `|`, `^`, `~`, `<<`, and `>>` becomes much easier because you'll be able to see exactly what Python is doing bit by bit.
 
+Yes! There is a simple algorithm, and it's the one every programmer learns.
+
+There are **three common methods** to find the binary representation of a decimal number.
+
+---
+
+# Method 1 (Most Important) ⭐⭐⭐⭐⭐
+
+## Repeated Division by 2
+
+This is the standard algorithm.
+
+### Steps
+
+1. Divide the number by **2**.
+2. Write down the **remainder** (`0` or `1`).
+3. Divide the quotient by **2** again.
+4. Repeat until the quotient becomes **0**.
+5. Read the remainders **from bottom to top**.
+
+---
+
+## Example: Decimal 10
+
+| Division | Quotient | Remainder |
+| -------: | -------: | --------: |
+|   10 ÷ 2 |        5 |     **0** |
+|    5 ÷ 2 |        2 |     **1** |
+|    2 ÷ 2 |        1 |     **0** |
+|    1 ÷ 2 |        0 |     **1** |
+
+Now read the remainders **bottom → top**:
+
+```text
+1 0 1 0
+```
+
+So,
+
+```text
+Decimal 10 = Binary 1010
+```
+
+---
+
+## Example: Decimal 13
+
+| Division | Quotient | Remainder |
+| -------: | -------: | --------: |
+|   13 ÷ 2 |        6 |     **1** |
+|    6 ÷ 2 |        3 |     **0** |
+|    3 ÷ 2 |        1 |     **1** |
+|    1 ÷ 2 |        0 |     **1** |
+
+Read bottom → top:
+
+```text
+1101
+```
+
+Therefore,
+
+```text
+13 = 1101
+```
+
+---
+
+# Why Does This Work?
+
+Every division by 2 extracts one binary digit.
+
+* Remainder `0` means the current bit is `0`.
+* Remainder `1` means the current bit is `1`.
+
+Reading from the bottom reconstructs the binary number from the most significant bit to the least significant bit.
+
+---
+
+# Method 2 (Using Powers of 2) ⭐⭐⭐⭐
+
+This is excellent for checking your answer mentally.
+
+Find the largest power of 2 less than or equal to the number.
+
+Example: **13**
+
+Powers of 2:
+
+```text
+1   2   4   8   16
+```
+
+13 fits into:
+
+```text
+8 ✓
+```
+
+Remaining:
+
+```text
+13 - 8 = 5
+```
+
+5 fits into:
+
+```text
+4 ✓
+```
+
+Remaining:
+
+```text
+5 - 4 = 1
+```
+
+1 fits into:
+
+```text
+1 ✓
+```
+
+Now fill the positions:
+
+|  8 |  4 |  2 |  1 |
+| -: | -: | -: | -: |
+|  1 |  1 |  0 |  1 |
+
+Result:
+
+```text
+1101
+```
+
+---
+
+# Method 3 (Python)
+
+Python can do it automatically.
+
+```python
+print(bin(10))
+```
+
+Output:
+
+```text
+0b1010
+```
+
+The prefix `0b` means:
+
+```text
+Binary Number
+```
+
+So,
+
+```text
+0b1010
+```
+
+is simply
+
+```text
+1010
+```
+
+---
+
+# 🧠 Memory Trick
+
+Whenever you need to convert **Decimal → Binary**:
+
+```text
+Divide by 2
+↓
+
+Write the remainder
+
+↓
+
+Repeat until quotient = 0
+
+↓
+
+Read remainders from bottom to top
+```
+
+This is the algorithm used in schools, colleges, interviews, and computer science courses.
+
+---
+
+# Let's Practice
+
+Without using Python or a calculator, convert these using the **division by 2** method:
+
+1. **6**
+2. **11**
+3. **18**
+4. **25**
+
+Write the division table just like we did above. Once you master this method, understanding `&`, `|`, `^`, `~`, `<<`, and `>>` becomes much easier.
+
+---
+
+| Decimal | Your Binary | Correct |
+| ------: | :---------: | :-----: |
+|       6 |     110     |    ✅    |
+|      11 |     1011    |    ✅    |
+|      18 |    10010    |    ✅    |
+|      25 |    11001    |    ✅    |
+
+Now let's learn the **power-of-2 method** properly. Most beginners get confused because nobody explains **how to choose the powers**.
+
+---
+
+# Step 1: Memorize the Powers of 2
+
+You **must** memorize this table.
+
+| Power | Value |
+| ----: | ----: |
+|    2⁰ |     1 |
+|    2¹ |     2 |
+|    2² |     4 |
+|    2³ |     8 |
+|    2⁴ |    16 |
+|    2⁵ |    32 |
+|    2⁶ |    64 |
+|    2⁷ |   128 |
+|    2⁸ |   256 |
+|    2⁹ |   512 |
+
+Don't calculate these every time. Just know them.
+
+---
+
+# Step 2: Find the Largest Power ≤ Number
+
+This is where you were stuck.
+
+Suppose the number is:
+
+```text
+25
+```
+
+Look at the powers:
+
+```text
+1
+2
+4
+8
+16
+32
+```
+
+Ask yourself:
+
+> **Which is the largest power of 2 that is NOT bigger than 25?**
+
+```text
+32 ❌ Too big
+
+16 ✅ Yes
+```
+
+So we start from **16**.
+
+---
+
+# Example 1: 25
+
+Write the powers from largest to smallest.
+
+| 16 |  8 |  4 |  2 |  1 |
+| -: | -: | -: | -: | -: |
+
+Now ask:
+
+### Can I use 16?
+
+```text
+25 ≥ 16
+
+Yes
+```
+
+Write **1**.
+
+Remaining:
+
+```text
+25 - 16 = 9
+```
+
+| 16 |  8 |  4 |  2 |  1 |
+| -: | -: | -: | -: | -: |
+|  1 |    |    |    |    |
+
+---
+
+### Can I use 8?
+
+Remaining is **9**.
+
+```text
+9 ≥ 8
+
+Yes
+```
+
+Write **1**.
+
+Remaining:
+
+```text
+9 - 8 = 1
+```
+
+| 16 |  8 |  4 |  2 |  1 |
+| -: | -: | -: | -: | -: |
+|  1 |  1 |    |    |    |
+
+---
+
+### Can I use 4?
+
+Remaining:
+
+```text
+1 ≥ 4 ?
+
+No
+```
+
+Write
+
+```text
+0
+```
+
+---
+
+### Can I use 2?
+
+```text
+1 ≥ 2 ?
+
+No
+```
+
+Write
+
+```text
+0
+```
+
+---
+
+### Can I use 1?
+
+```text
+1 ≥ 1
+
+Yes
+```
+
+Write
+
+```text
+1
+```
+
+Final answer:
+
+| 16 |  8 |  4 |  2 |  1 |
+| -: | -: | -: | -: | -: |
+|  1 |  1 |  0 |  0 |  1 |
+
+Binary:
+
+```text
+11001
+```
+
+---
+
+# Example 2: 18
+
+Largest power ≤ 18?
+
+```text
+32 ❌
+
+16 ✅
+```
+
+Start.
+
+| 16 |  8 |  4 |  2 |  1 |
+| -: | -: | -: | -: | -: |
+
+Remaining = 18
+
+---
+
+Can use 16?
+
+Yes.
+
+Write
+
+```text
+1
+```
+
+Remaining
+
+```text
+2
+```
+
+---
+
+Can use 8?
+
+```text
+2 ≥ 8 ?
+
+No
+```
+
+Write
+
+```text
+0
+```
+
+---
+
+Can use 4?
+
+No
+
+Write
+
+```text
+0
+```
+
+---
+
+Can use 2?
+
+Yes
+
+Write
+
+```text
+1
+```
+
+Remaining
+
+```text
+0
+```
+
+---
+
+Can use 1?
+
+No
+
+Write
+
+```text
+0
+```
+
+Final
+
+| 16 |  8 |  4 |  2 |  1 |
+| -: | -: | -: | -: | -: |
+|  1 |  0 |  0 |  1 |  0 |
+
+Binary
+
+```text
+10010
+```
+
+---
+
+# Example 3: 11
+
+Largest power ≤ 11?
+
+```text
+16 ❌
+
+8 ✅
+```
+
+|  8 |  4 |  2 |  1 |
+| -: | -: | -: | -: |
+
+Remaining = 11
+
+---
+
+8?
+
+Yes
+
+Remaining = 3
+
+Write
+
+```text
+1
+```
+
+---
+
+4?
+
+```text
+3 ≥ 4 ?
+
+No
+```
+
+Write
+
+```text
+0
+```
+
+---
+
+2?
+
+Yes
+
+Remaining = 1
+
+Write
+
+```text
+1
+```
+
+---
+
+1?
+
+Yes
+
+Remaining = 0
+
+Write
+
+```text
+1
+```
+
+Final
+
+```text
+1011
+```
+
+---
+
+# The Thinking Pattern
+
+Whenever you convert a decimal number:
+
+```text
+Step 1
+
+Find largest power of 2 ≤ number
+
+↓
+
+Step 2
+
+Subtract it
+
+↓
+
+Step 3
+
+Move to next smaller power
+
+↓
+
+If remaining ≥ power
+
+↓
+
+Write 1
+
+Else
+
+↓
+
+Write 0
+
+↓
+
+Repeat until 1
+```
+
+---
+
+# Why Does This Work?
+
+Each binary digit tells Python:
+
+```text
+Should I include this power of 2?
+```
+
+Example:
+
+```text
+25
+```
+
+| Power | 16 |  8 |  4 |  2 |  1 |
+| ----: | -: | -: | -: | -: | -: |
+|   Bit |  1 |  1 |  0 |  0 |  1 |
+
+This means:
+
+```text
+Use 16 ✔
+
+Use 8 ✔
+
+Don't use 4 ✘
+
+Don't use 2 ✘
+
+Use 1 ✔
+```
+
+Now add them:
+
+```text
+16 + 8 + 1
+
+=
+
+25
+```
+
+That's all binary really is—a compact way of saying **which powers of 2 are included**.
+
+---
+
+## 🧠 Memory Trick
+
+Think of the binary digits as **Yes/No switches**:
+
+```text
+Power of 2:   16    8    4    2    1
+Include it?    ✔    ✔    ✘    ✘    ✔
+Bit:           1    1    0    0    1
+```
+
+`1` means **"Yes, include this power."**
+
+`0` means **"No, don't include this power."**
+
 
