@@ -2321,4 +2321,135 @@ print(x is not y)
 # They have the same values but are two separate objects.
 
 
+# ✅ Problem 1
+# x = [1, 2, 3]
+# y = x
 
+# print(x is not y)
+
+# Your answer:
+
+# False
+
+# ✅ Correct.
+
+# Memory
+# x ───────┐
+#          ▼
+#      [1, 2, 3]
+#          ▲
+# y ───────┘
+
+# Python asks:
+
+# "Are these different objects?"
+
+# Answer:
+
+# No
+
+# So:
+
+# x is not y
+
+# returns
+
+# False
+# ✅ Problem 2
+# x = [1, 2, 3]
+# y = [1, 2, 3]
+
+# print(x is not y)
+
+# Your answer:
+
+# True
+
+# ✅ Correct.
+
+# Memory:
+
+# x ─────► [1, 2, 3]
+
+# y ─────► [1, 2, 3]
+
+# Python asks:
+
+# "Are these different objects?"
+
+# Answer:
+
+# Yes
+
+# Therefore
+
+# x is not y
+
+# returns
+
+# True
+# ✅ Problem 3
+# x = [10, 20]
+# y = x
+
+# x = [100]
+
+# print(x is not y)
+
+# Your answer:
+
+# True
+
+# ✅ Correct.
+
+# Initially
+
+# x ───────┐
+#          ▼
+#       [10,20]
+#          ▲
+# y ───────┘
+
+# After
+
+# x = [100]
+
+# Memory becomes
+
+# x ─────► [100]
+
+# y ─────► [10,20]
+
+# Now Python asks:
+
+# "Are these different objects?"
+
+# Yes.
+
+# Therefore
+
+# x is not y
+
+# returns
+
+# True
+# 🎯 Master Revision (Identity Operators)
+# Operator	Python asks	Compares	Returns
+# is	Are both variables the same object?	Memory identity	True / False
+# is not	Are both variables different objects?	Memory identity	True / False
+# Memory Rule
+# x = y
+# x ───────┐
+#          ▼
+#       Object
+#          ▲
+# y ───────┘
+# x is y → ✅ True
+# x is not y → ❌ False
+# x = [1]
+# y = [1]
+# x ─────► Object A
+
+# y ─────► Object B
+# x is y → ❌ False
+# x is not y → ✅ True
