@@ -11034,6 +11034,1029 @@ True
 | `in`     | Does this value exist inside the collection?     | `True` / `False` |
 | `not in` | Does this value NOT exist inside the collection? | `True` / `False` |
 
+
+# Problem 1
+
+```python
+USN = [101, 102, 103, 104]
+print(101 in USN)
+```
+
 ---
+
+## Step 1: Python creates the list
+
+Memory:
+
+```text
+USN
+ │
+ ▼
++------------------------+
+| 101 | 102 | 103 | 104 |
++------------------------+
+```
+
+`USN` stores a reference to the list object.
+
+---
+
+## Step 2: Python evaluates
+
+```python
+101 in USN
+```
+
+Python asks:
+
+> "Is **101** one of the elements inside this list?"
+
+---
+
+## Step 3: Search starts
+
+Python checks one element at a time.
+
+```text
+101 ?
+
+↓
+
+Found ✅
+
+↓
+
+Stop searching
+```
+
+Python doesn't continue because it already found the answer.
+
+---
+
+## Step 4: Python creates a Boolean object
+
+```python
+True
+```
+
+---
+
+## Output
+
+```text
+True
+```
+
+---
+
+# Problem 2
+
+```python
+name = "PYTHON"
+print("P" in name)
+```
+
+---
+
+## Step 1
+
+Python creates a string object.
+
+Memory
+
+```text
+name
+ │
+ ▼
++-------------------+
+| P | Y | T | H | O | N |
++-------------------+
+```
+
+Strings are sequences of characters.
+
+---
+
+## Step 2
+
+Python evaluates
+
+```python
+"P" in name
+```
+
+Python asks
+
+> "Is the character **P** inside this string?"
+
+---
+
+## Step 3
+
+Search
+
+```text
+P ?
+
+↓
+
+Found ✅
+
+↓
+
+Stop
+```
+
+---
+
+## Step 4
+
+Creates
+
+```python
+True
+```
+
+---
+
+## Output
+
+```text
+True
+```
+
+---
+
+# Problem 3
+
+```python
+name = "PYTHON"
+
+print("Z" in name)
+```
+
+---
+
+## Memory
+
+```text
+P
+Y
+T
+H
+O
+N
+```
+
+---
+
+## Python asks
+
+> "Is Z inside this string?"
+
+---
+
+Search
+
+```text
+P ?
+
+No
+
+↓
+
+Y ?
+
+No
+
+↓
+
+T ?
+
+No
+
+↓
+
+H ?
+
+No
+
+↓
+
+O ?
+
+No
+
+↓
+
+N ?
+
+No
+
+↓
+
+Reached end
+```
+
+Nothing matched.
+
+Python creates
+
+```python
+False
+```
+
+---
+
+## Output
+
+```text
+False
+```
+
+---
+
+# Problem 4
+
+```python
+Numbers = [1,2,3,4,5,6,7,8,9,0]
+
+print(1 not in Numbers)
+```
+
+---
+
+## Memory
+
+```text
+Numbers
+ │
+ ▼
++------------------------------+
+|1|2|3|4|5|6|7|8|9|0|
++------------------------------+
+```
+
+---
+
+Python first evaluates
+
+```python
+1 in Numbers
+```
+
+Search
+
+```text
+1 ?
+
+↓
+
+Found
+```
+
+So
+
+```python
+1 in Numbers
+```
+
+becomes
+
+```python
+True
+```
+
+Now Python applies
+
+```python
+not True
+```
+
+which becomes
+
+```python
+False
+```
+
+---
+
+## Output
+
+```text
+False
+```
+
+---
+
+# Problem 5
+
+```python
+Numbers = [0,9,8,7,6,5,4,3,2,1]
+
+print(1 in Numbers)
+```
+
+Notice something important.
+
+Many beginners think because **1 is last**, Python returns False.
+
+No.
+
+Python simply searches until it finds it.
+
+---
+
+Memory
+
+```text
+0
+9
+8
+7
+6
+5
+4
+3
+2
+1
+```
+
+Search
+
+```text
+0 ?
+
+No
+
+↓
+
+9 ?
+
+No
+
+↓
+
+8 ?
+
+No
+
+↓
+
+...
+
+↓
+
+1 ?
+
+Yes
+
+↓
+
+Stop
+```
+
+---
+
+Output
+
+```text
+True
+```
+
+---
+
+# Problem 6
+
+```python
+Student = {
+    "Name": "Gajanand",
+    "USN": "1NH23AI406"
+}
+
+print("USN" in Student)
+```
+
+---
+
+## Memory
+
+```text
+Student
+ │
+ ▼
+
++----------------------------------+
+| "Name" ─────► "Gajanand"         |
+| "USN"  ─────► "1NH23AI406"       |
++----------------------------------+
+```
+
+Notice there are two parts.
+
+Key
+
+```text
+Name
+USN
+```
+
+Value
+
+```text
+Gajanand
+1NH23AI406
+```
+
+---
+
+Python asks
+
+> "Is **USN** one of the keys?"
+
+Search
+
+```text
+Name ?
+
+No
+
+↓
+
+USN ?
+
+Yes
+```
+
+Stop.
+
+---
+
+Output
+
+```text
+True
+```
+
+---
+
+# Problem 7
+
+```python
+student = {
+    "name": "Gajanand",
+    "age": 22
+}
+
+print("Gajanand" in student)
+```
+
+---
+
+Memory
+
+```text
++------------------------------+
+| name ─────► Gajanand         |
+| age  ─────► 22               |
++------------------------------+
+```
+
+Python asks
+
+> "Is **Gajanand** one of the keys?"
+
+Search
+
+```text
+name ?
+
+No
+
+↓
+
+age ?
+
+No
+
+↓
+
+End
+```
+
+Notice
+
+Python **never checks the values**.
+
+It only checks
+
+```text
+Keys
+
+name
+age
+```
+
+Therefore
+
+```python
+False
+```
+
+---
+
+## Output
+
+```text
+False
+```
+
+---
+
+# 🔥 Universal Membership Evaluation Process
+
+Whenever Python sees:
+
+```python
+value in collection
+```
+
+it always follows this process:
+
+```text
+                value in collection
+                       │
+                       ▼
+         Evaluate the left value
+                       │
+                       ▼
+      Evaluate the right collection
+                       │
+                       ▼
+      What type of collection is it?
+                       │
+      ┌────────┬────────┬────────┬──────────┐
+      ▼        ▼        ▼        ▼
+    List    String    Tuple     Set
+      │        │        │        │
+ Search  Search   Search   Search elements
+ elements chars   elements (fast hash lookup)
+                       │
+                       ▼
+                 Dictionary?
+                       │
+                       ▼
+                Search KEYS only
+                       │
+                       ▼
+                 Found?
+              ┌──────────┐
+          Yes ▼          ▼ No
+         Return True   Return False
+```
+
+### One-line memory rule
+
+| Collection | What `in` checks |
+| ---------- | ---------------- |
+| String     | Characters       |
+| List       | Elements         |
+| Tuple      | Elements         |
+| Set        | Elements         |
+| Dictionary | **Keys only**    |
+
+
+
+
+
+# 📚 Bitwise Operators 
+
+---
+
+# 🚨 Before Learning Bitwise Operators
+
+
+Think of it like this:
+
+```text
+Arithmetic Operators
+        ↓
+Decimal Numbers (0-9)
+
+Bitwise Operators
+        ↓
+Binary Numbers (0 and 1)
+```
+
+Everything in a computer is stored as **0s and 1s**.
+
+---
+
+# What are Bitwise Operators?
+
+Bitwise Operators perform operations on **individual bits** of an integer.
+
+Instead of thinking:
+
+```text
+10
+20
+```
+
+Python thinks:
+
+```text
+10
+
+↓
+
+1010
+```
+
+and
+
+```text
+20
+
+↓
+
+10100
+```
+
+Then it compares **each bit**.
+
+---
+
+# Why do we need them?
+
+Normally we work with numbers.
+
+Example
+
+```python
+10 + 20
+```
+
+Python performs arithmetic.
+
+But sometimes we need to work directly with the bits stored in memory.
+
+Examples:
+
+* Operating Systems
+* Device Drivers
+* Networking
+* File Permissions
+* Compression Algorithms
+* Encryption
+* Graphics Programming
+* Embedded Systems
+* Game Development
+* Performance Optimization
+
+Even if you don't use them daily, interviewers often ask about them.
+
+---
+
+# First We Must Learn Binary Numbers
+
+We normally count like this:
+
+```text
+Decimal
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+```
+
+This is called **Base 10** because it uses **10 digits**:
+
+```text
+0 1 2 3 4 5 6 7 8 9
+```
+
+---
+
+# Computers Count Differently
+
+Computers only understand two states.
+
+```text
+OFF
+
+ON
+```
+
+or
+
+```text
+0
+
+1
+```
+
+Therefore computers use **Base 2**, called **Binary**.
+
+Binary has only two digits:
+
+```text
+0
+
+1
+```
+
+---
+
+# Counting in Binary
+
+```text
+Decimal     Binary
+
+0           0
+1           1
+2           10
+3           11
+4           100
+5           101
+6           110
+7           111
+8           1000
+9           1001
+10          1010
+```
+
+Notice something interesting.
+
+After
+
+```text
+1
+```
+
+there is no digit
+
+```text
+2
+```
+
+because binary only has
+
+```text
+0
+
+1
+```
+
+So it becomes
+
+```text
+10
+```
+
+---
+
+# Why is Decimal 10 Binary 1010?
+
+Let's understand.
+
+Every position in binary has a value.
+
+```text
+Bit Position
+
+8    4    2    1
+```
+
+Now write
+
+```text
+1010
+```
+
+```text
+8    4    2    1
+
+1    0    1    0
+```
+
+Now multiply.
+
+```text
+1 × 8 = 8
+
+0 × 4 = 0
+
+1 × 2 = 2
+
+0 × 1 = 0
+```
+
+Total
+
+```text
+8 + 2
+
+=
+
+10
+```
+
+That's why
+
+```text
+1010
+
+=
+
+10
+```
+
+---
+
+# Another Example
+
+Binary
+
+```text
+1101
+```
+
+Positions
+
+```text
+8    4    2    1
+
+1    1    0    1
+```
+
+Calculation
+
+```text
+8
+
++
+
+4
+
++
+
+0
+
++
+
+1
+
+=
+
+13
+```
+
+So
+
+```text
+1101
+
+=
+
+13
+```
+
+---
+
+# Memory Representation
+
+Suppose
+
+```python
+x = 10
+```
+
+You see
+
+```text
+10
+```
+
+Python stores it (conceptually) as binary.
+
+```text
+1010
+```
+
+In memory (using 8 bits for illustration):
+
+```text
+00001010
+```
+
+```text
+x
+ │
+ ▼
+
+00001010
+```
+
+This binary representation is what Bitwise Operators work with.
+
+---
+
+# Important Terminology
+
+## Bit
+
+A single binary digit.
+
+```text
+0
+
+or
+
+1
+```
+
+One digit = One Bit
+
+---
+
+## Byte
+
+Eight bits together.
+
+```text
+00001010
+```
+
+This is **8 bits**, which is **1 byte**.
+
+---
+
+# Revision Table
+
+| Term             | Meaning                                         |
+| ---------------- | ----------------------------------------------- |
+| Decimal          | Base 10 (0–9)                                   |
+| Binary           | Base 2 (0 and 1)                                |
+| Bit              | One binary digit                                |
+| Byte             | 8 bits                                          |
+| Bitwise Operator | Works on binary bits instead of decimal numbers |
+
+---
+
+# 🧠 Memory Trick
+
+```text
+Arithmetic Operators
+
+↓
+
+Work on Numbers
+
+10
+
+20
+
+30
+
+-------------------------
+
+Bitwise Operators
+
+↓
+
+Work on Bits
+
+1010
+
+1100
+
+0011
+```
+
+---
+
+## 📝 Practice (Don't use a calculator)
+
+Convert these decimal numbers to binary.
+
+1. Decimal **2** = ?
+2. Decimal **5** = ?
+3. Decimal **7** = ?
+4. Decimal **9** = ?
+5. Decimal **12** = ?
+6. Decimal **15** = ?
+
+Once you're comfortable converting between decimal and binary, learning `&`, `|`, `^`, `~`, `<<`, and `>>` becomes much easier because you'll be able to see exactly what Python is doing bit by bit.
 
 
