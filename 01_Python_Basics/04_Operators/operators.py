@@ -3067,3 +3067,50 @@ print("Gajanand" in student)
 ###########################################################################
 # Bitwise Operator
 
+First_Number = 10
+Second_Number = 11
+print(First_Number & Second_Number )
+
+
+Num1 = 6
+Num2 = 5
+print(Num1 & Num2)
+
+# output : 4
+
+Left = 9
+Right = 3
+print(Left & Right)
+
+# output = 1
+
+
+First_And = 15
+Second_And = 10
+print(First_And & Second_And)
+
+# Output :  10
+
+
+First_Decimal = 8
+Second_Decimal = 7
+print(f"Output: {First_Decimal & Second_Decimal}")
+# output : 0
+
+
+print(13 & 11)
+
+
+print(14 & 5)
+
+
+print(2 & 1)
+
+
+print(12 & 4)
+
+
+print(11 & 6)
+
+
+print(7 & 1)
