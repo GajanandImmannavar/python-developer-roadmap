@@ -1301,5 +1301,4 @@ AND → Both must be 1
 OR → At least one must be 1
 ```
 
-This is the complete foundation of the Bitwise OR operator. The next logical topics are **Bitwise XOR (`^`)**, **Bitwise NOT (`~`)**, and **Bitwise Shift Operators (`<<` and `>>`)**, which build directly on these binary concepts.
 
