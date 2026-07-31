@@ -1224,7 +1224,7 @@ The Bitwise OR (`|`) operator compares two integers bit by bit. It returns `1` f
 
 ### Q3. What is the difference between `|` and `or`?
 
-| Bitwise OR (`&#124;`) | Logical OR (`or`) |
+| Bitwise OR (`\|`) | Logical OR (`or`) |
 |------------------------|-------------------|
 | Bitwise operator | Logical operator |
 | Works on bits | Works on truth values |
