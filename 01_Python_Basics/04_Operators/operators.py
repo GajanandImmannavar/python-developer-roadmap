@@ -3193,3 +3193,63 @@ Second_Number = 2
 print(First_Number | Second_Number)
 
 
+#  XOR Operations (^) 
+
+a = 6
+b = 10
+print(a^b)
+
+
+# Output = 12 
+
+# 0 1 1 0
+# 1 0 1 0
+# -------
+# 1 1 0 0
+
+
+num1 = 11
+num2 = 13
+print(num1 ^ num2)
+
+# output 6
+
+
+First_Num = 9
+Second_Num = 12
+print(First_Num ^ Second_Num)
+
+# Output 5 
+
+left = 14
+right = 5
+print(left ^ right)
+
+# output : 11
+
+num1 = 8
+num2 = 7
+print(num1 ^ num2)
+
+
+a = 456
+b = 456
+print(a ^ b)
+
+# Output : 0
+
+
+
+a = 999
+b = 0
+print(a ^ b)
+
+# output : 999
+
+
+
+I = 25
+J = 24
+K = 17
+
+print(I^J^K)
