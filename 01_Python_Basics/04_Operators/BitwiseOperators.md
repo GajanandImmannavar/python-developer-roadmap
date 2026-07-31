@@ -1302,3 +1302,391 @@ OR → At least one must be 1
 ```
 
 
+# Bitwise XOR (`^`) (Exclusive OR)
+
+Many interview questions use XOR because of its unique properties.
+
+---
+
+# What does XOR ask?
+
+XOR asks one question:
+
+> **"Are the two bits different?"**
+
+* If **YES** → `1`
+* If **NO** → `0`
+
+Notice how it's different from AND and OR.
+
+---
+
+# Real-Life Analogy
+
+Imagine two light switches controlling a bulb.
+
+The bulb is **ON only if exactly one switch is ON**.
+
+| Switch A | Switch B | Bulb |
+| -------- | -------- | ---- |
+| OFF      | OFF      | OFF  |
+| OFF      | ON       | ON   |
+| ON       | OFF      | ON   |
+| ON       | ON       | OFF  |
+
+Both ON? → OFF
+
+Both OFF? → OFF
+
+Different? → ON
+
+This is exactly XOR.
+
+---
+
+# Truth Table
+
+This table is the heart of XOR.
+
+|  A  |  B  | A ^ B |
+| :-: | :-: | :---: |
+|  0  |  0  |   0   |
+|  0  |  1  |   1   |
+|  1  |  0  |   1   |
+|  1  |  1  |   0   |
+
+## Compare all three
+
+|  A  |  B  | AND `&` | OR `\|` | XOR `^` |
+| :-: | :-: | :-----: | :-----: | :-----: |
+|  0  |  0  |    0    |    0    |    0    |
+|  0  |  1  |    0    |    1    |    1    |
+|  1  |  0  |    0    |    1    |    1    |
+|  1  |  1  |    1    |    1    |    0    |
+
+Look at the last row:
+
+```text
+1 & 1 = 1
+1 | 1 = 1
+1 ^ 1 = 0   ← Different!
+```
+
+That's why XOR is called **Exclusive OR**.
+
+---
+
+# Example 1
+
+Calculate:
+
+```python
+10 ^ 12
+```
+
+Convert to binary.
+
+```text
+10 = 1010
+12 = 1100
+```
+
+```
+ 1010
+^1100
+-----
+```
+
+Compare bit by bit.
+
+```
+1 ^ 1 = 0
+
+0 ^ 1 = 1
+
+1 ^ 0 = 1
+
+0 ^ 0 = 0
+```
+
+Result
+
+```text
+0110
+```
+
+Convert back.
+
+```
+0110 = 6
+```
+
+Therefore
+
+```python
+10 ^ 12 = 6
+```
+
+---
+
+# Example 2
+
+```python
+5 ^ 3
+```
+
+```
+5 = 0101
+3 = 0011
+```
+
+```
+0101
+0011
+----
+0110
+```
+
+```
+0110 = 6
+```
+
+Answer
+
+```python
+5 ^ 3 = 6
+```
+
+---
+
+# Example 3
+
+```python
+7 ^ 7
+```
+
+```
+0111
+0111
+----
+0000
+```
+
+Answer
+
+```python
+7 ^ 7 = 0
+```
+
+---
+
+# The Most Important XOR Property
+
+## Property 1
+
+```python
+x ^ x = 0
+```
+
+Examples
+
+```python
+5 ^ 5 = 0
+
+100 ^ 100 = 0
+
+999 ^ 999 = 0
+```
+
+### Why?
+
+Every bit compares with itself.
+
+Each comparison is either
+
+```
+0 ^ 0 = 0
+
+or
+
+1 ^ 1 = 0
+```
+
+Every bit becomes zero.
+
+---
+
+# Property 2
+
+```python
+x ^ 0 = x
+```
+
+Example
+
+```python
+25 ^ 0 = 25
+```
+
+Why?
+
+```
+1 ^ 0 = 1
+
+0 ^ 0 = 0
+```
+
+Nothing changes.
+
+---
+
+# Property 3 (Very Famous)
+
+```python
+x ^ y ^ y = x
+```
+
+Why?
+
+Because
+
+```
+y ^ y = 0
+```
+
+Then
+
+```
+x ^ 0 = x
+```
+
+This property is used in many interview problems.
+
+---
+
+# Interview Problem 1
+
+Suppose every number appears **twice** except one.
+
+Find the unique number.
+
+Example
+
+```python
+[5, 3, 2, 3, 5]
+```
+
+Normal thinking:
+
+* Use a dictionary
+* Count frequencies
+
+Bitwise thinking:
+
+```
+5 ^ 3 ^ 2 ^ 3 ^ 5
+```
+
+Group equal numbers.
+
+```
+(5 ^ 5)
+
+^
+
+(3 ^ 3)
+
+^
+
+2
+```
+
+```
+0 ^ 0 ^ 2
+```
+
+```
+2
+```
+
+Answer:
+
+```
+2
+```
+
+This is one of the most common coding interview questions.
+
+---
+
+# AND vs OR vs XOR
+
+Think like this:
+
+### AND
+
+> Keep only common 1s.
+
+```
+1101
+
+1011
+
+↓
+
+1001
+```
+
+---
+
+### OR
+
+> Keep all 1s.
+
+```
+1101
+
+1011
+
+↓
+
+1111
+```
+
+---
+
+### XOR
+
+> Keep only different bits.
+
+```
+1101
+
+1011
+
+↓
+
+0110
+```
+
+---
+
+# Easy Way to Remember
+
+Imagine two friends answering a yes/no question.
+
+### AND
+
+Both must say **YES**.
+
+### OR
+
+At least one says **YES**.
+
+### XOR
+
+Exactly one says **YES**.
+
+---
+
+
