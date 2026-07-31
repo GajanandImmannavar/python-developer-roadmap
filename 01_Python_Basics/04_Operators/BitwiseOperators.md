@@ -1224,12 +1224,26 @@ The Bitwise OR (`|`) operator compares two integers bit by bit. It returns `1` f
 
 ### Q3. What is the difference between `|` and `or`?
 
+Use this **exact Markdown** in your `.md` file:
+
+```md
 | `|` (Bitwise OR) | `or` (Logical OR) |
 |------------------|-------------------|
 | Bitwise operator | Logical operator |
 | Works on bits | Works on truth values |
 | Evaluates every bit | Evaluates truthiness |
 | Used with integers | Used with Boolean expressions |
+```
+
+It will render in GitHub as:
+
+| `|` (Bitwise OR) | `or` (Logical OR) |
+|------------------|-------------------|
+| Bitwise operator | Logical operator |
+| Works on bits | Works on truth values |
+| Evaluates every bit | Evaluates truthiness |
+| Used with integers | Used with Boolean expressions |
+
 
 Example:
 
