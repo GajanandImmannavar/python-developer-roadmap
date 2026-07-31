@@ -1690,3 +1690,556 @@ Exactly one says **YES**.
 ---
 
 
+Awesome! 🔥 This is the only bitwise operator where almost every beginner gets confused.
+
+Take your time with this lesson. Once you understand it, **left shift (`<<`)** and **right shift (`>>`)** become much easier.
+
+---
+
+# Bitwise NOT (`~`)
+
+Unlike the other operators:
+
+```python
+&
+|
+^
+```
+
+which need **two numbers**, NOT needs only **one**.
+
+```python
+~5
+```
+
+---
+
+# What does NOT do?
+
+It simply **flips every bit**.
+
+```
+0 → 1
+1 → 0
+```
+
+That's all.
+
+---
+
+## Example
+
+Suppose we use **4 bits** (just for understanding).
+
+```
+5 = 0101
+```
+
+Apply NOT.
+
+```
+0101
+
+↓
+
+1010
+```
+
+Every bit changed.
+
+```
+0 → 1
+1 → 0
+1 → 0
+0 → 1
+```
+
+So far, this is easy.
+
+---
+
+# But Wait...
+
+Let's try it in Python.
+
+```python
+print(~5)
+```
+
+Output:
+
+```python
+-6
+```
+
+😲
+
+Most beginners expect:
+
+```
+1010 = 10
+```
+
+or maybe
+
+```
+-5
+```
+
+But Python prints:
+
+```
+-6
+```
+
+**Why?**
+
+This is the question we need to answer.
+
+---
+
+# The Secret: Computers Store Negative Numbers Differently
+
+Computers don't store:
+
+```
+-5
+```
+
+by putting a minus sign in front.
+
+Instead, they use a method called:
+
+> **Two's Complement**
+
+Don't worry about the name yet.
+
+We'll understand it with a simple trick.
+
+---
+
+# The Golden Formula
+
+In Python:
+
+```python
+~x = -(x + 1)
+```
+
+This is the formula you should remember.
+
+Examples:
+
+```python
+~5
+
+= -(5 + 1)
+
+= -6
+```
+
+---
+
+```python
+~10
+
+= -(10 + 1)
+
+= -11
+```
+
+---
+
+```python
+~0
+
+= -(0 + 1)
+
+= -1
+```
+
+---
+
+```python
+~7
+
+= -(7 + 1)
+
+= -8
+```
+
+---
+
+# Verify
+
+```python
+print(~5)
+```
+
+Output
+
+```
+-6
+```
+
+```python
+print(~10)
+```
+
+Output
+
+```
+-11
+```
+
+Works every time.
+
+---
+
+# But WHY?
+
+This is where many tutorials stop.
+
+I don't want you to memorize the formula.
+
+I want you to understand it.
+
+---
+
+# Imagine We Have Only 4 Bits
+
+Let's use **4 bits only**.
+
+```
+5 = 0101
+```
+
+Flip every bit.
+
+```
+0101
+
+↓
+
+1010
+```
+
+Now here's the important part.
+
+In a fixed-width binary system, a number that starts with `1` is interpreted as a **negative number** using two's complement.
+
+So `1010` is **not** interpreted as positive `10` in that system.
+
+Instead, it's interpreted as **-6**.
+
+That's why Python returns:
+
+```
+-6
+```
+
+Python internally behaves as if integers have infinitely many leading bits, which still follows the same mathematical rule:
+
+```python
+~x = -(x + 1)
+```
+
+---
+
+# Easy Way to Remember
+
+Don't think:
+
+```
+NOT gives negative.
+```
+
+❌ That's not the rule.
+
+Think:
+
+1. Flip all bits.
+2. Python's representation of negative numbers makes the result equal to:
+
+```python
+-(x + 1)
+```
+
+---
+
+# Practice (No Binary Needed)
+
+Using the formula:
+
+```
+~x = -(x + 1)
+```
+
+Calculate:
+
+1.
+
+```python
+~3
+```
+
+2.
+
+```python
+~8
+```
+
+3.
+
+```python
+~15
+```
+
+4.
+
+```python
+~0
+```
+
+5.
+
+```python
+~24
+```
+
+---
+
+# One Conceptual Question
+
+If
+
+```python
+~9 = -10
+```
+
+What will be
+
+```python
+~-10
+```
+
+Don't guess.
+
+Think about the formula carefully.
+
+---
+
+## After This
+
+Once you're comfortable with `~`, we'll move to **Left Shift (`<<`)**, where you'll discover a beautiful shortcut:
+
+```python
+x << 1
+```
+
+is the same as
+
+```python
+x × 2
+```
+
+and
+
+```python
+x << 3
+```
+
+is the same as
+
+```python
+x × 8
+```
+
+
+# ⭐ One Amazing Property of Bitwise NOT (`~`)
+
+The Bitwise NOT operator has an interesting mathematical property.
+
+If you apply the `~` operator **twice**, you always get back the original number.
+
+## Example 1
+
+```python
+print(~5)
+print(~~5)
+```
+
+### Step 1
+
+```text
+~5
+
+= -6
+```
+
+### Step 2
+
+```text
+~-6
+
+= 5
+```
+
+Therefore,
+
+```text
+~~5 = 5
+```
+
+---
+
+## Example 2
+
+```python
+print(~~20)
+```
+
+### Step 1
+
+```text
+~20
+
+= -21
+```
+
+### Step 2
+
+```text
+~-21
+
+= 20
+```
+
+Therefore,
+
+```text
+~~20 = 20
+```
+
+---
+
+## Example 3
+
+```python
+print(~~-8)
+```
+
+### Step 1
+
+```text
+~-8
+
+= 7
+```
+
+### Step 2
+
+```text
+~7
+
+= -8
+```
+
+Therefore,
+
+```text
+~~-8 = -8
+```
+
+---
+
+# 🧠 Why Does This Happen?
+
+The Bitwise NOT operator follows the formula:
+
+```text
+~x = -(x + 1)
+```
+
+Applying it twice:
+
+```text
+~~x
+
+= ~(-(x + 1))
+
+= x
+```
+
+So the second `~` reverses the effect of the first one and returns the original value.
+
+---
+
+# 📌 General Rule
+
+```text
+~~x = x
+```
+
+No matter whether `x` is:
+
+- Positive
+- Negative
+- Zero
+
+Applying `~` twice always returns the original number.
+
+---
+
+# 🧪 Examples
+
+```python
+print(~~0)      # 0
+print(~~7)      # 7
+print(~~100)    # 100
+print(~~-15)    # -15
+```
+
+---
+
+# 🎯 Interview Question
+
+## Q. What is the result of applying the Bitwise NOT operator twice?
+
+### Answer
+
+Applying the Bitwise NOT operator twice always returns the original number.
+
+```text
+~~x = x
+```
+
+This happens because the first `~` inverts the bits and the second `~` inverts them again, restoring the original bit pattern.
+
+---
+
+# 🏆 Final Mental Model
+
+```text
+First ~
+
+Original Number
+      ↓
+Invert all bits
+      ↓
+New Number
+
+Second ~
+
+Invert all bits again
+      ↓
+Original Number
+```
+
+## ✅ Golden Rule
+
+```text
+~~x = x
+```
+
+> **Applying the Bitwise NOT (`~`) operator twice always returns the original number.**
