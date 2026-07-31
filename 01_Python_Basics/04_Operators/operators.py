@@ -3114,3 +3114,13 @@ print(11 & 6)
 
 
 print(7 & 1)
+
+
+# def Even_Odd(n):
+#     if n & 1:
+#         print(f"{n} is Odd")
+#     else:
+#         print(f"{n} is Even")
+# while True:
+#     n = int(input("Enter Number: "))
+#     Even_Odd(n)
