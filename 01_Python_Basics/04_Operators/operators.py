@@ -3253,3 +3253,270 @@ J = 24
 K = 17
 
 print(I^J^K)
+
+
+####################################################################################################
+# Bitwise NOT (~) 
+
+print(~1)
+
+# output : -2
+
+
+print(~10)
+# output : -11
+
+
+print(~11)
+
+# output -12
+
+
+print(~15)
+# output : -16
+
+print(~16)
+# output : -17
+
+
+print(~100)
+
+# output : -101
+
+print(~1001)
+
+# Output : -1002
+
+x = -10
+
+print(~x)
+
+# Substitute it into the formula:
+
+# ~(-10)
+
+# = -((-10) + 1)
+
+# = -(-9)
+
+# = 9
+
+Result = ~~10
+print(Result)
+
+# output : 10
+
+
+Final = ~~1
+print(Final)
+
+# output : 1 
+
+
+Number = ~-10
+print(Number)
+
+# output : 9
+
+
+#################################################################
+# left shift <<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################################################################################################
+# Right Shift >>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# | Problem                                                     | Operator |
+# | ----------------------------------------------------------- | -------- |
+# | 1. Check whether a number is odd or even                    | ?        |
+# | 2. Multiply a number by 8                                   | ?        |
+# | 3. Divide a number by 4                                     | ?        |
+# | 4. Turn ON the last bit                                     | ?        |
+# | 5. Turn OFF the last bit                                    | ?        |
+# | 6. Toggle the last bit                                      | ?        |
+# | 7. Find the difference between two numbers at the bit level | ?        |
+# | 8. Check whether the 3rd bit is ON                          | ?        |
+
+
+
+
+
+
+a = 17
+if a & 1:
+    print("1")
+else:
+    print("0")
+# Output 1  (Means Odd)
+    
+    
+N = 13
+print(N<<1)
+ # output 26
+ 
+Num=  9
+print(Num<<8)
+
+
+
+ 
+Number = 30
+print(Number>>4)
