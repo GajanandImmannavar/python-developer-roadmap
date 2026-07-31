@@ -1213,19 +1213,19 @@ The Bitwise OR (`|`) operator compares two integers bit by bit. It returns `1` f
 
 ### Q2. What is the truth table of OR?
 
-| A | B | A | B |
-| - | - | ----- |
-| 0 | 0 | 0     |
-| 0 | 1 | 1     |
-| 1 | 0 | 1     |
-| 1 | 1 | 1     |
+| A | B | A \| B |
+|---|---|:------:|
+| 0 | 0 |    0   |
+| 0 | 1 |    1   |
+| 1 | 0 |    1   |
+| 1 | 1 |    1   |
 
 ---
 
 ### Q3. What is the difference between `|` and `or`?
 
-| `|` (Bitwise OR) | `or` (Logical OR) |
-|------------------|-------------------|
+| Bitwise OR (`&#124;`) | Logical OR (`or`) |
+|------------------------|-------------------|
 | Bitwise operator | Logical operator |
 | Works on bits | Works on truth values |
 | Evaluates every bit | Evaluates truthiness |
