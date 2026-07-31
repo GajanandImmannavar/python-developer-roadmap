@@ -1224,11 +1224,11 @@ The Bitwise OR (`|`) operator compares two integers bit by bit. It returns `1` f
 
 ### Q3. What is the difference between `|` and `or`?
 
-| `|` | `or` |
-|-----|------|
+| `|` (Bitwise OR) | `or` (Logical OR) |
+|------------------|-------------------|
 | Bitwise operator | Logical operator |
 | Works on bits | Works on truth values |
-| Evaluates every bit | Returns based on truthiness |
+| Evaluates every bit | Evaluates truthiness |
 | Used with integers | Used with Boolean expressions |
 
 Example:
