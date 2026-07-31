@@ -644,7 +644,7 @@ Every decimal number has a binary representation.
 OR asks:
 
 > **Is at least one bit 1?**
-
+---
 | A | B | A | B |
 | - | - | ----- |
 | 0 | 0 | 0     |
@@ -652,7 +652,7 @@ OR asks:
 | 1 | 0 | 1     |
 | 1 | 1 | 1     |
 
-
+---
 Remember:
 
 ```text
