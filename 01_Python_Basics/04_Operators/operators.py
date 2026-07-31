@@ -3065,7 +3065,7 @@ print("Gajanand" in student)
 
 
 ###########################################################################
-# Bitwise Operator
+# Bitwise Operator (&) And
 
 First_Number = 10
 Second_Number = 11
@@ -3124,3 +3124,72 @@ print(7 & 1)
 # while True:
 #     n = int(input("Enter Number: "))
 #     Even_Odd(n)
+
+
+##############################
+
+# Bitwise Operator (|) Or
+
+
+A = 10
+B = 2
+print(A | B)
+
+#output : 10
+
+
+X = 100
+Y = 0
+print(X | Y)
+
+# output : 100
+# Because
+# The Rule is :  X | 0 = X
+
+
+P = 100
+Q = 100
+
+print(P | Q)
+
+# Output: 100
+
+
+Num1 = 12
+Num2 = 3
+print(Num1 | Num2)
+
+# Output: 15
+
+A = 7 
+B = 15
+
+print(A|B)
+
+# Output 15
+
+# Why Because 
+
+# A New Property of OR
+
+# If every 1 bit of B is already present in A, then:
+
+# A | B = A
+
+# Example:
+
+# 15 | 7 = 15
+
+# because:
+
+# 15 = 1111
+
+# 7 = 0111
+
+# 7 doesn't contribute any new 1s.
+
+First_Number = 1
+Second_Number = 2
+print(First_Number | Second_Number)
+
+
