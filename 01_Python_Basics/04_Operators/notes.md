@@ -13823,3 +13823,934 @@ and
 ---
 
 ## ⭐ If this guide helped you, consider giving the repository a star!
+
+# 🔥 Unary Operators in Python
+
+> A complete beginner-friendly guide to understanding **Unary Operators** in Python, including their types, internal working, memory model, operator precedence, examples, interview questions, and practice problems.
+
+---
+
+# 📚 Table of Contents
+
+- [What is a Unary Operator?](#what-is-a-unary-operator)
+- [Unary vs Binary Operators](#unary-vs-binary-operators)
+- [Types of Unary Operators](#types-of-unary-operators)
+- [Unary Plus (`+`)](#1-unary-plus-)
+- [Unary Minus (`-`)](#2-unary-minus--)
+- [Logical NOT (`not`)](#3-logical-not-not)
+- [Bitwise NOT (`~`)](#4-bitwise-not-)
+- [Internal Working](#internal-working)
+- [Memory Model](#memory-model)
+- [Operator Precedence](#operator-precedence)
+- [Common Mistakes](#common-mistakes)
+- [Summary Table](#summary-table)
+- [Unary vs Binary Comparison](#unary-vs-binary-comparison)
+- [Interview Questions](#interview-questions)
+- [Practice Problems](#practice-problems)
+- [Challenge Problems](#challenge-problems)
+- [Key Takeaways](#key-takeaways)
+
+---
+
+# What is a Unary Operator?
+
+A **Unary Operator** is an operator that works on **only one operand** (one value or one variable).
+
+- **Unary** = One
+- **Operand** = The value or variable on which the operator operates
+
+## General Form
+
+```python
+operator operand
+```
+
+Example:
+
+```python
+-x
+```
+
+Here:
+
+- Operator → `-`
+- Operand → `x`
+
+Only **one operand** is involved.
+
+---
+
+# Unary vs Binary Operators
+
+## Unary Operator
+
+Works on **one operand**.
+
+```python
+x = 10
+
+print(-x)
+```
+
+Output
+
+```text
+-10
+```
+
+Only one value (`x`) is used.
+
+---
+
+## Binary Operator
+
+Works on **two operands**.
+
+```python
+x = 10
+y = 20
+
+print(x + y)
+```
+
+Output
+
+```text
+30
+```
+
+Operands:
+
+- Operand 1 → `x`
+- Operand 2 → `y`
+
+---
+
+# Types of Unary Operators
+
+Python provides four commonly used unary operators.
+
+| Operator | Name | Meaning |
+|----------|------|---------|
+| `+x` | Unary Plus | Returns the positive value |
+| `-x` | Unary Minus | Returns the negative value |
+| `not x` | Logical NOT | Reverses a Boolean value |
+| `~x` | Bitwise NOT | Inverts all bits |
+
+Notice something interesting.
+
+We've already learned:
+
+- ✅ `not`
+- ✅ `~`
+
+Now you know they also belong to the **Unary Operator** category.
+
+---
+
+# 1. Unary Plus (`+`)
+
+Example
+
+```python
+x = 10
+
+print(+x)
+```
+
+Output
+
+```text
+10
+```
+
+---
+
+## What does it do?
+
+Almost nothing.
+
+It simply returns the value as positive.
+
+```text
++10
+
+↓
+
+10
+```
+
+---
+
+## More Examples
+
+```python
+print(+25)
+```
+
+Output
+
+```text
+25
+```
+
+---
+
+```python
+print(+(-8))
+```
+
+Output
+
+```text
+-8
+```
+
+Notice:
+
+Unary plus **does not change the sign**.
+
+---
+
+# 2. Unary Minus (`-`)
+
+Example
+
+```python
+x = 10
+
+print(-x)
+```
+
+Output
+
+```text
+-10
+```
+
+Python creates the negative version of the value.
+
+---
+
+## Example
+
+```python
+x = -20
+
+print(-x)
+```
+
+Output
+
+```text
+20
+```
+
+Negative becomes positive.
+
+---
+
+## Original Variable Doesn't Change
+
+```python
+x = 10
+
+print(-x)
+print(x)
+```
+
+Output
+
+```text
+-10
+10
+```
+
+Python does **not** modify `x`.
+
+It only returns a new value.
+
+---
+
+# 3. Logical NOT (`not`)
+
+Logical NOT reverses a Boolean value.
+
+Example
+
+```python
+print(not True)
+```
+
+Output
+
+```text
+False
+```
+
+---
+
+Another example
+
+```python
+print(not False)
+```
+
+Output
+
+```text
+True
+```
+
+Only one operand is used.
+
+Therefore, `not` is a unary operator.
+
+---
+
+# 4. Bitwise NOT (`~`)
+
+Bitwise NOT flips every bit of an integer.
+
+Example
+
+```python
+print(~5)
+```
+
+Output
+
+```text
+-6
+```
+
+Why?
+
+```text
+5
+
+Binary
+
+00000101
+
+Invert
+
+11111010
+```
+
+Python stores integers using **two's complement**, so the result becomes:
+
+```text
+-6
+```
+
+---
+
+Another example
+
+```python
+print(~8)
+```
+
+Output
+
+```text
+-9
+```
+
+Shortcut formula:
+
+```text
+~x = -(x + 1)
+```
+
+Example
+
+```text
+~8
+
+= -(8 + 1)
+
+= -9
+```
+
+---
+
+# Internal Working
+
+Example
+
+```python
+x = 25
+
+print(-x)
+```
+
+Python thinks like this:
+
+```text
+Step 1
+
+Find x
+
+↓
+
+25
+```
+
+---
+
+```text
+Step 2
+
+Apply Unary Minus
+
+↓
+
+-25
+```
+
+---
+
+```text
+Step 3
+
+Return the new integer object
+
+↓
+
+-25
+```
+
+Notice
+
+`x` still refers to `25`.
+
+Python creates another integer object for `-25`.
+
+---
+
+# Memory Model
+
+```python
+x = 10
+```
+
+Memory
+
+```text
+x
+│
+▼
+10
+```
+
+Now
+
+```python
+print(-x)
+```
+
+Python conceptually creates
+
+```text
+x
+│
+▼
+10
+
+↓
+
+Unary Minus
+
+↓
+
+-10
+```
+
+`x` still points to `10`.
+
+---
+
+# Operator Precedence
+
+Unary operators have **high precedence**.
+
+Example
+
+```python
+-5 ** 2
+```
+
+Python evaluates
+
+```text
+5 ** 2
+
+↓
+
+25
+```
+
+Then
+
+```text
+-25
+```
+
+Final Answer
+
+```python
+-25
+```
+
+---
+
+If you want
+
+```text
+(-5)²
+```
+
+Use parentheses.
+
+```python
+(-5) ** 2
+```
+
+Output
+
+```text
+25
+```
+
+---
+
+Another Example
+
+```python
+not True and False
+```
+
+Python evaluates
+
+```text
+not True
+
+↓
+
+False
+```
+
+Expression
+
+```python
+False and False
+```
+
+↓
+
+```text
+False
+```
+
+---
+
+# Real-Life Analogy
+
+Imagine the temperature is
+
+```text
+25°C
+```
+
+Unary Minus means
+
+```text
+-25°C
+```
+
+The original temperature **didn't change**.
+
+You're simply referring to its opposite.
+
+---
+
+# Common Mistakes
+
+## ❌ Mistake 1
+
+Thinking unary minus changes the variable.
+
+```python
+x = 10
+
+print(-x)
+```
+
+Wrong assumption
+
+```text
+x becomes -10
+```
+
+Correct
+
+```text
+x is still 10
+```
+
+---
+
+## ❌ Mistake 2
+
+Confusing subtraction with unary minus.
+
+```python
+5 - 3
+```
+
+Subtraction
+
+Two operands.
+
+---
+
+```python
+-5
+```
+
+Unary minus.
+
+One operand.
+
+---
+
+## ❌ Mistake 3
+
+Thinking
+
+```python
+~x
+```
+
+means
+
+```text
+-x
+```
+
+Wrong.
+
+Example
+
+```python
+~5
+```
+
+Output
+
+```text
+-6
+```
+
+---
+
+## ❌ Mistake 4
+
+Ignoring parentheses.
+
+```python
+-5 ** 2
+```
+
+Result
+
+```text
+-25
+```
+
+Not
+
+```text
+25
+```
+
+---
+
+# Summary Table
+
+| Operator | Name | Operands | Example | Result |
+|----------|------|---------:|---------|--------|
+| `+x` | Unary Plus | 1 | `+10` | `10` |
+| `-x` | Unary Minus | 1 | `-10` | `-10` |
+| `not x` | Logical NOT | 1 | `not True` | `False` |
+| `~x` | Bitwise NOT | 1 | `~5` | `-6` |
+
+---
+
+# Unary vs Binary Comparison
+
+| Type | Operands | Examples |
+|------|---------:|----------|
+| Unary | 1 | `+x`, `-x`, `not x`, `~x` |
+| Binary | 2 | `x+y`, `x-y`, `x*y`, `x&y`, `x>y` |
+
+---
+
+# Interview Questions
+
+### Q1
+
+What is a Unary Operator?
+
+---
+
+### Q2
+
+What is the difference between Unary Minus and Subtraction?
+
+---
+
+### Q3
+
+Does
+
+```python
+-x
+```
+
+modify the original variable?
+
+---
+
+### Q4
+
+What is the shortcut formula for Bitwise NOT?
+
+---
+
+### Q5
+
+Predict the output.
+
+```python
+print(~10)
+```
+
+---
+
+### Q6
+
+Why does
+
+```python
+-5 ** 2
+```
+
+produce
+
+```text
+-25
+```
+
+instead of
+
+```text
+25
+```
+
+---
+
+# Practice Problems
+
+## Level 1
+
+### Problem 1
+
+```python
+x = 15
+
+print(+x)
+```
+
+---
+
+### Problem 2
+
+```python
+x = 15
+
+print(-x)
+```
+
+---
+
+### Problem 3
+
+```python
+x = -20
+
+print(+x)
+```
+
+---
+
+### Problem 4
+
+```python
+x = -20
+
+print(-x)
+```
+
+---
+
+### Problem 5
+
+```python
+print(not False)
+```
+
+---
+
+### Problem 6
+
+```python
+print(~8)
+```
+
+---
+
+## Level 2
+
+### Problem 7
+
+```python
+x = 50
+
+print(+(-x))
+```
+
+---
+
+### Problem 8
+
+```python
+print(~0)
+```
+
+---
+
+### Problem 9
+
+```python
+print(not(5 > 3))
+```
+
+---
+
+### Problem 10
+
+```python
+print(~15)
+```
+
+---
+
+## Level 3 (Interview Style)
+
+### Problem 11
+
+```python
+print(-5 ** 2)
+```
+
+---
+
+### Problem 12
+
+```python
+print((-5) ** 2)
+```
+
+---
+
+### Problem 13
+
+```python
+print(not not True)
+```
+
+---
+
+### Problem 14
+
+```python
+print(~(~5))
+```
+
+---
+
+### Problem 15
+
+```python
+x = 10
+
+print(-(+(~x)))
+```
+
+---
+
+# Challenge Problems
+
+Without running Python, predict the output.
+
+```python
+print(~(-5))
+```
+
+---
+
+```python
+print(not(10 > 5 and False))
+```
+
+---
+
+```python
+print(-(~8))
+```
+
+---
+
+```python
+print(+(-(+(-20))))
+```
+
+Show Python's thinking step by step.
+
+---
+
+# 🎯 Key Takeaways
+
+- Unary operators work on **only one operand**.
+- Python has four common unary operators:
+  - `+`
+  - `-`
+  - `not`
+  - `~`
+- Unary minus **does not modify** the original variable.
+- `not` reverses Boolean values.
+- `~` performs **Bitwise NOT** and follows the shortcut:
+
+```text
+~x = -(x + 1)
+```
+
+- Parentheses can change how unary operators interact with other operators.
+- Unary operators have **high precedence**, so always pay attention to the order of evaluation.
+
+---
+
+## ⭐ If this guide helped you, consider giving the repository a star!
