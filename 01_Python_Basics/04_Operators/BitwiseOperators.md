@@ -2923,3 +2923,744 @@ x << n = x × 2ⁿ
 ---
 
 ## ⭐ If this guide helped you, consider giving the repository a star!
+
+# 🔥 Bitwise Right Shift (`>>`) in Python
+
+> A beginner-friendly guide to understanding the **Right Shift (`>>`)** operator with examples, shortcuts, interview tips, common mistakes, and practice questions.
+
+---
+
+# 📚 Table of Contents
+
+- [What is Right Shift?](#what-is-right-shift)
+- [Syntax](#syntax)
+- [How Right Shift Works](#how-right-shift-works)
+- [Example 1: `10 >> 1`](#example-1-10--1)
+- [Example 2: `20 >> 2`](#example-2-20--2)
+- [Pattern You Should Notice](#pattern-you-should-notice)
+- [Shortcut Formula](#shortcut-formula)
+- [More Examples](#more-examples)
+- [Why Does It Halve?](#why-does-it-halve)
+- [Important Properties](#important-properties)
+- [Special Cases](#special-cases)
+- [Interview Questions](#interview-question)
+- [Common Mistakes](#common-mistakes)
+- [Quick Revision](#quick-revision)
+- [Practice Problems](#practice-problems)
+- [Thinking Challenge](#thinking-challenge)
+
+---
+
+# What is Right Shift?
+
+The **Right Shift (`>>`)** operator moves all the bits of a number **to the right** by a specified number of positions.
+
+For every position shifted:
+
+- Every bit moves **one place to the right**
+- A **0** is inserted on the **left** (for positive numbers)
+
+---
+
+# Syntax
+
+```python
+number >> positions
+```
+
+Example:
+
+```python
+10 >> 1
+```
+
+---
+
+# How Right Shift Works
+
+Imagine the binary number:
+
+```text
+1010
+```
+
+Shift right by **1**:
+
+```text
+Before
+
+1010
+
+After
+
+0101
+```
+
+Notice:
+
+- Every bit moved one place right.
+- A **0** entered from the left.
+- The last bit disappeared.
+
+---
+
+# Example 1: `10 >> 1`
+
+## Step 1: Convert to Binary
+
+```text
+Decimal : 10
+
+Binary  : 1010
+```
+
+---
+
+## Step 2: Shift Right by 1
+
+```text
+Before
+
+1010
+
+↓
+
+0101
+```
+
+---
+
+## Step 3: Convert Back to Decimal
+
+```text
+0101
+
+= 4 + 1
+
+= 5
+```
+
+Therefore,
+
+```python
+10 >> 1 = 5
+```
+
+---
+
+# Example 2: `20 >> 2`
+
+Binary:
+
+```text
+10100
+```
+
+## First Shift
+
+```text
+10100
+
+↓
+
+01010
+```
+
+## Second Shift
+
+```text
+01010
+
+↓
+
+00101
+```
+
+Convert back:
+
+```text
+00101
+
+= 4 + 1
+
+= 5
+```
+
+Therefore,
+
+```python
+20 >> 2 = 5
+```
+
+---
+
+# Pattern You Should Notice
+
+| Expression | Result |
+|------------|-------:|
+| `40 >> 0` | 40 |
+| `40 >> 1` | 20 |
+| `40 >> 2` | 10 |
+| `40 >> 3` | 5 |
+
+Observe:
+
+```text
+40
+
+↓
+
+20
+
+↓
+
+10
+
+↓
+
+5
+```
+
+Every shift **halves** the number.
+
+---
+
+# Shortcut Formula
+
+Instead of converting to binary every time, remember this formula:
+
+```text
+x >> n = x ÷ (2ⁿ)
+```
+
+For **positive integers**, Python discards any decimal part (floor division).
+
+---
+
+# More Examples
+
+## Example 1
+
+```python
+16 >> 1
+```
+
+```text
+16 ÷ 2
+
+= 8
+```
+
+---
+
+## Example 2
+
+```python
+16 >> 2
+```
+
+```text
+16 ÷ 4
+
+= 4
+```
+
+---
+
+## Example 3
+
+```python
+16 >> 3
+```
+
+```text
+16 ÷ 8
+
+= 2
+```
+
+---
+
+## Example 4
+
+```python
+48 >> 4
+```
+
+```text
+48 ÷ 16
+
+= 3
+```
+
+Answer:
+
+```python
+48 >> 4 = 3
+```
+
+---
+
+## Example 5
+
+```python
+26 >> 1
+```
+
+```text
+26 ÷ 2
+
+= 13
+```
+
+---
+
+## Example 6
+
+```python
+52 >> 2
+```
+
+```text
+52 ÷ 4
+
+= 13
+```
+
+---
+
+# Why Does It Halve?
+
+Take the binary number:
+
+```text
+1010
+
+= 8 + 2
+
+= 10
+```
+
+Shift right:
+
+```text
+0101
+
+= 4 + 1
+
+= 5
+```
+
+Notice how every place value became half.
+
+| Before | After |
+|--------:|------:|
+| 8 | 4 |
+| 4 | 2 |
+| 2 | 1 |
+
+Every bit moved into a column worth **half as much**.
+
+That's why right shifting divides the number by **2** for every shift.
+
+---
+
+# Important Properties
+
+## Property 1
+
+```python
+x >> 0 = x
+```
+
+Example:
+
+```python
+15 >> 0 = 15
+```
+
+---
+
+## Property 2
+
+```python
+x >> 1 = x ÷ 2
+```
+
+Example:
+
+```python
+18 >> 1 = 9
+```
+
+---
+
+## Property 3
+
+```python
+x >> 2 = x ÷ 4
+```
+
+Example:
+
+```python
+20 >> 2 = 5
+```
+
+---
+
+## Property 4
+
+```python
+x >> 3 = x ÷ 8
+```
+
+Example:
+
+```python
+64 >> 3 = 8
+```
+
+---
+
+## Property 5
+
+```python
+x >> n = x ÷ 2ⁿ
+```
+
+For positive integers, any remainder is discarded.
+
+---
+
+# Special Cases
+
+## Even Number
+
+```python
+12 >> 1
+
+12 ÷ 2
+
+= 6
+```
+
+Perfect division.
+
+---
+
+## Odd Number
+
+```python
+13 >> 1
+```
+
+Mathematically:
+
+```text
+13 ÷ 2
+
+= 6.5
+```
+
+Python returns:
+
+```python
+13 >> 1 = 6
+```
+
+The decimal part is discarded.
+
+---
+
+## Another Example
+
+```python
+15 >> 2
+```
+
+```text
+15 ÷ 4
+
+= 3.75
+```
+
+Python returns:
+
+```python
+15 >> 2 = 3
+```
+
+---
+
+# Interview Question
+
+Without using Python:
+
+```python
+80 >> 3
+```
+
+Think:
+
+```text
+80 ÷ 8
+
+= 10
+```
+
+Answer:
+
+```python
+80 >> 3 = 10
+```
+
+---
+
+# Common Mistakes
+
+## ❌ Mistake 1
+
+Thinking:
+
+```python
+20 >> 2
+```
+
+means
+
+```text
+20 ÷ 2
+```
+
+Wrong!
+
+It means:
+
+```text
+20 ÷ (2²)
+
+= 5
+```
+
+---
+
+## ❌ Mistake 2
+
+Confusing positions with division.
+
+```python
+64 >> 3
+```
+
+Some beginners write:
+
+```text
+64 ÷ 3
+```
+
+Wrong.
+
+Correct:
+
+```text
+64 ÷ 8
+
+= 8
+```
+
+---
+
+## ❌ Mistake 3
+
+Forgetting that the decimal part is discarded.
+
+Example:
+
+```python
+13 >> 1
+```
+
+Wrong:
+
+```text
+6.5
+```
+
+Correct:
+
+```text
+6
+```
+
+---
+
+# Quick Revision
+
+| Expression | Shortcut |
+|------------|----------|
+| `x >> 0` | `x` |
+| `x >> 1` | `x ÷ 2` |
+| `x >> 2` | `x ÷ 4` |
+| `x >> 3` | `x ÷ 8` |
+| `x >> 4` | `x ÷ 16` |
+| `x >> n` | `x ÷ 2ⁿ` |
+
+---
+
+# Practice Problems
+
+## Level 1
+
+1.
+
+```python
+8 >> 1
+```
+
+2.
+
+```python
+16 >> 2
+```
+
+3.
+
+```python
+32 >> 3
+```
+
+4.
+
+```python
+18 >> 1
+```
+
+5.
+
+```python
+24 >> 2
+```
+
+---
+
+## Level 2
+
+6.
+
+```python
+40 >> 3
+```
+
+7.
+
+```python
+96 >> 5
+```
+
+8.
+
+```python
+128 >> 7
+```
+
+9.
+
+```python
+100 >> 2
+```
+
+10.
+
+```python
+200 >> 4
+```
+
+---
+
+## Level 3 (Interview Style)
+
+11.
+
+```python
+250 >> 3
+```
+
+12.
+
+```python
+511 >> 1
+```
+
+13.
+
+```python
+1024 >> 5
+```
+
+14.
+
+```python
+75 >> 2
+```
+
+15.
+
+```python
+999 >> 4
+```
+
+---
+
+# Thinking Challenge
+
+Without using binary:
+
+Which is larger?
+
+```python
+40 >> 2
+```
+
+or
+
+```python
+40 >> 3
+```
+
+Why?
+
+---
+
+# 🤔 Concept Challenge
+
+Before checking the answer, think about this:
+
+> **Why do we insert a `0` on the left when we shift right for positive numbers?**
+
+Hint:
+
+Think about what happens when every bit moves into a place value worth **half as much**.
+
+Understanding **why** is much more valuable than memorizing the rule.
+
+---
+
+# 🎯 Key Takeaways
+
+- `>>` moves bits to the **right**.
+- Every right shift inserts a **0** on the **left** (for positive numbers).
+- Each shift **halves** the value.
+- Formula:
+
+```text
+x >> n = x ÷ 2ⁿ
+```
+
+- For positive integers, Python **discards the decimal part** after division.
+- You usually **don't need binary** to solve right shift questions in interviews.
+- Just remember the shortcut formula.
+
+---
+
+## ⭐ If this guide helped you, consider giving the repository a star!
