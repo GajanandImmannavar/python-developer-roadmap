@@ -2243,3 +2243,683 @@ Original Number
 ```
 
 > **Applying the Bitwise NOT (`~`) operator twice always returns the original number.**
+
+# 🔥 Bitwise Left Shift (`<<`) in Python
+
+> A beginner-friendly guide to understanding the **Left Shift (`<<`)** operator with examples, shortcuts, interview tips, and practice questions.
+
+---
+
+# 📚 Table of Contents
+
+- [What is Left Shift?](#what-is-left-shift)
+- [Syntax](#syntax)
+- [How Left Shift Works](#how-left-shift-works)
+- [Example 1: `5 << 1`](#example-1-5--1)
+- [Example 2: `5 << 2`](#example-2-5--2)
+- [Pattern You Should Notice](#pattern-you-should-notice)
+- [Shortcut Formula](#shortcut-formula)
+- [More Examples](#more-examples)
+- [Why Does It Double?](#why-does-it-double)
+- [Important Properties](#important-properties)
+- [Interview Questions](#interview-question)
+- [Common Mistakes](#common-mistakes)
+- [Quick Revision](#quick-revision)
+- [Practice Problems](#practice-problems)
+- [Thinking Challenge](#thinking-challenge)
+
+---
+
+# What is Left Shift?
+
+The **Left Shift (`<<`)** operator moves all the bits of a number **to the left** by a specified number of positions.
+
+For every position shifted:
+
+- Every bit moves **one place to the left**
+- A **0** is inserted on the **right**
+
+---
+
+# Syntax
+
+```python
+number << positions
+```
+
+Example:
+
+```python
+5 << 1
+```
+
+---
+
+# How Left Shift Works
+
+Imagine the binary number:
+
+```text
+0101
+```
+
+Shift left by **1**:
+
+```text
+Before
+
+0101
+
+After
+
+1010
+```
+
+Notice:
+
+- Every bit moved one place left.
+- A **0** entered from the right.
+
+---
+
+# Example 1: `5 << 1`
+
+## Step 1: Convert to Binary
+
+```text
+Decimal : 5
+
+Binary  : 0101
+```
+
+---
+
+## Step 2: Shift Left by 1
+
+```text
+Before
+
+0101
+
+↓
+
+1010
+```
+
+---
+
+## Step 3: Convert Back to Decimal
+
+```text
+1010
+
+= 8 + 2
+
+= 10
+```
+
+Therefore,
+
+```python
+5 << 1 = 10
+```
+
+---
+
+# Example 2: `5 << 2`
+
+Binary:
+
+```text
+0101
+```
+
+## First Shift
+
+```text
+0101
+
+↓
+
+1010
+```
+
+## Second Shift
+
+```text
+1010
+
+↓
+
+10100
+```
+
+Convert back:
+
+```text
+10100
+
+= 16 + 4
+
+= 20
+```
+
+Therefore,
+
+```python
+5 << 2 = 20
+```
+
+---
+
+# Pattern You Should Notice
+
+| Expression | Result |
+|------------|-------:|
+| `5 << 0` | 5 |
+| `5 << 1` | 10 |
+| `5 << 2` | 20 |
+| `5 << 3` | 40 |
+| `5 << 4` | 80 |
+
+Observe:
+
+```text
+5
+
+↓
+
+10
+
+↓
+
+20
+
+↓
+
+40
+
+↓
+
+80
+```
+
+Every shift **doubles** the value.
+
+---
+
+# Shortcut Formula
+
+Instead of converting to binary every time, remember this formula:
+
+```text
+x << n = x × (2ⁿ)
+```
+
+This works because shifting left moves every bit to a place value worth **twice as much**.
+
+---
+
+# More Examples
+
+## Example 1
+
+```python
+8 << 1
+```
+
+```text
+8 × 2
+
+= 16
+```
+
+---
+
+## Example 2
+
+```python
+8 << 2
+```
+
+```text
+8 × 4
+
+= 32
+```
+
+---
+
+## Example 3
+
+```python
+8 << 3
+```
+
+```text
+8 × 8
+
+= 64
+```
+
+---
+
+## Example 4
+
+```python
+3 << 4
+```
+
+```text
+3 × 16
+
+= 48
+```
+
+Answer:
+
+```python
+3 << 4 = 48
+```
+
+---
+
+## Example 5
+
+```python
+13 << 1
+```
+
+```text
+13 × 2
+
+= 26
+```
+
+---
+
+## Example 6
+
+```python
+13 << 2
+```
+
+```text
+13 × 4
+
+= 52
+```
+
+---
+
+# Why Does It Double?
+
+Take the binary number:
+
+```text
+0101
+
+= 4 + 1
+
+= 5
+```
+
+Shift left:
+
+```text
+1010
+
+= 8 + 2
+
+= 10
+```
+
+Notice how every place value doubled.
+
+| Before | After |
+|--------:|------:|
+| 1 | 2 |
+| 2 | 4 |
+| 4 | 8 |
+| 8 | 16 |
+
+Every bit moved into a column worth **twice as much**.
+
+That's why left shifting multiplies the number by **2** for every shift.
+
+---
+
+# Important Properties
+
+## Property 1
+
+```python
+x << 0 = x
+```
+
+Example:
+
+```python
+7 << 0 = 7
+```
+
+---
+
+## Property 2
+
+```python
+x << 1 = x × 2
+```
+
+Example:
+
+```python
+9 << 1 = 18
+```
+
+---
+
+## Property 3
+
+```python
+x << 2 = x × 4
+```
+
+Example:
+
+```python
+6 << 2 = 24
+```
+
+---
+
+## Property 4
+
+```python
+x << 3 = x × 8
+```
+
+Example:
+
+```python
+10 << 3 = 80
+```
+
+---
+
+## Property 5
+
+```python
+x << n = x × 2ⁿ
+```
+
+This is the formula interviewers expect you to know.
+
+---
+
+# Interview Question
+
+Without using Python:
+
+```python
+10 << 3
+```
+
+Think:
+
+```text
+10 × 8
+
+= 80
+```
+
+Answer:
+
+```python
+10 << 3 = 80
+```
+
+---
+
+# Common Mistakes
+
+## ❌ Mistake 1
+
+Thinking:
+
+```python
+5 << 2
+```
+
+means
+
+```text
+5 × 2
+```
+
+Wrong!
+
+It means:
+
+```text
+5 × (2²)
+
+= 20
+```
+
+---
+
+## ❌ Mistake 2
+
+Confusing positions with multiplication.
+
+```python
+9 << 3
+```
+
+Some beginners write:
+
+```text
+9 × 3
+```
+
+Wrong.
+
+Correct:
+
+```text
+9 × 8
+
+= 72
+```
+
+---
+
+## ❌ Mistake 3
+
+Forgetting that each shift inserts a **0** on the right.
+
+---
+
+# Quick Revision
+
+| Expression | Shortcut |
+|------------|----------|
+| `x << 0` | `x` |
+| `x << 1` | `x × 2` |
+| `x << 2` | `x × 4` |
+| `x << 3` | `x × 8` |
+| `x << 4` | `x × 16` |
+| `x << n` | `x × 2ⁿ` |
+
+---
+
+# Practice Problems
+
+## Level 1
+
+1.
+
+```python
+5 << 1
+```
+
+2.
+
+```python
+7 << 2
+```
+
+3.
+
+```python
+9 << 3
+```
+
+4.
+
+```python
+12 << 1
+```
+
+5.
+
+```python
+15 << 2
+```
+
+---
+
+## Level 2
+
+6.
+
+```python
+20 << 0
+```
+
+7.
+
+```python
+3 << 5
+```
+
+8.
+
+```python
+1 << 6
+```
+
+9.
+
+```python
+25 << 2
+```
+
+10.
+
+```python
+18 << 3
+```
+
+---
+
+## Level 3 (Interview Style)
+
+11.
+
+```python
+14 << 4
+```
+
+12.
+
+```python
+31 << 1
+```
+
+13.
+
+```python
+50 << 2
+```
+
+14.
+
+```python
+2 << 10
+```
+
+15.
+
+```python
+100 << 5
+```
+
+---
+
+# Thinking Challenge
+
+Without calculating in binary:
+
+Which is larger?
+
+```python
+5 << 2
+```
+
+or
+
+```python
+5 << 3
+```
+
+Why?
+
+---
+
+# Bonus Challenge
+
+Without using Python or binary:
+
+Calculate:
+
+```python
+11 << 5
+```
+
+Can you solve it in less than **5 seconds**?
+
+---
+
+# 🤔 Concept Challenge
+
+Before checking the answer, think about this:
+
+> **Why do we insert a `0` on the right when we shift left?**
+
+Hint:
+
+Think about what happens when every bit moves to a place value worth **twice as much**.
+
+Understanding **why** is much more valuable than memorizing the rule.
+
+---
+
+# 🎯 Key Takeaways
+
+- `<<` moves bits to the **left**.
+- Every left shift inserts a **0** on the **right**.
+- Each shift **doubles** the value.
+- Formula:
+
+```text
+x << n = x × 2ⁿ
+```
+
+- You usually **don't need binary** to solve left shift questions in interviews.
+- Just remember the shortcut formula.
+
+---
+
+## ⭐ If this guide helped you, consider giving the repository a star!
