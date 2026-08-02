@@ -12741,3 +12741,1085 @@ Bit:           1    1    0    0    1
 `0` means **"No, don't include this power."**
 
 
+# 🧠 Expression Evaluation in Python
+
+> A complete beginner-friendly guide to understanding how Python evaluates expressions using **Operator Precedence** and **Associativity**.
+
+Master this chapter, and you'll be able to mentally execute Python code just like the Python interpreter.
+
+---
+
+# 📚 Table of Contents
+
+- [What is Expression Evaluation?](#what-is-expression-evaluation)
+- [Why is it Important?](#why-is-it-important)
+- [How Python Thinks](#how-python-thinks)
+- [Operator Precedence Table](#operator-precedence-table)
+- [Associativity](#associativity)
+- [Step-by-Step Examples](#step-by-step-examples)
+- [Memory Model](#memory-model)
+- [Golden Rules](#golden-rules)
+- [Common Mistakes](#common-mistakes)
+- [Quick Revision](#quick-revision)
+- [Practice Problems](#practice-problems)
+- [Challenge Problems](#challenge-problems)
+- [Interview Questions](#interview-questions)
+
+---
+
+# What is Expression Evaluation?
+
+An **expression** is anything that produces a value.
+
+Examples:
+
+```python
+10 + 20
+```
+
+```python
+5 > 3
+```
+
+```python
+True and False
+```
+
+```python
+len("Python")
+```
+
+Python cannot calculate expressions randomly.
+
+It follows a fixed order called **Expression Evaluation**.
+
+Think of it like solving a mathematics problem.
+
+Example:
+
+```python
+10 + 5 * 2
+```
+
+Python doesn't calculate from left to right.
+
+It follows predefined rules.
+
+---
+
+# Why is it Important?
+
+Consider this expression:
+
+```python
+10 + 5 * 2 > 15 and True
+```
+
+Python cannot immediately answer.
+
+It must calculate each part one by one.
+
+Just like a calculator.
+
+If you understand the order, you'll never be confused while reading Python code.
+
+---
+
+# How Python Thinks
+
+Imagine Python receives:
+
+```python
+result = 10 + 5 * 2 > 15 and True
+```
+
+Python internally thinks like this:
+
+```text
+Step 1
+
+Which operator has the highest priority?
+```
+
+It keeps solving one operation at a time until only one value remains.
+
+---
+
+# Operator Precedence Table
+
+Python follows this order from **highest** to **lowest** precedence.
+
+| Priority | Operators | Description |
+|-----------|-----------|-------------|
+| 1 | `( )` | Parentheses |
+| 2 | `**` | Exponentiation |
+| 3 | `+x`, `-x`, `~x` | Unary operators |
+| 4 | `*`, `/`, `//`, `%` | Multiplication, Division, Floor Division, Modulus |
+| 5 | `+`, `-` | Addition, Subtraction |
+| 6 | `<<`, `>>` | Bitwise Shift |
+| 7 | `&` | Bitwise AND |
+| 8 | `^` | Bitwise XOR |
+| 9 | `\|` | Bitwise OR |
+| 10 | `==`, `!=`, `>`, `<`, `>=`, `<=` | Comparison |
+| 11 | `is`, `is not` | Identity |
+| 12 | `in`, `not in` | Membership |
+| 13 | `not` | Logical NOT |
+| 14 | `and` | Logical AND |
+| 15 | `or` | Logical OR |
+| 16 | `=`, `+=`, `-=`, etc. | Assignment |
+
+---
+
+# Visual Flow
+
+```text
+Parentheses
+      ↓
+Exponent
+      ↓
+Unary Operators
+      ↓
+Multiply / Divide / // / %
+      ↓
+Add / Subtract
+      ↓
+Bitwise Shift
+      ↓
+Bitwise AND
+      ↓
+Bitwise XOR
+      ↓
+Bitwise OR
+      ↓
+Comparison
+      ↓
+Identity
+      ↓
+Membership
+      ↓
+not
+      ↓
+and
+      ↓
+or
+      ↓
+Assignment
+```
+
+---
+
+# Associativity
+
+Sometimes two operators have the **same precedence**.
+
+Then Python uses **Associativity**.
+
+## Left-to-Right
+
+Most operators are evaluated from left to right.
+
+Example:
+
+```python
+20 / 5 * 2
+```
+
+Python thinks
+
+```text
+20 / 5
+
+↓
+
+4
+```
+
+Then
+
+```text
+4 * 2
+
+↓
+
+8
+```
+
+---
+
+## Right-to-Left
+
+Exponentiation (`**`) is special.
+
+Example:
+
+```python
+2 ** 3 ** 2
+```
+
+Python evaluates
+
+```text
+3 ** 2
+
+↓
+
+9
+```
+
+Then
+
+```text
+2 ** 9
+
+↓
+
+512
+```
+
+Not
+
+```text
+(2 ** 3) ** 2
+```
+
+---
+
+# Step-by-Step Examples
+
+## Example 1
+
+```python
+10 + 5 * 2
+```
+
+### Step 1
+
+```text
+5 * 2
+
+↓
+
+10
+```
+
+Expression becomes
+
+```python
+10 + 10
+```
+
+### Step 2
+
+```text
+10 + 10
+
+↓
+
+20
+```
+
+Final Answer
+
+```python
+20
+```
+
+---
+
+## Example 2
+
+```python
+10 + 5 * 2 > 15
+```
+
+### Step 1
+
+```text
+5 * 2
+
+↓
+
+10
+```
+
+Expression
+
+```python
+10 + 10 > 15
+```
+
+### Step 2
+
+```text
+10 + 10
+
+↓
+
+20
+```
+
+Expression
+
+```python
+20 > 15
+```
+
+### Step 3
+
+```text
+20 > 15
+
+↓
+
+True
+```
+
+Final Answer
+
+```python
+True
+```
+
+---
+
+## Example 3
+
+```python
+10 + 5 * 2 > 15 and True
+```
+
+### Step 1
+
+```text
+5 * 2
+
+↓
+
+10
+```
+
+Expression
+
+```python
+10 + 10 > 15 and True
+```
+
+---
+
+### Step 2
+
+```text
+10 + 10
+
+↓
+
+20
+```
+
+Expression
+
+```python
+20 > 15 and True
+```
+
+---
+
+### Step 3
+
+```text
+20 > 15
+
+↓
+
+True
+```
+
+Expression
+
+```python
+True and True
+```
+
+---
+
+### Step 4
+
+```text
+True and True
+
+↓
+
+True
+```
+
+Final Answer
+
+```python
+True
+```
+
+---
+
+## Example 4
+
+```python
+20 > 15 and 5 in [1, 2, 5]
+```
+
+### Step 1
+
+```text
+20 > 15
+
+↓
+
+True
+```
+
+Expression
+
+```python
+True and 5 in [1,2,5]
+```
+
+### Step 2
+
+```text
+5 in [1,2,5]
+
+↓
+
+True
+```
+
+Expression
+
+```python
+True and True
+```
+
+### Step 3
+
+```text
+True and True
+
+↓
+
+True
+```
+
+Final Answer
+
+```python
+True
+```
+
+---
+
+## Example 5
+
+```python
+10 + 20 // 5
+```
+
+### Step 1
+
+```text
+20 // 5
+
+↓
+
+4
+```
+
+Expression
+
+```python
+10 + 4
+```
+
+### Step 2
+
+```text
+10 + 4
+
+↓
+
+14
+```
+
+Final Answer
+
+```python
+14
+```
+
+---
+
+## Example 6
+
+```python
+2 ** 3 + 4
+```
+
+### Step 1
+
+```text
+2 ** 3
+
+↓
+
+8
+```
+
+Expression
+
+```python
+8 + 4
+```
+
+### Step 2
+
+```text
+8 + 4
+
+↓
+
+12
+```
+
+Final Answer
+
+```python
+12
+```
+
+---
+
+## Example 7
+
+```python
+not False and True
+```
+
+### Step 1
+
+```text
+not False
+
+↓
+
+True
+```
+
+Expression
+
+```python
+True and True
+```
+
+### Step 2
+
+```text
+True and True
+
+↓
+
+True
+```
+
+Final Answer
+
+```python
+True
+```
+
+---
+
+## Example 8 (Bitwise + Arithmetic)
+
+```python
+8 + 2 << 1
+```
+
+### Step 1
+
+```text
+8 + 2
+
+↓
+
+10
+```
+
+Expression
+
+```python
+10 << 1
+```
+
+### Step 2
+
+```text
+10 << 1
+
+↓
+
+20
+```
+
+Final Answer
+
+```python
+20
+```
+
+---
+
+## Example 9
+
+```python
+20 >> 2 + 1
+```
+
+### Step 1
+
+```text
+2 + 1
+
+↓
+
+3
+```
+
+Expression
+
+```python
+20 >> 3
+```
+
+### Step 2
+
+```text
+20 >> 3
+
+↓
+
+2
+```
+
+Final Answer
+
+```python
+2
+```
+
+---
+
+# Memory Model
+
+Suppose
+
+```python
+x = 10
+y = 20
+
+result = x + y * 2 > 40
+```
+
+Memory
+
+```text
+x ───► 10
+
+y ───► 20
+```
+
+Python evaluates
+
+```text
+20 × 2
+
+↓
+
+40
+```
+
+Then
+
+```text
+10 + 40
+
+↓
+
+50
+```
+
+Then
+
+```text
+50 > 40
+
+↓
+
+True
+```
+
+Finally
+
+```text
+result ───► True
+```
+
+---
+
+# Golden Rules
+
+Python never evaluates randomly.
+
+It always follows:
+
+```text
+Highest Precedence
+
+↓
+
+Lowest Precedence
+```
+
+Until only one value remains.
+
+---
+
+# Python Thinking Formula
+
+Whenever you see a long expression:
+
+```text
+Expression
+
+↓
+
+Find the highest-precedence operator
+
+↓
+
+Evaluate it
+
+↓
+
+Replace it with the result
+
+↓
+
+Repeat
+
+↓
+
+Only one value remains
+```
+
+This is exactly how the Python interpreter works.
+
+---
+
+# Common Mistakes
+
+## ❌ Mistake 1
+
+Thinking Python evaluates from left to right only.
+
+Wrong.
+
+```python
+10 + 5 * 2
+```
+
+Multiplication happens first.
+
+---
+
+## ❌ Mistake 2
+
+Forgetting parentheses.
+
+```python
+(10 + 5) * 2
+```
+
+is **not** the same as
+
+```python
+10 + 5 * 2
+```
+
+---
+
+## ❌ Mistake 3
+
+Confusing `==` and `=`.
+
+```python
+x = 5
+```
+
+Assignment
+
+```python
+x == 5
+```
+
+Comparison
+
+---
+
+## ❌ Mistake 4
+
+Thinking
+
+```python
+2 ** 3 ** 2
+```
+
+means
+
+```text
+(2 ** 3) ** 2
+```
+
+Wrong.
+
+Exponentiation evaluates from **right to left**.
+
+---
+
+# Quick Revision
+
+| Operator | Example |
+|-----------|---------|
+| Parentheses | `(5 + 2)` |
+| Exponent | `2 ** 3` |
+| Multiply | `5 * 3` |
+| Divide | `10 / 2` |
+| Floor Division | `10 // 3` |
+| Modulus | `10 % 3` |
+| Addition | `10 + 5` |
+| Shift | `10 << 2` |
+| Bitwise AND | `5 & 3` |
+| Bitwise XOR | `5 ^ 3` |
+| Bitwise OR | `5 \| 3` |
+| Comparison | `10 > 5` |
+| Identity | `a is b` |
+| Membership | `"a" in text` |
+| Logical NOT | `not True` |
+| Logical AND | `True and False` |
+| Logical OR | `True or False` |
+
+---
+
+# Practice Problems
+
+## Level 1
+
+1.
+
+```python
+10 + 4 * 3
+```
+
+2.
+
+```python
+20 // 4 + 6
+```
+
+3.
+
+```python
+2 ** 3 + 5 * 2
+```
+
+4.
+
+```python
+10 + 5 * 2 > 18
+```
+
+5.
+
+```python
+not False and 10 > 5
+```
+
+---
+
+## Level 2
+
+6.
+
+```python
+5 in [1,5,10] and 20 >= 10
+```
+
+7.
+
+```python
+10 + 2 * 3 == 16 or False
+```
+
+8.
+
+```python
+15 << 1 + 1
+```
+
+9.
+
+```python
+64 >> 2 * 2
+```
+
+10.
+
+```python
+5 + 3 * 2 << 1
+```
+
+---
+
+## Level 3 (Interview Style)
+
+11.
+
+```python
+2 ** 3 ** 2
+```
+
+12.
+
+```python
+20 // 3 % 2
+```
+
+13.
+
+```python
+not 5 > 2 or False
+```
+
+14.
+
+```python
+3 << 2 + 1 > 20
+```
+
+15.
+
+```python
+10 + 2 * 5 == 20 and not False
+```
+
+---
+
+# Challenge Problems
+
+Evaluate step by step without Python.
+
+```python
+100 // 5 + 2 ** 3 * 2
+```
+
+---
+
+```python
+5 << 2 + 3 * 2
+```
+
+---
+
+```python
+10 + 2 << 3 > 90 or False
+```
+
+---
+
+```python
+not (10 > 5 and 5 < 3)
+```
+
+---
+
+# Interview Questions
+
+### Q1
+
+What is **Operator Precedence**?
+
+---
+
+### Q2
+
+What is **Associativity**?
+
+---
+
+### Q3
+
+Why is `2 ** 3 ** 2` equal to `512` instead of `64`?
+
+---
+
+### Q4
+
+Which has higher precedence?
+
+```python
+*
+```
+
+or
+
+```python
++
+```
+
+---
+
+### Q5
+
+Which executes first?
+
+```python
+10 + 5 << 2
+```
+
+---
+
+### Q6
+
+What is the difference between
+
+```python
+=
+```
+
+and
+
+```python
+==
+```
+
+---
+
+# 🎯 Key Takeaways
+
+- Python evaluates expressions using **Operator Precedence**.
+- If operators have the same precedence, **Associativity** decides the order.
+- Parentheses `()` have the highest precedence and can change the evaluation order.
+- Exponentiation (`**`) is evaluated **right to left**.
+- Most other operators are evaluated **left to right**.
+- Train yourself to evaluate one operation at a time, just like Python.
+
+---
+
+## ⭐ If this guide helped you, consider giving the repository a star!
