@@ -4231,3 +4231,922 @@ Questions:
 ---
 
 ## ⭐ If this guide helped you, consider giving the repository a star!
+
+
+# 📚 Python Built-in Function — `isinstance()`
+
+> A complete beginner-friendly guide to Python's `isinstance()` function with internal working, memory model, inheritance support, interview notes, and practice questions.
+
+---
+
+# 📖 Table of Contents
+
+- [What is `isinstance()`?](#what-is-isinstance)
+- [Why Do We Need `isinstance()`?](#why-do-we-need-isinstance)
+- [Syntax](#syntax)
+- [How `isinstance()` Works](#how-isinstance-works)
+- [Internal Working](#internal-working)
+- [Memory Model](#memory-model)
+- [Examples](#examples)
+- [Comparing `type()` and `isinstance()`](#comparing-type-and-isinstance)
+- [Professional Feature: Multiple Types](#professional-feature-multiple-types)
+- [Inheritance Support](#inheritance-support)
+- [Real-World Examples](#real-world-examples)
+- [Common Beginner Mistakes](#common-beginner-mistakes)
+- [Interview Notes](#interview-notes)
+- [Summary](#summary)
+- [Memory Trick](#memory-trick)
+- [Practice Questions](#practice-questions)
+- [Thinking Challenge](#thinking-challenge)
+- [What's Next?](#whats-next)
+
+---
+
+# What is `isinstance()`?
+
+`isinstance()` is a **built-in function** that checks whether an object belongs to a particular **class (data type)**.
+
+Think of it as Python answering the question:
+
+> **"Is this object an integer?"**
+
+or
+
+> **"Is this object a string?"**
+
+It always returns:
+
+- `True`
+- `False`
+
+---
+
+# Why Do We Need `isinstance()`?
+
+Suppose you're writing a calculator.
+
+The user enters:
+
+```python
+x = "100"
+```
+
+Before performing calculations, you should know what type of data you're working with.
+
+You check:
+
+```python
+print(isinstance(x, str))
+```
+
+Output
+
+```text
+True
+```
+
+Now you know the object is a string.
+
+---
+
+# Syntax
+
+```python
+isinstance(object, classinfo)
+```
+
+or
+
+```python
+isinstance(value, datatype)
+```
+
+Examples
+
+```python
+isinstance(10, int)
+```
+
+```python
+isinstance("Python", str)
+```
+
+```python
+isinstance([1, 2], list)
+```
+
+---
+
+# How `isinstance()` Works
+
+Suppose you write:
+
+```python
+x = 10
+
+print(isinstance(x, int))
+```
+
+The sequence is:
+
+```text
+Program Starts
+      │
+      ▼
+Create Object
+      │
+      ▼
+Variable Refers to Object
+      │
+      ▼
+Call isinstance(x, int)
+      │
+      ▼
+Python Finds the Object
+      │
+      ▼
+Checks Whether Object Belongs to int
+      │
+      ▼
+Returns True
+      │
+      ▼
+print() Displays It
+```
+
+---
+
+# Internal Working
+
+Program
+
+```python
+x = 10
+
+print(isinstance(x, int))
+```
+
+Python internally performs these steps.
+
+---
+
+## Step 1 — Find the Variable
+
+```text
+x
+```
+
+---
+
+## Step 2 — Find the Object
+
+```text
+10
+```
+
+---
+
+## Step 3 — Check the Object's Class
+
+Python asks:
+
+```text
+Was this object created by the int class?
+```
+
+Answer
+
+```text
+Yes
+```
+
+---
+
+## Step 4 — Return the Result
+
+```python
+True
+```
+
+---
+
+## Step 5 — `print()` Displays It
+
+Console
+
+```text
+True
+```
+
+Nothing in memory changes.
+
+---
+
+# Memory Model
+
+Program
+
+```python
+x = 10
+```
+
+Memory
+
+```text
+x
+ │
+ ▼
+10
+```
+
+Now execute
+
+```python
+isinstance(x, int)
+```
+
+Python
+
+```text
+Reads the object
+      │
+      ▼
+Checks its class
+      │
+      ▼
+Returns True
+```
+
+Memory remains
+
+```text
+x
+ │
+ ▼
+10
+```
+
+`isinstance()` only inspects the object.
+
+It never modifies it.
+
+---
+
+# Examples
+
+## Integer
+
+```python
+print(isinstance(10, int))
+```
+
+Output
+
+```text
+True
+```
+
+---
+
+## Float
+
+```python
+print(isinstance(10.5, float))
+```
+
+Output
+
+```text
+True
+```
+
+---
+
+## String
+
+```python
+print(isinstance("Python", str))
+```
+
+Output
+
+```text
+True
+```
+
+---
+
+## Boolean
+
+```python
+print(isinstance(True, bool))
+```
+
+Output
+
+```text
+True
+```
+
+---
+
+## List
+
+```python
+print(isinstance([1, 2, 3], list))
+```
+
+Output
+
+```text
+True
+```
+
+---
+
+## Tuple
+
+```python
+print(isinstance((1, 2), tuple))
+```
+
+Output
+
+```text
+True
+```
+
+---
+
+## Dictionary
+
+```python
+print(isinstance({"name": "AI"}, dict))
+```
+
+Output
+
+```text
+True
+```
+
+---
+
+## Set
+
+```python
+print(isinstance({1, 2}, set))
+```
+
+Output
+
+```text
+True
+```
+
+---
+
+## None
+
+```python
+print(isinstance(None, type(None)))
+```
+
+Output
+
+```text
+True
+```
+
+---
+
+# Comparing `type()` and `isinstance()`
+
+Many beginners confuse these two.
+
+| `type()` | `isinstance()` |
+|-----------|----------------|
+| Returns the object's class | Returns `True` or `False` |
+| Used to inspect | Used to check |
+| Output: `<class 'int'>` | Output: `True` |
+
+Example
+
+```python
+x = 10
+
+print(type(x))
+```
+
+Output
+
+```python
+<class 'int'>
+```
+
+Now
+
+```python
+print(isinstance(x, int))
+```
+
+Output
+
+```text
+True
+```
+
+---
+
+# Professional Feature: Multiple Types
+
+You can check more than one type at the same time.
+
+Example
+
+```python
+x = 10
+
+print(isinstance(x, (int, float)))
+```
+
+Output
+
+```text
+True
+```
+
+Because `10` is an `int`, and `int` is one of the allowed types.
+
+---
+
+Another example
+
+```python
+name = "Python"
+
+print(isinstance(name, (list, tuple, str)))
+```
+
+Output
+
+```text
+True
+```
+
+This feature is widely used in professional Python projects.
+
+---
+
+# Inheritance Support
+
+One of the biggest advantages of `isinstance()` over `type()` is that it understands **inheritance**.
+
+Example
+
+```python
+class Animal:
+    pass
+
+class Dog(Animal):
+    pass
+
+dog = Dog()
+
+print(isinstance(dog, Dog))
+print(isinstance(dog, Animal))
+```
+
+Output
+
+```text
+True
+True
+```
+
+Even though `dog` is a `Dog`, it is also considered an `Animal`.
+
+We'll study inheritance in detail when we learn Object-Oriented Programming (OOP).
+
+---
+
+# Real-World Examples
+
+## Banking
+
+```python
+amount = 5000
+
+if isinstance(amount, int):
+    print("Valid amount")
+```
+
+Output
+
+```text
+Valid amount
+```
+
+---
+
+## User Registration
+
+```python
+username = "Gajanand"
+
+if isinstance(username, str):
+    print("Valid username")
+```
+
+---
+
+## Shopping Cart
+
+```python
+quantity = 5
+
+if isinstance(quantity, int):
+    print("Quantity accepted")
+```
+
+---
+
+## API Validation
+
+```python
+price = 99.99
+
+if isinstance(price, (int, float)):
+    print("Valid price")
+```
+
+---
+
+# Common Beginner Mistakes
+
+## ❌ Mistake 1
+
+```python
+isinstance("10", int)
+```
+
+Output
+
+```text
+False
+```
+
+Because
+
+```text
+"10"
+```
+
+is a string.
+
+Not an integer.
+
+---
+
+## ❌ Mistake 2
+
+Thinking `isinstance()` converts data.
+
+Wrong
+
+```python
+x = "100"
+
+print(isinstance(x, int))
+```
+
+Output
+
+```text
+False
+```
+
+The value remains
+
+```text
+"100"
+```
+
+No conversion happens.
+
+---
+
+## ❌ Mistake 3
+
+Passing a value instead of a class.
+
+Wrong
+
+```python
+isinstance(10, 10)
+```
+
+Correct
+
+```python
+isinstance(10, int)
+```
+
+---
+
+## ❌ Mistake 4
+
+Using `type()` when inheritance matters.
+
+In most object-oriented code,
+
+```python
+isinstance()
+```
+
+is usually the better choice.
+
+---
+
+# Interview Notes
+
+### Is `isinstance()` a keyword?
+
+❌ No.
+
+It is a **built-in function**.
+
+---
+
+### What does `isinstance()` return?
+
+Always
+
+```python
+True
+```
+
+or
+
+```python
+False
+```
+
+---
+
+### Does `isinstance()` modify objects?
+
+❌ Never.
+
+---
+
+### Can it check multiple types?
+
+✅ Yes.
+
+Example
+
+```python
+isinstance(x, (int, float))
+```
+
+---
+
+### Why is `isinstance()` preferred over `type()` in OOP?
+
+Because it supports **inheritance**.
+
+---
+
+# Summary
+
+| Function | Returns |
+|-----------|---------|
+| `print()` | Displays value |
+| `type()` | Object's class |
+| `id()` | Object's identity |
+| `isinstance()` | `True` or `False` depending on the object's type |
+
+---
+
+# Memory Trick
+
+Think of `isinstance()` as a **security guard checking an ID card**.
+
+Object
+
+```text
+10
+```
+
+Guard asks
+
+```text
+Are you an int?
+```
+
+Answer
+
+```text
+Yes
+
+↓
+
+True
+```
+
+---
+
+Object
+
+```text
+"Python"
+```
+
+Guard asks
+
+```text
+Are you an int?
+```
+
+Answer
+
+```text
+No
+
+↓
+
+False
+```
+
+The guard only checks.
+
+He doesn't change the person.
+
+---
+
+# Practice Questions
+
+## Level 1
+
+Predict the output.
+
+### Problem 1
+
+```python
+x = 100
+
+print(isinstance(x, int))
+```
+
+---
+
+### Problem 2
+
+```python
+x = 100.5
+
+print(isinstance(x, float))
+```
+
+---
+
+### Problem 3
+
+```python
+x = "100"
+
+print(isinstance(x, int))
+```
+
+---
+
+### Problem 4
+
+```python
+x = [10, 20]
+
+print(isinstance(x, tuple))
+```
+
+---
+
+### Problem 5
+
+```python
+x = (1, 2, 3)
+
+print(isinstance(x, (list, tuple)))
+```
+
+---
+
+## Level 2
+
+### Problem 6
+
+```python
+x = {"a": 1}
+
+print(isinstance(x, dict))
+```
+
+---
+
+### Problem 7
+
+```python
+x = {1, 2, 3}
+
+print(isinstance(x, (list, set)))
+```
+
+---
+
+### Problem 8
+
+```python
+x = None
+
+print(isinstance(x, type(None)))
+```
+
+---
+
+## Level 3
+
+Without running Python, explain:
+
+```python
+value = 10
+
+print(type(value))
+
+print(isinstance(value, int))
+
+print(isinstance(value, float))
+
+print(isinstance(value, (int, float)))
+```
+
+Answer these questions:
+
+- What object is created?
+- What does `type()` return?
+- What does each `isinstance()` call check?
+- Which statements return `True`?
+- Which statements return `False`?
+- Why?
+
+---
+
+# Thinking Challenge
+
+Without running Python:
+
+```python
+x = True
+
+print(isinstance(x, bool))
+
+print(isinstance(x, int))
+```
+
+Can you explain **both outputs**?
+
+> **Hint:** In Python, `bool` is a subclass of `int`. This is one reason `isinstance()` understands inheritance.
+
+---
+
+# What's Next?
+
+The next built-in function is:
+
+## 📚 `issubclass()`
+
+You'll learn:
+
+- What a class is
+- What inheritance means
+- Parent class vs child class
+- Why `issubclass()` exists
+- Relationship between `issubclass()` and `isinstance()`
+- Interview questions
+
+Understanding `issubclass()` now will make Object-Oriented Programming much easier later.
+
+---
+
+# 🎯 Key Takeaways
+
+- `isinstance()` is a **built-in function**.
+- It checks whether an object belongs to a specified class.
+- It always returns `True` or `False`.
+- It never modifies the object.
+- It supports checking multiple types at once.
+- Unlike `type()`, it understands inheritance.
+- It is widely used in production code for type validation.
+
+---
+
+## ⭐ If this guide helped you, consider giving the repository a star!
