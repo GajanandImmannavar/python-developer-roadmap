@@ -3318,3 +3318,916 @@ Remember,
 
 > **Everything in Python is an object—including classes themselves.**
 
+# 📚 Python Built-in Function — `id()`
+
+> A complete beginner-friendly guide to Python's `id()` function with memory model, object identity, internal working, interview notes, and practice questions.
+
+---
+
+# 📖 Table of Contents
+
+- [What is `id()`?](#what-is-id)
+- [Why Do We Need `id()`?](#why-do-we-need-id)
+- [Syntax](#syntax)
+- [How `id()` Works](#how-id-works)
+- [Internal Working](#internal-working)
+- [Memory Model](#memory-model)
+- [Why `is` Uses Object Identity](#why-is-uses-object-identity)
+- [Relationship Between `print()`, `type()`, and `id()`](#relationship-between-print-type-and-id)
+- [Real-World Analogy](#real-world-analogy)
+- [Important Concepts](#important-concepts)
+- [Common Beginner Mistakes](#common-beginner-mistakes)
+- [Interview Notes](#interview-notes)
+- [Summary](#summary)
+- [Memory Trick](#memory-trick)
+- [Practice Questions](#practice-questions)
+- [Thinking Challenge](#thinking-challenge)
+- [What's Next?](#whats-next)
+
+---
+
+# What is `id()`?
+
+`id()` is a **built-in function** that returns the **identity** of an object.
+
+In CPython (the standard Python implementation), this identity is typically the object's **memory address** during its lifetime.
+
+Think of it as Python answering the question:
+
+> **"Which exact object is this variable referring to?"**
+
+---
+
+# Syntax
+
+```python
+id(object)
+```
+
+Example
+
+```python
+x = 10
+
+print(id(x))
+```
+
+Example Output
+
+```text
+140651574041832
+```
+
+⚠️ **Important**
+
+Your number will almost certainly be different.
+
+The actual value depends on your Python session and implementation.
+
+---
+
+# Why Do We Need `id()`?
+
+Suppose we have:
+
+```python
+x = 10
+y = 10
+```
+
+Question:
+
+- Are `x` and `y` referring to the same object?
+- Or two different objects?
+
+Let's check.
+
+```python
+print(id(x))
+print(id(y))
+```
+
+Possible Output
+
+```text
+140651574041832
+140651574041832
+```
+
+Since both IDs are the same,
+
+both variables refer to the **same object**.
+
+---
+
+# How `id()` Works
+
+Suppose you write:
+
+```python
+x = 100
+
+print(id(x))
+```
+
+The sequence is:
+
+```text
+Program Starts
+      │
+      ▼
+Create Object
+      │
+      ▼
+Variable Refers to Object
+      │
+      ▼
+Call id(x)
+      │
+      ▼
+Python Finds the Object
+      │
+      ▼
+Reads the Object's Identity
+      │
+      ▼
+Returns the Identity
+      │
+      ▼
+print() Displays It
+```
+
+---
+
+# Internal Working
+
+Program
+
+```python
+x = 100
+```
+
+Python creates an integer object.
+
+```text
+100
+```
+
+Suppose (for explanation only) Python internally gives it ID
+
+```text
+2001
+```
+
+> Real IDs are much larger.
+
+Memory
+
+```text
+x
+ │
+ ▼
+100
+
+ID = 2001
+```
+
+Now execute
+
+```python
+print(id(x))
+```
+
+Python internally performs these steps.
+
+---
+
+## Step 1 — Find the Variable
+
+```text
+x
+```
+
+---
+
+## Step 2 — Find the Object
+
+```text
+100
+```
+
+---
+
+## Step 3 — Read the Object's Identity
+
+```text
+ID = 2001
+```
+
+---
+
+## Step 4 — Return the Identity
+
+```python
+2001
+```
+
+---
+
+## Step 5 — `print()` Displays It
+
+Console
+
+```text
+2001
+```
+
+Notice:
+
+The object is **not modified**.
+
+`id()` only inspects it.
+
+---
+
+# Memory Model
+
+Program
+
+```python
+x = "Python"
+```
+
+Memory
+
+```text
+x
+ │
+ ▼
+"Python"
+
+ID = 5001
+```
+
+Now execute
+
+```python
+print(id(x))
+```
+
+Python prints
+
+```text
+5001
+```
+
+Memory after printing
+
+```text
+x
+ │
+ ▼
+"Python"
+
+ID = 5001
+```
+
+Nothing changes.
+
+---
+
+# Why `is` Uses Object Identity
+
+Consider
+
+```python
+x = [1, 2]
+
+y = x
+
+print(x is y)
+```
+
+Output
+
+```text
+True
+```
+
+Why?
+
+Because both variables refer to the **same object**.
+
+Memory
+
+```text
+x
+ │
+ │
+ ▼
+[1, 2]
+ ▲
+ │
+y
+```
+
+Suppose
+
+```text
+ID = 8001
+```
+
+Internally,
+
+```python
+x is y
+```
+
+checks whether both references point to the same object.
+
+Conceptually, this is similar to comparing their identities.
+
+Since both refer to the same object,
+
+```text
+True
+```
+
+---
+
+## Example 1
+
+```python
+x = [1, 2]
+
+y = x
+
+print(id(x))
+print(id(y))
+```
+
+Possible Output
+
+```text
+8001
+8001
+```
+
+Same object.
+
+Same identity.
+
+---
+
+## Example 2
+
+```python
+x = [1, 2]
+
+y = [1, 2]
+```
+
+Memory
+
+```text
+x
+ │
+ ▼
+[1, 2]
+
+ID = 8001
+```
+
+```text
+y
+ │
+ ▼
+[1, 2]
+
+ID = 9010
+```
+
+The values are equal.
+
+The objects are different.
+
+Therefore
+
+```python
+x == y
+```
+
+Output
+
+```text
+True
+```
+
+because their **values** are equal.
+
+But
+
+```python
+x is y
+```
+
+Output
+
+```text
+False
+```
+
+because their **identities** are different.
+
+---
+
+# Relationship Between `print()`, `type()`, and `id()`
+
+Suppose
+
+```python
+x = 10
+```
+
+Memory
+
+```text
+x
+ │
+ ▼
+10
+```
+
+---
+
+## `print(x)`
+
+asks
+
+```text
+What is the VALUE?
+```
+
+Answer
+
+```text
+10
+```
+
+---
+
+## `type(x)`
+
+asks
+
+```text
+What is the TYPE?
+```
+
+Answer
+
+```text
+int
+```
+
+Output
+
+```python
+<class 'int'>
+```
+
+---
+
+## `id(x)`
+
+asks
+
+```text
+Which OBJECT is this?
+```
+
+Answer
+
+```text
+Its unique identity
+```
+
+---
+
+# Real-World Analogy
+
+Imagine a hostel.
+
+There are two students named Rahul.
+
+```text
+Rahul
+Rahul
+```
+
+How do you identify them?
+
+Not by name.
+
+By **room number**.
+
+```text
+Rahul
+
+Room 201
+```
+
+```text
+Rahul
+
+Room 305
+```
+
+The room number is like `id()`.
+
+The student's name is like the object's value.
+
+---
+
+# Important Concepts
+
+## `id()` Does NOT Return the Value
+
+Example
+
+```python
+x = 25
+
+print(id(x))
+```
+
+Output
+
+```text
+140651574041832
+```
+
+Not
+
+```text
+25
+```
+
+---
+
+## `id()` Does NOT Return the Type
+
+Wrong expectation
+
+```python
+int
+```
+
+Correct
+
+It returns the object's identity.
+
+---
+
+## `id()` Never Modifies an Object
+
+It only reads information.
+
+---
+
+# Common Beginner Mistakes
+
+## ❌ Mistake 1
+
+Thinking
+
+```python
+id(x)
+```
+
+means
+
+```text
+Value of x
+```
+
+Wrong.
+
+It means
+
+```text
+Identity of the object
+```
+
+---
+
+## ❌ Mistake 2
+
+Thinking two equal values always have different IDs.
+
+Example
+
+```python
+x = 10
+
+y = 10
+```
+
+Depending on Python's implementation, both variables may refer to the same object.
+
+---
+
+## ❌ Mistake 3
+
+Comparing IDs manually.
+
+Instead of
+
+```python
+id(x) == id(y)
+```
+
+simply use
+
+```python
+x is y
+```
+
+It is clearer and expresses your intent.
+
+---
+
+## ❌ Mistake 4
+
+Assuming the same `id()` value in every program run.
+
+Object identities can change between different executions of your program.
+
+---
+
+# Interview Notes
+
+### Is `id()` a keyword?
+
+❌ No.
+
+It is a **built-in function**.
+
+---
+
+### What does `id()` return?
+
+The object's **identity**.
+
+In CPython, this is typically its memory address.
+
+---
+
+### Does `id()` modify objects?
+
+❌ Never.
+
+---
+
+### Can two variables have the same `id()`?
+
+✅ Yes.
+
+If they refer to the **same object**.
+
+---
+
+### Can two equal objects have different IDs?
+
+✅ Yes.
+
+Example
+
+```python
+[1, 2]
+
+[1, 2]
+```
+
+They have equal values but are different objects.
+
+---
+
+# Summary
+
+| Function | Returns |
+|-----------|---------|
+| `print()` | Object's value |
+| `type()` | Object's class |
+| `id()` | Object's identity |
+
+---
+
+# Memory Trick
+
+Whenever you see
+
+```python
+print(x)
+```
+
+Think
+
+```text
+Show the VALUE
+```
+
+---
+
+Whenever you see
+
+```python
+type(x)
+```
+
+Think
+
+```text
+Show the TYPE
+```
+
+---
+
+Whenever you see
+
+```python
+id(x)
+```
+
+Think
+
+```text
+Show the OBJECT'S IDENTITY
+```
+
+---
+
+# Practice Questions
+
+## Level 1
+
+### Problem 1
+
+```python
+x = 100
+
+print(id(x))
+```
+
+What does `id()` return?
+
+---
+
+### Problem 2
+
+```python
+x = [1, 2]
+
+y = x
+
+print(id(x))
+print(id(y))
+```
+
+Will the IDs be the same or different?
+
+Why?
+
+---
+
+### Problem 3
+
+```python
+x = [1, 2]
+
+y = [1, 2]
+
+print(id(x))
+print(id(y))
+```
+
+Will the IDs be the same or different?
+
+Why?
+
+---
+
+## Level 2
+
+### Problem 4
+
+```python
+a = "Python"
+
+b = a
+
+print(a is b)
+print(id(a))
+print(id(b))
+```
+
+Explain the outputs.
+
+---
+
+### Problem 5
+
+```python
+a = (1, 2)
+
+b = (1, 2)
+
+print(a == b)
+print(a is b)
+```
+
+Explain the difference between `==` and `is`.
+
+---
+
+### Problem 6
+
+```python
+x = 50
+
+print(id(x))
+
+x = 60
+
+print(id(x))
+```
+
+Did the identity change?
+
+Why?
+
+---
+
+## Level 3
+
+Without running Python, explain:
+
+```python
+x = [10, 20]
+
+y = x
+
+z = [10, 20]
+
+print(x == y)
+print(x is y)
+
+print(x == z)
+print(x is z)
+```
+
+Answer these questions:
+
+- Which variables refer to the same object?
+- Which objects have the same values?
+- Which IDs are the same?
+- Which IDs are different?
+- Why?
+
+---
+
+# Thinking Challenge
+
+Without running Python:
+
+```python
+x = "Hello"
+
+print(id(x))
+
+x = x + " World"
+
+print(id(x))
+```
+
+Questions:
+
+- Is the second object the same as the first?
+- Why does the identity change?
+- What happened to the original string object?
+
+---
+
+# 🎯 Key Takeaways
+
+- `id()` is a **built-in function**.
+- It returns an object's **identity**.
+- In CPython, the identity is typically the object's memory address.
+- `id()` never modifies objects.
+- `is` checks whether two references point to the same object.
+- `==` compares values, while `is` compares object identity.
+- The numeric value returned by `id()` can differ between program runs.
+
+---
+
+## ⭐ If this guide helped you, consider giving the repository a star!
