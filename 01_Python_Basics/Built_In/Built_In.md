@@ -5118,3 +5118,987 @@ Can you explain **both outputs**?
 
 ---
 
+# 📚 Python Built-in Function — `int()`
+
+> A complete beginner-friendly guide to Python's `int()` function with internal working, memory model, type conversion rules, interview notes, and practice questions.
+
+---
+
+# 📖 Table of Contents
+
+- [What is `int()`?](#what-is-int)
+- [Why Do We Need `int()`?](#why-do-we-need-int)
+- [Syntax](#syntax)
+- [How `int()` Works](#how-int-works)
+- [Internal Working](#internal-working)
+- [Memory Model](#memory-model)
+- [What Can `int()` Convert?](#what-can-int-convert)
+- [Understanding Truncation](#understanding-truncation)
+- [Base Conversion (Advanced)](#base-conversion-advanced)
+- [Real-World Examples](#real-world-examples)
+- [Common Beginner Mistakes](#common-beginner-mistakes)
+- [Interview Notes](#interview-notes)
+- [Summary](#summary)
+- [Memory Trick](#memory-trick)
+- [Practice Questions](#practice-questions)
+- [Thinking Challenge](#thinking-challenge)
+- [What's Next?](#whats-next)
+
+---
+
+# What is `int()`?
+
+`int()` is a **built-in function** that converts a value into an **integer object**.
+
+Think of it as Python answering the question:
+
+> **"Can this value be converted into an integer?"**
+
+If the conversion is possible,
+
+Python creates and returns a **new integer object**.
+
+If it is not possible,
+
+Python raises an exception.
+
+---
+
+# Why Do We Need `int()`?
+
+Remember,
+
+```python
+age = input("Enter your age: ")
+```
+
+If the user enters
+
+```text
+22
+```
+
+Python stores
+
+```text
+"22"
+```
+
+not
+
+```text
+22
+```
+
+Now,
+
+```python
+print(age + 5)
+```
+
+causes an error because
+
+```text
+"22" + 5
+```
+
+is invalid.
+
+Correct approach
+
+```python
+age = int(input("Enter your age: "))
+
+print(age + 5)
+```
+
+Output
+
+```text
+27
+```
+
+---
+
+# Syntax
+
+## Basic Syntax
+
+```python
+int(value)
+```
+
+Examples
+
+```python
+int("100")
+```
+
+```python
+int(25.9)
+```
+
+```python
+int(True)
+```
+
+---
+
+## Optional Base Parameter
+
+```python
+int(string, base)
+```
+
+Example
+
+```python
+int("1010", 2)
+```
+
+Output
+
+```text
+10
+```
+
+We'll study number bases in more detail later.
+
+---
+
+# How `int()` Works
+
+Suppose you write
+
+```python
+x = "100"
+
+y = int(x)
+```
+
+The sequence is
+
+```text
+Program Starts
+      │
+      ▼
+Find Object
+      │
+      ▼
+Can It Become an Integer?
+      │
+      ▼
+Yes
+      │
+      ▼
+Create New Integer Object
+      │
+      ▼
+Assign to y
+```
+
+---
+
+# Internal Working
+
+Program
+
+```python
+x = "100"
+
+y = int(x)
+```
+
+Python internally performs these steps.
+
+---
+
+## Step 1 — Find the Object
+
+```text
+"100"
+```
+
+---
+
+## Step 2 — Check Whether Conversion Is Possible
+
+Python asks
+
+```text
+Can this string represent an integer?
+```
+
+Answer
+
+```text
+Yes
+```
+
+---
+
+## Step 3 — Create a New Integer Object
+
+```text
+100
+```
+
+---
+
+## Step 4 — Assign the New Object
+
+Memory
+
+```text
+x ─────► "100"
+
+y ─────► 100
+```
+
+Notice
+
+The original string still exists.
+
+Python creates a **new object**.
+
+---
+
+# Memory Model
+
+Program
+
+```python
+x = "100"
+
+y = int(x)
+```
+
+Before conversion
+
+```text
+x
+ │
+ ▼
+"100"
+```
+
+After conversion
+
+```text
+x
+ │
+ ▼
+"100"
+
+y
+ │
+ ▼
+100
+```
+
+The string object is **not modified**.
+
+A new integer object is created.
+
+---
+
+# What Can `int()` Convert?
+
+## ✅ Integer
+
+```python
+print(int(25))
+```
+
+Output
+
+```text
+25
+```
+
+Already an integer.
+
+---
+
+## ✅ String Containing Digits
+
+```python
+print(int("123"))
+```
+
+Output
+
+```text
+123
+```
+
+---
+
+## ✅ Float
+
+```python
+print(int(15.9))
+```
+
+Output
+
+```text
+15
+```
+
+`int()` removes the decimal part.
+
+It **does not round**.
+
+---
+
+## ✅ Negative Float
+
+```python
+print(int(-15.9))
+```
+
+Output
+
+```text
+-15
+```
+
+Notice
+
+The decimal part is removed toward zero.
+
+---
+
+## ✅ Boolean
+
+```python
+print(int(True))
+```
+
+Output
+
+```text
+1
+```
+
+```python
+print(int(False))
+```
+
+Output
+
+```text
+0
+```
+
+Internally
+
+```text
+True  = 1
+
+False = 0
+```
+
+---
+
+## ✅ String With Spaces
+
+```python
+print(int("   42   "))
+```
+
+Output
+
+```text
+42
+```
+
+Python ignores leading and trailing spaces.
+
+---
+
+## ❌ Invalid String
+
+```python
+int("Python")
+```
+
+Python asks
+
+```text
+Can "Python" become an integer?
+```
+
+Answer
+
+```text
+No
+```
+
+Error
+
+```text
+ValueError
+```
+
+---
+
+## ❌ Mixed String
+
+```python
+int("12A")
+```
+
+Output
+
+```text
+ValueError
+```
+
+---
+
+## ❌ Empty String
+
+```python
+int("")
+```
+
+Output
+
+```text
+ValueError
+```
+
+---
+
+## ❌ None
+
+```python
+int(None)
+```
+
+Output
+
+```text
+TypeError
+```
+
+---
+
+# Understanding Truncation
+
+Many beginners think
+
+```python
+int(9.99)
+```
+
+becomes
+
+```text
+10
+```
+
+Wrong.
+
+Output
+
+```text
+9
+```
+
+`int()` simply removes the decimal part.
+
+More examples
+
+```python
+int(7.8)
+```
+
+Output
+
+```text
+7
+```
+
+---
+
+```python
+int(-7.8)
+```
+
+Output
+
+```text
+-7
+```
+
+Remember
+
+> `int()` **truncates toward zero**.
+
+---
+
+# Base Conversion (Advanced)
+
+`int()` can also convert numbers written in different bases.
+
+Binary
+
+```python
+print(int("1010", 2))
+```
+
+Output
+
+```text
+10
+```
+
+---
+
+Octal
+
+```python
+print(int("17", 8))
+```
+
+Output
+
+```text
+15
+```
+
+---
+
+Hexadecimal
+
+```python
+print(int("FF", 16))
+```
+
+Output
+
+```text
+255
+```
+
+Don't worry if this feels new.
+
+You'll study number systems in detail later.
+
+---
+
+# Real-World Examples
+
+## User Age
+
+```python
+age = int(input("Enter your age: "))
+```
+
+---
+
+## Number of Students
+
+```python
+students = int(input("How many students? "))
+```
+
+---
+
+## ATM Withdrawal
+
+```python
+amount = int(input("Enter amount: "))
+```
+
+---
+
+## DSA
+
+Most coding platforms provide input as text.
+
+```python
+n = int(input())
+```
+
+---
+
+## Menu Choice
+
+```python
+choice = int(input("Enter your choice: "))
+```
+
+---
+
+# Common Beginner Mistakes
+
+## ❌ Mistake 1
+
+```python
+int("10.5")
+```
+
+Output
+
+```text
+ValueError
+```
+
+Correct
+
+```python
+int(float("10.5"))
+```
+
+Output
+
+```text
+10
+```
+
+---
+
+## ❌ Mistake 2
+
+Thinking `int()` changes the original variable.
+
+```python
+x = "100"
+
+int(x)
+```
+
+After this
+
+```python
+print(x)
+```
+
+Output
+
+```text
+100
+```
+
+But notice,
+
+`x` is still a **string**.
+
+To change the reference,
+
+```python
+x = int(x)
+```
+
+---
+
+## ❌ Mistake 3
+
+Thinking `int()` rounds numbers.
+
+```python
+int(9.99)
+```
+
+Output
+
+```text
+9
+```
+
+Not
+
+```text
+10
+```
+
+---
+
+## ❌ Mistake 4
+
+Passing an invalid string.
+
+```python
+int("ABC")
+```
+
+Output
+
+```text
+ValueError
+```
+
+---
+
+## ❌ Mistake 5
+
+Trying to convert a list.
+
+```python
+int([1, 2, 3])
+```
+
+Output
+
+```text
+TypeError
+```
+
+---
+
+# Interview Notes
+
+### Is `int()` a keyword?
+
+❌ No.
+
+It is a **built-in function**.
+
+---
+
+### Does `int()` modify the original object?
+
+❌ No.
+
+It creates a **new integer object**.
+
+---
+
+### Does `int()` round floating-point numbers?
+
+❌ No.
+
+It truncates toward zero.
+
+---
+
+### Why does `int("10.5")` fail?
+
+Because `"10.5"` is a string representing a floating-point number, not an integer.
+
+---
+
+### Can `int()` convert booleans?
+
+✅ Yes.
+
+```python
+True  → 1
+
+False → 0
+```
+
+---
+
+# Summary
+
+| Input | Output |
+|--------|--------|
+| `int("25")` | `25` |
+| `int(15.9)` | `15` |
+| `int(-15.9)` | `-15` |
+| `int(True)` | `1` |
+| `int(False)` | `0` |
+| `int("Python")` | ❌ `ValueError` |
+| `int("12A")` | ❌ `ValueError` |
+| `int(None)` | ❌ `TypeError` |
+
+---
+
+# Memory Trick
+
+Think of `int()` as a **translator**.
+
+```text
+"100"
+   │
+   ▼
+int()
+   │
+   ▼
+100
+```
+
+If the translation is possible,
+
+Python creates a **new integer object**.
+
+If not,
+
+Python says
+
+```text
+"I can't translate this."
+```
+
+and raises an exception.
+
+---
+
+# Practice Questions
+
+## Level 1
+
+Predict the output.
+
+### Problem 1
+
+```python
+print(int("50"))
+```
+
+---
+
+### Problem 2
+
+```python
+print(int(25.99))
+```
+
+---
+
+### Problem 3
+
+```python
+print(int(True))
+```
+
+---
+
+### Problem 4
+
+```python
+print(int(False))
+```
+
+---
+
+### Problem 5
+
+```python
+x = "100"
+
+y = int(x)
+
+print(type(x))
+print(type(y))
+```
+
+Explain
+
+- What objects are created?
+- What does `x` refer to?
+- What does `y` refer to?
+- Why are their types different?
+
+---
+
+## Level 2
+
+### Problem 6
+
+```python
+print(int("   75   "))
+```
+
+---
+
+### Problem 7
+
+```python
+print(int(-12.99))
+```
+
+---
+
+### Problem 8
+
+```python
+print(int("1010", 2))
+```
+
+---
+
+### Problem 9
+
+```python
+print(int("17", 8))
+```
+
+---
+
+### Problem 10
+
+```python
+print(int("FF", 16))
+```
+
+---
+
+## Level 3
+
+Without running Python, explain:
+
+```python
+x = "250"
+
+print(type(x))
+
+y = int(x)
+
+print(type(y))
+
+print(id(x))
+
+print(id(y))
+```
+
+Answer these questions:
+
+- What objects are created?
+- Does `int()` modify the original string?
+- Why are the IDs different?
+- Which object does `x` refer to?
+- Which object does `y` refer to?
+
+---
+
+# Thinking Challenge
+
+Without running Python:
+
+```python
+x = "10"
+
+print(int(x) + int(x))
+```
+
+Why does this work, while
+
+```python
+print(x + x)
+```
+
+produces a completely different result?
+
+Explain what happens in memory.
+
+---
+
+# 🎯 Key Takeaways
+
+- `int()` is a **built-in function**.
+- It converts compatible values into **integer objects**.
+- It creates a **new object** instead of modifying the original.
+- It truncates floating-point numbers toward zero.
+- It can convert strings containing valid integers.
+- It raises `ValueError` or `TypeError` when conversion is impossible.
+- It is one of the most commonly used functions in Python programming.
+
+---
+
+## ⭐ If this guide helped you, consider giving the repository a star!
