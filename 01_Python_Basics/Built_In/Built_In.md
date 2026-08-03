@@ -6102,3 +6102,901 @@ Explain what happens in memory.
 ---
 
 ## ⭐ If this guide helped you, consider giving the repository a star!
+
+# 📚 Python Built-in Function — `float()`
+
+> A complete beginner-friendly guide to Python's `float()` function with internal working, memory model, type conversion rules, interview notes, and practice questions.
+
+---
+
+# 📖 Table of Contents
+
+- [What is `float()`?](#what-is-float)
+- [Why Do We Need `float()`?](#why-do-we-need-float)
+- [Syntax](#syntax)
+- [How `float()` Works](#how-float-works)
+- [Internal Working](#internal-working)
+- [Memory Model](#memory-model)
+- [What Can `float()` Convert?](#what-can-float-convert)
+- [Scientific Notation](#scientific-notation)
+- [Difference Between `int()` and `float()`](#difference-between-int-and-float)
+- [Real-World Examples](#real-world-examples)
+- [Common Beginner Mistakes](#common-beginner-mistakes)
+- [Interview Notes](#interview-notes)
+- [Summary](#summary)
+- [Memory Trick](#memory-trick)
+- [Practice Questions](#practice-questions)
+- [Thinking Challenge](#thinking-challenge)
+- [What's Next?](#whats-next)
+
+---
+
+# What is `float()`?
+
+`float()` is a **built-in function** that converts a value into a **floating-point number** (a number with a decimal point).
+
+Think of it as Python answering the question:
+
+> **"Can this value be converted into a floating-point number?"**
+
+If the conversion is possible,
+
+Python creates and returns a **new float object**.
+
+If it is not possible,
+
+Python raises an exception.
+
+---
+
+# Why Do We Need `float()`?
+
+Suppose a user enters:
+
+```python
+price = input("Enter price: ")
+```
+
+The user types
+
+```text
+99.95
+```
+
+Python stores
+
+```text
+"99.95"
+```
+
+which is a **string**.
+
+You cannot perform mathematical calculations until you convert it.
+
+Correct
+
+```python
+price = float(input("Enter price: "))
+
+print(price * 2)
+```
+
+Output
+
+```text
+199.9
+```
+
+---
+
+# Syntax
+
+## Basic Syntax
+
+```python
+float(value)
+```
+
+Examples
+
+```python
+float("10.5")
+```
+
+```python
+float(20)
+```
+
+```python
+float(True)
+```
+
+---
+
+# How `float()` Works
+
+Suppose you write
+
+```python
+x = "25.75"
+
+y = float(x)
+```
+
+The sequence is
+
+```text
+Program Starts
+      │
+      ▼
+Find Object
+      │
+      ▼
+Can It Become a Float?
+      │
+      ▼
+Yes
+      │
+      ▼
+Create New Float Object
+      │
+      ▼
+Assign to y
+```
+
+---
+
+# Internal Working
+
+Program
+
+```python
+x = "25.75"
+
+y = float(x)
+```
+
+Python internally performs these steps.
+
+---
+
+## Step 1 — Find the Object
+
+```text
+"25.75"
+```
+
+---
+
+## Step 2 — Check Whether Conversion Is Possible
+
+Python asks
+
+```text
+Can this string represent a floating-point number?
+```
+
+Answer
+
+```text
+Yes
+```
+
+---
+
+## Step 3 — Create a New Float Object
+
+```text
+25.75
+```
+
+---
+
+## Step 4 — Assign the New Object
+
+Memory
+
+```text
+x ─────► "25.75"
+
+y ─────► 25.75
+```
+
+Notice
+
+The original string still exists.
+
+Python creates a **new object**.
+
+---
+
+# Memory Model
+
+Program
+
+```python
+x = "25.75"
+
+y = float(x)
+```
+
+Before conversion
+
+```text
+x
+ │
+ ▼
+"25.75"
+```
+
+After conversion
+
+```text
+x
+ │
+ ▼
+"25.75"
+
+y
+ │
+ ▼
+25.75
+```
+
+The string object is **not modified**.
+
+A new float object is created.
+
+---
+
+# What Can `float()` Convert?
+
+## ✅ Float
+
+```python
+print(float(25.75))
+```
+
+Output
+
+```text
+25.75
+```
+
+Already a float.
+
+---
+
+## ✅ Integer
+
+```python
+print(float(25))
+```
+
+Output
+
+```text
+25.0
+```
+
+---
+
+## ✅ String Representing a Float
+
+```python
+print(float("12.75"))
+```
+
+Output
+
+```text
+12.75
+```
+
+---
+
+## ✅ String Representing an Integer
+
+```python
+print(float("50"))
+```
+
+Output
+
+```text
+50.0
+```
+
+---
+
+## ✅ Boolean
+
+```python
+print(float(True))
+```
+
+Output
+
+```text
+1.0
+```
+
+```python
+print(float(False))
+```
+
+Output
+
+```text
+0.0
+```
+
+Internally
+
+```text
+True  = 1
+
+False = 0
+```
+
+---
+
+## ✅ String With Spaces
+
+```python
+print(float("   42.5   "))
+```
+
+Output
+
+```text
+42.5
+```
+
+Python ignores leading and trailing spaces.
+
+---
+
+## ❌ Invalid String
+
+```python
+float("Python")
+```
+
+Output
+
+```text
+ValueError
+```
+
+---
+
+## ❌ Mixed String
+
+```python
+float("25.5A")
+```
+
+Output
+
+```text
+ValueError
+```
+
+---
+
+## ❌ Empty String
+
+```python
+float("")
+```
+
+Output
+
+```text
+ValueError
+```
+
+---
+
+## ❌ None
+
+```python
+float(None)
+```
+
+Output
+
+```text
+TypeError
+```
+
+---
+
+# Scientific Notation
+
+`float()` also understands scientific notation.
+
+Example
+
+```python
+print(float("1e3"))
+```
+
+Output
+
+```text
+1000.0
+```
+
+Explanation
+
+```text
+1 × 10³ = 1000
+```
+
+---
+
+Another example
+
+```python
+print(float("2.5e2"))
+```
+
+Output
+
+```text
+250.0
+```
+
+---
+
+Small numbers
+
+```python
+print(float("5e-3"))
+```
+
+Output
+
+```text
+0.005
+```
+
+Scientific notation is commonly used in:
+
+- Data Science
+- Machine Learning
+- Scientific Computing
+- Engineering
+
+---
+
+# Difference Between `int()` and `float()`
+
+| Function | Result |
+|-----------|--------|
+| `int("25")` | `25` |
+| `float("25")` | `25.0` |
+| `int(15.9)` | `15` |
+| `float(15)` | `15.0` |
+| `int(True)` | `1` |
+| `float(True)` | `1.0` |
+
+---
+
+# Real-World Examples
+
+## Shopping App
+
+```python
+price = float(input("Enter product price: "))
+```
+
+---
+
+## Percentage Calculator
+
+```python
+percentage = float(input("Enter percentage: "))
+```
+
+---
+
+## Scientific Data
+
+```python
+temperature = float(input("Temperature: "))
+```
+
+---
+
+## Geometry
+
+```python
+radius = float(input("Enter radius: "))
+```
+
+---
+
+## DSA
+
+Some coding problems provide decimal input.
+
+```python
+radius = float(input())
+```
+
+---
+
+# Common Beginner Mistakes
+
+## ❌ Mistake 1
+
+```python
+float("10,5")
+```
+
+Python expects
+
+```text
+10.5
+```
+
+not
+
+```text
+10,5
+```
+
+Output
+
+```text
+ValueError
+```
+
+---
+
+## ❌ Mistake 2
+
+Thinking `float()` changes the original variable.
+
+```python
+x = "50"
+
+float(x)
+```
+
+After this
+
+```python
+print(x)
+```
+
+Output
+
+```text
+50
+```
+
+But `x` is still a **string**.
+
+Correct
+
+```python
+x = float(x)
+```
+
+---
+
+## ❌ Mistake 3
+
+```python
+float("100abc")
+```
+
+Output
+
+```text
+ValueError
+```
+
+---
+
+## ❌ Mistake 4
+
+Trying to convert a list.
+
+```python
+float([1, 2])
+```
+
+Output
+
+```text
+TypeError
+```
+
+---
+
+## ❌ Mistake 5
+
+Thinking every decimal is represented exactly.
+
+Example
+
+```python
+print(0.1 + 0.2)
+```
+
+Output
+
+```text
+0.30000000000000004
+```
+
+This is due to how floating-point numbers are stored in computers.
+
+You'll study floating-point precision later.
+
+---
+
+# Interview Notes
+
+### Is `float()` a keyword?
+
+❌ No.
+
+It is a **built-in function**.
+
+---
+
+### Does `float()` modify the original object?
+
+❌ No.
+
+It creates a **new float object**.
+
+---
+
+### Can `float()` convert integers?
+
+✅ Yes.
+
+```python
+float(10)
+```
+
+Output
+
+```text
+10.0
+```
+
+---
+
+### Can `float()` convert booleans?
+
+✅ Yes.
+
+```python
+True  → 1.0
+
+False → 0.0
+```
+
+---
+
+### Why does `float("10A")` fail?
+
+Because `"10A"` is **not a valid numeric representation**.
+
+---
+
+# Summary
+
+| Input | Output |
+|--------|--------|
+| `float(20)` | `20.0` |
+| `float("20")` | `20.0` |
+| `float("20.5")` | `20.5` |
+| `float(True)` | `1.0` |
+| `float(False)` | `0.0` |
+| `float("Python")` | ❌ `ValueError` |
+| `float(None)` | ❌ `TypeError` |
+
+---
+
+# Memory Trick
+
+Think of `float()` as adding **decimal precision**.
+
+```text
+20
+ │
+ ▼
+float()
+ │
+ ▼
+20.0
+```
+
+Or converting a numeric string.
+
+```text
+"15.75"
+ │
+ ▼
+float()
+ │
+ ▼
+15.75
+```
+
+If the conversion is possible,
+
+Python creates a **new float object**.
+
+---
+
+# Practice Questions
+
+## Level 1
+
+Predict the output.
+
+### Problem 1
+
+```python
+print(float("75"))
+```
+
+---
+
+### Problem 2
+
+```python
+print(float(100))
+```
+
+---
+
+### Problem 3
+
+```python
+print(float(True))
+```
+
+---
+
+### Problem 4
+
+```python
+print(float(False))
+```
+
+---
+
+### Problem 5
+
+```python
+x = "45.5"
+
+y = float(x)
+
+print(type(x))
+print(type(y))
+```
+
+Explain
+
+- What object does `x` refer to?
+- What object does `y` refer to?
+- Why are they different types?
+- Does `float()` modify `x`?
+
+---
+
+## Level 2
+
+### Problem 6
+
+```python
+print(float("   99.5   "))
+```
+
+---
+
+### Problem 7
+
+```python
+print(float("1e2"))
+```
+
+---
+
+### Problem 8
+
+```python
+print(float(25))
+```
+
+---
+
+### Problem 9
+
+```python
+print(float("250"))
+```
+
+---
+
+### Problem 10
+
+```python
+print(float("5e-2"))
+```
+
+---
+
+## Level 3
+
+Without running Python, explain:
+
+```python
+x = "250"
+
+print(type(x))
+
+y = float(x)
+
+print(type(y))
+
+print(id(x))
+
+print(id(y))
+```
+
+Answer these questions:
+
+- What objects are created?
+- Does `float()` modify the original string?
+- Why are the IDs different?
+- Which object does `x` refer to?
+- Which object does `y` refer to?
+
+---
+
+# Thinking Challenge
+
+Without running Python:
+
+```python
+x = "10.5"
+
+print(float(x) + 5)
+
+print(x + "5")
+```
+
+Why does the first statement perform numerical addition,
+
+while the second performs string concatenation?
+
+Explain what happens in memory.
+
+---
+
+# 🎯 Key Takeaways
+
+- `float()` is a **built-in function**.
+- It converts compatible values into **floating-point objects**.
+- It creates a **new object** instead of modifying the original.
+- It can convert integers, numeric strings, and booleans.
+- It supports scientific notation such as `"1e3"`.
+- It raises `ValueError` or `TypeError` when conversion is impossible.
+- It is widely used in calculations involving decimal values.
+
+---
+
+## ⭐ If this guide helped you, consider giving the repository a star!s
