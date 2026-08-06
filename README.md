@@ -119,8 +119,8 @@ Here is the **complete version**.
 | Variables & Objects           | ✅ Completed   |
 | Data Types                    | ✅ Completed   |
 | Type Casting & Conversion     | ✅ Completed   |
-| Operators & Expressions       | ⏳ In Progress |
-| Built-in Functions            | ⬜ Not Started |
+| Operators & Expressions       | ✅ In Progress |
+| Built-in Functions            | ⏳ Not Started |
 | Input & Output                | ⬜ Not Started |
 | Conditional Statements        | ⬜ Not Started |
 | `match` / `case`              | ⬜ Not Started |
