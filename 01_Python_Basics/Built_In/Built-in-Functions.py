@@ -96,3 +96,34 @@ print(bool(name))
 # So, it returns True.
 
 
+
+
+
+# list()  function 
+
+
+Name = "Gajanand"
+iterable = list(Name)
+print(iterable)
+
+# Output: ['G', 'a', 'j', 'a', 'n', 'a', 'n', 'd']
+# Because the string is iterable, it returns a list of characters in the string.
+
+Number = 12345
+iterable = list(str(Number))
+print(iterable)
+
+# Steps 
+# 1: Convert the integer to a string using str(). 
+# Because integers are not iterable, we need to convert it to a string first.
+# 2: Then, we can use the list() function to convert the string to a list of characters.
+# Each character in the string will become an element in the list.
+# Output: ['1', '2', '3', '4', '5']
+
+
+
+
+
+
+
+
