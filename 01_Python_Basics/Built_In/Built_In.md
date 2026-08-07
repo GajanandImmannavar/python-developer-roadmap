@@ -9050,3 +9050,561 @@ Dictionary
 ```
 
 > 🏆 **`list()` is now complete.**
+
+
+---
+
+# 📚 Built-in Function 12 — `tuple()`
+
+`tuple()` converts an **iterable** into a **tuple**.
+
+Tuples are:
+
+- ✅ Immutable
+- ✅ Faster than lists
+- ✅ Hashable (when elements are hashable)
+- ✅ Used as dictionary keys
+- ✅ Common in DSA and Python internals
+
+---
+
+# 1️⃣ What is `tuple()`?
+
+`tuple()` converts an **iterable** into a **tuple**.
+
+Think of it as asking Python:
+
+> **"Can you convert this iterable into an immutable sequence?"**
+
+If yes,
+
+Python creates a **new tuple object**.
+
+---
+
+# 2️⃣ Why Do We Need `tuple()`?
+
+Suppose you have a list:
+
+```python
+numbers = [10, 20, 30]
+```
+
+You don't want anyone to accidentally modify it.
+
+Convert it into a tuple:
+
+```python
+numbers = tuple(numbers)
+```
+
+Now it becomes immutable.
+
+---
+
+# 3️⃣ Syntax
+
+```python
+tuple(iterable)
+```
+
+Example:
+
+```python
+tuple([1, 2, 3])
+```
+
+---
+
+# 4️⃣ Internal Working
+
+Program
+
+```python
+x = [10, 20, 30]
+
+y = tuple(x)
+```
+
+Python internally thinks:
+
+```text
+Find x
+ ↓
+[10, 20, 30]
+ ↓
+Read first element
+ ↓
+10
+ ↓
+Store
+ ↓
+Read next element
+ ↓
+20
+ ↓
+Store
+ ↓
+Read next element
+ ↓
+30
+ ↓
+Store
+ ↓
+Finished
+ ↓
+Create a new tuple
+```
+
+Result:
+
+```python
+(10, 20, 30)
+```
+
+---
+
+# 5️⃣ Memory Model
+
+```python
+x = [10, 20, 30]
+
+y = tuple(x)
+```
+
+```text
+x
+│
+▼
+[10, 20, 30]
+
+      tuple()
+         │
+         ▼
+
+y
+│
+▼
+(10, 20, 30)
+```
+
+> **Important:** `tuple()` does **not** modify the original list. It creates a **new tuple object**.
+
+---
+
+# 6️⃣ What Can `tuple()` Convert?
+
+## 🟢 List
+
+```python
+print(tuple([1, 2, 3]))
+```
+
+Output
+
+```python
+(1, 2, 3)
+```
+
+---
+
+## 🟢 String
+
+```python
+print(tuple("Python"))
+```
+
+Output
+
+```python
+('P', 'y', 't', 'h', 'o', 'n')
+```
+
+Each character becomes a separate tuple element.
+
+---
+
+## 🟢 Set
+
+```python
+print(tuple({10, 20, 30}))
+```
+
+Possible Output
+
+```python
+(10, 20, 30)
+```
+
+> ⚠️ Sets are unordered, so the order is **not guaranteed**.
+
+---
+
+## 🟢 Range
+
+```python
+print(tuple(range(5)))
+```
+
+Output
+
+```python
+(0, 1, 2, 3, 4)
+```
+
+---
+
+## 🟢 Dictionary
+
+```python
+student = {
+    "name": "Gajanand",
+    "age": 22
+}
+
+print(tuple(student))
+```
+
+Output
+
+```python
+('name', 'age')
+```
+
+### Why only keys?
+
+A dictionary is iterable over its **keys**.
+
+Python internally thinks:
+
+```text
+Dictionary
+ ↓
+Visit first key
+ ↓
+Visit next key
+ ↓
+Visit next key
+ ↓
+Finished
+```
+
+So,
+
+```python
+tuple(dictionary)
+```
+
+is equivalent to:
+
+```python
+tuple(dictionary.keys())
+```
+
+---
+
+# 7️⃣ Real-World Examples
+
+## Protect Configuration
+
+```python
+days = tuple(["Mon", "Tue", "Wed"])
+```
+
+Nobody can accidentally modify the tuple.
+
+---
+
+## Returning Multiple Values
+
+```python
+return (left, right)
+```
+
+Tuples are perfect for returning multiple values.
+
+---
+
+## Dictionary Keys
+
+```python
+point = (10, 20)
+
+location = {
+    point: "Home"
+}
+```
+
+Lists cannot be dictionary keys because they are mutable.
+
+---
+
+# 8️⃣ Common Mistakes
+
+## ❌ Mistake 1
+
+```python
+tuple(100)
+```
+
+Output
+
+```text
+TypeError
+```
+
+Why?
+
+An integer is **not iterable**.
+
+---
+
+## ❌ Mistake 2
+
+Thinking:
+
+```python
+tuple("ABC")
+```
+
+returns:
+
+```python
+("ABC",)
+```
+
+Wrong.
+
+Actual output:
+
+```python
+('A', 'B', 'C')
+```
+
+---
+
+## ❌ Mistake 3
+
+Thinking tuples can be modified.
+
+```python
+x = tuple([1, 2, 3])
+
+x[0] = 100
+```
+
+Output
+
+```text
+TypeError
+```
+
+Because tuples are immutable.
+
+---
+
+# 9️⃣ `list()` vs `tuple()`
+
+| Feature | `list()` | `tuple()` |
+|---|---|---|
+| Mutable | ✅ Yes | ❌ No |
+| Ordered | ✅ Yes | ✅ Yes |
+| Indexing | ✅ Yes | ✅ Yes |
+| Slicing | ✅ Yes | ✅ Yes |
+| Can Modify | ✅ Yes | ❌ No |
+| Speed | ❌ Slightly Slower | ✅ Slightly Faster |
+| Dictionary Key | ❌ No | ✅ Yes *(if elements are hashable)* |
+
+---
+
+# 🔟 Summary Table
+
+| Input | Output |
+|---|---|
+| `tuple([1,2,3])` | `(1, 2, 3)` |
+| `tuple("ABC")` | `('A', 'B', 'C')` |
+| `tuple(range(3))` | `(0, 1, 2)` |
+| `tuple({"a":1})` | `('a',)` |
+| `tuple(100)` | ❌ `TypeError` |
+
+---
+
+# 🧠 Memory Trick
+
+Think of `tuple()` as **laminating a document**.
+
+Before:
+
+```text
+[10, 20, 30]
+```
+
+You can modify it.
+
+After laminating:
+
+```text
+(10, 20, 30)
+```
+
+You can still **read** it,
+
+but you **cannot change** it.
+
+---
+
+# 🚀 DSA Usage
+
+### Returning Multiple Values
+
+```python
+return (min_value, max_value)
+```
+
+---
+
+### Coordinates
+
+```python
+(2, 5)
+```
+
+---
+
+### Hash Map Keys
+
+```python
+visited[(row, col)] = True
+```
+
+---
+
+### Queue Entries in BFS
+
+```python
+queue.append((row, col))
+```
+
+These patterns appear frequently in DSA and coding interviews.
+
+---
+
+# 🔥 Interview Questions
+
+## Q1. Why does this work?
+
+```python
+tuple([1, 2, 3])
+```
+
+But this fails?
+
+```python
+tuple(100)
+```
+
+---
+
+## Q2. Why are tuples often used as dictionary keys but lists are not?
+
+---
+
+## Q3. What is the biggest practical difference between a list and a tuple?
+
+---
+
+# 📝 Practice (Predict the Output)
+
+## Problem 1
+
+```python
+print(tuple("AI"))
+```
+
+---
+
+## Problem 2
+
+```python
+print(tuple([5, 10]))
+```
+
+---
+
+## Problem 3
+
+```python
+print(tuple(range(4)))
+```
+
+---
+
+## Problem 4
+
+```python
+student = {
+    "name": "Gajanand",
+    "age": 22
+}
+
+print(tuple(student))
+```
+
+---
+
+## Problem 5
+
+```python
+x = [10, 20, 30]
+
+y = tuple(x)
+
+print(type(x))
+print(type(y))
+```
+
+### Explain
+
+1. What object does `x` refer to?
+2. What object does `y` refer to?
+3. Can `y` be modified?
+4. Does `tuple()` modify the original list?
+
+---
+
+# 🏆 Final Mental Model
+
+```text
+Iterable
+     │
+     ▼
+Read one element at a time
+     │
+     ▼
+Create a new tuple
+     │
+     ▼
+Return the new tuple
+```
+
+Think:
+
+```text
+List
+String
+Set
+Range
+Dictionary
+        │
+        ▼
+      tuple()
+        │
+        ▼
+ Immutable Tuple
+```
+
+---
+
+
+
+> 🏆 **`tuple()` is now complete.**
