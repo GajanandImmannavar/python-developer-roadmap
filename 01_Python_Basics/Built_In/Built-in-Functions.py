@@ -122,16 +122,29 @@ print(iterable)
 
 
 dict = {"Name": "Gajanand", "Age": 22, "Mobile_No": 8660264369}
-List = list(dict.values())
+
+List = list(dict.values())# .values() method returns a view object that displays a list of all the values in the dictionary.
+List1 = list(dict)  # list(dict) == list(dict.keys()) It will return a list of all the keys in the dictionary.
+print(type(List))
+print(List1)
 print(List)
+
+# <class 'list'>
+# ['Name', 'Age', 'Mobile_No']
+# ['Gajanand', 22, 8660264369]
+
+
 
 
 data = (1,2,3,4)
-data[0] = 10 # why Not Possible because tuple is immutable
+# data[0] = 10 # why Not Possible because tuple is immutable
 print(type(data))
 List = list(data)
 List[0] = 10 # Before converting to list, we cannot change the value of tuple because tuple is immutable but after converting to list, we can change the value of list because list is mutable.
 print(List)
+
+# Output: <class 'tuple'>
+# [10, 2, 3, 4]
 
 
 
@@ -145,11 +158,10 @@ Ages.add(10)  #
 print(type(Ages))
 List = list(Ages)
 List[0] = 10
-print(List)
+print(List) # Order of elements in the list may not be same as the order of elements in the set because set is unordered collection of elements.
 
-
-
-
+# Output: <class 'set'>
+# [10, 72, 42, 11, 12, 10, 82, 52, 22, 92, 62]
 
 
 
