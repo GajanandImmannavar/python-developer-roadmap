@@ -121,6 +121,37 @@ print(iterable)
 # Output: ['1', '2', '3', '4', '5']
 
 
+dict = {"Name": "Gajanand", "Age": 22, "Mobile_No": 8660264369}
+List = list(dict.values())
+print(List)
+
+
+data = (1,2,3,4)
+data[0] = 10 # why Not Possible because tuple is immutable
+print(type(data))
+List = list(data)
+List[0] = 10 # Before converting to list, we cannot change the value of tuple because tuple is immutable but after converting to list, we can change the value of list because list is mutable.
+print(List)
+
+
+
+
+
+
+
+Ages = {11,12,22,32,42,52,62,72,82,92}
+# Ages[0] = 10 # why Not Possible because set is mutable but it does not support indexing
+Ages.add(10)  # 
+print(type(Ages))
+List = list(Ages)
+List[0] = 10
+print(List)
+
+
+
+
+
+
 
 
 
