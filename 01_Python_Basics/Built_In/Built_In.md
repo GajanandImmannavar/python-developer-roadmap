@@ -9608,3 +9608,2786 @@ Dictionary
 
 
 > 🏆 **`tuple()` is now complete.**
+
+Yes. You want the **complete `set()` lesson as raw Markdown source**, inside **one single code block**, so you can copy the entire block and paste it directly into a `.md` file. It should be detailed like a professional developer note: **definition → characteristics → what/why/how → internal concept → syntax → examples → when/when not to use → DSA usage → mistakes → comparisons → interview questions → practice**.
+
+````markdown
+# 📚 Built-in Function 13 — `set()`
+
+`set()` is one of the most important built-in functions in Python, especially for **DSA**.
+
+It is used to convert an **iterable** into a **set**.
+
+The biggest characteristics of a set are:
+
+- ✅ Stores unique elements
+- ✅ Removes duplicates
+- ✅ Mutable
+- ✅ Unordered
+- ❌ Does not support indexing
+- ❌ Does not support slicing
+- ⚡ Very fast average-case membership checking
+- 🔑 Uses hashing internally
+- 🔄 Can be used for set operations such as union, intersection, and difference
+
+---
+
+# 1. What is `set()`?
+
+The `set()` built-in function creates a **set object** from an iterable.
+
+### Definition
+
+> `set()` converts an iterable into a set containing unique elements.
+
+### Syntax
+
+```python
+set(iterable)
+````
+
+Example:
+
+```python
+numbers = [1, 2, 2, 3, 3, 4]
+
+result = set(numbers)
+
+print(result)
+```
+
+Output:
+
+```text
+{1, 2, 3, 4}
+```
+
+The duplicate values are removed.
+
+---
+
+# 2. What is a Set?
+
+Before understanding `set()`, understand the data structure it creates.
+
+A **set** is a collection of unique elements.
+
+Example:
+
+```python
+numbers = {10, 20, 30}
+```
+
+A set can contain:
+
+```python
+{10, 20, 30}
+```
+
+But duplicate values are not stored as separate elements.
+
+```python
+numbers = {10, 20, 20, 30, 30}
+```
+
+Conceptually:
+
+```text
+10 → keep
+20 → keep
+20 → duplicate → ignore
+30 → keep
+30 → duplicate → ignore
+```
+
+Result:
+
+```python
+{10, 20, 30}
+```
+
+---
+
+# 3. Why Do We Need `set()`?
+
+The main reasons are:
+
+```text
+1. Remove duplicates
+2. Check membership quickly
+3. Track elements we have already seen
+4. Perform mathematical set operations
+5. Solve many DSA problems efficiently
+```
+
+For example:
+
+```python
+numbers = [1, 2, 2, 3, 3, 4]
+
+unique_numbers = set(numbers)
+
+print(unique_numbers)
+```
+
+Output:
+
+```text
+{1, 2, 3, 4}
+```
+
+So:
+
+```text
+list
+ ↓
+set()
+ ↓
+unique elements
+```
+
+---
+
+# 4. What is an Iterable?
+
+`set()` expects an **iterable**.
+
+An iterable is an object that Python can read one element at a time.
+
+Examples:
+
+```python
+"Python"
+
+[1, 2, 3]
+
+(1, 2, 3)
+
+{1, 2, 3}
+
+range(5)
+
+{"name": "Gajanand"}
+```
+
+Python can iterate through these objects.
+
+Therefore, they can generally be passed to `set()`.
+
+---
+
+# 5. Basic Syntax
+
+```python
+set(iterable)
+```
+
+Example:
+
+```python
+numbers = [10, 20, 30]
+
+result = set(numbers)
+
+print(result)
+```
+
+Output:
+
+```text
+{10, 20, 30}
+```
+
+---
+
+# 6. Internal Working of `set()`
+
+Consider:
+
+```python
+numbers = [10, 20, 10, 30, 20]
+```
+
+Now:
+
+```python
+unique_numbers = set(numbers)
+```
+
+Conceptually, Python processes the elements:
+
+```text
+10
+ ↓
+Not already present
+ ↓
+Keep
+
+20
+ ↓
+Not already present
+ ↓
+Keep
+
+10
+ ↓
+Already present
+ ↓
+Ignore
+
+30
+ ↓
+Not already present
+ ↓
+Keep
+
+20
+ ↓
+Already present
+ ↓
+Ignore
+```
+
+Final result:
+
+```python
+{10, 20, 30}
+```
+
+Conceptually:
+
+```text
+Iterable
+   ↓
+Read element
+   ↓
+Check uniqueness
+   ↓
+Already present?
+   │
+   ├── YES → Ignore
+   │
+   └── NO  → Store
+   ↓
+Continue
+   ↓
+Create set
+```
+
+---
+
+# 7. Why Does a Set Remove Duplicates?
+
+A set is designed to contain **unique elements**.
+
+For example:
+
+```python
+numbers = {10, 20, 10, 30, 20}
+```
+
+Python does not maintain multiple copies of the same set element.
+
+Conceptually:
+
+```text
+10 → unique
+20 → unique
+10 → already exists
+30 → unique
+20 → already exists
+```
+
+Result:
+
+```python
+{10, 20, 30}
+```
+
+Therefore:
+
+```text
+set → uniqueness
+```
+
+is one of the most important concepts to remember.
+
+---
+
+# 8. Important Characteristics of a Set
+
+A Python set has several important characteristics.
+
+| Characteristic         | Set                    |
+| ---------------------- | ---------------------- |
+| Ordered sequence       | ❌ No                   |
+| Mutable                | ✅ Yes                  |
+| Duplicates             | ❌ No                   |
+| Indexing               | ❌ No                   |
+| Slicing                | ❌ No                   |
+| Membership checking    | ⚡ Very fast on average |
+| Hashing                | ✅ Uses hashing         |
+| Stores unique elements | ✅ Yes                  |
+
+---
+
+# 9. Set is Mutable
+
+A set is **mutable**.
+
+That means you can change the set after creating it.
+
+Example:
+
+```python
+numbers = {10, 20, 30}
+
+numbers.add(40)
+
+print(numbers)
+```
+
+Conceptually:
+
+```text
+Before:
+
+{10, 20, 30}
+
+      ↓ add(40)
+
+After:
+
+{10, 20, 30, 40}
+```
+
+The set object itself was modified.
+
+---
+
+# 10. Set Does Not Support Indexing
+
+This is extremely important.
+
+A list supports indexing:
+
+```python
+numbers = [10, 20, 30]
+
+print(numbers[0])
+```
+
+Output:
+
+```text
+10
+```
+
+But a set does not support indexing:
+
+```python
+numbers = {10, 20, 30}
+
+print(numbers[0])
+```
+
+This produces:
+
+```text
+TypeError
+```
+
+Why?
+
+Because a set is not designed around positions.
+
+Think:
+
+```text
+List
+ ↓
+position matters
+
+Set
+ ↓
+membership matters
+```
+
+---
+
+# 11. Set Does Not Support Slicing
+
+Lists support slicing:
+
+```python
+numbers = [10, 20, 30, 40]
+
+print(numbers[1:3])
+```
+
+Output:
+
+```text
+[20, 30]
+```
+
+But this does not work:
+
+```python
+numbers = {10, 20, 30, 40}
+
+print(numbers[1:3])
+```
+
+Because sets do not support indexing or slicing.
+
+---
+
+# 12. Set and Order
+
+A set should be treated as an **unordered collection** for normal programming purposes.
+
+Example:
+
+```python
+numbers = {10, 20, 30, 40}
+
+print(numbers)
+```
+
+Do not write logic that depends on a particular display order.
+
+For example, don't assume that:
+
+```python
+set("hello")
+```
+
+will always display characters in a particular order.
+
+The important properties of a set are:
+
+```text
+UNIQUENESS
++
+MEMBERSHIP
++
+SET OPERATIONS
+```
+
+not position.
+
+---
+
+# 13. String → Set
+
+A string is iterable.
+
+Therefore:
+
+```python
+letters = set("banana")
+
+print(letters)
+```
+
+The characters are processed individually:
+
+```text
+b → keep
+a → keep
+n → keep
+a → duplicate
+n → duplicate
+a → duplicate
+```
+
+The result contains only unique characters.
+
+Conceptually:
+
+```python
+{'b', 'a', 'n'}
+```
+
+⚠️ The displayed order of a set should not be relied upon.
+
+---
+
+# 14. List → Set
+
+Example:
+
+```python
+numbers = [1, 2, 2, 3, 3, 4]
+
+result = set(numbers)
+
+print(result)
+```
+
+Result:
+
+```text
+{1, 2, 3, 4}
+```
+
+This is one of the most common uses of `set()`.
+
+### Why?
+
+Because the list contains duplicates:
+
+```text
+1
+2
+2
+3
+3
+4
+```
+
+The set keeps only unique elements:
+
+```text
+1
+2
+3
+4
+```
+
+---
+
+# 15. Tuple → Set
+
+Tuples are iterable.
+
+Therefore:
+
+```python
+numbers = (1, 2, 2, 3, 3)
+
+result = set(numbers)
+
+print(result)
+```
+
+Result:
+
+```text
+{1, 2, 3}
+```
+
+---
+
+# 16. Range → Set
+
+`range()` is iterable.
+
+Example:
+
+```python
+numbers = set(range(5))
+
+print(numbers)
+```
+
+Conceptually:
+
+```text
+range(5)
+
+↓
+
+0 1 2 3 4
+
+↓
+
+{0, 1, 2, 3, 4}
+```
+
+---
+
+# 17. Dictionary → Set
+
+This is very important.
+
+A dictionary is iterable over its **keys**.
+
+Example:
+
+```python
+student = {
+    "name": "Gajanand",
+    "age": 22
+}
+
+result = set(student)
+
+print(result)
+```
+
+The result contains the keys:
+
+```text
+{'name', 'age'}
+```
+
+Why?
+
+Because:
+
+```python
+set(student)
+```
+
+is conceptually similar to:
+
+```python
+set(student.keys())
+```
+
+Remember:
+
+```text
+dictionary
+    ↓
+iteration
+    ↓
+keys
+    ↓
+set
+```
+
+---
+
+# 18. Dictionary Values → Set
+
+If you specifically want the values:
+
+```python
+student = {
+    "name": "Gajanand",
+    "age": 22
+}
+
+result = set(student.values())
+
+print(result)
+```
+
+Now the values are converted:
+
+```text
+Gajanand
+22
+```
+
+---
+
+# 19. Dictionary Items → Set
+
+You can also convert dictionary items:
+
+```python
+student = {
+    "name": "Gajanand",
+    "age": 22
+}
+
+result = set(student.items())
+
+print(result)
+```
+
+Conceptually:
+
+```text
+("name", "Gajanand")
+("age", 22)
+```
+
+become set elements.
+
+The tuples inside the set must contain hashable elements.
+
+---
+
+# 20. Empty Set — Very Important
+
+This is one of the most common Python beginner mistakes.
+
+You might think:
+
+```python
+{}
+```
+
+means an empty set.
+
+It does not.
+
+In Python:
+
+```python
+{}
+```
+
+creates an empty dictionary.
+
+Check:
+
+```python
+x = {}
+
+print(type(x))
+```
+
+Output:
+
+```text
+<class 'dict'>
+```
+
+To create an empty set, use:
+
+```python
+x = set()
+
+print(type(x))
+```
+
+Output:
+
+```text
+<class 'set'>
+```
+
+Remember:
+
+```text
+{}     → empty dictionary
+
+set()  → empty set
+```
+
+---
+
+# 21. Why Does Python Use `{}` for Dictionary?
+
+Python uses:
+
+```python
+{}
+```
+
+as the syntax for an empty dictionary.
+
+Therefore Python needs another way to explicitly create an empty set.
+
+That is:
+
+```python
+set()
+```
+
+So:
+
+```python
+empty_set = set()
+```
+
+is the correct way.
+
+---
+
+# 22. Set Membership
+
+One of the most important operations with a set is membership checking.
+
+Example:
+
+```python
+numbers = {10, 20, 30, 40}
+
+print(30 in numbers)
+```
+
+Output:
+
+```text
+True
+```
+
+And:
+
+```python
+print(50 in numbers)
+```
+
+Output:
+
+```text
+False
+```
+
+You can also use:
+
+```python
+not in
+```
+
+Example:
+
+```python
+print(50 not in numbers)
+```
+
+Output:
+
+```text
+True
+```
+
+---
+
+# 23. Why Is Set Membership Fast?
+
+Sets use **hashing** internally.
+
+Conceptually:
+
+```text
+value
+ ↓
+hash
+ ↓
+location
+ ↓
+check
+```
+
+This allows Python to perform membership checks very efficiently on average.
+
+For a set:
+
+```python
+30 in numbers
+```
+
+Python does not normally need to scan every element from beginning to end like a simple list search.
+
+### Average-case complexity
+
+```text
+x in set → O(1) average
+```
+
+For a list:
+
+```text
+x in list → O(n) average/worst-case
+```
+
+This difference becomes extremely important in DSA.
+
+---
+
+# 24. List Membership vs Set Membership
+
+### List
+
+```python
+numbers = [10, 20, 30, 40, 50]
+
+print(40 in numbers)
+```
+
+Conceptually:
+
+```text
+10 → not found
+20 → not found
+30 → not found
+40 → found
+```
+
+This is a sequential search.
+
+### Set
+
+```python
+numbers = {10, 20, 30, 40, 50}
+
+print(40 in numbers)
+```
+
+The set uses hashing to perform membership checking efficiently on average.
+
+Therefore:
+
+```text
+List
+ ↓
+search through elements
+
+Set
+ ↓
+hash-based membership
+```
+
+---
+
+# 25. Big-O Comparison
+
+| Operation         |           List |             Set |
+| ----------------- | -------------: | --------------: |
+| Membership `in`   |           O(n) |    O(1) average |
+| Add               | O(1) amortized |    O(1) average |
+| Remove            |           O(n) |    O(1) average |
+| Index access      |           O(1) | ❌ Not supported |
+| Duplicate storage |              ✅ |               ❌ |
+
+The exact performance can depend on the operation and implementation details, but the average-case set membership advantage is one of the main reasons sets are important in DSA.
+
+---
+
+# 26. Why Set Elements Must Be Hashable
+
+A set internally uses hashing.
+
+Therefore, elements stored in a set must be **hashable**.
+
+Examples of commonly hashable objects:
+
+```python
+int
+float
+str
+tuple
+```
+
+when their contents are hashable.
+
+Example:
+
+```python
+numbers = {10, 20, 30}
+```
+
+Works.
+
+Strings:
+
+```python
+names = {"Alice", "Bob", "Charlie"}
+```
+
+Works.
+
+Tuples:
+
+```python
+points = {(1, 2), (3, 4)}
+```
+
+Works.
+
+---
+
+# 27. Why Can't a List Be a Set Element?
+
+This fails:
+
+```python
+numbers = {[1, 2], [3, 4]}
+```
+
+because lists are mutable and therefore unhashable.
+
+You will get:
+
+```text
+TypeError: unhashable type: 'list'
+```
+
+Think:
+
+```text
+set
+ ↓
+hash table
+ ↓
+elements need stable hash values
+ ↓
+mutable list cannot be used
+```
+
+---
+
+# 28. Tuple Can Be a Set Element
+
+This works:
+
+```python
+points = {(1, 2), (3, 4)}
+
+print(points)
+```
+
+Why?
+
+Because tuples can be hashable when all their elements are hashable.
+
+Example:
+
+```python
+{(1, 2), (3, 4)}
+```
+
+is valid.
+
+But this:
+
+```python
+{([1, 2], [3, 4])}
+```
+
+is not valid because lists are unhashable.
+
+---
+
+# 29. `set()` Does Not Modify the Original Iterable
+
+Consider:
+
+```python
+numbers = [10, 20, 20, 30]
+
+unique_numbers = set(numbers)
+```
+
+The original list remains:
+
+```python
+[10, 20, 20, 30]
+```
+
+The new set is:
+
+```python
+{10, 20, 30}
+```
+
+Conceptually:
+
+```text
+numbers
+   │
+   ▼
+[10, 20, 20, 30]
+   │
+   │ set()
+   ▼
+unique_numbers
+   │
+   ▼
+{10, 20, 30}
+```
+
+So:
+
+```text
+set(iterable)
+```
+
+creates a set from the iterable.
+
+It does not mean:
+
+```text
+modify original iterable
+```
+
+---
+
+# 30. Real-World Example — Remove Duplicate User IDs
+
+Suppose:
+
+```python
+user_ids = [101, 102, 101, 103, 102, 104]
+```
+
+We want unique IDs:
+
+```python
+unique_ids = set(user_ids)
+
+print(unique_ids)
+```
+
+Conceptually:
+
+```text
+101 → keep
+102 → keep
+101 → duplicate
+103 → keep
+102 → duplicate
+104 → keep
+```
+
+Result:
+
+```text
+{101, 102, 103, 104}
+```
+
+---
+
+# 31. Real-World Example — Unique Characters
+
+Suppose:
+
+```python
+word = "programming"
+```
+
+Find the unique characters:
+
+```python
+unique_characters = set(word)
+
+print(unique_characters)
+```
+
+The set removes repeated characters.
+
+This is useful in problems involving:
+
+```text
+unique characters
+duplicate characters
+frequency-related logic
+membership checks
+```
+
+---
+
+# 32. DSA Pattern — Remove Duplicates
+
+Suppose:
+
+```python
+numbers = [1, 2, 3, 2, 4, 1]
+```
+
+Convert to a set:
+
+```python
+unique = set(numbers)
+
+print(unique)
+```
+
+The duplicate values disappear.
+
+Conceptually:
+
+```text
+[1, 2, 3, 2, 4, 1]
+          ↓
+        set()
+          ↓
+     {1, 2, 3, 4}
+```
+
+This is one of the simplest uses of sets in DSA.
+
+---
+
+# 33. DSA Pattern — Detect Duplicates
+
+Suppose:
+
+```python
+numbers = [1, 2, 3, 2]
+```
+
+We can compare lengths:
+
+```python
+unique = set(numbers)
+
+if len(unique) != len(numbers):
+    print("Duplicate exists")
+```
+
+Why?
+
+Original:
+
+```text
+[1, 2, 3, 2]
+```
+
+Length:
+
+```text
+4
+```
+
+Unique values:
+
+```text
+{1, 2, 3}
+```
+
+Length:
+
+```text
+3
+```
+
+Therefore:
+
+```text
+4 != 3
+```
+
+So a duplicate exists.
+
+---
+
+# 34. DSA Pattern — `seen`
+
+This is one of the most important set patterns.
+
+```python
+seen = set()
+
+for number in numbers:
+    if number in seen:
+        print("Duplicate found")
+        break
+
+    seen.add(number)
+```
+
+The idea is:
+
+```text
+Read number
+     ↓
+Have I seen it?
+     ↓
+YES ─────→ Duplicate
+     │
+     NO
+     ↓
+Add to seen
+     ↓
+Continue
+```
+
+This pattern appears frequently in DSA.
+
+---
+
+# 35. Why Use `seen = set()`?
+
+Suppose:
+
+```python
+numbers = [5, 2, 8, 2]
+```
+
+Start:
+
+```python
+seen = set()
+```
+
+Conceptually:
+
+```text
+seen = {}
+```
+
+But remember, the actual empty set is:
+
+```python
+set()
+```
+
+Process:
+
+```text
+5
+ ↓
+not in seen
+ ↓
+add 5
+
+seen = {5}
+```
+
+Next:
+
+```text
+2
+ ↓
+not in seen
+ ↓
+add 2
+
+seen = {5, 2}
+```
+
+Next:
+
+```text
+8
+ ↓
+not in seen
+ ↓
+add 8
+
+seen = {5, 2, 8}
+```
+
+Next:
+
+```text
+2
+ ↓
+already in seen
+ ↓
+duplicate
+```
+
+This is the fundamental idea behind many duplicate-detection algorithms.
+
+---
+
+# 36. When Should You Use `set()`?
+
+Use a set when the problem involves:
+
+### 1. Removing duplicates
+
+```python
+unique = set(numbers)
+```
+
+### 2. Fast membership checking
+
+```python
+if value in numbers:
+```
+
+when `numbers` is a set.
+
+### 3. Tracking seen elements
+
+```python
+seen = set()
+```
+
+### 4. Finding common elements
+
+Use intersection:
+
+```python
+a & b
+```
+
+### 5. Finding elements present in one collection but not another
+
+Use difference:
+
+```python
+a - b
+```
+
+### 6. Finding all unique elements
+
+```python
+unique = set(data)
+```
+
+---
+
+# 37. When Should You NOT Use a Set?
+
+Do not use a set when you need:
+
+### 1. Indexing
+
+If you need:
+
+```python
+numbers[0]
+```
+
+use a list or tuple.
+
+### 2. Slicing
+
+If you need:
+
+```python
+numbers[1:5]
+```
+
+use a list, tuple, or another sequence.
+
+### 3. Duplicate values
+
+If duplicates matter:
+
+```python
+[10, 10, 20]
+```
+
+a set is not appropriate because duplicates are removed.
+
+### 4. Positional order
+
+If the exact sequence position matters, use a sequence such as a list or tuple.
+
+---
+
+# 38. `list()` vs `tuple()` vs `set()`
+
+| Feature          | `list`             | `tuple`          | `set`           |
+| ---------------- | ------------------ | ---------------- | --------------- |
+| Ordered sequence | ✅                  | ✅                | ❌               |
+| Mutable          | ✅                  | ❌                | ✅               |
+| Duplicates       | ✅                  | ✅                | ❌               |
+| Indexing         | ✅                  | ✅                | ❌               |
+| Slicing          | ✅                  | ✅                | ❌               |
+| Fast membership  | ❌                  | ❌                | ⚡ Yes           |
+| Hash-based       | ❌                  | Can be hashable  | ✅               |
+| Main purpose     | General collection | Fixed collection | Unique elements |
+
+---
+
+# 39. `set()` vs `list()`
+
+Consider:
+
+```python
+numbers = [10, 20, 20, 30]
+```
+
+List:
+
+```text
+[10, 20, 20, 30]
+```
+
+Set:
+
+```python
+set(numbers)
+```
+
+Result:
+
+```text
+{10, 20, 30}
+```
+
+Main difference:
+
+```text
+list
+ ↓
+allows duplicates
+ ↓
+supports indexing
+
+set
+ ↓
+removes duplicates
+ ↓
+no indexing
+```
+
+---
+
+# 40. `set()` vs `tuple()`
+
+Both remove nothing by themselves.
+
+Example:
+
+```python
+tuple([1, 2, 2, 3])
+```
+
+Result:
+
+```text
+(1, 2, 2, 3)
+```
+
+Duplicates remain.
+
+But:
+
+```python
+set([1, 2, 2, 3])
+```
+
+Result:
+
+```text
+{1, 2, 3}
+```
+
+So:
+
+```text
+tuple
+ ↓
+keeps duplicates
+ ↓
+immutable
+
+set
+ ↓
+removes duplicates
+ ↓
+mutable
+```
+
+---
+
+# 41. Set Operations
+
+Sets are not only for removing duplicates.
+
+They also support mathematical operations.
+
+Suppose:
+
+```python
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+```
+
+We can perform:
+
+```text
+Union
+Intersection
+Difference
+Symmetric Difference
+```
+
+---
+
+# 42. Union
+
+Union means:
+
+> Elements that exist in either set.
+
+Operator:
+
+```python
+|
+```
+
+Example:
+
+```python
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+print(A | B)
+```
+
+Result:
+
+```text
+{1, 2, 3, 4, 5}
+```
+
+Conceptually:
+
+```text
+A = {1,2,3}
+
+B = {3,4,5}
+
+Union
+
+↓
+
+{1,2,3,4,5}
+```
+
+---
+
+# 43. Intersection
+
+Intersection means:
+
+> Elements common to both sets.
+
+Operator:
+
+```python
+&
+```
+
+Example:
+
+```python
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+print(A & B)
+```
+
+Result:
+
+```text
+{3}
+```
+
+Because `3` exists in both sets.
+
+---
+
+# 44. Difference
+
+Difference means:
+
+> Elements present in the first set but not the second set.
+
+Operator:
+
+```python
+-
+```
+
+Example:
+
+```python
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+print(A - B)
+```
+
+Result:
+
+```text
+{1, 2}
+```
+
+Because:
+
+```text
+1 → only in A
+2 → only in A
+3 → in both
+```
+
+Therefore:
+
+```text
+A - B = {1,2}
+```
+
+---
+
+# 45. Symmetric Difference
+
+Symmetric difference means:
+
+> Elements that exist in either set, but not in both.
+
+Operator:
+
+```python
+^
+```
+
+Example:
+
+```python
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+print(A ^ B)
+```
+
+Result:
+
+```text
+{1, 2, 4, 5}
+```
+
+The common value `3` is removed.
+
+---
+
+# 46. Set Operations Memory Trick
+
+Remember:
+
+```text
+A | B
+ ↓
+Union
+ ↓
+Everything from both
+
+A & B
+ ↓
+Intersection
+ ↓
+Common elements
+
+A - B
+ ↓
+Difference
+ ↓
+Only A
+
+A ^ B
+ ↓
+Symmetric Difference
+ ↓
+Not common
+```
+
+---
+
+# 47. Common Mistake — `{}`
+
+Wrong:
+
+```python
+empty_set = {}
+```
+
+This creates:
+
+```text
+dict
+```
+
+Correct:
+
+```python
+empty_set = set()
+```
+
+This creates:
+
+```text
+set
+```
+
+Always remember:
+
+```text
+{}     → dict
+
+set()  → empty set
+```
+
+---
+
+# 48. Common Mistake — Indexing
+
+Wrong:
+
+```python
+numbers = {10, 20, 30}
+
+print(numbers[0])
+```
+
+Why?
+
+Because sets do not have positional indexes.
+
+Think:
+
+```text
+List:
+index → value
+
+Set:
+value → membership
+```
+
+---
+
+# 49. Common Mistake — Expecting Duplicates
+
+Example:
+
+```python
+numbers = set([1, 1, 2, 2, 3])
+```
+
+Do not expect:
+
+```text
+{1, 1, 2, 2, 3}
+```
+
+The result is:
+
+```text
+{1, 2, 3}
+```
+
+A set stores unique elements.
+
+---
+
+# 50. Common Mistake — Using an Unhashable Element
+
+This fails:
+
+```python
+numbers = {[1, 2], [3, 4]}
+```
+
+because lists are unhashable.
+
+Error:
+
+```text
+TypeError: unhashable type: 'list'
+```
+
+Use tuples if appropriate:
+
+```python
+numbers = {(1, 2), (3, 4)}
+```
+
+---
+
+# 51. Common Mistake — Assuming Set Order
+
+Do not write code based on the assumption that:
+
+```python
+set("python")
+```
+
+will always display in a particular order.
+
+A set is designed for:
+
+```text
+uniqueness
+membership
+set operations
+```
+
+not positional access.
+
+---
+
+# 52. Conversion: List → Set → List
+
+This is a very common DSA technique.
+
+Start:
+
+```python
+numbers = [1, 2, 2, 3, 3, 4]
+```
+
+Convert to set:
+
+```python
+unique = set(numbers)
+```
+
+Now:
+
+```text
+{1, 2, 3, 4}
+```
+
+Convert back:
+
+```python
+numbers = list(unique)
+```
+
+Conceptually:
+
+```text
+[1,2,2,3,3,4]
+       ↓
+     set()
+       ↓
+  {1,2,3,4}
+       ↓
+     list()
+       ↓
+   [1,2,3,4]
+```
+
+⚠️ If you need to preserve the original order while removing duplicates, do not blindly rely on converting through a set. The set itself does not represent sequence order.
+
+---
+
+# 53. `set()` Complexity
+
+Suppose:
+
+```python
+numbers = [1, 2, 3, 4, 5]
+```
+
+Creating a set from the iterable requires processing its elements.
+
+Conceptually:
+
+```text
+n elements
+ ↓
+read each element
+ ↓
+insert into set
+```
+
+Average complexity:
+
+```text
+set(iterable) → O(n)
+```
+
+Membership:
+
+```python
+x in my_set
+```
+
+Average complexity:
+
+```text
+O(1)
+```
+
+This is why sets are so useful in DSA.
+
+---
+
+# 54. DSA Example — Two Arrays
+
+Suppose:
+
+```python
+A = [1, 2, 3, 4]
+B = [3, 4, 5, 6]
+```
+
+Convert to sets:
+
+```python
+set_A = set(A)
+set_B = set(B)
+```
+
+Find common values:
+
+```python
+common = set_A & set_B
+
+print(common)
+```
+
+Result:
+
+```text
+{3, 4}
+```
+
+This is much cleaner than manually comparing every pair.
+
+---
+
+# 55. DSA Example — Find Unique Values
+
+```python
+numbers = [10, 20, 20, 30, 10, 40]
+
+unique = set(numbers)
+
+print(unique)
+```
+
+Conceptually:
+
+```text
+Original
+
+10 20 20 30 10 40
+
+       ↓
+
+Set
+
+10 20 30 40
+```
+
+---
+
+# 56. DSA Example — Duplicate Detection
+
+```python
+numbers = [10, 20, 30, 20]
+
+seen = set()
+
+for number in numbers:
+
+    if number in seen:
+        print("Duplicate:", number)
+        break
+
+    seen.add(number)
+```
+
+Output:
+
+```text
+Duplicate: 20
+```
+
+The important pattern is:
+
+```text
+seen = set()
+
+for item:
+    if item in seen:
+        duplicate
+    else:
+        seen.add(item)
+```
+
+Memorize this pattern.
+
+You will use it frequently in DSA.
+
+---
+
+# 57. DSA Example — Common Elements
+
+```python
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+common = A & B
+
+print(common)
+```
+
+Output:
+
+```text
+{3, 4}
+```
+
+This is an efficient way to find common elements between sets.
+
+---
+
+# 58. DSA Example — Missing From Another Set
+
+```python
+A = {1, 2, 3, 4}
+B = {2, 3}
+
+result = A - B
+
+print(result)
+```
+
+Output:
+
+```text
+{1, 4}
+```
+
+Meaning:
+
+```text
+Elements in A
+but not in B
+```
+
+---
+
+# 59. Real-World Example — Registered Users
+
+Suppose:
+
+```python
+registered_users = {101, 102, 103, 104}
+```
+
+Check whether user `103` exists:
+
+```python
+if 103 in registered_users:
+    print("User exists")
+```
+
+This is exactly the type of situation where a set is useful.
+
+The question is:
+
+```text
+"Does this value exist?"
+```
+
+That is a natural set problem.
+
+---
+
+# 60. Real-World Example — Unique Skills
+
+Suppose:
+
+```python
+skills = [
+    "Python",
+    "SQL",
+    "Python",
+    "Git",
+    "SQL"
+]
+```
+
+Get unique skills:
+
+```python
+unique_skills = set(skills)
+
+print(unique_skills)
+```
+
+Conceptually:
+
+```text
+Python
+SQL
+Python → duplicate
+Git
+SQL → duplicate
+
+↓
+
+Python
+SQL
+Git
+```
+
+---
+
+# 61. Set Methods You Should Know
+
+Once you create a set, you can modify it using methods.
+
+Important methods:
+
+```text
+add()
+update()
+remove()
+discard()
+pop()
+clear()
+```
+
+Example:
+
+```python
+numbers = {10, 20, 30}
+
+numbers.add(40)
+
+print(numbers)
+```
+
+Result contains:
+
+```text
+40
+```
+
+We will study these methods separately in depth when learning set operations.
+
+---
+
+# 62. `add()` vs `update()`
+
+`add()` adds one element:
+
+```python
+numbers = {1, 2}
+
+numbers.add(3)
+
+print(numbers)
+```
+
+Conceptually:
+
+```text
+{1,2}
+   ↓
+add(3)
+   ↓
+{1,2,3}
+```
+
+`update()` adds multiple elements from an iterable:
+
+```python
+numbers = {1, 2}
+
+numbers.update([3, 4, 5])
+
+print(numbers)
+```
+
+Conceptually:
+
+```text
+{1,2}
+
+     +
+[3,4,5]
+
+     ↓
+
+{1,2,3,4,5}
+```
+
+---
+
+# 63. Important Rule — `set()` vs Set Literal
+
+You can create a non-empty set using:
+
+```python
+numbers = {1, 2, 3}
+```
+
+You can also create one using:
+
+```python
+numbers = set([1, 2, 3])
+```
+
+Both create sets.
+
+But for an empty set:
+
+```python
+{}
+```
+
+is a dictionary.
+
+Therefore:
+
+```python
+set()
+```
+
+must be used.
+
+---
+
+# 64. One Complete Mental Model
+
+When you see:
+
+```python
+set(data)
+```
+
+think:
+
+```text
+What is data?
+      ↓
+Is it iterable?
+      ↓
+Read elements
+      ↓
+Hash elements
+      ↓
+Keep unique elements
+      ↓
+Create set
+```
+
+Then ask yourself:
+
+```text
+Do I need uniqueness?
+        OR
+Do I need fast membership?
+        OR
+Do I need set operations?
+```
+
+If yes, a set may be the correct data structure.
+
+---
+
+# 🧠 Developer Mental Model
+
+Remember these four words:
+
+```text
+SET
+
+UNIQUE
+HASHING
+MEMBERSHIP
+NO INDEX
+```
+
+If you remember these, you understand the main purpose of a set.
+
+---
+
+# ⭐ Most Important Rules
+
+```text
+set() → converts an iterable into a set
+
+set → stores unique elements
+
+set → mutable
+
+set → no indexing
+
+set → no slicing
+
+set → hash-based membership
+
+set → average O(1) membership
+
+{} → empty dictionary
+
+set() → empty set
+```
+
+---
+
+# 🧠 One-Line Memory Trick
+
+> **`set()` = unique elements + fast membership + no indexing**
+
+Whenever you see a DSA problem asking:
+
+```text
+"Have I seen this before?"
+
+"Remove duplicates"
+
+"Is this element present?"
+
+"Find common elements"
+
+"Track visited elements"
+```
+
+immediately think:
+
+```python
+set()
+```
+
+---
+
+# 📊 Final Comparison
+
+| Feature          | List               | Tuple            | Set             |
+| ---------------- | ------------------ | ---------------- | --------------- |
+| Ordered sequence | ✅                  | ✅                | ❌               |
+| Mutable          | ✅                  | ❌                | ✅               |
+| Duplicates       | ✅                  | ✅                | ❌               |
+| Indexing         | ✅                  | ✅                | ❌               |
+| Slicing          | ✅                  | ✅                | ❌               |
+| Membership       | O(n)               | O(n)             | O(1) average    |
+| Hash-based       | ❌                  | Sometimes        | ✅               |
+| Main purpose     | General collection | Fixed collection | Unique elements |
+
+---
+
+# 🔥 Interview Questions
+
+### Q1
+
+What does `set()` do?
+
+---
+
+### Q2
+
+Why does this remove duplicates?
+
+```python
+set([1, 2, 2, 3, 3])
+```
+
+---
+
+### Q3
+
+Why does this fail?
+
+```python
+numbers = {10, 20, 30}
+
+print(numbers[0])
+```
+
+---
+
+### Q4
+
+What is the difference between:
+
+```python
+{}
+```
+
+and:
+
+```python
+set()
+```
+
+---
+
+### Q5
+
+Why is membership checking generally faster in a set than in a list?
+
+---
+
+### Q6
+
+Why can't a list be stored as a set element?
+
+---
+
+### Q7
+
+Can a tuple be stored inside a set?
+
+When is it possible?
+
+---
+
+### Q8
+
+What is the difference between:
+
+```python
+A | B
+```
+
+and:
+
+```python
+A & B
+```
+
+---
+
+### Q9
+
+What is the difference between:
+
+```python
+A - B
+```
+
+and:
+
+```python
+B - A
+```
+
+---
+
+### Q10
+
+Why is this pattern common in DSA?
+
+```python
+seen = set()
+```
+
+---
+
+# 📝 Practice — Predict the Output
+
+Do not run the code initially.
+
+## Problem 1
+
+```python
+print(set([1, 2, 2, 3, 3]))
+```
+
+---
+
+## Problem 2
+
+```python
+print(set("banana"))
+```
+
+What values will exist in the set?
+
+Do not depend on the displayed order.
+
+---
+
+## Problem 3
+
+```python
+x = set()
+
+print(type(x))
+```
+
+---
+
+## Problem 4
+
+```python
+x = {}
+
+print(type(x))
+```
+
+---
+
+## Problem 5
+
+```python
+student = {
+    "name": "Gajanand",
+    "age": 22
+}
+
+print(set(student))
+```
+
+Why are only the dictionary keys used?
+
+---
+
+## Problem 6
+
+Explain why this fails:
+
+```python
+numbers = {10, 20, 30}
+
+print(numbers[0])
+```
+
+---
+
+## Problem 7
+
+```python
+numbers = [1, 2, 3, 2, 4]
+
+unique = set(numbers)
+
+print(len(numbers))
+print(len(unique))
+```
+
+Predict both outputs.
+
+What does the difference tell you?
+
+---
+
+## Problem 8
+
+```python
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+print(A | B)
+```
+
+What operation is being performed?
+
+---
+
+## Problem 9
+
+```python
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+print(A & B)
+```
+
+What is the common element?
+
+---
+
+## Problem 10
+
+```python
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+print(A - B)
+```
+
+Which elements remain?
+
+---
+
+## Problem 11
+
+```python
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+print(A ^ B)
+```
+
+Which elements are excluded?
+
+---
+
+# 🧪 DSA Practice
+
+## Problem 12 — Duplicate Detection
+
+Write a program that determines whether a list contains duplicates.
+
+Example:
+
+```python
+numbers = [1, 2, 3, 4, 2]
+```
+
+Expected idea:
+
+```text
+Duplicate exists
+```
+
+---
+
+## Problem 13 — Unique Elements
+
+Given:
+
+```python
+numbers = [10, 20, 10, 30, 20, 40]
+```
+
+Create a set containing only unique values.
+
+---
+
+## Problem 14 — Seen Pattern
+
+Complete the code:
+
+```python
+numbers = [5, 2, 8, 2, 9]
+
+seen = set()
+
+for number in numbers:
+
+    # Check whether number was already seen
+
+    # If not seen, add it
+```
+
+---
+
+## Problem 15 — Common Elements
+
+Given:
+
+```python
+A = {10, 20, 30, 40}
+B = {30, 40, 50, 60}
+```
+
+Find the elements common to both sets.
+
+---
+
+# 🏆 Final Revision
+
+```text
+                    SET
+                     │
+          ┌──────────┼──────────┐
+          ↓          ↓          ↓
+       UNIQUE     HASHING    MEMBERSHIP
+          │          │          │
+          ↓          ↓          ↓
+     No duplicates  Fast       in / not in
+                                 │
+                                 ↓
+                              O(1) average
+```
+
+Remember:
+
+```text
+set()
+ ↓
+Iterable → Set
+ ↓
+Duplicates removed
+ ↓
+Unique elements
+ ↓
+Fast membership
+ ↓
+No indexing
+ ↓
+No slicing
+```
+
+## ⭐ Golden Rule
+
+> If your problem is about **uniqueness, membership, duplicates, seen elements, visited elements, or common elements**, always consider using a `set`.
+
+```
+```
