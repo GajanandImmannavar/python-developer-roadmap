@@ -9609,7 +9609,6 @@ Dictionary
 
 > 🏆 **`tuple()` is now complete.**
 
-````markdown
 # 📚 Built-in Function 13 — `set()`
 
 `set()` is one of the most important built-in functions in Python, especially for **DSA**.
@@ -9618,15 +9617,15 @@ It is used to convert an **iterable** into a **set**.
 
 The biggest characteristics of a set are:
 
-- ✅ Stores unique elements
-- ✅ Removes duplicates
-- ✅ Mutable
-- ✅ Unordered
-- ❌ Does not support indexing
-- ❌ Does not support slicing
-- ⚡ Very fast average-case membership checking
-- 🔑 Uses hashing internally
-- 🔄 Can be used for set operations such as union, intersection, and difference
+* ✅ Stores unique elements
+* ✅ Removes duplicates
+* ✅ Mutable
+* ✅ Unordered
+* ❌ Does not support indexing
+* ❌ Does not support slicing
+* ⚡ Very fast average-case membership checking
+* 🔑 Uses hashing internally
+* 🔄 Can be used for set operations such as union, intersection, and difference
 
 ---
 
@@ -9642,6 +9641,8 @@ The `set()` built-in function creates a **set object** from an iterable.
 
 ```python
 set(iterable)
+```
+
 ````
 
 Example:
