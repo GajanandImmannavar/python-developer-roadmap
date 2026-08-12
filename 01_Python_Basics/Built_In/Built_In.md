@@ -9609,8 +9609,6 @@ Dictionary
 
 > 🏆 **`tuple()` is now complete.**
 
-Yes. You want the **complete `set()` lesson as raw Markdown source**, inside **one single code block**, so you can copy the entire block and paste it directly into a `.md` file. It should be detailed like a professional developer note: **definition → characteristics → what/why/how → internal concept → syntax → examples → when/when not to use → DSA usage → mistakes → comparisons → interview questions → practice**.
-
 ````markdown
 # 📚 Built-in Function 13 — `set()`
 
