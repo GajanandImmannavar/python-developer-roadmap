@@ -258,9 +258,14 @@ print( A ^ B) #  {1, 2, 3, 6, 7, 8} A only + B only Elements that are in either 
 A = {1,2,3,4,5}
 B = {1,2,3}
 print(B.issubset(A)) # Every element of B exists in A.
+# You can also use:
+print(B <= A)
+
+print(type(B)) # set 
 
 
-
+# Check Superset
+ 
 
 
 
