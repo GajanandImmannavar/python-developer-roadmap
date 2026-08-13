@@ -164,9 +164,64 @@ print(List) # Order of elements in the list may not be same as the order of elem
 # [10, 72, 42, 11, 12, 10, 82, 52, 22, 92, 62]
 
 
+ # Print each set element
+
+numbers = {10,20,30,40,50}
+print(type(numbers)) 
+print(numbers) # set are unorder Elements no guarrent of sequences
+
+# Addding new element using .add
+
+Numbers = {1,2,3,4,5}
+Numbers.add(10)
+print(Numbers)
 
 
 
+# Add Duplicate
+# A set automatically ignores duplicates.
+Sets = {1,2,3,4,5}
+Sets.add(1)
+print(Sets) 
+
+# Remove an Element
+
+Usns = {1101, 2002, 3003, 1110}
+Usns.remove(1101) # ⚠️ remove() gives an error if the element doesn't exist.
+print(Usns)
+
+# . discard()
+
+Sequences = {400, 401, 402, 403, 404, 405, 406}
+Sequences.discard(400) # discard() no error if missing
+print(Sequences)
+
+# Membership
+# Check if Element Exists
+
+Users = {101, 102, 103, 104, 105, 106}
+print(101  in Users) # True ( in, not in both are membership Operators to check whether is it exist or not)
+print(10001 not in Users) # true
+
+
+
+
+# set Size
+
+Numbers = {1,2,3,4,5,8}
+Length = len(Numbers) # len() is built-in function to check length of datatype
+print(Length) 
+# Output 6
+
+
+# Union
+# Combine both sets.
+
+A = {1,2,3,4,5}
+B = {6,7,8,9,0}
+print(A | B)
+# or:
+print(A.union(B))
 
 
 
