@@ -252,6 +252,15 @@ B = {4, 5, 6, 7, 8}
 
 print( A ^ B) #  {1, 2, 3, 6, 7, 8} A only + B only Elements that are in either A or B, but not both.
 
+# Set Relatiship Operations
+# Check Subset
+
+A = {1,2,3,4,5}
+B = {1,2,3}
+print(B.issubset(A)) # Every element of B exists in A.
+
+
+
 
 
 
