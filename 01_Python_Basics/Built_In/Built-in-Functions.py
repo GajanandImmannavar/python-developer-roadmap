@@ -224,4 +224,34 @@ print(A | B)
 print(A.union(B))
 
 
+# Intersection
+# Find common elements.
+
+P = {1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2, 1}
+Q = {1, 10, 20, 30, 40, 6}
+print(P & Q) # & gives comman elements from both sets A AND B → common
+# OR
+print(P.intersection(Q))
+
+
+# Difference
+#  Elements in A but NOT in B.
+
+M = { 101, 102, 103, 104, 105}
+N = {101, 106,107,108}
+
+print(M - N ) # {104, 105, 102, 103}   Elements in M but not in N
+print(N-M) # {106, 107, 108} Elements in N but not in M
+
+
+# Symmetric Difference
+# Elements that are in either A or B, but not both.
+
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+
+print( A ^ B) #  {1, 2, 3, 6, 7, 8} A only + B only Elements that are in either A or B, but not both.
+
+
+
 
