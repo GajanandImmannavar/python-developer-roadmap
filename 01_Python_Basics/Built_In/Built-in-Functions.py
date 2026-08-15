@@ -266,6 +266,23 @@ print(type(B)) # set
 
 # Check Superset
  
+A = {1,2,3,4,5,6}
+B = {11,22,3,4,6}
+print(type(A))
+print(A.issuperset(B)) # A Contains all elements of B Rule of Superset 
+# out put: False 
+
+
+# Check Disjoint 
+# Two sets are disjoint when they have nothing in common.
+
+Num1 = {11,22,33,44,21}
+Num2 = {12,23,34,45,12}
+print(Num1.isdisjoint(Num2)) 
+
+# Output True
+
+
 
 
 
