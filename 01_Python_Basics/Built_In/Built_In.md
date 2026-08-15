@@ -9645,6 +9645,8 @@ set(iterable)
 
 ````
 
+````
+
 Example:
 
 ```python
@@ -12388,5 +12390,4 @@ No slicing
 
 > If your problem is about **uniqueness, membership, duplicates, seen elements, visited elements, or common elements**, always consider using a `set`.
 
-```
 ```
