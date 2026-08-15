@@ -282,6 +282,32 @@ print(Num1.isdisjoint(Num2))
 
 # Output True
 
+# Remove all elements
+
+numbers = {1000, 1001, 1003, 1004, 1005}
+print("----Before Removing Elements------")
+print(numbers) # output  {1000, 1001, 1003, 1004, 1005}
+print("------After Removing------")
+numbers.clear()
+print(numbers) # output  set()
+
+
+# Copy the set
+
+M = {1,2,3,4,5,6}
+N = M.copy()
+
+print(N) # Output {1,2,3,4,5,6}
+
+
+# 🧠 Set Problems — No Loops
+# Now practice these.
+# Problem 1 — Remove duplicates
+
+Elements = [1,1,2,2,3,4,5,6,7,8,9,0,0,]
+Result = set(Elements)
+print(type(Result))
+print(Result)
 
 
 
