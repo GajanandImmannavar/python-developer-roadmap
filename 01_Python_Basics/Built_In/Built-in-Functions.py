@@ -309,6 +309,31 @@ Result = set(Elements)
 print(type(Result))
 print(Result)
 
+# Find common elements
+
+A = {1,2,3,4,5,6,7}
+B = {1,11,22,3,43,7,1}
+
+print(A & B)
+# Output: {0,1,2,3,4,5,6,7,8,9,0}
+
+# Combine two sets ( | )
+
+A = {1, 2, 3, 4, 5, 6}
+B = {7, 8, 9, 10, 11, 12}
+
+Result = (A | B) # "|" this joint two different sets 
+print(Result) 
+print(type(A))
+
+# Find elements only in A
+
+A = {10, 20, 30, 30}
+B = {10, 100, 20}
+Result = B - A
+print(Result)
+
+
 
 
 
