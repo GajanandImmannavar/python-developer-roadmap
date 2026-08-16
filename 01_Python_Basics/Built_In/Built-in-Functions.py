@@ -333,7 +333,3 @@ B = {10, 100, 20}
 Result = B - A
 print(Result)
 
-
-
-
-
