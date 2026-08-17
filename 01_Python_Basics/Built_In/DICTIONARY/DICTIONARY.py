@@ -1,179 +1,179 @@
-# # Data = {
-# #     "Name": "Gajanand",
-# #     "Mobile_NO": 8660264369
-# # }
+Data = {
+    "Name": "Gajanand",
+    "Mobile_NO": 8660264369
+}
 
-# # print(type(Data))
-# # print(Data["Name"])
-# # print(Data["Mobile_NO"])
+print(type(Data))
+print(Data["Name"])
+print(Data["Mobile_NO"])
 
 
-# Personal_Data = {
+Personal_Data = {
 
 
-#    "About": {
-#         "Name": "Gajanand",
-#         "Education": "BE",
-#         "Stream": "AIML",
-#         "Job": "Looking for Job",
-#         "Salary": ""
-#            },
+   "About": {
+        "Name": "Gajanand",
+        "Education": "BE",
+        "Stream": "AIML",
+        "Job": "Looking for Job",
+        "Salary": ""
+           },
 
 
-#     "Family":{
-#                 "Parents": "Lingaraj  and Sunanda",
-#                 "Siblings":"Gireesh And Malati",
-#                 "Grand_Parents":"Ramappa and Gangavva"  
-#             }
+    "Family":{
+                "Parents": "Lingaraj  and Sunanda",
+                "Siblings":"Gireesh And Malati",
+                "Grand_Parents":"Ramappa and Gangavva"  
+            }
 
-# }
+}
 
-# # print("-------Whole Content Of Dictionary--------\n")
-# # print(f"{Personal_Data}\n")
+print("-------Whole Content Of Dictionary--------\n")
+print(f"{Personal_Data}\n")
 
-# # print(f"{Personal_Data['About']}\n")
+print(f"{Personal_Data['About']}\n")
 
 
-# # print(f"{Personal_Data['About']['Stream']}\n")
+print(f"{Personal_Data['About']['Stream']}\n")
 
-# # print(f"{Personal_Data['Family']['Parents']}\n")
+print(f"{Personal_Data['Family']['Parents']}\n")
 
 
-# # print(Personal_Data.get('About'))
+print(Personal_Data.get('About'))
 
-# # print(Personal_Data.get('About').get('Stream'))
+print(Personal_Data.get('About').get('Stream'))
 
-# # Salary = Personal_Data.get("About",{}).get("Salary",0)
+Salary = Personal_Data.get("About",{}).get("Salary",0)
 
-# # print(Salary)
+print(Salary)
 
-# # # Personal_Data["About"]["Address"]= "Dist Bagalakot Tq Mudhol 587313"
+Personal_Data["About"]["Address"]= "Dist Bagalakot Tq Mudhol 587313"
 
-# # print(Personal_Data.get("About"))
+print(Personal_Data.get("About"))
 
-# # Personal_Data["About"]["Address"] = "Dist: Bagalakot Tq: Mudhol ATPost: Ingalagi 587313"
+Personal_Data["About"]["Address"] = "Dist: Bagalakot Tq: Mudhol ATPost: Ingalagi 587313"
 
-# # print(Personal_Data.get("About",{}).get("Address"))
+print(Personal_Data.get("About",{}).get("Address"))
 
-# # del Personal_Data["About"]["Address"]
+del Personal_Data["About"]["Address"]
 
-# # print(Personal_Data)
+print(Personal_Data)
 
 
 
 
-# # print(f"{Personal_Data.keys()}\n")
+print(f"{Personal_Data.keys()}\n")
 
-# # for key in Personal_Data.keys():
-# #     print(f"{key}\n")
+for key in Personal_Data.keys():
+    print(f"{key}\n")
 
 
-# # for value in Personal_Data.values():
-# #     print(f"{value}\n")
+for value in Personal_Data.values():
+    print(f"{value}\n")
 
 
-# # for value, key in Personal_Data.items():
-# #     print(f"{value, key}\n")
+for value, key in Personal_Data.items():
+    print(f"{value, key}\n")
 
-# # print("---nested_Key-----")
-# # for key, value in Personal_Data.items():
-# #     print("Main key",key)
-# #     for nested_key in value.keys():
-# #         print("Nested_Keys", nested_key)
-# # 
-# # 
-# # 
-# # print ("Name" in Personal_Data["About"])
-# # 
-# # 
-#         #    OR
-# # 
-# # print("Grand_Parents" in Personal_Data.get("Family",{}))
-# # 
-# # 
-# # 
-# # print("Gajanand" in Personal_Data["About"].values())
-# # 
-# # 
-# # 
-# # 
-# # print("Gajanand" not in Personal_Data.get("About",{}).values())
-# # 
-# # 
-# # print("Education" not in Personal_Data["About"].keys())
+print("---nested_Key-----")
+for key, value in Personal_Data.items():
+    print("Main key",key)
+    for nested_key in value.keys():
+        print("Nested_Keys", nested_key)
 
-# # length = len(Personal_Data)
-# # print(length)
 
 
-# # length_of_nested_dict = len(Personal_Data["About"])
-# # print(length_of_nested_dict)
+print ("Name" in Personal_Data["About"])
 
 
-# # for x in Personal_Data:
-# #     print(x)
+           OR
 
+print("Grand_Parents" in Personal_Data.get("Family",{}))
 
-# # for value in Personal_Data.values():
-# #     print(value)
 
 
-# # for key, value in Personal_Data.items():
-# #     print(key, value)
+print("Gajanand" in Personal_Data["About"].values())
 
-# # Update Method
 
-# # Personal_Data.update({
-# #     "About":{
-# #     "Name": "Praveen"
-# #            }
-# # })
-#       # Update only Name or Specific data
-# # Personal_Data["About"]["Name"] = "Praveen"
-# # print(Personal_Data)
 
 
-# Personal_Data.setdefault("Age", 22)
+print("Gajanand" not in Personal_Data.get("About",{}).values())
 
-# print(Personal_Data)
 
-# Student = Personal_Data.copy()
+print("Education" not in Personal_Data["About"].keys())
 
-# print(Student)
+length = len(Personal_Data)
+print(length)
 
 
+length_of_nested_dict = len(Personal_Data["About"])
+print(length_of_nested_dict)
 
 
+for x in Personal_Data:
+    print(x)
 
-# Student1 = {
-#     "Name" : "Gajanand",
-#     "Age": 22
-# }
 
-# Student2 = {
-#     "Address": "Mudhol",
-#     "Pin": 587313
-# }
+for value in Personal_Data.values():
+    print(value)
 
 
+for key, value in Personal_Data.items():
+    print(key, value)
 
-# Students = Student1 | Student2
+Update Method
 
-# print(Students)
+Personal_Data.update({
+    "About":{
+    "Name": "Praveen"
+           }
+})
+      Update only Name or Specific data
+Personal_Data["About"]["Name"] = "Praveen"
+print(Personal_Data)
 
-# Learners = Students
 
-# Learners.update({
-#     "Name": "Gajanana"
-# })
+Personal_Data.setdefault("Age", 22)
 
-# print(Learners)
+print(Personal_Data)
 
-# Tables= {}
+Student = Personal_Data.copy()
 
-# for Number in range(1, 10+1):
-#     Tables[Number] = Number*Number
-# print(Tables)
+print(Student)
+
+
+
+
+
+Student1 = {
+    "Name" : "Gajanand",
+    "Age": 22
+}
+
+Student2 = {
+    "Address": "Mudhol",
+    "Pin": 587313
+}
+
+
+
+Students = Student1 | Student2
+
+print(Students)
+
+Learners = Students
+
+Learners.update({
+    "Name": "Gajanana"
+})
+
+print(Learners)
+
+Tables= {}
+
+for Number in range(1, 10+1):
+    Tables[Number] = Number*Number
+print(Tables)
 
 # Dictionary 
 
