@@ -1,3 +1,4 @@
+#----------------------------()()()()-------------------------------------------------------
 # Append() Method
 
 List = [1,2,3,4,5]
@@ -57,7 +58,7 @@ print(Updated_List) # output None append returns none
 
 print(Numbers)
 
-
+#------------------------------------()()()()----------------------------------------
 
 # Extend method()
 
@@ -90,16 +91,62 @@ String.extend("EF")
 print(String)
 
 
-
-
+#---------------------------------()()()()()----------------------------------------
 # Insert Method
-
+# Adds an element at a specific index.
 
 Flames = [1,2,3,4,5,6,7,8,9,0]
 
 Result = Flames.insert(10, 10)
 
 print(Flames)
+
+# ---------------------------------()()()())()--------------------------------------
+# remove()
+# Removes the first occurrence of a value.
+# Important
+# remove() searches by value, not index.
+
+Numbers = [1,1,2,2,3,3,4,4,5,5,6,6]
+
+Numbers.remove(1)
+
+print(Numbers)
+
+#------------------------------------()()()()---------------------------------------------
+
+# pop()
+
+Numbers = [10,20,30,40,50,60]
+
+print(f"{Numbers}\n")
+Updated = Numbers.pop()
+
+
+print(f"Poped Element is : {Updated}\n")
+print(Numbers)
+
+# pop(index)
+
+# You can specify an index.
+
+Indexed_pop = Numbers.pop(4)
+
+print(Indexed_pop)
+
+
+# clear()  
+
+Name = ["Gajanand", "Akash", "Veeresh", "Chandrashaker"]
+
+print(Name)
+
+Name.clear()
+
+print(Name)
+
+
+
 
 
 
