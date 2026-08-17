@@ -1,11 +1,11 @@
-Data = {
-    "Name": "Gajanand",
-    "Mobile_NO": 8660264369
-}
+# Data = {
+#     "Name": "Gajanand",
+#     "Mobile_NO": 8660264369
+# }
 
-print(type(Data))
-print(Data["Name"])
-print(Data["Mobile_NO"])
+# print(type(Data))
+# print(Data["Name"])
+# print(Data["Mobile_NO"])
 
 
 Personal_Data = {
@@ -39,30 +39,44 @@ Personal_Data = {
 # print(f"{Personal_Data['Family']['Parents']}\n")
 
 
-print(Personal_Data.get('About'))
-print(Personal_Data.get('About').get('Stream'))
+# print(Personal_Data.get('About'))
 
-Salary = Personal_Data.get("About",{}).get("Salary",0)
-print(Salary)
+# print(Personal_Data.get('About').get('Stream'))
 
+# Salary = Personal_Data.get("About",{}).get("Salary",0)
 
+# print(Salary)
 
-# Personal_Data["About"]["Address"]= "Dist Bagalakot Tq Mudhol 587313"
+# # Personal_Data["About"]["Address"]= "Dist Bagalakot Tq Mudhol 587313"
 
-print(Personal_Data.get("About"))
+# print(Personal_Data.get("About"))
 
+# Personal_Data["About"]["Address"] = "Dist: Bagalakot Tq: Mudhol ATPost: Ingalagi 587313"
 
+# print(Personal_Data.get("About",{}).get("Address"))
 
-Personal_Data["About"]["Address"] = "Dist: Bagalakot Tq: Mudhol ATPost: Ingalagi 587313"
+# del Personal_Data["About"]["Address"]
 
-
-
-
-print(Personal_Data.get("About",{}).get("Address"))
-
-
-del Personal_Data["About"]["Address"]
+# print(Personal_Data)
 
 
 
-print(Personal_Data)
+
+print(f"{Personal_Data.keys()}\n")
+
+for key in Personal_Data.keys():
+    print(f"{key}\n")
+
+
+for value in Personal_Data.values():
+    print(f"{value}\n")
+
+
+for value, key in Personal_Data.items():
+    print(f"{value, key}\n")
+
+print("---nested_Key-----")
+for key, value in Personal_Data.items():
+    print("Main key",key)
+    for nested_key in value.keys():
+        print("Nested_Keys", nested_key)
