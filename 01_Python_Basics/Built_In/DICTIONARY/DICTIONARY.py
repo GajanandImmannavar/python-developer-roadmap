@@ -59,3 +59,10 @@ Personal_Data["About"]["Address"] = "Dist: Bagalakot Tq: Mudhol ATPost: Ingalagi
 
 
 print(Personal_Data.get("About",{}).get("Address"))
+
+
+del Personal_Data["About"]["Address"]
+
+
+
+print(Personal_Data)
