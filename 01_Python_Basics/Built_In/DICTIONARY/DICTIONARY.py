@@ -13,7 +13,7 @@ Personal_Data = {
 
    "About": {
         "Name": "Gajanand",
-        "Educaion": "BE",
+        "Education": "BE",
         "Stream": "AIML",
         "Job": "Looking for Job",
         "Salary": ""
@@ -62,21 +62,73 @@ Personal_Data = {
 
 
 
-print(f"{Personal_Data.keys()}\n")
+# print(f"{Personal_Data.keys()}\n")
 
-for key in Personal_Data.keys():
-    print(f"{key}\n")
-
-
-for value in Personal_Data.values():
-    print(f"{value}\n")
+# for key in Personal_Data.keys():
+#     print(f"{key}\n")
 
 
-for value, key in Personal_Data.items():
-    print(f"{value, key}\n")
+# for value in Personal_Data.values():
+#     print(f"{value}\n")
 
-print("---nested_Key-----")
-for key, value in Personal_Data.items():
-    print("Main key",key)
-    for nested_key in value.keys():
-        print("Nested_Keys", nested_key)
+
+# for value, key in Personal_Data.items():
+#     print(f"{value, key}\n")
+
+# print("---nested_Key-----")
+# for key, value in Personal_Data.items():
+#     print("Main key",key)
+#     for nested_key in value.keys():
+#         print("Nested_Keys", nested_key)
+# 
+# 
+# 
+# print ("Name" in Personal_Data["About"])
+# 
+# 
+        #    OR
+# 
+# print("Grand_Parents" in Personal_Data.get("Family",{}))
+# 
+# 
+# 
+# print("Gajanand" in Personal_Data["About"].values())
+# 
+# 
+# 
+# 
+# print("Gajanand" not in Personal_Data.get("About",{}).values())
+# 
+# 
+# print("Education" not in Personal_Data["About"].keys())
+
+# length = len(Personal_Data)
+# print(length)
+
+
+# length_of_nested_dict = len(Personal_Data["About"])
+# print(length_of_nested_dict)
+
+
+# for x in Personal_Data:
+#     print(x)
+
+
+# for value in Personal_Data.values():
+#     print(value)
+
+
+# for key, value in Personal_Data.items():
+#     print(key, value)
+
+# Update Method
+
+# Personal_Data.update({
+#     "About":{
+#     "Name": "Praveen"
+#            }
+# })
+      # Update only Name or Specific data
+Personal_Data["About"]["Name"] = "Praveen"
+print(Personal_Data)
+
