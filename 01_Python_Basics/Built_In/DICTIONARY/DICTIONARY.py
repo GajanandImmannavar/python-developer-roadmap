@@ -86,7 +86,7 @@ for key, value in Personal_Data.items():
 print ("Name" in Personal_Data["About"])
 
 
-           OR
+        #    OR
 
 print("Grand_Parents" in Personal_Data.get("Family",{}))
 
