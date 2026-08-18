@@ -375,9 +375,77 @@ print(copuns[len(copuns)-1])
 
 # Indexing gets one element.
 # Slicing gets multiple elements from a sequence.
+# list[start:stop]
+# start → where to begin
+# stop  → where to stop
+# ⭐ Most important rule
+# Start is included. Stop is excluded.
+
 
 
 Numbers = [1,2,3,4,5,6,7]
-print(Numbers[1:2]) # Start from 1 index and stop 2 index
-print(Numbers[0:8])
-print(Numbers[0:])
+print(Numbers[1:2]) 
+# utput [2]
+
+
+numbers = [10, 20, 30, 40, 50]
+print(numbers[1:4])
+
+# Index:     0    1    2    3    4
+# Value:    10   20   30   40   50
+#                 ↑              ↑
+#               start           stop
+#                 │               │
+#                include        exclude
+
+
+# output [20, 30, 40]
+
+
+# Why Is Stop Excluded?
+# 
+# This is one of the most important Python rules.
+# 
+# numbers[1:4]
+# 
+# means:
+# 
+# index 1
+# index 2
+# index 3
+# 
+# but not index 4.
+# 
+# So:
+# 
+# 1 ≤ index < 4
+# 
+# This makes slicing work naturally with lengths and ranges.
+
+A = [100, 200, 300, 400,500]
+print(A[0:4])
+
+# output [100, 200, 300, 400]
+
+# Start Can Be Omitted
+# When start is omitted, Python starts from the beginning.
+
+print(A[:3]) # means print(A[0:3])
+
+# output [100, 200, 300]
+
+# Stop Can Be Omitted 
+#  When stop is omitted, Python goes until the end.
+
+B = [1001, 1002, 1003, 1004, 1005, 1006]
+
+print(B[2:])
+
+
+# Both Start and Stop Omitted
+# This selects the entire list.
+
+nums = [1, 2, 3, 4, 5, 6]
+
+print(nums[:])
+
