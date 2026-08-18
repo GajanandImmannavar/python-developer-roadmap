@@ -370,4 +370,14 @@ print(data[0][1][1])
 copuns = [10123, 104563, 112896, 10856]
 
 print(copuns[len(copuns)-1])
+#----------------------------------------------()()()()----------------------------------
+# Slicing
 
+# Indexing gets one element.
+# Slicing gets multiple elements from a sequence.
+
+
+Numbers = [1,2,3,4,5,6,7]
+print(Numbers[1:2]) # Start from 1 index and stop 2 index
+print(Numbers[0:8])
+print(Numbers[0:])
