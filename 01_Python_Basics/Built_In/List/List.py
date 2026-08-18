@@ -441,6 +441,9 @@ B = [1001, 1002, 1003, 1004, 1005, 1006]
 
 print(B[2:])
 
+# output  [1003, 1004, 1005, 1006]-------------------------------------------------------------
+
+# --------------------------------------------------------------------------------------------------
 
 # Both Start and Stop Omitted
 # This selects the entire list.
@@ -448,4 +451,46 @@ print(B[2:])
 nums = [1, 2, 3, 4, 5, 6]
 
 print(nums[:])
+
+# Important
+# 
+# numbers[:] creates a new list containing the same element references.
+# 
+# It is therefore commonly used as a shallow copy.
+
+
+Threes = [123, 213, 234, 223, 212]
+
+New_Threes = Threes[:]
+
+print(New_Threes)
+
+# output [123, 213, 234, 223, 212]
+
+print(New_Threes is Threes) 
+
+
+
+# Slicing With Negative Indexes
+
+
+numbers = [10, 20, 30, 40, 50]
+
+# Value:       10    20    30    40    50
+# Positive:     0     1     2     3     4
+# Negative:    -5    -4    -3    -2    -1
+
+print(numbers[-4:-1])
+# output [20, 30, 40]
+
+# Negative Start + Positive Stop
+
+print(numbers[-5:4])
+# output  [10, 20, 30, 40]
+
+
+# Positive Start + Negative Stop
+
+print(numbers[1:-1])
+# output [20, 30, 40]
 
