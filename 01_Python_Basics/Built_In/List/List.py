@@ -494,3 +494,10 @@ print(numbers[-5:4])
 print(numbers[1:-1])
 # output [20, 30, 40]
 
+
+
+Lists = [101,202, 303, 404, 505, 606]
+
+print(Lists[:])
+
+
