@@ -498,6 +498,13 @@ print(numbers[1:-1])
 
 Lists = [101,202, 303, 404, 505, 606]
 
-print(Lists[:])
+print(Lists[:]) # all elements
+
+print(Lists[::2]) # start from 0th index and skip one element
+
+print(Lists[1::2]) # start from 1 index and skip 1 element
 
 
+print(Lists[::-1])
+
+print(Lists[::-2])
