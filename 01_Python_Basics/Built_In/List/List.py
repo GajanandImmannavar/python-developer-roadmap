@@ -588,3 +588,43 @@ No[:] = [] # asssigning empty list to original list
 
 print(No)
 
+# Slice Assignment With a String
+
+letters = ["G","J","N"]
+
+letters[1:2]= ["XYZ"]
+
+print(letters)
+
+
+# Extended Slice Assignment
+
+
+Numbers = [10,20,30,40,50,60]
+
+Numbers[::2]=[100,200,300]
+
+print(Numbers)
+
+
+# mportant Rule for Extended Slice Assignment
+# 
+# When using a non-1 step, the replacement must have the same number of elements as the selected slice.
+# 
+# For example:
+
+# numbers[::2] = [100, 200]
+# 
+# is invalid if three positions are selected.
+# 
+# Python raises:
+
+# ValueError
+
+# because:
+
+# Selected positions = 3
+# Replacement values = 2
+# 
+# # They must match.
+
