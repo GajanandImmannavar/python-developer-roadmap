@@ -506,7 +506,9 @@ print(Lists[:]) # all elements
 # The Third Parameter: step
 
 L1 = [1,2,3,4,5,6]
-print(L1[1:6:2])
+print(L1[1:6:2]) # list[start:stop:step]
 
-print(L1[::3])
+print(L1[0:3:2])
+#output [1,3]
+
 
