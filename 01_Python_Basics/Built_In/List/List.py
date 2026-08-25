@@ -628,3 +628,21 @@ print(Numbers)
 # 
 # # They must match.
 
+# Empty Slices
+# # numbers = [10, 20, 30]
+
+# # Consider:
+
+# # numbers[2:2]
+
+# # Start and stop are the same.
+
+# # There are no elements between them.
+
+# # Result:
+
+# []
+
+
+
+
