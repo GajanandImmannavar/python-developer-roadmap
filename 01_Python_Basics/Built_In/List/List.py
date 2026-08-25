@@ -511,4 +511,11 @@ print(L1[1:6:2]) # list[start:stop:step]
 print(L1[0:3:2])
 #output [1,3]
 
+print(L1[0:3:2])
+
+print(L1[::2])
+#output : [1,3,5,6]
+
+print(L1[0::2]) # Start at index 1, move by 2, and continue to the end.
+# Output [1,3,5] 
 
