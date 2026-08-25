@@ -519,3 +519,72 @@ print(L1[::2])
 print(L1[0::2]) # Start at index 1, move by 2, and continue to the end.
 # Output [1,3,5] 
 
+# Omitting Everything Except Step
+
+Numbers = [1,2,3,4,5,6,7,8]
+print(Numbers[::2])          # whole list take every second element
+#output [1, 3, 5, 7]
+
+print(Numbers[::1]) # Return all elements in normal order
+# output
+#[1,2,3,4,5,6,7,8]
+
+# Negative Step
+
+Alphabets = ['G','A','J','A','N','A','N','D']
+
+print(Alphabets[::-1]) # A negative step means move backwards.
+
+
+# [::-2]
+# Negative step -2 means:
+# Start from the end and move backwards by 2.
+
+print(Alphabets[::-2]) 
+#output 'D', 'A', 'A', 'A']
+
+
+# Slice Assignment
+# Slicing isn't only for reading.
+# You can replace a slice.
+
+order_No = [10,20,30,40,50]
+
+order_No[1:3]= [200,300]
+
+print(order_No)
+
+
+
+# Slice Assignment Can Shrink a List
+
+No = [1,2,3,4,5,6]
+
+No[1:5] = [1001]
+
+print(No)
+# output [1,1001,6]
+
+
+
+# Delete a Slice
+
+No = [1,2,3,4,5,6]
+
+
+del No[1:5] # del is builtin 
+
+print(No)
+# [1,6]
+
+# Clear Using Slice Assignment
+
+No = [1,2,3,4,5,6]
+
+print(No)
+
+No[:] = [] # asssigning empty list to original list 
+
+
+print(No)
+
