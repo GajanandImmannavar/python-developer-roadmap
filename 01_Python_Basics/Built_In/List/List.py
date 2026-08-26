@@ -692,3 +692,46 @@ numbers =[1,2,3,4]
 
 
 print(numbers*0)
+
+
+# in operator
+
+list =[1,2,3,4,5,6,7,8]
+
+print(1 in list)
+
+# output in
+
+# not in
+
+usn = [1,2,3,4,5,6]
+
+print(1 not in usn)
+
+
+# == List Comparison
+
+# The == operator checks whether two lists contain equal elements in the same order.
+
+L1 = [1,2,3,4]
+L2 = [1,2,3,4]
+L3 = [1,2]
+
+print(L1 == L2)
+print(L1==L3)
+
+#True
+# False
+
+
+# Order Matter
+# == Checks Element-by-Element
+
+No = [1,3,5,7,9]
+Usn = [1,3,5,7,9]
+print(No == Usn)
+
+S1 = [2,4,6,8,0]
+S2 = [2,4,6,0,8]
+
+print(S1 == S2)
