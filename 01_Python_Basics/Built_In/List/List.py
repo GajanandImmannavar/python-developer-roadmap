@@ -645,4 +645,50 @@ print(Numbers)
 
 
 
+# List Operations
 
+
+# What Are List Operators?
+# Operators allow us to perform operations between lists or check relationships involving lists.
+
+List1  = [1,2,3,4,5,6]
+
+List2 = [7,8,9,0,12,13]
+
+List3 = List1 + List2
+
+print("Concaticating: ",List3)
+
+# You Can Only Concatenate Compatible Types
+
+# This works:
+
+# [1, 2] + [3, 4]
+
+# But:
+
+# [1, 2] + (3, 4)
+ 
+# raises:
+ 
+# TypeError
+
+
+# * Repetition Operator
+
+# The * operator repeats a list.
+
+Numbers = [1,2,3,4]
+
+print(Numbers*3)
+
+# Output [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
+
+
+# list * 0 converting list ti empty list
+
+
+numbers =[1,2,3,4]
+
+
+print(numbers*0)
