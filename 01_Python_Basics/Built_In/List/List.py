@@ -745,3 +745,27 @@ l2 = [12,21,1,2]
 print(l1 != l2)
 
 # output True
+
+
+# List Ordering Operators
+
+L1 = [0,2,3,4]
+L2 = [1,2,3,4]
+
+print(L1 < L2) # python compare 0 < 1 = true so on
+
+# output True
+
+print(L1 > L2)
+
+# output False
+
+print(L1 <= L2)
+
+# output True
+
+
+print(L1>=L2)
+# false
+
+
