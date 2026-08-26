@@ -744,8 +744,4 @@ l2 = [12,21,1,2]
 
 print(l1 != l2)
 
-# output True 
-
-
-
-
+# output True
