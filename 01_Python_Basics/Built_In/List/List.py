@@ -735,3 +735,17 @@ S1 = [2,4,6,8,0]
 S2 = [2,4,6,0,8]
 
 print(S1 == S2)
+
+
+# !=  means Are these two lists not equal?
+
+l1 = [1,2,3,4]
+l2 = [12,21,1,2]
+
+print(l1 != l2)
+
+# output True 
+
+
+
+
